@@ -7,20 +7,36 @@ Plan My Course
 ## Description
 This is a full stack application designed for students at USASK,to help them plan and figure out which classes they still need to take and check each class prerequisites without having to navigate to another page. This app would also allow users to create reviews and comments on classes.
 
+## Dependencies
+The backend was initialized using:
+
+npm init
+
+npm install express cors mysql2
+
+The frontend was initialized using:
+
+npm create vite@latest frontend
+
 ## Installation
 clone the project to your local repo
 
 When cloned cd into backend folder and run:
+
 npm install
+
 npm start
 
-If that is successfull, go into the frontend folder and run:
+If no errors occur, go into the frontend folder and run:
+
 npm install
+
 npm run dev
 
 ## Usage
-When running npm start in the backend no errors should occur
-When running npm run dev in the frontend no erros should occur
+When running npm start in the backend, there should be a message in the console saying which port the server is running on
+
+When running npm run dev in the frontend, there should be a link in the console for the default react app created using vite 
 
 ## Roadmap
 Finish deliverable 2 part 2
