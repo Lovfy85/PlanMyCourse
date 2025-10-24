@@ -15,3 +15,7 @@ python3 courseScraper.py
     or
 
 python courseScraper.py
+
+**if any errors happen, do this:**
+you would then run:
+pip install --upgrade mysql-connector-python
