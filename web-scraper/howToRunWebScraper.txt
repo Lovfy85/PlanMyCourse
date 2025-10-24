@@ -1,0 +1,17 @@
+cd into web-scraper folder
+
+run:
+python3 -m venv env
+
+If this does not work use:
+python -m venv env
+
+than run:
+pip install -r requirements.txt
+
+to start the scraper by running:
+python3 courseScraper.py 
+
+    or
+
+python courseScraper.py
