@@ -8,6 +8,8 @@ Plan My Course
 This is a full stack application designed for students at USASK,to help them plan and figure out which classes they still need to take and check each class prerequisites without having to navigate to another page. This app would also allow users to create reviews and comments on classes.
 
 ## How To Run This Project
+Before starting, make sure you have node installed
+
 clone the project to a local repo
 
 When cloned, cd into backend folder and run:

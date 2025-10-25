@@ -1,0 +1,11 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environemnt
+env/
+storefront-bHnC4D5c/
+
+.env

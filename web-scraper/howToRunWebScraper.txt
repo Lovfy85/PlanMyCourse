@@ -1,0 +1,37 @@
+Before running the scraper make sure you have 
+a database/schema in mySQL you want to import the data into.
+Once you have a database/schema
+create a .env file inside the web-scraper directory with the following attributes
+
+    DB_USER= <Your username for mySQL >
+    DB_PASS= <Your password for mySQL>
+    DB_HOST= <The host (You can usually just have "localhost" for this)>
+    DB_NAME= <The name of the database/schema you want to import the data into>
+
+
+Once you have all of the above configured you can start the following:
+
+    cd web-scraper folder
+
+    Create a Virtual Environment:
+        On Linux/Mac run:
+            python3 -m venv env
+            source env/bin/activate
+
+        On Windows run:
+            python -m venv env
+            env\Scripts\activate
+
+    than run:
+    pip install -r requirements.txt
+
+    to start the scraper run:
+        On Linux/Mac:
+            python3 courseScraper.py 
+
+        On Windows:
+            python courseScraper.py
+
+    if any import or mySQL errors happen
+        run:
+            pip install --upgrade mysql-connector-python
