@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import './homepage.css'
+import './Home.css'
 
-function homepage() {
+function Home() {
 
   return (
     <>
@@ -39,4 +38,4 @@ function homepage() {
   )
 }
 
-export default homepage
+export default Home
