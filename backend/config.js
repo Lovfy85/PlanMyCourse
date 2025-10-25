@@ -11,12 +11,29 @@ const connectMade = mysql.createConnection({
     port: process.env.DB_PORT
 });
 
-connectMade.connect((err) => {
-    if (err){
-        console.error('The database could not be connected to.');
-        return
-    }
-    console.log('Connected to database.');
+const connectMade2 = mysql.createConnection({
+    host: process.env.DB_HOST, 
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB2_NAME,
+    port: process.env.DB_PORT
 });
 
-module.exports = connectMade;
+
+connectMade.connect((err) => {
+    if (err){
+        console.error('The course database could not be connected to.');
+        return
+    }
+    console.log('Connected to course database.');
+});
+
+connectMade2.connect((err) => {
+    if (err){
+        console.error('The users database could not be connected to.');
+        return
+    }
+    console.log('Connected to users database.');
+});
+
+module.exports = {connectMade, connectMade2}
