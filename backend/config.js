@@ -13,9 +13,10 @@ const connectMade = mysql.createConnection({
 
 connectMade.connect((err) => {
     if (err){
-        console.error('The courses database could not be connected to.');
+        console.error('The database could not be connected to.');
+        return
     }
-    console.log('Connected towards that of the courses database.');
+    console.log('Connected to database.');
 });
 
 module.exports = connectMade;
