@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/courses', (req, res) => {
-    connectMade.query('SELECT * FROM courses', (err, results) => {
+    connectMade.query('SELECT * FROM Courses', (err, results) => {
         if(err){
             console.error('There has been a query error.', err);
             res.status(500).send('There has been an error with getting the database.');
