@@ -93,7 +93,8 @@ def fetch_courses(courseSubject):
         elif course.find('h4').find('a') is None:
             continue
         else:
-            title = course.find('h4').find('a').text
+            rawTitle = course.find('h4').find('a').text
+            title = rawTitle.strip()
         
         # Class number
         number = get_class_num(title)
