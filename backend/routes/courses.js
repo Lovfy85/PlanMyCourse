@@ -2,7 +2,7 @@ const express = require('express');
 const connectMade = require('../config.js');
 const router = express.Router();
 
-router.get('/getcourses', (req, res) => {
+router.get('/', (req, res) => {
     try{
         connectMade.query('SELECT * FROM Courses', (err, results) => {
         if(err){
@@ -20,7 +20,7 @@ router.get('/getcourses', (req, res) => {
 });
 
 //To get that of the a course's description just by its name alone.
-router.get('/getcourses/:class_name', (req,res) => {
+router.get('/:class_name', (req,res) => {
 
     const class_name = req.params.class_name;
 

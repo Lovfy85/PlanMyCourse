@@ -2,7 +2,7 @@ const express = require('express');
 const connectMade = require('../config.js');
 const router = express.Router();
 
-router.get('/getcoursesadded', (req, res) => {
+router.get('/added', (req, res) => {
     try{
         connectMade.query('SELECT * FROM Coursesadded', (err, results) => {
         if(err){
