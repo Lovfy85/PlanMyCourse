@@ -19,6 +19,7 @@ router.get('/getcourses', (req, res) => {
     }
 });
 
+//To get that of the a course's description just by its name alone.
 router.get('/getcourses/:class_name', (req,res) => {
 
     const class_name = req.params.class_name;
