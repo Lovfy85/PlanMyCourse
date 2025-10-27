@@ -4,7 +4,7 @@ const router = express.Router();
 
 //Will use cookies soon based on that of the dependency installed.
 
-router.get('/getusers', (req, res) => {
+router.get('/', (req, res) => {
     try{
         connectMade.query('SELECT * FROM Users', (err, results) => {
         if(err){

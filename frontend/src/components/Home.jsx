@@ -4,9 +4,8 @@ function Home() {
 
   return (
     <>
-    <div className='backpage'>
         <nav className='navbar'>
-          <div className='profile-section'>
+          <div className='title-section'>
             <h2>PlanMyCourse</h2>
           </div>
           <div className='nav-links'>
@@ -22,8 +21,7 @@ function Home() {
           </div>
         </nav>
     
-        <div className="homepage">
-          <div className="homepage-content">
+        <div className="main-container">
             <div className="website-name">
               <h1>PlanMyCourse</h1>
             </div>
@@ -32,8 +30,6 @@ function Home() {
             
           </div>
         </div>
-      </div>
-      </div>
     </>
   )
 }
