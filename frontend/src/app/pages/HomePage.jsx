@@ -1,6 +1,6 @@
-import './Home.css'
+import './HomePage.css'
 
-function Home() {
+function HomePage() {
 
   return (
     <>
@@ -34,4 +34,4 @@ function Home() {
   )
 }
 
-export default Home
+export default HomePage
