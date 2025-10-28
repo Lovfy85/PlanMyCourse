@@ -21,25 +21,25 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const {userName, userPassword} = req.body;
-    const query = `INSERT INTO Users (userName, userPassword) Values (?,?)`;
-    connectMade.query(query, [userName, userPassword], (err, result) => {
+    const {userId, username, password} = req.body;
+    const query = `INSERT INTO Users (username, password) Values (?,?)`;
+    connectMade.query(query, [username, password], (err, result) => {
         if(err){
             res.send("Did not insert that of a user successfully in Users table");
             return;
         }
-        res.status(201).json({id: result.insertId, userName, userPassword});
+        res.status(201).json({userId, username, password});
     });
 });
 
-router.get('/:userID', (req, res) => {
-    const userID = req.params.userID;
+router.get('/:userId', (req, res) => {
+    const userId = req.params.userId;
 
     try{
-        connectMade.query('SELECT * FROM Users WHERE userID = ?', [userID], (err, results) => {
+        connectMade.query('SELECT * FROM Users WHERE userId = ?', [userId], (err, results) => {
             if(err){
                 console.error('There has been an error getting a user from the courses table.');
-                res.status(500).send('Cannot get that of a selected user from their userID from the Users table.');
+                res.status(500).send('Cannot get that of a selected user from their userId from the Users table.');
                 return;
             }
             res.json(results);
@@ -51,12 +51,12 @@ router.get('/:userID', (req, res) => {
     }
 });
 
-router.delete('/:userID', (req, res) => {
-    const userID = req.params.userID;
-    const query = `DELETE FROM Users WHERE userID = ?`;
-    connectMade.query(query,[userID], (err, result) =>{
+router.delete('/:userId', (req, res) => {
+    const userId = req.params.userId;
+    const query = `DELETE FROM Users WHERE userId = ?`;
+    connectMade.query(query,[userId], (err, result) =>{
         if(err){
-            res.send("Did not delete user from Users table from their userID");
+            res.send("Did not delete user from Users table from their userId");
             return;
         }
         res.json({message: "User that was in Users table is now gone."});
