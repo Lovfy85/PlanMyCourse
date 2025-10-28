@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const { courseId, course_name, taken } = req.body;
+    const { courseId, taken } = req.body;
     const query = `INSERT INTO CoursesAdded (courseId, taken) Values (?, ?)`;
     connectMade.query(query, [courseId, taken], (err, result) => {
         if(err){
