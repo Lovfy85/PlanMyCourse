@@ -5,6 +5,8 @@ import mysql.connector
 from dotenv import load_dotenv
 import os
 
+import re
+
 load_dotenv()
 
 # MySql Config
@@ -21,7 +23,7 @@ else:
 
 mycursor = db.cursor()
 
-# Create a courses table
+# Create a Courses table
 mycursor.execute("""
 CREATE TABLE IF NOT EXISTS Courses (
     courseId INT AUTO_INCREMENT PRIMARY KEY,
@@ -32,7 +34,17 @@ CREATE TABLE IF NOT EXISTS Courses (
     description TEXT,
     notes TEXT
 )
-""")              
+""")
+
+# Create a Prerequisites table
+mycursor.execute("""
+CREATE TABLE IF NOT EXISTS Prerequisites (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    course VARCHAR(255),
+    prereq VARCHAR(255)
+);
+""")     
+db.commit()              
 
 def get_class_num(title):
     """
@@ -61,6 +73,42 @@ def list_to_text(arr):
     
     return notes
 
+def findPrereq(arr):
+    """
+    This function takes in a list which was taken from the pTag when trying to find notes
+    and returns a list of prerequisites.
+
+    arr: an array of notes
+    """
+
+    # \b[A-Z]{2,4}: Only Capital letters from A-Z with 2-4 characters
+    # \s?: optional space
+    # \d[0-9]{2,3}\b: digits from 0-9, with 2-3 characters
+    pattern = r'\b[A-Z]{2,4}\s?\d[0-9]{2,3}\b'
+
+    prerequisites = []
+    next = False
+    for i in arr:
+        if 'Prerequisite' in i:
+            next = True
+            continue
+        if next:
+            prerequisites = re.findall(pattern, i)
+            next = False
+            break
+
+    # Removes the period from from the raw text    
+    noDecimalsPrereqs = []
+    for i in prerequisites:
+        noDecimalsPrereqs.append(i.split('.')[0])
+
+    # Removes the space in between the course names
+    cleanedPrereqs = []
+    for i in noDecimalsPrereqs:
+        cleanedPrereqs.append(i.replace(" ", ""))
+         
+    return cleanedPrereqs
+
 
 def fetch_courses(courseSubject):
     """
@@ -82,7 +130,6 @@ def fetch_courses(courseSubject):
     # Initial values for elements that might not be in the url
     description = ""
     notes = ""
-    
 
     # Iterate through all div tags
     for course in course_elements:
@@ -111,29 +158,32 @@ def fetch_courses(courseSubject):
             description = divCol.find('p').text
 
         # Finding notes
+        prerequisite = []
         if divRow:
             colPrereq = divRow.find('div', class_='col-md-5')
             if colPrereq:
                 pTag = colPrereq.find('p')
                 pTagList = list(pTag.stripped_strings)
             notes = list_to_text(pTagList)  
+
+        prerequisite = findPrereq(pTagList)
         
         courses.append({
             'title': title,
             'subject': courseSubject,
             'number': int(number),
-            'class_name': courseSubject + number,
-            'description': notes,
-            'notes': notes
+            'class_name': name,
+            'description': description,
+            'notes': notes,
+            'prerequisite': prerequisite
         })
     return courses
 
 def main():
     courses = fetch_courses('CMPT')
-
     for i in courses:
         mycursor.execute("""
-        INSERT IGNORE INTO Courses (
+        INSERT INTO Courses (
             title,
             subject,
             number,
@@ -142,6 +192,16 @@ def main():
             notes)
             VALUES (%s, %s, %s, %s, %s, %s)
         """, (i['title'], i['subject'], i['number'], i['class_name'], i['description'], i['notes']))
+    db.commit()
+
+    for i in courses:
+        if i['prerequisite'] == []:
+            continue
+        for j in i['prerequisite']:
+            mycursor.execute("""
+            INSERT INTO Prerequisites (course, prereq)
+            VALUES (%s, %s)
+        """, (i['class_name'], j))
     db.commit()
 
 
