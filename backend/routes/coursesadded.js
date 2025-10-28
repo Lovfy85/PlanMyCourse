@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
             res.send("Did not insert properly to CoursesAdded table")
             return;
         }
-        res.json(req.body)
+        res.status(201).json({id: result.insertId, courseId, taken});
     })
 
 })
@@ -39,7 +39,7 @@ router.delete('/:id', (req, res) => {
             res.send("Did not delete a course from CoursesAdded table")
             return;
         }
-        res.json(req.body)
+        res.json({message: "The course that was added before is now deleted."});
     })
 
 })

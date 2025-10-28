@@ -4,6 +4,7 @@ const coursesRoutes = require('./routes/courses');
 const userRoutes = require('./routes/users');
 const coursesAddedRoutes = require('./routes/coursesadded');
 const { createCoursesAddedTable } = require('./models/coursesAdded');
+const { createUsersTable } = require('./models/Users');
 
 const app = express();
 app.use(express.json());
@@ -13,6 +14,7 @@ app.use('/users', userRoutes);
 app.use('/coursesadded', coursesAddedRoutes);
 
 createCoursesAddedTable()
+createUsersTable()
 
 app.listen(3001, () => {
     console.log("Server is running on port 3001");
