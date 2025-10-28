@@ -13,6 +13,10 @@ function PlannerPage() {
             </div>
             <div className="class-sections">
                 <Accordion />
+                <Accordion />
+                <Accordion />
+                <Accordion />
+                <Accordion />
             </div>
         </div>
     </>

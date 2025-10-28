@@ -1,3 +1,4 @@
+/* ACCORDION */
 .accordion {
   width: 100%;
   max-width: 1100px;
@@ -67,6 +68,7 @@
   width: 0;
 }
 
+/* CHECKBOX */
 .checkmark {
   position: absolute;
   top: 0;

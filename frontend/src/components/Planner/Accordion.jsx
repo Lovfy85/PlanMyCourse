@@ -2,6 +2,12 @@ import { useState } from 'react'
 import './Accordion.css'
 import Class from './AccordionClass'
 
+/** Accordion Component
+ * 
+ * Displays an accordion ui element, with title and hidden body list. Body contents can be toggled through dropdown.
+ * 
+ * @returns {JSX.Element}
+ */
 function Accordion() {
   const [isExpanded, setIsExpanded] = useState(true);
 
