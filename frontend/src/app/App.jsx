@@ -2,6 +2,8 @@ import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import Home from './pages/HomePage'
 import Planner from './pages/PlannerPage'
+import Graph from './pages/Graph'
+
 function App() {
 
   return (
