@@ -4,3 +4,13 @@
   padding: 2rem;
   text-align: center;
 }
+
+body {
+  font-family: "Inter", serif;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url('../assets/fonts/Inter-VariableFont_opsz,wght.ttf') format('opentype');
+  font-style: normal;
+}

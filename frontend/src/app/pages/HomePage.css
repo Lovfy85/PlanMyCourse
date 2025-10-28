@@ -26,13 +26,10 @@ body {
   background-color: #ffffff;
   font-size: 0.9em;
   border-style: none;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
 }
 
 
 .title-section {
-  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.4rem;
   margin-left: 2.5rem;
 }
@@ -51,7 +48,6 @@ body {
 
 .website-name h1 {
   font-size: 5rem;
-  font-family:Georgia, 'Times New Roman', Times, serif;
   text-shadow: black;
   color: #1a5b98;
   font-weight: 550;

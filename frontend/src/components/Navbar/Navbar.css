@@ -12,7 +12,6 @@
   color: white;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   font-size: 1em;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .nav-title {
@@ -36,8 +35,8 @@
   padding: 1rem;
   cursor: pointer;
   transition: color 0.3s ease;
-  font-size: 0.9em;
-  font-weight: lighter;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 .nav-links li:hover {
