@@ -19,11 +19,24 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const { courseId } = req.body;
-    const query = `INSERT INTO CoursesAdded (courseId) Values (?)`;
-    connectMade.query(query, [courseId], (err, result) => {
+    const { courseId, course_name, taken } = req.body;
+    const query = `INSERT INTO CoursesAdded (courseId, taken) Values (?, ?)`;
+    connectMade.query(query, [courseId, taken], (err, result) => {
         if(err){
             res.send("Did not insert properly to CoursesAdded table")
+            return;
+        }
+        res.json(req.body)
+    })
+
+})
+
+router.delete('/:id', (req, res) => {
+    const id = req.params.id;
+    const query = `DELETE FROM CoursesAdded WHERE id = ?`;
+    connectMade.query(query, [id], (err, result) => {
+        if(err){
+            res.send("Did not delete a course from CoursesAdded table")
             return;
         }
         res.json(req.body)
