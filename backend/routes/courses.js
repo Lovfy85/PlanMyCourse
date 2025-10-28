@@ -19,13 +19,21 @@ router.get('/', (req, res) => {
     }
 });
 
-//To get that of the a course's description just by its name alone.
-router.get('/:class_name', (req,res) => {
+//To get that of the a course's by name or subject.
+router.get('/search', (req,res) => {
 
-    const class_name = req.params.class_name;
+    const searchTerm = req.query.term;
+    if (!searchTerm) {
+        res.status(400).json({error: "Search term is required"})
+        return
+    }
 
-    try{
-        connectMade.query('SELECT * FROM Courses WHERE class_name = ?', [class_name], (err, results) => {
+    const query = `SELECT * FROM Courses WHERE class_name LIKE ? 
+                  OR subject LIKE ?`
+    
+    const searchValue = `%${searchTerm}`;
+
+    connectMade.query(query, [searchValue, searchValue], (err, results) => {
         if(err){
             console.error('There has been an error getting the course from the courses table.');
             res.status(500).send('Seems to be that of course to be selected is not at all being seen in the courses table.');
@@ -33,11 +41,6 @@ router.get('/:class_name', (req,res) => {
         }
         res.json(results);
     });
-    }
-    catch{
-        console.error('That course may not exist according to the course table.');
-        res.status(500).send('That course name cannot be seen at all in the course table.');
-    }
 });
 
 module.exports = router;
