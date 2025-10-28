@@ -4,7 +4,16 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     try{
-        connectMade.query('SELECT * FROM CoursesAdded', (err, results) => {
+        connectMade.query(`
+            SELECT 
+                ca.id,
+                ca.taken,
+                c.courseId,
+                c.title,
+                c.subject,
+                c.number,
+                c.class_name
+            FROM CoursesAdded ca JOIN Courses c ON ca.courseId = c.courseId`, (err, results) => {
         if(err){
             console.error('There has been a query error.', err);
             res.status(500).send('There has been an error with getting the coursesadded table.');
