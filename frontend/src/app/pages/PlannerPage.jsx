@@ -7,11 +7,14 @@ function PlannerPage() {
     <>
         <Navbar />
         <div className="content">
-            <h1>Class Checklist</h1>
-            <hr></hr>
-            <div className="class-sections"></div>
+            <div className="planner-header">
+                <h1>Class Planner</h1>
+                <hr></hr>
+            </div>
+            <div className="class-sections">
+                <Accordion />
+            </div>
         </div>
-        <Accordion />
     </>
   )
 }

@@ -1,6 +1,25 @@
-body {
-  background-color: #e8e8e8; 
-  margin: 0;
-  padding: 0;
+.content {
+  display: flex;
+  flex-direction: column;
 }
 
+.planner-header {
+  width: 100%;
+  max-width: 1111px;
+  margin: 4rem auto -1rem auto;
+}
+
+.planner-header h1 {
+  padding-top: 40px;
+  padding-left: 16px;
+  margin-bottom: 0px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.planner-header hr {
+  /* margin-top: 2px; */
+  height: 4px;
+  border: none;
+  background-color: #215591;
+}
