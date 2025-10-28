@@ -4,52 +4,6 @@ body {
   padding: 0;
 }
 
-.navbar {
-  position: fixed; 
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4em;
-  justify-self: stretch;
-  background-color: #1a5b98; 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  font-size: 1em;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.nav-links {
-  display: flex;
-}
-
-
-.nav-links ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-
-.nav-links li {
-  align-content: center;
-  padding: 1rem;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  font-size: 0.9em;
-  font-weight: lighter;
-}
-
-.nav-links li:hover {
-  background-color: #93c4fd; 
-  transition: background-color 0.3s ease, transform 0.1s ease;
-  border-radius: 2em;
-
-  color: black;
-}
-
 .profile-button {
   margin-left: 2rem;
   margin-right: 2rem;
@@ -72,13 +26,10 @@ body {
   background-color: #ffffff;
   font-size: 0.9em;
   border-style: none;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
 }
 
 
 .title-section {
-  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.4rem;
   margin-left: 2.5rem;
 }
@@ -97,7 +48,6 @@ body {
 
 .website-name h1 {
   font-size: 5rem;
-  font-family:Georgia, 'Times New Roman', Times, serif;
   text-shadow: black;
   color: #1a5b98;
   font-weight: 550;
