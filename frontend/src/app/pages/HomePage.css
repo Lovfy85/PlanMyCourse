@@ -1,5 +1,4 @@
 body {
-  background-color: #e8e8e8; 
   margin: 0;
   padding: 0;
 }
@@ -52,6 +51,7 @@ body {
   color: #1a5b98;
   font-weight: 550;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .search-bar {
