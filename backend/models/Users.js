@@ -4,9 +4,9 @@ const connectMade = require("../config");
 const createUsersTable = async () => {
     const query = `
         CREATE TABLE IF NOT EXISTS Users (
-        userID INT AUTO_INCREMENT PRIMARY KEY,
-        userName VARCHAR(60),
-        userPassword VARCHAR(60)
+        userId INT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(255),
+        password VARCHAR(255)
         )
     `;
 
