@@ -23,7 +23,7 @@ else:
 
 mycursor = db.cursor()
 
-# Create a courses table
+# Create a Courses table
 mycursor.execute("""
 CREATE TABLE IF NOT EXISTS Courses (
     courseId INT AUTO_INCREMENT PRIMARY KEY,
@@ -34,7 +34,17 @@ CREATE TABLE IF NOT EXISTS Courses (
     description TEXT,
     notes TEXT
 )
-""")              
+""")
+
+# Create a Prerequisites table
+mycursor.execute("""
+CREATE TABLE IF NOT EXISTS Prerequisites (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    course VARCHAR(255),
+    prereq VARCHAR(255)
+);
+""")     
+db.commit()              
 
 def get_class_num(title):
     """
@@ -75,7 +85,7 @@ def findPrereq(arr):
     # \s?: optional space
     # \d[0-9]{2,3}\b: digits from 0-9, with 2-3 characters
     pattern = r'\b[A-Z]{2,4}\s?\d[0-9]{2,3}\b'
-    
+
     prerequisites = []
     next = False
     for i in arr:
@@ -120,7 +130,6 @@ def fetch_courses(courseSubject):
     # Initial values for elements that might not be in the url
     description = ""
     notes = ""
-    
 
     # Iterate through all div tags
     for course in course_elements:
@@ -174,7 +183,7 @@ def main():
     courses = fetch_courses('CMPT')
     for i in courses:
         mycursor.execute("""
-        INSERT IGNORE INTO Courses (
+        INSERT INTO Courses (
             title,
             subject,
             number,
@@ -183,6 +192,16 @@ def main():
             notes)
             VALUES (%s, %s, %s, %s, %s, %s)
         """, (i['title'], i['subject'], i['number'], i['class_name'], i['description'], i['notes']))
+    db.commit()
+
+    for i in courses:
+        if i['prerequisite'] == []:
+            continue
+        for j in i['prerequisite']:
+            mycursor.execute("""
+            INSERT INTO Prerequisites (course, prereq)
+            VALUES (%s, %s)
+        """, (i['class_name'], j))
     db.commit()
 
 
