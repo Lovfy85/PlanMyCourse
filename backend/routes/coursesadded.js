@@ -2,9 +2,20 @@ const express = require('express');
 const connectMade = require('../config.js');
 const router = express.Router();
 
+// get
 router.get('/', (req, res) => {
     try{
-        connectMade.query('SELECT * FROM CoursesAdded', (err, results) => {
+        const query = `
+            SELECT 
+                ca.id,
+                ca.taken,
+                c.courseId,
+                c.title,
+                c.subject,
+                c.number,
+                c.class_name
+            FROM CoursesAdded ca JOIN Courses c ON ca.courseId = c.courseId`
+        connectMade.query(query, (err, results) => {
         if(err){
             console.error('There has been a query error.', err);
             res.status(500).send('There has been an error with getting the coursesadded table.');
@@ -18,6 +29,7 @@ router.get('/', (req, res) => {
     }
 });
 
+// post
 router.post('/', (req, res) => {
     const { courseId, taken } = req.body;
     const query = `INSERT INTO CoursesAdded (courseId, taken) Values (?, ?)`;
@@ -31,6 +43,23 @@ router.post('/', (req, res) => {
 
 })
 
+// put
+router.put('/:id', (req, res) => {
+    const id = req.params.id
+    const { taken } = req.body
+
+    const query = `UPDATE CoursesAdded SET taken = ? WHERE id = ?`
+    connectMade.query(query, [taken, id], (err, result) => {
+        if(err){
+            res.send("Did not change taken value in CoursesAdded table")
+            return
+        }
+        res.status(201).json({id, taken});
+    })
+
+})
+
+// delete
 router.delete('/:id', (req, res) => {
     const id = req.params.id;
     const query = `DELETE FROM CoursesAdded WHERE id = ?`;

@@ -5,7 +5,7 @@ const createCoursesAddedTable = async () => {
         CREATE TABLE IF NOT EXISTS CoursesAdded (
         id INT AUTO_INCREMENT PRIMARY KEY,
         courseId INT,
-        taken BOOLEAN,
+        taken BOOLEAN DEFAULT FALSE,
         createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (courseId) REFERENCES Courses(courseId)
         )
