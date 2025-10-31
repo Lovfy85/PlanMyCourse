@@ -11,9 +11,9 @@ function AccordionClass({title}) {
   return (
     <div className="accordion-class">
         <span>{title}</span>
-        <label class="accordion-class-checkbox">
+        <label className="accordion-class-checkbox">
             <input type="checkbox"></input>
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
         </label>
     </div>
   );
