@@ -1,0 +1,115 @@
+/* ACCORDION */
+.accordion {
+  width: 100%;
+  max-width: 1100px;
+  margin: 1.2rem auto;
+  border: 1px solid #215591;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background-color: #215591;
+  color:#f9f9f9;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  font-weight: 555;
+}
+
+.accordion-body {
+  max-height: 0;
+  transition: max-height 0.35s ease;
+}
+
+.accordion-body.expanded {
+  max-height: 5000px;
+}
+
+.accordion-classes {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.accordion-class {
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion-class:nth-child(odd) {
+  background-color: #D6D6D4;
+}
+
+.accordion-class:nth-child(even) {
+  background-color: #E6E6E6;
+}
+
+.accordion-class p {
+  margin: 0.25rem 0 0;
+}
+
+.accordion-class-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+}
+
+.accordion-class-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* CHECKBOX */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  border: 3px solid #215591;
+  border-radius: 2px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.accordion-class-checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.accordion-class-checkbox input:checked ~ .checkmark {
+  background-color: #215591;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.accordion-class-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.accordion-class-checkbox .checkmark:after {
+  left: 10px;
+  top: 2px;
+  width: 8px;
+  height: 18px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: opacity 0.3s ease;
+}
+
