@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
     }
 });
 
-//To get that of the a course's by name or subject.
+//To get that of the a course's by name, subject or level
 router.get('/search', (req,res) => {
 
     const searchTerm = req.query.term;
@@ -28,8 +28,14 @@ router.get('/search', (req,res) => {
         return
     }
 
+    // search letter by letter
     const query = `SELECT * FROM Courses WHERE class_name LIKE ? 
                   OR subject LIKE ?`
+
+    // search by level
+    if (Number(searchTerm)) {
+        query = `SELECT * FROM Courses WHERE level LIKE ?`
+    }
     
     const searchValue = `%${searchTerm}`;
 
