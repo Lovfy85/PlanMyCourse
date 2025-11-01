@@ -7,7 +7,7 @@ import './Accordion.css'
  * @param {string} The course title and USASK description
  * @returns {JSX.Element}
  */
-function AccordionClass({title}) {
+function AccordionClass({title, id}) {
   return (
     <div className="accordion-class">
         <span>{title}</span>
