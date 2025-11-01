@@ -8,19 +8,19 @@ import Class from './AccordionClass'
  * 
  * @returns {JSX.Element}
  */
-function Accordion() {
+function Accordion({level,courses}) {
   const [isExpanded, setIsExpanded] = useState(true);
 
   return (
     <div className="accordion">
         <div className="accordion-header" onClick={() => setIsExpanded(!isExpanded)}>
-            <span>100 Level Classes</span>
+            <span>{level} Level Classes</span>
         </div>
         <div className={`accordion-body ${isExpanded ? "expanded" : ""}`}>
             <div className="accordion-classes">
-                <Class title="CMPT140 - Introduction to Creative Computing"/>
-                <Class title="CMPT141 - Introduction to Computer Science"/>
-                <Class title="CMPT145 - Principles of Computer Science"/>
+              {courses.map(course => (
+                <Class title={course.title} id={course.id}/>
+              ))}
             </div>
         </div>
     </div>

@@ -7,13 +7,13 @@ import './Accordion.css'
  * @param {string} The course title and USASK description
  * @returns {JSX.Element}
  */
-function AccordionClass({title}) {
+function AccordionClass({title, id}) {
   return (
     <div className="accordion-class">
         <span>{title}</span>
-        <label class="accordion-class-checkbox">
+        <label className="accordion-class-checkbox">
             <input type="checkbox"></input>
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
         </label>
     </div>
   );
