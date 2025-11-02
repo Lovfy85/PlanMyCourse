@@ -3,10 +3,12 @@ const express = require('express');
 const coursesRoutes = require('./routes/courses');
 const userRoutes = require('./routes/users');
 const coursesAddedRoutes = require('./routes/coursesadded');
+const cors = require('cors');
 const { createCoursesAddedTable } = require('./models/coursesAdded');
 const { createUsersTable } = require('./models/Users');
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.use('/courses', coursesRoutes);
