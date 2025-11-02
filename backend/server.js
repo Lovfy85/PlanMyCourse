@@ -1,6 +1,7 @@
 const express = require('express');
 
 const coursesRoutes = require('./routes/courses');
+const prerequisitesRoutes = require('./routes/prerequisites');
 const userRoutes = require('./routes/users');
 const coursesAddedRoutes = require('./routes/coursesadded');
 const cors = require('cors');
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/courses', coursesRoutes);
+app.use('/prerequisites', prerequisitesRoutes);
 app.use('/users', userRoutes);
 app.use('/coursesadded', coursesAddedRoutes);
 

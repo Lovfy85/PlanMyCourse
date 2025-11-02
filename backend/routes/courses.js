@@ -2,6 +2,7 @@ const express = require('express');
 const connectMade = require('../config.js');
 const router = express.Router();
 
+//To get all courses
 router.get('/', (req, res) => {
     try{
         connectMade.query('SELECT * FROM Courses', (err, results) => {
@@ -28,18 +29,17 @@ router.get('/search', (req,res) => {
         return
     }
 
-    // search letter by letter
-    const query = `SELECT * FROM Courses WHERE class_name LIKE ? 
-                  OR subject LIKE ?`
-
-    // search by level
-    if (Number(searchTerm)) {
-        query = `SELECT * FROM Courses WHERE level LIKE ?`
-    }
+    var query = `SELECT * FROM Courses WHERE 
+                    class_name LIKE ? 
+                  OR subject LIKE ? 
+                  OR FLOOR(number / 100) * 100 = ?`
     
-    const searchValue = `%${searchTerm}`;
+    var searchValue = `%${searchTerm}`;
+    if (Number(searchTerm)) {
+        searchValue = `${Number(searchTerm)}`;
+    }
 
-    connectMade.query(query, [searchValue, searchValue], (err, results) => {
+    connectMade.query(query, [searchValue, searchValue, searchValue], (err, results) => {
         if(err){
             console.error('There has been an error getting the course from the courses table.');
             res.status(500).send('Seems to be that of course to be selected is not at all being seen in the courses table.');
@@ -48,5 +48,7 @@ router.get('/search', (req,res) => {
         res.json(results);
     });
 });
+
+
 
 module.exports = router;
