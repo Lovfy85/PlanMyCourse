@@ -1,35 +1,99 @@
-.search-bar {
-  position: sticky;
-  justify-self: center;
-  align-self: center;
-  padding-left: 22em;
-  padding-top: 37em;
-  width: 30em;
+/* === Graph Page Styles === */
+.graph-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.search-bar input {
-  padding: 1rem 2em;
-  font-size: 1rem;
-  border: 2px solid #ffffff;
-  border-radius: 50px; 
+.graph-main {
+  flex: 1;
+  position: relative;
+}
+
+
+/* Input field */
+.search-input {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ccc;
   outline: none;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
 }
 
-.search-bar button {
-    height: 3.5em;
-    width: 6em;
-    margin-left: -15%;
-    font-size: 1rem;
-    border: 2px solid #ffffff;
-    border-radius: 45px; 
-    outline: none;
-    background-color: #1a5b98;
-    color: aliceblue;
+/* Search button */
+.search-button {
+  background-color: #2740a0;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.search-bar button:hover {
-    color: black;
-    background-color: #93c4fd;
-    transition: ease-in 0.2s;
+.search-button:hover {
+  background-color: #1f3180;
+}/* === Graph Page Styles === */
+
+.graph-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.graph-main {
+  flex: 1;
+  position: relative;
+}
+
+/* Navbar (already handled in your component, but can style globally if needed) */
+.graph-navbar {
+  width: 100%;
+  z-index: 20;
+}
+
+/* Search bar container */
+.search-bar-container {
+  position: fixed;       /* fixed at bottom */
+  bottom: 5em;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  height: 3em;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: auto;  /* allow clicks inside */
+}
+
+/* ReactFlow canvas (optional safety) */
+.reactflow-wrapper {
+  pointer-events: all;   /* default behavior for ReactFlow */
+}
+
+/* Input field */
+.search-input {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+}
+
+/* Search button */
+.search-button {
+  background-color: #2740a0;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-button:hover {
+  background-color: #1f3180;
 }
