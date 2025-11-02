@@ -47,7 +47,6 @@ router.get('/search', (req,res) => {
     connectMade.query(query, [searchValue], (err, results) => {
         if(err){
             console.error('There has been an error getting the prerequisites from the prerequisites table.');
-            console.error('SQL Error:', err.sqlMessage || err.message);
             res.status(500).send('Seems to be that of course to be selected is not at all being seen in the prerequisites table.');
             return;
         }
