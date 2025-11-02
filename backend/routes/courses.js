@@ -2,6 +2,7 @@ const express = require('express');
 const connectMade = require('../config.js');
 const router = express.Router();
 
+//To get all courses
 router.get('/', (req, res) => {
     try{
         connectMade.query('SELECT * FROM Courses', (err, results) => {
@@ -19,7 +20,7 @@ router.get('/', (req, res) => {
     }
 });
 
-//To get that of the a course's by name or subject.
+//To get that of the a course's by name, subject or level
 router.get('/search', (req,res) => {
 
     const searchTerm = req.query.term;
@@ -28,12 +29,17 @@ router.get('/search', (req,res) => {
         return
     }
 
-    const query = `SELECT * FROM Courses WHERE class_name LIKE ? 
-                  OR subject LIKE ?`
+    var query = `SELECT * FROM Courses WHERE 
+                    class_name LIKE ? 
+                  OR subject LIKE ? 
+                  OR FLOOR(number / 100) * 100 = ?`
     
-    const searchValue = `%${searchTerm}`;
+    var searchValue = `%${searchTerm}`;
+    if (Number(searchTerm)) {
+        searchValue = `${Number(searchTerm)}`;
+    }
 
-    connectMade.query(query, [searchValue, searchValue], (err, results) => {
+    connectMade.query(query, [searchValue, searchValue, searchValue], (err, results) => {
         if(err){
             console.error('There has been an error getting the course from the courses table.');
             res.status(500).send('Seems to be that of course to be selected is not at all being seen in the courses table.');
@@ -42,5 +48,7 @@ router.get('/search', (req,res) => {
         res.json(results);
     });
 });
+
+
 
 module.exports = router;
