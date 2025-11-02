@@ -31,6 +31,17 @@ This is a full stack application designed for students at USASK,to help them pla
 
         c) Then, open and use another terminal tab where you are to open that of the PlanMyCourse website which you would run the command: 
             docker logs -f main_frontend
+        
+        --> If you want to stop the docker-compose.yml from running: docker-compose down
+
+            ---> The safest way to stop it.
+
+        --> If running that of the docker-compose.yml and this message occurs during the build: 
+            ✘ Container course_scraper service "scraper" didn't complete successfully: exit 1   
+            Just simply run back the docker-compose.yml: docker-compose up -d
+
+                ---> The message happens because of doing: docker-compose down -v where it removes that of the volume being used in which 
+                    stores the web-scraper.
 
 ## Usage
 When running npm start in the backend, there should be a message in the console saying which port the server is running on
