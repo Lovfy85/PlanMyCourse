@@ -19,6 +19,18 @@ This is a full stack application designed for students at USASK,to help them pla
     If no errors occur, cd into the frontend folder and run:
         npm install
         npm run dev
+    
+    To make it so that the project runs on any OS, make sure you have that of docker desktop installed.
+    If you do have it, these are the steps:
+
+        a) Make sure you are in the project directory itself in the terminal. Once you are, do the following: 
+            docker-compose up -d
+
+        b) Then, open and use another terminal tab where you are to run the server, which you would run the command: 
+            docker logs -f main_server
+
+        c) Then, open and use another terminal tab where you are to open that of the PlanMyCourse website which you would run the command: 
+            docker logs -f main_frontend
 
 ## Usage
 When running npm start in the backend, there should be a message in the console saying which port the server is running on

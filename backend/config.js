@@ -11,12 +11,16 @@ const connectMade = mysql.createConnection({
     port: process.env.DB_PORT
 });
 
-connectMade.connect((err) => {
-    if (err){
-        console.error('The database could not be connected to.');
-        return
-    }
-    console.log('Connected to database.');
-});
+function connectStuff(){
+    connectMade.connect((err) => {
+        if (err){
+            console.error('The database could not be connected to.');
+            setTimeout(connectStuff, 5000);
+        }
+        console.log('Connected to database.');
+    });
+}
+
+connectStuff();
 
 module.exports = connectMade;
