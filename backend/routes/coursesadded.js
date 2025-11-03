@@ -1,8 +1,19 @@
+//Express is used in order to refer to that of using the routes in which to make to refer to endpoints used. 
 const express = require('express');
+
+//Refers towards that of the connection of the main database in MySQL. 
 const connectMade = require('../config.js');
+
+//Keyword used to then refer the usage of endpoints. 
 const router = express.Router();
 
-// get
+//This is to make sure that of this nodejs file with its endpoints can be used to refer towards that of the frontend.
+const app = express();
+const cors = require('cors');
+app.use(cors());
+
+//Gets that of the CoursesAdded Table in which contains that of the courses that were added. Those courses added to the table refers to a course's id,
+// to which that course id then accesses that of all that selected course's information. 
 router.get('/', (req, res) => {
     try{
         const query = `
@@ -29,7 +40,7 @@ router.get('/', (req, res) => {
     }
 });
 
-// post
+//Insert that of the courses added to the table in which is inserted based on the course's id and sets if it is taken or not. 
 router.post('/', (req, res) => {
     const { courseId, taken } = req.body;
     const query = `INSERT INTO CoursesAdded (courseId, taken) Values (?, ?)`;
@@ -43,7 +54,7 @@ router.post('/', (req, res) => {
 
 })
 
-// put
+//This is to update that of whether or not the course added to the table is being taken or not. 
 router.put('/:id', (req, res) => {
     const id = req.params.id
     const { taken } = req.body
@@ -59,7 +70,7 @@ router.put('/:id', (req, res) => {
 
 })
 
-// delete
+//Deletes that of the course that was added in the table overall by referring to its id in the table. 
 router.delete('/:id', (req, res) => {
     const id = req.params.id;
     const query = `DELETE FROM CoursesAdded WHERE id = ?`;
@@ -73,4 +84,5 @@ router.delete('/:id', (req, res) => {
 
 })
 
+//Makes sure that these endpoints can be referred to towards that of the server.js
 module.exports = router;
