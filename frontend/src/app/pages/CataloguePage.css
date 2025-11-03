@@ -1,0 +1,29 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem;
+}
+
+.catalogue-header {
+    margin-top: 0;
+}
+
+.catalogue-header h1 {
+  padding-left: 16px;
+  margin-bottom: 0px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.catalogue-header hr {
+    height: 4px;
+    border: none;
+    background-color: #215591;
+}
+
+.catalogue-courses {
+    display: flex;
+    flex-direction: column;
+    margin: 1.2rem auto;
+    row-gap: 25px;
+}
