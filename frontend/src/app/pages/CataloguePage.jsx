@@ -2,6 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
+import "./CataloguePage.css";
+import CatalogueCourse from '../../components/Catalogue/CatalogueCourse';
 
 function CataloguePage() {
   let {term} = useParams()
@@ -19,18 +21,18 @@ function CataloguePage() {
     }, [term]);
     
   return (
-    <div className='courseCatalogue'>
-        {courses.map((course, index) => {
-            return (
-            <div 
-              className = "course" 
-              key={index} 
-            >
-                <div className='coursetitle'>{course.title}</div>
-                <div className='description'>{course.description}</div>
-            </div>
-            );
-        })}
+    <div className="content">
+      <div className="catalogue-header">
+        <h1>Course Catalogue</h1>
+        <hr></hr>
+      </div>
+      <div className='catalogue-courses'>
+          {courses.map((course, index) => {
+              return (
+                <CatalogueCourse title={course.title} description={course.description}/>
+              );
+          })}
+      </div>
     </div>
   )
 }
