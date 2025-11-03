@@ -9,13 +9,15 @@ import Courses from './pages/Courses'
 function App() {
 
   return (
-    <Routes>
-      <Route path='/' element={<Home />}/>
-      <Route path='/courses/:term' element={<Courses />}/>
-      <Route path='/planner' element={<Planner />}/>
-      <Route path='/graph' element={<CourseGraph />}/>
-      <Route path='/courses' element={<Courses/>}/>
-    </Routes>
+    <div>
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='/courses/:term' element={<Courses />}/>
+        <Route path='/planner' element={<Planner />}/>
+        <Route path='/graph' element={<CourseGraph />}/>
+      </Routes>
+      <Navbar />
+    </div>
   )
 }
 
