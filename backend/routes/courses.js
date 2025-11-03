@@ -31,15 +31,17 @@ router.get('/search', (req,res) => {
 
     var query = `SELECT * FROM Courses WHERE 
                     class_name LIKE ? 
-                  OR subject LIKE ? 
-                  OR FLOOR(number / 100) * 100 = ?`
+                  OR subject LIKE ?
+                  OR courseId LIKE ?
+                  OR FLOOR(number / 100) * 100 = ?
+                  `
     
     var searchValue = `%${searchTerm}`;
     if (Number(searchTerm)) {
         searchValue = `${Number(searchTerm)}`;
     }
 
-    connectMade.query(query, [searchValue, searchValue, searchValue], (err, results) => {
+    connectMade.query(query, [searchValue, searchValue, searchValue, searchValue], (err, results) => {
         if(err){
             console.error('There has been an error getting the course from the courses table.');
             res.status(500).send('Seems to be that of course to be selected is not at all being seen in the courses table.');

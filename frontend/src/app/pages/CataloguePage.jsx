@@ -16,6 +16,8 @@ function CataloguePage() {
             setCourses(data);
         })
         .catch(error => {
+            axios.get(`http://localhost:3001/courses/search?term=${"CMPT"}`)
+            const data = response.data;
             console.error("Error fetching courses added", error)
         });
     }, [term]);
