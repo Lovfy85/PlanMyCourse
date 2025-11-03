@@ -1,13 +1,20 @@
+#Uses that of the latest image of node.
 FROM node:latest
 
+#The working directory running this dockerfile is in /app.
 WORKDIR /app
 
+#Copies that of the package.json files from that of project directory unto that of the working directory.
 COPY package*.json ./
 
+#Runs that of installing the node package dependencies.
 RUN npm install
 
+#Copies that of the files seen in frontend and puts it in the working directory.
 COPY . .
 
+#Exposes 5173 port. This connects to that of the frontend container.
 EXPOSE 5173
 
+#Runs that of the website to start up from frontend.
 CMD ["npm", "run", "dev"]

@@ -1,9 +1,20 @@
+//Express is used in order to refer to that of using the routes in which to make to refer to endpoints used. 
 const express = require('express');
+
+//Refers towards that of the connection of the main database in MySQL. 
 const connectMade = require('../config.js');
+
+//Keyword used to then refer the usage of endpoints. 
 const router = express.Router();
+
+//This is to make sure that of this nodejs file with its endpoints can be used to refer towards that of the frontend.
+const app = express();
+const cors = require('cors');
+app.use(cors());
 
 //Will use cookies soon based on that of the dependency installed.
 
+//Gets that of the users that are registered in the Users Table.
 router.get('/', (req, res) => {
     try{
         connectMade.query('SELECT * FROM Users', (err, results) => {
@@ -20,6 +31,7 @@ router.get('/', (req, res) => {
     }
 });
 
+//Inserts that of a user based on that of their created username and password for that username. 
 router.post('/', (req, res) => {
     const {userId, username, password} = req.body;
     const query = `INSERT INTO Users (username, password) Values (?,?)`;
@@ -32,6 +44,7 @@ router.post('/', (req, res) => {
     });
 });
 
+//Gets that of a specific user based on that of their userId in that of the table.
 router.get('/:userId', (req, res) => {
     const userId = req.params.userId;
 
@@ -51,6 +64,7 @@ router.get('/:userId', (req, res) => {
     }
 });
 
+//Deletes that of a specific user based on that of their userId in that of the table.
 router.delete('/:userId', (req, res) => {
     const userId = req.params.userId;
     const query = `DELETE FROM Users WHERE userId = ?`;
@@ -63,5 +77,6 @@ router.delete('/:userId', (req, res) => {
     });
 });
 
+//Makes sure that these endpoints can be referred to towards that of the server.js
 module.exports = router;
 

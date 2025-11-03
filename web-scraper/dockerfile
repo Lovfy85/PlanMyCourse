@@ -1,9 +1,14 @@
+#Uses that of the latest image of python.
 FROM python:latest
 
+#The working directory running this dockerfile is in /app.
 WORKDIR /app
 
+#Copies that of the files seen in web-scraper directory and puts it in the working directory.
 COPY . .
 
+#Runs that of the command where it installs that of the requirements in requirement.txt for the python file that runs the web scraper.
 RUN pip install --no-cache-dir -r requirements.txt
 
+#Runs that of the command when the container for the web scraper to run. 
 CMD ["python3", "courseScraper.py"]

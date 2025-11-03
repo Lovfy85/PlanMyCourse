@@ -1,73 +1,141 @@
+#These are the containers to be run, which contains that of the MySQL, the web scraper, the server and the frontend (aka the website overall).
 services:
+
+  #The container that runs that of the MySQL database
   db:
+
+    #Uses that of the latest version of MySQL.
     image: mysql:latest
+
+    #The conatiner name of running the MySQL database.
     container_name: the_database
+
+    #Each time that of the database container is closed, it restarts everything fully so that when it starts back up again,
+    # it will run without much problems.
     restart: always
+
+    #Refers to that of the database's name and its password to access to it when it runs.
     environment: 
       MYSQL_ROOT_PASSWORD: solaire85
       MYSQL_DATABASE: coursesdb
+
+    #Host port 3307 is connected to that of the container port 3306.
     ports: 
       - "3307:3306"
+
+    #Mounts that of the host directory called db_data towards that the dependencies seen in /var/lib/mysql, which helps with MySQL initialization.
     volumes:
       - db_data:/var/lib/mysql
+
+    #Makes sure that when running this container, it checks to see if it can run successfully.
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 5s
       timeout: 5s
       retries: 5
 
+  #The container that runs that of the web-scraper.
   scraper:
+
+    #Builds of the dockerfile that is connected to 'web-scraper' subdirectory.
     build:
       context: ./web-scraper
+    
+    #The container name of running the web scraper.
     container_name: course_scraper
+
+    #This container runs only when that of the database container runs finely.
     depends_on:
       db:
         condition: service_healthy
+
+    #Intializes the environment variables in which connects towards that of the MySQL database container.
     environment:
       DB_HOST: db
       DB_USER: root
       DB_PASS: solaire85
       DB_NAME: coursesdb
       DB_PORT: 3306
+    
+    #The command to run that of executing the web scraper when the docker-compose.yml is built.
     command: ["python3", "courseScraper.py"]
 
+  #The container that runs that of the server.
   backend:
+
+    #Builds of the dockerfile that is connected to the 'backend' subdirectory.
     build:
       context: ./backend
+
+    #The container name of running the server. 
     container_name: main_server
+
+    #Host port 3001 connects to that of the container port 3001.
     ports:
       - "3001:3001" 
+
+    #Intializes the environment variables in which connects towards that of the MySQL database container.
     environment:
       DB_HOST: db
       DB_USER: root
       DB_PASS: solaire85
       DB_NAME: coursesdb
       DB_PORT: 3306
+    
+    #This container runs only when that of the database container runs finely and when that of the web scraper executes successfully.
     depends_on:
       db:
         condition: service_healthy
       scraper:
         condition: service_completed_successfully
+    
+    #This is broken up into that of two parts:
+    # The backend directory seen in this project directory will also be seen in that of the /app folder inside the container.
+    # In that of the /app folder inside the container, it has that of the node_modules folder in which contains dependencies 
+    # that relates on using nodejs.
     volumes:
       - ./backend:/app
       - /app/node_modules
+
+    #This container restarts if that of the server does not run.
     restart: on-failure
+
+    #When accessing that of the container, it will run that of the server with this command.
     command: ["npm", "start"]
     
+  #The container that runs that of the frontend.
   frontend:
+
+    #Builds that of the dockerfile that is connected to the 'frontend' directory.
     build: 
       context: ./frontend
+    
+    #The container name of running the frontend.
     container_name: main_frontend
+
+    #Host port 5173 connects to that of the container port 5173.
     ports:
       - "5173:5173"
+
+    #In where the frontend is located to be interacted through the usage of Vite, it connects to the link in which refers to the website.
     environment: 
       - VITE_API_URL=http://localhost:3001
+
+    #The container can only work if that of the server is on.
     depends_on:
       - backend
+
+    #This is broken up into that of two parts:
+    # The frontend directory seen in this project directory will also be seen in that of the /app folder inside the container.
+    # In that of the /app folder inside the container, it has that of the node_modules folder in which contains dependencies 
+    # that relates on using nodejs.
     volumes:
       - ./frontend:/app
       - /app/node_modules
+    
+    #When accessing that of the container, you can have access that of the website overall. 
     command: ["npm", "run", "dev", "--", "--host"]
 
+#This refers to that of the volume being used, which is 'db_data'.
 volumes:
   db_data:
