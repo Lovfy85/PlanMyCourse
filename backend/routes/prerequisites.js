@@ -27,8 +27,8 @@ router.get('/', (req, res) => {
 
 //To get that of all of a course's prerequisites and those of its prerequisites' prerequisites
 router.get('/:prereq', (req,res) => {
-
     const searchTerm = req.query.term;
+    
     if (!searchTerm) {
         res.status(400).json({error: "Search term is required"});
         return;

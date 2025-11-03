@@ -1,18 +1,8 @@
-//Express is used in order to refer to that of using the routes in which to make to refer to endpoints used. 
 const express = require('express');
-
-//Refers towards that of the connection of the main database in MySQL. 
 const connectMade = require('../config.js');
-
-//Keyword used to then refer the usage of endpoints. 
 const router = express.Router();
 
-//This is to make sure that of this nodejs file with its endpoints can be used to refer towards that of the frontend.
-const app = express();
-const cors = require('cors');
-app.use(cors());
-
-//To get all courses from that of the Courses table.
+//To get all courses
 router.get('/', (req, res) => {
     try{
         connectMade.query('SELECT * FROM Courses', (err, results) => {
@@ -30,7 +20,7 @@ router.get('/', (req, res) => {
     }
 });
 
-//To get that of the a course's by name, subject or level.
+//To get that of the a course's by name, subject or level
 router.get('/search', (req,res) => {
 
     const searchTerm = req.query.term;
@@ -39,8 +29,6 @@ router.get('/search', (req,res) => {
         return
     }
 
-    //This is to get that of the course to be searched based on just seeing that of a class's name, subject or its course number,
-    // to which if these can be gotten, it can be displayed when searched. 
     var query = `SELECT * FROM Courses WHERE 
                     class_name LIKE ? 
                   OR subject LIKE ? 
@@ -61,5 +49,6 @@ router.get('/search', (req,res) => {
     });
 });
 
-//Makes sure that these endpoints can be referred to towards that of the server.js
+
+
 module.exports = router;

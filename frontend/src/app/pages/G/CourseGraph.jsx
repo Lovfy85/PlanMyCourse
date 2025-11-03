@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import coursesData from "./courses.json";
 import ReactFlow, { MiniMap, Controls, Background } from "reactflow";
+import Navbar from "../../../components/Navbar/Navbar";
 import "reactflow/dist/style.css";
 
 const CourseGraph = () => {
@@ -116,6 +117,8 @@ const CourseGraph = () => {
         </button>
       </div>
 
+
+      <Navbar />
       <ReactFlow nodes={nodes} edges={edges} fitView>
         <Background />
       </ReactFlow>
