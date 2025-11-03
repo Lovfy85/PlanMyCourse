@@ -7,10 +7,10 @@ dotenv.config();
 
 //This creates that of the MYSQL database connection which intializes that of the environment variables.
 const connectMade = mysql.createConnection({
-    host: process.env.DB_HOST, 
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
+    host: process.env.DB_HOST || 'localhost', 
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASS || 'ar.rubia',
+    database: process.env.DB_NAME || 'coursesdb',
     port: process.env.DB_PORT
 });
 
