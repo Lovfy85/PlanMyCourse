@@ -1,5 +1,5 @@
 import './HomePage.css'
-import Redirect from '../../components/SearchCourse/Redirect'
+import Redirect from '../../components/SearchBar/Redirect'
 
 function HomePage() {
   return (
