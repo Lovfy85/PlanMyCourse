@@ -1,10 +1,8 @@
 import './HomePage.css'
-import Navbar from '../../components/Navbar/Navbar'
 
 function HomePage() {
   return (
     <>
-        <Navbar />
         <div className="main-container">
             <div className="website-name">
               <h1>PlanMyCourse</h1>

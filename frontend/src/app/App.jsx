@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
+import Navbar from '../components/Navbar/Navbar'
 import Home from './pages/HomePage'
 import Planner from './pages/PlannerPage'
 import CourseGraph from './pages/G/CourseGraph'

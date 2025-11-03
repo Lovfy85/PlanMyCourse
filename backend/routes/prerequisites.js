@@ -1,10 +1,5 @@
-//Express is used in order to refer to that of using the routes in which to make to refer to endpoints used. 
 const express = require('express');
-
-//Refers to that of the config.js file that houses that of the initialization of the database overall. 
 const connectMade = require('../config.js');
-
-//Keyword used to then refer the usage of endpoints. 
 const router = express.Router();
 
 //This is to make sure that of this nodejs file with its endpoints can be used to refer towards that of the frontend.
@@ -30,7 +25,7 @@ router.get('/', (req, res) => {
     }
 });
 
-//To get that of all of a course's prerequisites.
+//To get that of all of a course's prerequisites
 router.get('/search', (req,res) => {
 
     const searchTerm = req.query.term;
@@ -64,5 +59,4 @@ router.get('/search', (req,res) => {
     });
 });
 
-//Makes sure that these endpoints can be referred to towards that of the server.js
 module.exports = router;
