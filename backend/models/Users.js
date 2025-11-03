@@ -1,6 +1,7 @@
-//Will make that of the Users Table through here with MYSQL things.
+//Refers towards that of the connection of the main database in MySQL. 
 const connectMade = require("../config");
 
+//Starts up that of the users table while the other tables are starting up and that of the server as well.
 const createUsersTable = async () => {
     const query = `
         CREATE TABLE IF NOT EXISTS Users (
@@ -19,6 +20,7 @@ const createUsersTable = async () => {
     }
 }
 
+//Makes sure that this table is initialized can be referred to towards that of the server.js.
 module.exports = {
     createUsersTable
 }

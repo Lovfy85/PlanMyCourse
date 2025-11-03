@@ -1,5 +1,8 @@
+//Refers towards that of the connection of the main database in MySQL. 
 const connectMade =  require("../config");
 
+//With the usage of async, async is used in order for the table to be starting up while the server is starting up. Does not stop the server
+// from running when the table has to run first.
 const createCoursesAddedTable = async () => {
     const query = `
         CREATE TABLE IF NOT EXISTS CoursesAdded (
@@ -19,6 +22,8 @@ const createCoursesAddedTable = async () => {
     }
 }
 
+
+//Makes sure that this table is initialized can be referred to towards that of the server.js.
 module.exports = {
     createCoursesAddedTable
 }
