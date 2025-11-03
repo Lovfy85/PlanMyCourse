@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactFlow, { Background } from "reactflow";
 import "reactflow/dist/style.css";
+import Navbar from "../../components/Navbar/Navbar";
 import "./Graph.css";
 import axios from "axios";
 
@@ -102,6 +103,7 @@ const Graph = () => {
 
   return (
     <div className="graph-container">
+      <Navbar className="graph-navbar" />
 
       <div className="graph-main">
         {/* Search Bar */}

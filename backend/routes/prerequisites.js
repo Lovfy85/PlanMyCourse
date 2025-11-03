@@ -25,10 +25,10 @@ router.get('/', (req, res) => {
     }
 });
 
-//To get that of all of a course's prerequisites
-router.get('/search', (req,res) => {
-
+//To get that of all of a course's prerequisites and those of its prerequisites' prerequisites
+router.get('/:prereq', (req,res) => {
     const searchTerm = req.query.term;
+    
     if (!searchTerm) {
         res.status(400).json({error: "Search term is required"});
         return;
@@ -45,6 +45,32 @@ router.get('/search', (req,res) => {
         INNER JOIN prereq_chain AS pc ON p.course = pc.prereq
     )
     SELECT * FROM prereq_chain
+    `;
+    
+    const searchValue = `${searchTerm}`;
+
+    connectMade.query(query, [searchValue], (err, results) => {
+        if(err){
+            console.error('There has been an error getting the prerequisites from the prerequisites table.');
+            res.status(500).send('Seems to be that of course to be selected is not at all being seen in the prerequisites table.');
+            return;
+        }
+        res.json(results);
+    });
+});
+
+//To get that of all of a course's prerequisites
+router.get('/:course', (req,res) => {
+
+    const searchTerm = req.query.term;
+    if (!searchTerm) {
+        res.status(400).json({error: "Search term is required"});
+        return;
+    }
+
+    const query = `
+    SELECT * FROM Prerequisites
+    WHERE course = ?
     `;
     
     const searchValue = `${searchTerm}`;
