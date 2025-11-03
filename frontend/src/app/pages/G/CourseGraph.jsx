@@ -42,7 +42,7 @@ const CourseGraph = () => {
             animated: true,
           });
 
-          // Recursive call, horizontalIndex adjusted for spacing
+          // Recursive call
           buildGraph(prereqCourse, nodesAcc, edgesAcc, visited, horizontalIndex + i);
         }
       });
