@@ -9,7 +9,7 @@ function HomePage() {
             </div>
           <div className="search-bar">
             <input type="text" placeholder="Search courses..." />
-            
+
           </div>
         </div>
     </>
