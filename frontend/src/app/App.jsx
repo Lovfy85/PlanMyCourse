@@ -5,6 +5,7 @@ import Home from './pages/HomePage'
 import Planner from './pages/PlannerPage'
 import CourseGraph from './pages/G/CourseGraph'
 import Catalogue from './pages/CataloguePage'
+import Course from './pages/Courses'
 
 function App() {
 
@@ -12,11 +13,8 @@ function App() {
     <div>
       <Routes>
         <Route path='/' element={<Home />}/>
-<<<<<<< HEAD
-        <Route path='/courses/:term' element={<Courses />}/>
-=======
+        <Route path='/courses/:term' element={<Course />}/>
         <Route path='/catalogue/:term' element={<Catalogue />}/>
->>>>>>> main
         <Route path='/planner' element={<Planner />}/>
         <Route path='/graph' element={<CourseGraph />}/>
       </Routes>

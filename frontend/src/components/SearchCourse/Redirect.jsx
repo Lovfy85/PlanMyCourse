@@ -11,7 +11,7 @@ function Redirect() {
 
         const searchTerm = query.toUpperCase().trim();
 
-        navigate(`./courses/${searchTerm}`);
+        navigate(`./Catalogue/${searchTerm}`);
     }
 
     return (
