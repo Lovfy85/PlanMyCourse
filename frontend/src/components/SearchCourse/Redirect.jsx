@@ -1,17 +1,23 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const deperatment = 'cmpt'
+
 // redirect component
 function Redirect() {
     const [query, setQuery] = useState("");
     const navigate = useNavigate();
 
     const handleSearch = async () => {
-        if (!query) return;
+        if (!query) {
+            navigate(`./catalogue/${deperatment}`);
+            alert("Opps, it seems that the input is invalid!")
+            return
+        };
 
         const searchTerm = query.toUpperCase().trim();
 
-        navigate(`./Catalogue/${searchTerm}`);
+        navigate(`./catalogue/${searchTerm}`);
     }
 
     return (
