@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar/Navbar'
 import Home from './pages/HomePage'
 import Planner from './pages/PlannerPage'
 import CourseGraph from './pages/G/CourseGraph'
-import Courses from './pages/Courses'
+import Catalogue from './pages/CataloguePage'
 
 function App() {
 
@@ -12,7 +12,11 @@ function App() {
     <div>
       <Routes>
         <Route path='/' element={<Home />}/>
+<<<<<<< HEAD
         <Route path='/courses/:term' element={<Courses />}/>
+=======
+        <Route path='/catalogue/:term' element={<Catalogue />}/>
+>>>>>>> main
         <Route path='/planner' element={<Planner />}/>
         <Route path='/graph' element={<CourseGraph />}/>
       </Routes>
