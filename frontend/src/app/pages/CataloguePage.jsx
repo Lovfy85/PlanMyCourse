@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
 
-function Courses() {
+function CataloguePage() {
   let {term} = useParams()
   const [courses, setCourses] = useState([]);
   
@@ -35,4 +35,4 @@ function Courses() {
   )
 }
 
-export default Courses
+export default CataloguePage
