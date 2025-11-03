@@ -1,5 +1,4 @@
 import './PlannerPage.css'
-import Navbar from '../../components/Navbar/Navbar'
 import Accordion from '../../components/Planner/Accordion'
 
 import axios from 'axios'
@@ -40,7 +39,6 @@ function PlannerPage() {
     }, []);
     return (
     <>
-        <Navbar />
         <div className="content">
             <div className="planner-header">
                 <h1>Class Planner</h1>
