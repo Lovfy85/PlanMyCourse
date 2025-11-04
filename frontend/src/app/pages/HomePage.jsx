@@ -1,4 +1,5 @@
 import './HomePage.css'
+import Redirect from '../../components/SearchBar/Redirect'
 
 function HomePage() {
   return (
@@ -8,8 +9,7 @@ function HomePage() {
               <h1>PlanMyCourse</h1>
             </div>
           <div className="search-bar">
-            <input type="text" placeholder="Search courses..." />
-
+            <Redirect />
           </div>
         </div>
     </>

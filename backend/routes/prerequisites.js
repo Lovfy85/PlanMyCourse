@@ -25,10 +25,10 @@ router.get('/', (req, res) => {
     }
 });
 
-//To get that of all of a course's prerequisites
-router.get('/search', (req,res) => {
-
+//To get that of all of a course's prerequisites and those of its prerequisites' prerequisites
+router.get('/:prereq', (req,res) => {
     const searchTerm = req.query.term;
+    
     if (!searchTerm) {
         res.status(400).json({error: "Search term is required"});
         return;
@@ -60,7 +60,11 @@ router.get('/search', (req,res) => {
 });
 
 //To get that of all of a course's prerequisites
+<<<<<<< HEAD
 router.get('/prereq', (req,res) => {
+=======
+router.get('/:course', (req,res) => {
+>>>>>>> 96b0c6cd71c4bd4e3275e2ed7de388a5cfbaedad
 
     const searchTerm = req.query.term;
     if (!searchTerm) {

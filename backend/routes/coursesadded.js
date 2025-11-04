@@ -12,6 +12,7 @@ const app = express();
 const cors = require('cors');
 app.use(cors());
 
+
 //Gets that of the CoursesAdded Table in which contains that of the courses that were added. Those courses added to the table refers to a course's id,
 // to which that course id then accesses that of all that selected course's information. 
 router.get('/', (req, res) => {
