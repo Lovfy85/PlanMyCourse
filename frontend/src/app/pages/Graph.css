@@ -54,7 +54,7 @@
 .search-bar-container {
   position: fixed;     
   background: none;  
-  bottom: 4em;
+  bottom: 3.5em;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -126,3 +126,4 @@
   box-shadow: 0 4px 10px rgba(39, 64, 160, 0.3);
   cursor: pointer;
 }
+
