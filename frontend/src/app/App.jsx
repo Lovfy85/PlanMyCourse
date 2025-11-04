@@ -16,7 +16,7 @@ function App() {
         <Route path='/planner' element={<Planner />}/>
         <Route path='/graph' element={<CourseGraph />}/>
         <Route path='/catalogue/:term' element={<Catalogue />}/>
-        <Route path='/course/:coursenumber' element={<Course />}/>
+        <Route path='/catalogue/course/:coursenumber' element={<Course />}/>
       </Routes>
       <Navbar />
     </div>

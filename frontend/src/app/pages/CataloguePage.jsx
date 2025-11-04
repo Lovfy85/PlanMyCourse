@@ -29,9 +29,9 @@ function CataloguePage() {
         <hr></hr>
       </div>
       <div className='catalogue-courses'>
-          {courses.map((course, index) => {
+          {courses.map((course) => {
               return (
-                <CatalogueCourse title={course.title} description={course.description}/>
+                <CatalogueCourse title={course.title} description={course.description} courseId={course.class_name.toLowerCase()}/>
               );
           })}
       </div>
