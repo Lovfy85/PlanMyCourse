@@ -4,21 +4,23 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 function CoursePage() {
-    let {courseId} = useParams()
+    const {courseId} = useParams()
+    const [course, setCourse] = useState({});
     useEffect(() => {
-        axios.get(`http://localhost:3001/courses/search?term=${courseId}`)
+        axios.get(`http://localhost:3001/courses/${courseId}`)
         .then(response => {
-            console.log(response.data);
+            setCourse(response.data[0]);
         })
         .catch(error => {
             console.error("Error fetching by id", error)
         });
-    }, []);
+    }, [courseId]);
     return (
     <div className="content">
         <div className="course-header">
-            <h1>COURSE NAME!!</h1>
+            <h1>{course.title}</h1>
             <hr></hr>
+            
         </div>
     </div>
     )
