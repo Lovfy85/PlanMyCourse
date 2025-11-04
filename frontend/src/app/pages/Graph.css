@@ -1,10 +1,11 @@
-/* === Graph Page Styles === */
+/* Graph container */
 .graph-container {
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
+
 
 .graph-main {
   flex: 1;
@@ -33,15 +34,9 @@
   transition: background-color 0.2s ease;
 }
 
+/* Change color on hover */
 .search-button:hover {
   background-color: #1f3180;
-}/* === Graph Page Styles === */
-
-.graph-container {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .graph-main {
@@ -49,7 +44,7 @@
   position: relative;
 }
 
-/* Navbar (already handled in your component, but can style globally if needed) */
+/* Navbar*/
 .graph-navbar {
   width: 100%;
   z-index: 20;
@@ -57,8 +52,9 @@
 
 /* Search bar container */
 .search-bar-container {
-  position: fixed;       /* fixed at bottom */
-  bottom: 5em;
+  position: fixed;     
+  background: none;  
+  bottom: 4em;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -68,10 +64,6 @@
   pointer-events: auto;  /* allow clicks inside */
 }
 
-/* ReactFlow canvas (optional safety) */
-.reactflow-wrapper {
-  pointer-events: all;   /* default behavior for ReactFlow */
-}
 
 /* Input field */
 .search-input {
@@ -80,20 +72,57 @@
   border-radius: 5px 0 0 5px;
   border: 1px solid #ccc;
   outline: none;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* Search button */
 .search-button {
-  background-color: #2740a0;
+  background-color: #1a5b98;
+  font-size: 1em;
   color: white;
   border: none;
   padding: 10px 15px;
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 10px 10px 0;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
 .search-button:hover {
   background-color: #1f3180;
+  transition: ease-in-out 1s;
+}
+
+.graph-flow{
+  display: flex;
+  width: 70%;
+  height: 77vh;
+  border: 5px solid #1a5b98;
+  border-radius: 1%;
+  margin-left: 15%;
+  margin-top: 3%;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.node {
+  background-color: #508cc5;
+  border: 2px solid #508cc5;
+  border-radius: 15px;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 15px;
+  text-align: center;
+  min-width: 100px;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect */
+.node:hover {
+  transition: ease-in-out 0.25s;
+  background-color: #dcdcdc;
+  border: 1px solid #2b2b32;
+  color: #4d4d4d;
+  box-shadow: 0 4px 10px rgba(39, 64, 160, 0.3);
+  cursor: pointer;
 }
