@@ -59,4 +59,30 @@ router.get('/search', (req,res) => {
     });
 });
 
+//To get that of all of a course's prerequisites
+router.get('/prereq', (req,res) => {
+
+    const searchTerm = req.query.term;
+    if (!searchTerm) {
+        res.status(400).json({error: "Search term is required"});
+        return;
+    }
+
+    const query = `
+    SELECT * FROM Prerequisites
+    WHERE course = ?
+    `;
+    
+    const searchValue = `${searchTerm}`;
+
+    connectMade.query(query, [searchValue], (err, results) => {
+        if(err){
+            console.error('There has been an error getting the prerequisites from the prerequisites table.');
+            res.status(500).send('Seems to be that of course to be selected is not at all being seen in the prerequisites table.');
+            return;
+        }
+        res.json(results);
+    });
+});
+
 module.exports = router;
