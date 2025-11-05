@@ -1,126 +1,170 @@
 import React, { useState } from "react";
-import ReactFlow, { Background } from "reactflow";
+import ReactFlow, {
+  Background,
+  MiniMap,
+  Controls,
+  ReactFlowProvider,
+  useReactFlow,
+} from "reactflow";
 import "reactflow/dist/style.css";
 import Navbar from "../../components/Navbar/Navbar";
 import "./Graph.css";
+ // Used to communicate with the backend API
 import axios from "axios";
 
-const Graph = () => {
+
+const computeDepths = (edges) => {
+  const graph = {};
+  const inDegree = {};
+
+  // Build a graph and count incoming edges for each node
+  edges.forEach(({ source, target }) => {
+    if (!graph[source]) graph[source] = [];
+    graph[source].push(target);
+    inDegree[target] = (inDegree[target] || 0) + 1;
+    if (!inDegree[source]) inDegree[source] = 0;
+  });
+
+  // Start with nodes that have no prerequisites (inDegree = 0)
+  const queue = Object.keys(inDegree).filter((k) => inDegree[k] === 0);
+  const depth = {};
+  queue.forEach((n) => (depth[n] = 0));
+
+  // Use a simple breadth-first traversal to assign depth levels
+  while (queue.length) {
+    const node = queue.shift();
+    const currDepth = depth[node];
+    (graph[node] || []).forEach((neighbor) => {
+      depth[neighbor] = Math.max(depth[neighbor] || 0, currDepth + 1);
+      inDegree[neighbor]--;
+      if (inDegree[neighbor] === 0) queue.push(neighbor);
+    });
+  }
+
+  return depth;
+};
+
+
+// Main Graph Content
+const GraphContent = () => {
   const [nodes, setNodes] = useState([]);
   const [edges, setEdges] = useState([]);
   const [query, setQuery] = useState("");
+  // Centeralize the graph using fitView 
+  const { fitView } = useReactFlow(); 
 
-  // Helper: determine Y position by course level (e.g., 100, 200, 300)
-  const getCourseLevel = (className) => {
-    const match = className.match(/\d+/);
-    return match ? parseInt(match[0].slice(0, 1)) : 1;
-  };
 
-  // Recursively build graph from course and its prerequisites
-  const buildGraph = async (
-    course,
-    nodesAcc,
-    edgesAcc,
-    visited = new Set(),
-    horizontalIndex = 0
-  ) => {
-    if (!course || visited.has(course.class_name)) return;
 
-    visited.add(course.class_name);
-
-    const level = getCourseLevel(course.class_name);
-    const yPos = 400 - level * 100;
-
-    // Add node if not already present
-    if (!nodesAcc.some((n) => n.id === course.class_name)) {
-      nodesAcc.push({
-        id: course.class_name,
-        data: { label: course.class_name },
-        position: { x: 200 + horizontalIndex * 150, y: yPos },
-      });
-    }
-
-    // Add edges and recurse into prerequisites
-    if (course.course_prereq && course.course_prereq.length > 0) {
-      for (let i = 0; i < course.course_prereq.length; i++) {
-        const prereqName = course.course_prereq[i];
-        const edgeId = `${prereqName}-${course.class_name}`;
-
-        if (!edgesAcc.some((e) => e.id === edgeId)) {
-          edgesAcc.push({
-            id: edgeId,
-            source: prereqName,
-            target: course.class_name,
-            animated: true,
-            style: { stroke: "#2740a0" },
-            markerEnd: { type: "arrowclosed", color: "#000000" },
-          });
-        }
-
-        try {
-          const res = await axios.get(
-            `http://localhost:3001/courses/search?term=${prereqName}`
-          );
-          const prereqCourse = res.data[0]; // assuming API returns array
-          await buildGraph(prereqCourse, nodesAcc, edgesAcc, visited, horizontalIndex + i);
-        } catch (err) {
-          console.error(`Failed to fetch prerequisite ${prereqName}:`, err);
-        }
-      }
-    }
-  };
-
-  // Handle course search and graph generation
+  // Handle search button click
   const handleSearch = async () => {
-    const lowerQuery = query.toLowerCase().trim();
-    if (!lowerQuery) return;
+    // Allow lowercase and remove spaces
+    let lowerQuery = query.toLowerCase().replace(/\s+/g, "");
+    if (!lowerQuery) return; 
+
+    // If user enters just numbers (e.g., "280"), prepend "cmpt"
+    if (/^\d+$/.test(lowerQuery)) {
+      lowerQuery = `cmpt${lowerQuery}`;
+    }
 
     try {
+      // Fetch prerequisite data from backend
       const response = await axios.get(
-        `http://localhost:3001/courses/search?term=${lowerQuery}`
+        `http://localhost:3001/prerequisites/search?term=${lowerQuery}`
+      );
+      const prereqData = response.data;
+
+      // Only do CMPT prerequisites
+      const filteredData = prereqData.filter(
+        (row) =>
+          row.course?.toUpperCase().startsWith("CMPT") &&
+          row.prereq?.toUpperCase().startsWith("CMPT")
       );
 
-      const courseList = response.data;
-      if (!courseList || courseList.length === 0) {
-        alert("Course not found!");
+      // Don't display course if no prerequisites exist
+      if (!filteredData.length) {
+        alert("No CMPT prerequisites found!");
         return;
       }
 
-      const newNodes = [];
-      const newEdges = [];
+      // Build edges between courses and connect lines (by using steps)
+      const edges = filteredData.map((row) => ({
+        id: `${row.course}-${row.prereq}`,
+        source: row.prereq,
+        target: row.course,
+        type: "step",
+        animated: true,
+        style: { 
+          stroke: "#3a3a3aff", 
+          strokeWidth: 2 },
+        markerEnd: { 
+          type: "arrowclosed", color: "#000000ff" },
+      }));
 
-      for (let i = 0; i < courseList.length; i++) {
-        await buildGraph(courseList[i], newNodes, newEdges, new Set(), i);
-      }
+      // Compute depth level for each node (how far from root)
+      const depthMap = computeDepths(edges);
 
-      setNodes(newNodes);
-      setEdges(newEdges);
+      // Collect all course names
+      const courseNames = new Set();
+      filteredData.forEach((r) => {
+        courseNames.add(r.course);
+        courseNames.add(r.prereq);
+      });
+
+      // Group courses by depth level
+      const nodesByDepth = {};
+      Array.from(courseNames).forEach((name) => {
+        const d = depthMap[name] ?? 0;
+        if (!nodesByDepth[d]) nodesByDepth[d] = [];
+        nodesByDepth[d].push(name);
+      });
+
+      // Position nodes based on depth
+      const nodes = [];
+      Object.entries(nodesByDepth).forEach(([depth, names]) => {
+        const count = names.length;
+        const startX = -(count - 1) * 200;
+        names.forEach((name, i) => {
+          nodes.push({
+            id: name,
+            data: { label: name },
+            position: { x: startX + i * 300, y: depth * 200 },
+            className: "node",
+          });
+        });
+      });
+
+      // Update states
+      setNodes(nodes);
+      setEdges(edges);
       setQuery("");
+
+      // Fit graph in fitView
+      setTimeout(() => fitView({ padding: 0.2, duration: 800 }), 200);
     } catch (err) {
-      console.error("Failed to GET request:", err);
+      console.error("Error fetching course data:", err);
     }
   };
 
+
+
   return (
-    <div className="graph-container">
-      <Navbar className="graph-navbar" />
+    <div className="graph-main">
+      {/* Search bar */}
+      <div className="search-bar-container">
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Enter course name, e.g., CMPT280 or 280"
+          className="search-input"
+        />
+        <button onClick={handleSearch} className="search-button">
+          Search
+        </button>
+      </div>
 
-      <div className="graph-main">
-        {/* Search Bar */}
-        <div className="search-bar-container">
-          <input
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Enter course name, e.g., CMPT280"
-            className="search-input"
-          />
-          <button onClick={handleSearch} className="search-button">
-            Search
-          </button>
-        </div>
-
-        {/* React Flow Graph */}
+      {/* Graph view */}
+      <div className="graph-flow">
         <ReactFlow nodes={nodes} edges={edges} fitView>
           <Background />
         </ReactFlow>
@@ -128,5 +172,18 @@ const Graph = () => {
     </div>
   );
 };
+
+
+// Graph wrapper with Navbar and ReactFlowProvider
+const Graph = () => (
+  <div className="graph-container">
+    <Navbar className="graph-navbar" />
+    <ReactFlowProvider>
+      <GraphContent />
+      <MiniMap />
+      <Controls />
+    </ReactFlowProvider>
+  </div>
+);
 
 export default Graph;
