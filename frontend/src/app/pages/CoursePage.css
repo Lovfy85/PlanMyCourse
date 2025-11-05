@@ -1,6 +1,50 @@
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .content {
     display: flex;
     flex-direction: column;
     margin: 4rem;
 }
 
+.course-header h1 {
+    padding-left: 16px;
+    margin-bottom: 0px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.course-header hr {
+    height: 4px;
+    border: none;
+    background-color: #215591;
+}
+
+.course-info h3 {
+    font-size: 30px;
+}
+
+.course-description {
+    font-size: 20px;
+}
+
+.course-info h5  {
+    font-size: 18px;
+}
+
+h3, h5 {
+    margin-bottom: 0px;
+}
+
+.course-rating {
+    display: flex;
+    margin-left: -6rem;
+    background-color: #D9D9D9;
+    width: 100vw;
+    height: 100px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.3);
+}
