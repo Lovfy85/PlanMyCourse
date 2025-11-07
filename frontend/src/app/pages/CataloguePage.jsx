@@ -23,7 +23,7 @@ function CataloguePage() {
     }, [term]);
     
   return (
-    <div className="content">
+    <div className="catalogue-content">
       <div className="catalogue-header">
         <h1>Course Catalogue</h1>
         <hr></hr>
