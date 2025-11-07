@@ -34,7 +34,7 @@ router.get('/search', (req,res) => {
                   OR subject LIKE ?
                   OR courseId LIKE ?
                   OR FLOOR(number / 100) * 100 = ?
-                  `
+                  `;
     
     var searchValue = `%${searchTerm}`;
     if (Number(searchTerm)) {
@@ -51,6 +51,17 @@ router.get('/search', (req,res) => {
     });
 });
 
+//To get that of the a course's by name via parameter
+router.get('/:name', (req,res) => {
+    connectMade.query(`SELECT * FROM Courses WHERE class_name = ?`, [req.params.name], (err, results) => {
+        if(err){
+            console.error('There has been an error getting the course from the courses table.');
+            res.status(500).send('Seems to be that of course to be selected is not at all being seen in the courses table.');
+            return;
+        }
+        res.json(results);
+    });
+});
 
 
 module.exports = router;
