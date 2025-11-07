@@ -3,7 +3,6 @@ import "./CatalogueCourse.css";
 import axios from "axios";
 
 function CatalogueCourse( {title, description, courseId, id} ) {
-    console.log(courseId)
     const navigate = useNavigate();
 
     // add course to user
@@ -27,7 +26,11 @@ function CatalogueCourse( {title, description, courseId, id} ) {
             <span className="course-title">{title}</span>
             <div className="information">
                 <span className="description">{description}</span>
-                <button className="add-course" onClick={handleAddCourse}>Add to Planner</button>
+                <button className="add-course" 
+                onClick={(e) => {
+                    e.stopPropagation()
+                    handleAddCourse()
+                }}>Add to Planner</button>
             </div>
         </div>
     );

@@ -1,7 +1,8 @@
 .catalogue-course {
   margin-left: 20px;
   margin-right: 20px;
-  padding: 1rem;
+  z-index: 0;
+  padding: 1rem 1rem;
   text-align: left;
   cursor: pointer;
   display: flex;
@@ -39,6 +40,7 @@
   padding: 15px;
   font-size: 16px;
   font-weight: bold;
+  z-index: 10;
   color: #ffffff;
   background-color: #1a5b98;
   border-width: 0px;
