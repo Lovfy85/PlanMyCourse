@@ -60,11 +60,8 @@ router.get('/:prereq', (req,res) => {
 });
 
 //To get that of all of a course's prerequisites
-<<<<<<< HEAD
 router.get('/prereq', (req,res) => {
-=======
-router.get('/:course', (req,res) => {
->>>>>>> 96b0c6cd71c4bd4e3275e2ed7de388a5cfbaedad
+
 
     const searchTerm = req.query.term;
     if (!searchTerm) {
