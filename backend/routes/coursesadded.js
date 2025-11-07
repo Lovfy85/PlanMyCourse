@@ -44,15 +44,32 @@ router.get('/', (req, res) => {
 //Insert that of the courses added to the table in which is inserted based on the course's id and sets if it is taken or not. 
 router.post('/', (req, res) => {
     const { courseId, taken } = req.body;
-    const query = `INSERT INTO CoursesAdded (courseId, taken) Values (?, ?)`;
-    connectMade.query(query, [courseId, taken], (err, result) => {
-        if(err){
-            res.send("Did not insert properly to CoursesAdded table")
+
+    connectMade.query('SELECT EXISTS (SELECT 1 FROM CoursesAdded WHERE courseId = ?)', [courseId], (err, result) => {
+        if (err) {
+            res.send("Did not query properly from CoursesAdded table");
+            console.log("query error:", err);
             return;
         }
-        res.status(201).json({id: result.insertId, courseId, taken});
-    })
 
+        const existsKey = Object.keys(result[0])[0];  // Get the dynamic key
+        const exists = result[0][existsKey];          // Get the value (0 or 1)
+
+        if (exists === 1) {
+            res.send("Course already exists in CoursesAdded table");
+            return;
+        } else {
+            // You can proceed to insert or handle the non-existence case here
+            const query = `INSERT INTO CoursesAdded (courseId, taken) Values (?, ?)`;
+            connectMade.query(query, [courseId, taken], (err, result) => {
+                if(err){
+                    res.send("Did not insert properly to CoursesAdded table")
+                    return;
+                }
+                res.status(201).json({id: result.insertId, courseId, taken});
+            })
+        }
+    })
 })
 
 //This is to update that of whether or not the course added to the table is being taken or not. 

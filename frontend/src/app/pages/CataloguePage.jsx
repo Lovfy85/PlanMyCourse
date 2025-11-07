@@ -8,7 +8,8 @@ import CatalogueCourse from '../../components/Catalogue/CatalogueCourse';
 function CataloguePage() {
   let {term} = useParams()
   const [courses, setCourses] = useState([]);
-  
+  //const [mappableCourses, setMappableCourses] = useState([]);
+
   useEffect(() => {
         axios.get(`http://localhost:3001/courses/search?term=${term}`)
         .then(response => {
@@ -16,10 +17,18 @@ function CataloguePage() {
             setCourses(data);
         })
         .catch(error => {
-            axios.get(`http://localhost:3001/courses/search?term=${"CMPT"}`)
-            const data = response.data;
             console.error("Error fetching courses added", error)
         });
+        
+        // axios.get("http://localhost:3001/coursesadded/")
+        // .then(response => {
+        //     // console.log(response.data);
+        //     const processedData = processData(response.data);
+        //     setMappableCourses(processedData);
+        // })
+        // .catch(error => {
+        //     console.error("Error fetching courses added", error)
+        // });
     }, [term]);
     
   return (
@@ -31,7 +40,7 @@ function CataloguePage() {
       <div className='catalogue-courses'>
           {courses.map((course, index) => {
               return (
-                <CatalogueCourse title={course.title} description={course.description}/>
+                <CatalogueCourse id={course.courseId} title={course.title} description={course.description}/>
               );
           })}
       </div>

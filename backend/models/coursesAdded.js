@@ -6,8 +6,8 @@ const connectMade =  require("../config");
 const createCoursesAddedTable = async () => {
     const query = `
         CREATE TABLE IF NOT EXISTS CoursesAdded (
-        id INT AUTO_INCREMENT PRIMARY KEY UNIQUE,
-        courseId INT UNIQUE,
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        courseId INT,
         taken BOOLEAN DEFAULT FALSE,
         createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (courseId) REFERENCES Courses(courseId)
