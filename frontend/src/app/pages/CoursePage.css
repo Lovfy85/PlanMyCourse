@@ -1,7 +1,155 @@
-.content {
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.course-content {
     display: flex;
     flex-direction: column;
-    margin: 4rem;
+}
 
-    
+.course-top-section {
+    margin: 0 4rem;
+}
+
+.course-header h1 {
+    padding-left: 16px;
+    margin-bottom: 0px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.course-header hr {
+    height: 4px;
+    border: none;
+    background-color: #215591;
+}
+
+.course-info  {
+    margin: auto 1.2rem;
+}
+
+.course-info h3 {
+    font-size: 24px;
+}
+
+.course-description {
+    font-size: 18px;
+}
+
+.course-info h5  {
+    font-size: 18px;
+}
+
+h3, h5 {
+    margin-bottom: 0px;
+}
+
+.course-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.course-buttons button {
+    margin-top: 2rem;
+    width: 188px;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+}
+
+.course-planner {
+    background-color: #215591;
+    color: #FFFFFF;
+    border: none;
+}
+
+.course-view {
+    background-color: #D9D9D9;
+    color: #454545;
+    border: 1px solid #454545
+}
+
+.course-review-section {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #D9D9D9;
+    width: 100%;
+    margin: 3rem 0;
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.course-statistics,
+.course-new-review {
+    margin: 1.4rem 0;
+    min-width: 500px;
+    max-width: 600px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-statistics h3,
+.course-new-review h3{
+    margin: 0;
+    font-size: 28px;
+}
+
+.course-rating p{
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.course-distribution {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.divider {
+    width: 4px;
+    align-self: stretch;
+    transform: scaleY(0.8);
+    background-color: #215591;
+}
+
+.course-new-review textarea {
+    margin-top: 10px;
+    resize: none;
+    font-size: 16px;
+    font-weight: bold;
+    width: auto;
+    height: 100%;
+    outline: none;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #215591;
+    font-family: Inter;
+    color:#454545
+}
+
+.course-new-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.course-new-submit {
+    margin-top: 2rem;
+    width: 140px;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+    background-color: #215591;
+    color: #FFFFFF;
+    border: none;
 }

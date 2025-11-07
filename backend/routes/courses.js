@@ -64,4 +64,20 @@ router.get('/search', (req,res) => {
     });
 });
 
+<<<<<<< HEAD
+=======
+//To get that of the a course's by name via parameter
+router.get('/:name', (req,res) => {
+    connectMade.query(`SELECT * FROM Courses WHERE class_name = ?`, [req.params.name], (err, results) => {
+        if(err){
+            console.error('There has been an error getting the course from the courses table.');
+            res.status(500).send('Seems to be that of course to be selected is not at all being seen in the courses table.');
+            return;
+        }
+        res.json(results);
+    });
+});
+
+
+>>>>>>> f730b1251bb9de6f197d76639a5d10406603be00
 module.exports = router;

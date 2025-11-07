@@ -39,7 +39,7 @@ function PlannerPage() {
     }, []);
     return (
     <>
-        <div className="content">
+        <div className="planner-content">
             <div className="planner-header">
                 <h1>Class Planner</h1>
                 <hr></hr>
