@@ -8,8 +8,7 @@ import CatalogueCourse from '../../components/Catalogue/CatalogueCourse';
 function CataloguePage() {
   let {term} = useParams()
   const [courses, setCourses] = useState([]);
-  //const [mappableCourses, setMappableCourses] = useState([]);
-
+  
   useEffect(() => {
         axios.get(`http://localhost:3001/courses/search?term=${term}`)
         .then(response => {
@@ -17,30 +16,22 @@ function CataloguePage() {
             setCourses(data);
         })
         .catch(error => {
+            axios.get(`http://localhost:3001/courses/search?term=${"CMPT"}`)
+            const data = response.data;
             console.error("Error fetching courses added", error)
         });
-        
-        // axios.get("http://localhost:3001/coursesadded/")
-        // .then(response => {
-        //     // console.log(response.data);
-        //     const processedData = processData(response.data);
-        //     setMappableCourses(processedData);
-        // })
-        // .catch(error => {
-        //     console.error("Error fetching courses added", error)
-        // });
     }, [term]);
     
   return (
-    <div className="content">
+    <div className="catalogue-content">
       <div className="catalogue-header">
         <h1>Course Catalogue</h1>
         <hr></hr>
       </div>
       <div className='catalogue-courses'>
-          {courses.map((course, index) => {
+          {courses.map((course) => {
               return (
-                <CatalogueCourse id={course.courseId} title={course.title} description={course.description}/>
+                <CatalogueCourse title={course.title} description={course.description} courseId={course.class_name} id={course.id}/>
               );
           })}
       </div>
@@ -49,3 +40,4 @@ function CataloguePage() {
 }
 
 export default CataloguePage
+

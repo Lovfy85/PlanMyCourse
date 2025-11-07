@@ -61,10 +61,6 @@ router.get('/:prereq', (req,res) => {
 
 //To get that of all of a course's prerequisites
 router.get('/prereq', (req,res) => {
-<<<<<<< HEAD
-=======
-
->>>>>>> f730b1251bb9de6f197d76639a5d10406603be00
     const searchTerm = req.query.term;
     if (!searchTerm) {
         res.status(400).json({error: "Search term is required"});

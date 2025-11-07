@@ -1,9 +1,10 @@
-import { useNavigate, } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import "./CatalogueCourse.css";
 import axios from "axios";
 
-<<<<<<< HEAD
-function CatalogueCourse( {id, title, description} ) {
+function CatalogueCourse( {title, description, courseId, id} ) {
+    console.log(courseId)
+    const navigate = useNavigate();
 
     // add course to user
     const handleAddCourse = () => {
@@ -21,16 +22,12 @@ function CatalogueCourse( {id, title, description} ) {
         }
     }
     
-=======
-function CatalogueCourse( {title, description, courseId} ) {
-    const navigate = useNavigate();
->>>>>>> f730b1251bb9de6f197d76639a5d10406603be00
     return (    
         <div className="catalogue-course" onClick={() => navigate(`/catalogue/course/${courseId}`)}>
             <span className="course-title">{title}</span>
             <div className="information">
                 <span className="description">{description}</span>
-                <span><button className="add-course" onClick={handleAddCourse}>Add to Planner</button></span>
+                <button className="add-course" onClick={handleAddCourse}>Add to Planner</button>
             </div>
         </div>
     );
