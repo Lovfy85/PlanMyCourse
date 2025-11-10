@@ -1,3 +1,11 @@
+# How to run
+To run this project first activate the server (read the readme file in the backend folder).
+Download dependecies by running:
+- npm install
+
+To start the frontend run:
+- npm run dev
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
