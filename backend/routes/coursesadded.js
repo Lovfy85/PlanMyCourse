@@ -1,20 +1,10 @@
 //Express is used in order to refer to that of using the routes in which to make to refer to endpoints used. 
 const express = require('express');
-
-//Refers towards that of the connection of the main database in MySQL. 
 const connectMade = require('../config.js');
-
-//Keyword used to then refer the usage of endpoints. 
 const router = express.Router();
 
-//This is to make sure that of this nodejs file with its endpoints can be used to refer towards that of the frontend.
-const app = express();
-const cors = require('cors');
-app.use(cors());
-
-
-//Gets that of the CoursesAdded Table in which contains that of the courses that were added. Those courses added to the table refers to a course's id,
-// to which that course id then accesses that of all that selected course's information. 
+// GET 
+// Get all the courses added to the courses added table
 router.get('/', (req, res) => {
     try{
         const query = `
@@ -41,38 +31,61 @@ router.get('/', (req, res) => {
     }
 });
 
-//Insert that of the courses added to the table in which is inserted based on the course's id and sets if it is taken or not. 
+// Get course by courseId, only returns a true or false
+router.get('/:courseId', (req, res) => {
+    const courseId = req.params.courseId;
+
+    const query = `SELECT * FROM CoursesAdded WHERE courseId = ?`;
+
+    connectMade.query(query, [courseId], (err, results) => {
+        if (err) {
+            console.error('Error checking courseId:', err);
+            return res.status(500).json({ error: 'Internal server error' });
+        }
+
+        if (results.length > 0) {
+            // course is already in the planner
+            return res.status(200).json({ exists: true, course: results[0] });
+        } else {
+            // course not in planner
+            return res.status(200).json({ exists: false });
+        }
+    });
+});
+
+// POST
+// Insert courses to the CoursesAdded table 
 router.post('/', (req, res) => {
     const { courseId, taken } = req.body;
+    const checkQuery = 'SELECT * FROM CoursesAdded WHERE courseId = ?';
 
-    connectMade.query('SELECT EXISTS (SELECT 1 FROM CoursesAdded WHERE courseId = ?)', [courseId], (err, result) => {
+    // Check if courseId already exists
+    connectMade.query(checkQuery, [courseId], (err, results) => {
         if (err) {
-            res.send("Did not query properly from CoursesAdded table");
-            console.log("query error:", err);
-            return;
+            console.error('Error checking courseId:', err);
+            return res.status(500).json({ error: 'Internal server error' });
         }
 
-        const existsKey = Object.keys(result[0])[0];  // Get the dynamic key
-        const exists = result[0][existsKey];          // Get the value (0 or 1)
-
-        if (exists === 1) {
-            res.send("Course already exists in CoursesAdded table");
-            return;
-        } else {
-            // You can proceed to insert or handle the non-existence case here
-            const query = `INSERT INTO CoursesAdded (courseId, taken) Values (?, ?)`;
-            connectMade.query(query, [courseId, taken], (err, result) => {
-                if(err){
-                    res.send("Did not insert properly to CoursesAdded table")
-                    return;
-                }
-                res.status(201).json({id: result.insertId, courseId, taken});
-            })
+        if (results.length > 0) {
+            return res.status(400).json({ error: 'Course ID already exists' });
         }
-    })
-})
 
-//This is to update that of whether or not the course added to the table is being taken or not. 
+        // If not found, insert new course
+        const insertQuery = 'INSERT INTO CoursesAdded (courseId, taken) VALUES (?, ?)';
+        connectMade.query(insertQuery, [courseId, taken], (err, result) => {
+            if (err) {
+                console.error('Error inserting course:', err);
+                return res.status(500).json({ error: 'Failed to insert course' });
+            }
+            res.status(201).json({
+                message: 'Course added successfully',
+            });
+        });
+    });
+});
+
+// PUT
+// Update taken from false to true, or true to false
 router.put('/:id', (req, res) => {
     const id = req.params.id
     const { taken } = req.body
@@ -88,7 +101,8 @@ router.put('/:id', (req, res) => {
 
 })
 
-//Deletes that of the course that was added in the table overall by referring to its id in the table. 
+// DELETE
+// Deletes that of the course that was added in the table overall by referring to its id in the table. 
 router.delete('/:id', (req, res) => {
     const id = req.params.id;
     const query = `DELETE FROM CoursesAdded WHERE id = ?`;
@@ -102,5 +116,4 @@ router.delete('/:id', (req, res) => {
 
 })
 
-//Makes sure that these endpoints can be referred to towards that of the server.js
 module.exports = router;

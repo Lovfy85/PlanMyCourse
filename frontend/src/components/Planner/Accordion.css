@@ -39,6 +39,21 @@
   padding: 0.75rem 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-class-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.accordion-class-actions .accordion-class-checkbox {
+  padding-left: 0;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
 }
 
 .accordion-class:nth-child(odd) {
@@ -58,6 +73,7 @@
   position: relative;
   padding-left: 35px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .accordion-class-checkbox input {
@@ -111,5 +127,26 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   transition: opacity 0.3s ease;
+}
+
+/* DELETE BUTTON */
+.accordion-delete-btn {
+  background-color: transparent;
+  border: 2px solid #215591;
+  color: #215591;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.accordion-delete-btn:hover {
+  background-color: #ff5959;
+  color: #f9f9f9;
 }
 

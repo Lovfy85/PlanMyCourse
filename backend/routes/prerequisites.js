@@ -2,12 +2,8 @@ const express = require('express');
 const connectMade = require('../config.js');
 const router = express.Router();
 
-//This is to make sure that of this nodejs file with its endpoints can be used to refer towards that of the frontend.
-const app = express();
-const cors = require('cors');
-app.use(cors());
-
-//To get all course prerequisites. It selects that of everything that was filled in the 'Prerequisites' table initialized from that of the web scraper file.
+// GET
+// Get all course prerequisites.
 router.get('/', (req, res) => {
     try{
         connectMade.query('SELECT * FROM Prerequisites', (err, results) => {
@@ -25,14 +21,9 @@ router.get('/', (req, res) => {
     }
 });
 
-//To get that of all of a course's prerequisites and those of its prerequisites' prerequisites
-router.get('/:prereq', (req,res) => {
-    const searchTerm = req.query.term;
-    
-    if (!searchTerm) {
-        res.status(400).json({error: "Search term is required"});
-        return;
-    }
+// Get a courses prerequisites prerequisite
+router.get('/recurse/:course', (req,res) => {
+    const course = req.params.course;
 
     const query = `
     WITH RECURSIVE prereq_chain AS (
@@ -46,10 +37,8 @@ router.get('/:prereq', (req,res) => {
     )
     SELECT * FROM prereq_chain
     `;
-    
-    const searchValue = `${searchTerm}`;
 
-    connectMade.query(query, [searchValue], (err, results) => {
+    connectMade.query(query, [course], (err, results) => {
         if(err){
             console.error('There has been an error getting the prerequisites from the prerequisites table.');
             res.status(500).send('Seems to be that of course to be selected is not at all being seen in the prerequisites table.');
@@ -59,22 +48,13 @@ router.get('/:prereq', (req,res) => {
     });
 });
 
-//To get that of all of a course's prerequisites
-router.get('/prereq', (req,res) => {
-    const searchTerm = req.query.term;
-    if (!searchTerm) {
-        res.status(400).json({error: "Search term is required"});
-        return;
-    }
+// Get only the prerequisite of a given course
+router.get('/:course', (req,res) => {
+    const course = req.params.course;
 
-    const query = `
-    SELECT * FROM Prerequisites
-    WHERE course = ?
-    `;
-    
-    const searchValue = `${searchTerm}`;
+    const query = `SELECT * FROM Prerequisites WHERE course = ?`
 
-    connectMade.query(query, [searchValue], (err, results) => {
+    connectMade.query(query, [course], (err, results) => {
         if(err){
             console.error('There has been an error getting the prerequisites from the prerequisites table.');
             res.status(500).send('Seems to be that of course to be selected is not at all being seen in the prerequisites table.');

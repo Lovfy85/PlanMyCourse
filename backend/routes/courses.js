@@ -2,7 +2,8 @@ const express = require('express');
 const connectMade = require('../config.js');
 const router = express.Router();
 
-//To get all courses
+// GET
+// Get all courses
 router.get('/', (req, res) => {
     try{
         connectMade.query('SELECT * FROM Courses', (err, results) => {
@@ -20,7 +21,7 @@ router.get('/', (req, res) => {
     }
 });
 
-//To get that of the a course's by name, subject or level
+// Get a course by name, subject or level
 router.get('/search', (req,res) => {
 
     const searchTerm = req.query.term;
@@ -32,7 +33,6 @@ router.get('/search', (req,res) => {
     var query = `SELECT * FROM Courses WHERE 
                     class_name LIKE ? 
                   OR subject LIKE ?
-                  OR courseId LIKE ?
                   OR FLOOR(number / 100) * 100 = ?
                   `;
     
@@ -51,7 +51,7 @@ router.get('/search', (req,res) => {
     });
 });
 
-//To get that of the a course's by name via parameter
+// Get by class_name
 router.get('/:name', (req,res) => {
     connectMade.query(`SELECT * FROM Courses WHERE class_name = ?`, [req.params.name], (err, results) => {
         if(err){
@@ -63,7 +63,7 @@ router.get('/:name', (req,res) => {
     });
 });
 
-//To get that of the a course's by name via parameter
+// Get by courseId
 router.get('/:id', (req,res) => {
     connectMade.query(`SELECT * FROM Courses WHERE courseId = ?`, [req.params.name], (err, results) => {
         if(err){
