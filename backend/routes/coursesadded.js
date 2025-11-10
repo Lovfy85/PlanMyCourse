@@ -30,36 +30,35 @@ router.get('/', (req, res) => {
     }
 });
 
-//Insert that of the courses added to the table in which is inserted based on the course's id and sets if it is taken or not. 
+//Insert that of the courses added to the table 
 router.post('/', (req, res) => {
     const { courseId, taken } = req.body;
+    const checkQuery = 'SELECT * FROM CoursesAdded WHERE courseId = ?';
 
-    connectMade.query('SELECT EXISTS (SELECT 1 FROM CoursesAdded WHERE courseId = ?)', [courseId], (err, result) => {
+    // Check if courseId already exists
+    connectMade.query(checkQuery, [courseId], (err, results) => {
         if (err) {
-            res.send("Did not query properly from CoursesAdded table");
-            console.log("query error:", err);
-            return;
+            console.error('Error checking courseId:', err);
+            return res.status(500).json({ error: 'Internal server error' });
         }
 
-        const existsKey = Object.keys(result[0])[0];  // Get the dynamic key
-        const exists = result[0][existsKey];          // Get the value (0 or 1)
-
-        if (exists === 1) {
-            res.send("Course already exists in CoursesAdded table");
-            return;
-        } else {
-            // You can proceed to insert or handle the non-existence case here
-            const query = `INSERT INTO CoursesAdded (courseId, taken) Values (?, ?)`;
-            connectMade.query(query, [courseId, taken], (err, result) => {
-                if(err){
-                    res.send("Did not insert properly to CoursesAdded table")
-                    return;
-                }
-                res.status(201).json({id: result.insertId, courseId, taken});
-            })
+        if (results.length > 0) {
+            return res.status(400).json({ error: 'Course ID already exists' });
         }
-    })
-})
+
+        // If not found, insert new course
+        const insertQuery = 'INSERT INTO CoursesAdded (courseId, taken) VALUES (?, ?)';
+        connectMade.query(insertQuery, [courseId, taken], (err, result) => {
+            if (err) {
+                console.error('Error inserting course:', err);
+                return res.status(500).json({ error: 'Failed to insert course' });
+            }
+            res.status(201).json({
+                message: 'Course added successfully',
+            });
+        });
+    });
+});
 
 //This is to update that of whether or not the course added to the table is being taken or not. 
 router.put('/:id', (req, res) => {
