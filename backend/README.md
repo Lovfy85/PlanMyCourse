@@ -41,7 +41,7 @@ Base URL: `http://localhost:3001`
 
 - `GET /courses` - Get all courses
 - `GET /courses/search?term={searchTerm}` - Search courses by name, subject or level
-  `GET /courses/:id` - Get course by ID
+- `GET /courses/:id` - Get course by ID
 - `GET /courses/:name` - Get course by class name
 
 ### Prerequisites
