@@ -33,7 +33,6 @@ router.get('/search', (req,res) => {
     var query = `SELECT * FROM Courses WHERE 
                     class_name LIKE ? 
                   OR subject LIKE ?
-                  OR courseId LIKE ?
                   OR FLOOR(number / 100) * 100 = ?
                   `;
     
