@@ -2,7 +2,8 @@ const express = require('express');
 const connectMade = require('../config.js');
 const router = express.Router();
 
-//Gets that of the users that are registered in the Users Table.
+// GET
+// Gets all users.
 router.get('/', (req, res) => {
     try{
         connectMade.query('SELECT * FROM Users', (err, results) => {
@@ -19,20 +20,7 @@ router.get('/', (req, res) => {
     }
 });
 
-//Inserts that of a user based on that of their created username and password for that username. 
-router.post('/', (req, res) => {
-    const {userId, username, password} = req.body;
-    const query = `INSERT INTO Users (username, password) Values (?,?)`;
-    connectMade.query(query, [username, password], (err, result) => {
-        if(err){
-            res.send("Did not insert that of a user successfully in Users table");
-            return;
-        }
-        res.status(201).json({userId, username, password});
-    });
-});
-
-//Gets that of a specific user based on that of their userId in that of the table.
+// Get a user by their Id
 router.get('/:userId', (req, res) => {
     const userId = req.params.userId;
 
@@ -52,7 +40,22 @@ router.get('/:userId', (req, res) => {
     }
 });
 
-//Deletes that of a specific user based on that of their userId in that of the table.
+// POST
+// Inserts a user into the Users table. 
+router.post('/', (req, res) => {
+    const {userId, username, password} = req.body;
+    const query = `INSERT INTO Users (username, password) Values (?,?)`;
+    connectMade.query(query, [username, password], (err, result) => {
+        if(err){
+            res.send("Did not insert that of a user successfully in Users table");
+            return;
+        }
+        res.status(201).json({userId, username, password});
+    });
+});
+
+// DELETE
+// Delete a user by their ID
 router.delete('/:userId', (req, res) => {
     const userId = req.params.userId;
     const query = `DELETE FROM Users WHERE userId = ?`;
@@ -65,6 +68,5 @@ router.delete('/:userId', (req, res) => {
     });
 });
 
-//Makes sure that these endpoints can be referred to towards that of the server.js
 module.exports = router;
 

@@ -3,6 +3,7 @@ const express = require('express');
 const connectMade = require('../config.js');
 const router = express.Router();
 
+// GET 
 // Get all the courses added to the courses added table
 router.get('/', (req, res) => {
     try{
@@ -30,6 +31,7 @@ router.get('/', (req, res) => {
     }
 });
 
+// Get course by courseId, only returns a true or false
 router.get('/:courseId', (req, res) => {
     const courseId = req.params.courseId;
 
@@ -51,7 +53,8 @@ router.get('/:courseId', (req, res) => {
     });
 });
 
-//Insert that of the courses added to the table 
+// POST
+// Insert courses to the CoursesAdded table 
 router.post('/', (req, res) => {
     const { courseId, taken } = req.body;
     const checkQuery = 'SELECT * FROM CoursesAdded WHERE courseId = ?';
@@ -81,7 +84,8 @@ router.post('/', (req, res) => {
     });
 });
 
-//This is to update that of whether or not the course added to the table is being taken or not. 
+// PUT
+// Update taken from false to true, or true to false
 router.put('/:id', (req, res) => {
     const id = req.params.id
     const { taken } = req.body
@@ -97,6 +101,7 @@ router.put('/:id', (req, res) => {
 
 })
 
+// DELETE
 // Deletes that of the course that was added in the table overall by referring to its id in the table. 
 router.delete('/:id', (req, res) => {
     const id = req.params.id;

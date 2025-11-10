@@ -2,7 +2,8 @@ const express = require('express');
 const connectMade = require('../config.js');
 const router = express.Router();
 
-//To get all course prerequisites.
+// GET
+// Get all course prerequisites.
 router.get('/', (req, res) => {
     try{
         connectMade.query('SELECT * FROM Prerequisites', (err, results) => {
@@ -20,7 +21,7 @@ router.get('/', (req, res) => {
     }
 });
 
-//To get that of all of a course's prerequisites and those of its prerequisites' prerequisites
+// Get a courses prerequisites prerequisite
 router.get('/recurse/:course', (req,res) => {
     const course = req.params.course;
 
@@ -47,7 +48,7 @@ router.get('/recurse/:course', (req,res) => {
     });
 });
 
-//To get that of all of a course's prerequisites
+// Get only the prerequisite of a given course
 router.get('/:course', (req,res) => {
     const course = req.params.course;
 
