@@ -7,14 +7,7 @@ const connectMade = require('../config.js');
 //Keyword used to then refer the usage of endpoints. 
 const router = express.Router();
 
-//This is to make sure that of this nodejs file with its endpoints can be used to refer towards that of the frontend.
-const app = express();
-const cors = require('cors');
-app.use(cors());
-
-
-//Gets that of the CoursesAdded Table in which contains that of the courses that were added. Those courses added to the table refers to a course's id,
-// to which that course id then accesses that of all that selected course's information. 
+// Get all the courses added to the courses added table
 router.get('/', (req, res) => {
     try{
         const query = `
@@ -88,7 +81,7 @@ router.put('/:id', (req, res) => {
 
 })
 
-//Deletes that of the course that was added in the table overall by referring to its id in the table. 
+// Deletes that of the course that was added in the table overall by referring to its id in the table. 
 router.delete('/:id', (req, res) => {
     const id = req.params.id;
     const query = `DELETE FROM CoursesAdded WHERE id = ?`;
@@ -102,5 +95,4 @@ router.delete('/:id', (req, res) => {
 
 })
 
-//Makes sure that these endpoints can be referred to towards that of the server.js
 module.exports = router;
