@@ -1,18 +1,6 @@
-//Express is used in order to refer to that of using the routes in which to make to refer to endpoints used. 
 const express = require('express');
-
-//Refers towards that of the connection of the main database in MySQL. 
 const connectMade = require('../config.js');
-
-//Keyword used to then refer the usage of endpoints. 
 const router = express.Router();
-
-//This is to make sure that of this nodejs file with its endpoints can be used to refer towards that of the frontend.
-const app = express();
-const cors = require('cors');
-app.use(cors());
-
-//Will use cookies soon based on that of the dependency installed.
 
 //Gets that of the users that are registered in the Users Table.
 router.get('/', (req, res) => {
