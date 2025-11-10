@@ -30,6 +30,27 @@ router.get('/', (req, res) => {
     }
 });
 
+router.get('/:courseId', (req, res) => {
+    const courseId = req.params.courseId;
+
+    const query = `SELECT * FROM CoursesAdded WHERE courseId = ?`;
+
+    connectMade.query(query, [courseId], (err, results) => {
+        if (err) {
+            console.error('Error checking courseId:', err);
+            return res.status(500).json({ error: 'Internal server error' });
+        }
+
+        if (results.length > 0) {
+            // course is already in the planner
+            return res.status(200).json({ exists: true, course: results[0] });
+        } else {
+            // course not in planner
+            return res.status(200).json({ exists: false });
+        }
+    });
+});
+
 //Insert that of the courses added to the table 
 router.post('/', (req, res) => {
     const { courseId, taken } = req.body;

@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import "./CatalogueCourse.css";
 import axios from "axios";
 
 function CatalogueCourse( {title, description, courseId, id} ) {
+    const [added, setAdded] = useState(false);
     const navigate = useNavigate();
 
     // add course to user
@@ -12,7 +14,7 @@ function CatalogueCourse( {title, description, courseId, id} ) {
                 courseId: id,
                 taken: false
             }).then(response => {
-
+                setAdded(true)
             }).catch(error => {
                 console.error("Failed to add course to user's coursesAdded data.");
             })
@@ -30,7 +32,7 @@ function CatalogueCourse( {title, description, courseId, id} ) {
                 onClick={(e) => {
                     e.stopPropagation()
                     handleAddCourse()
-                }}>Add to Planner</button>
+                }}>{added ? "Added" : "Add to Planner"}</button>
             </div>
         </div>
     );
