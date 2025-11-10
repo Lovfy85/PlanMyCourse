@@ -23,28 +23,30 @@ router.get('/', (req, res) => {
 
 // Get a course by name, subject or level
 router.get('/search', (req,res) => {
-
     const searchTerm = req.query.term;
     if (!searchTerm) {
         res.status(400).json({error: "Search term is required"})
         return
     }
 
-    var query = `SELECT * FROM Courses WHERE 
-                    class_name LIKE ? 
-                  OR subject LIKE ?
-                  OR FLOOR(number / 100) * 100 = ?
-                  `;
-    
-    var searchValue = `%${searchTerm}`;
-    if (Number(searchTerm)) {
-        searchValue = `${Number(searchTerm)}`;
+    const isNumber = !isNaN(Number(searchTerm));
+    let query = '';
+    let params = [];
+
+    if (isNumber) {
+        // search by level
+        query = `SELECT * FROM Courses WHERE FLOOR(number / 100) * 100 = ?`;
+        params = [Number(searchTerm)];
+    } else {
+        // search by subject or class_name
+        query = `SELECT * FROM Courses WHERE class_name LIKE ? OR subject = ?`;
+        params = [`${searchTerm}%`, searchTerm];
     }
 
-    connectMade.query(query, [searchValue, searchValue, searchValue, searchValue], (err, results) => {
+    connectMade.query(query, params, (err, results) => {
         if(err){
-            console.error('There has been an error getting the course from the courses table.');
-            res.status(500).send('Seems to be that of course to be selected is not at all being seen in the courses table.');
+            console.error('Error getting courses', err);
+            res.status(500).send('Error fetching courses.');
             return;
         }
         res.json(results);
