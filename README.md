@@ -1,7 +1,5 @@
-# CMPT 370 PROJECT WiP
 
-## Name
-Plan My Course
+# Plan My Course
 
 ## Description
 This is a full stack application designed for students at USASK,to help them plan and figure out which classes they still need to take and check each class prerequisites without having to navigate to another page. This app would also allow users to create reviews and comments on classes.
@@ -14,10 +12,10 @@ This is a full stack application designed for students at USASK,to help them pla
     
     To make it so that the project runs on any OS, make sure you have that of docker desktop installed.
     If you do have it, these are the steps:
-        ***Note you are running this on a UNIX device (linux or mac) and you are getting permission errors,
-        add sudo before the command to every command that uses docker.
+        * Note, if you are running this on a UNIX device (linux or mac) and you are getting permission errors,
+        add sudo before the command to every command that uses docker. 
         example:
-            sudo docker-compose up -d ***
+            sudo docker-compose up -d
 
         If on windows just follow the instructions normally    
 
@@ -63,4 +61,4 @@ Randolf Pugong
 MIT License
 
 ## Project status
-This project is in it's beginning stages. We are currently wokring on finishing features that two of our user epics need.
+This project is in its coding stages, testing will be done when majority of the features are implemented.
