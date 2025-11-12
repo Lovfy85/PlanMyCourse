@@ -17,7 +17,6 @@ function CatalogueCourse( {title, description, courseId, id} ) {
             .catch(err => console.error(err));
     }, [id]);
 
-    // add course to user
     const handleAddCourse = () => {
         try {
             axios.post("http://localhost:3001/coursesadded/",{
@@ -34,15 +33,15 @@ function CatalogueCourse( {title, description, courseId, id} ) {
     }
     
     return (    
-        <div className="catalogue-course" onClick={() => navigate(`/catalogue/course/${courseId}`)}>
-            <span className="course-title">{title}</span>
+        <div className="catalogue-course">
+            <span className="course-title" onClick={() => navigate(`/catalogue/course/${courseId}`)}>{title}</span>
             <div className="information">
                 <span className="description">{description}</span>
-                <button className="add-course" 
+                <button className={`add-course ${added ? "added" : ""}`}
                 onClick={(e) => {
                     e.stopPropagation()
                     handleAddCourse()
-                }}>{added ? "Added" : "Add to Planner"}</button>
+                }}>{added ? "Course Added" : "Add to Planner"}</button>
             </div>
         </div>
     );
