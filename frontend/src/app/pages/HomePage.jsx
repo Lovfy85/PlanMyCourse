@@ -1,5 +1,6 @@
 import './HomePage.css'
 import Redirect from '../../components/SearchBar/Redirect'
+import Recommendations from '../../components/SearchBar/Recommendations'
 
 function HomePage() {
   return (
@@ -10,6 +11,7 @@ function HomePage() {
             </div>
           <div className="search-bar">
             <Redirect />
+            <Recommendations />
           </div>
         </div>
     </>
