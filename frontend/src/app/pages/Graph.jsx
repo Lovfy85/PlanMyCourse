@@ -69,7 +69,7 @@ const GraphContent = () => {
     try {
       // Fetch prerequisite data from backend
       const response = await axios.get(
-        `http://localhost:3001/prerequisites/search?term=${lowerQuery}`
+        `http://localhost:3001/prerequisites/recurse/${lowerQuery}`
       );
       const prereqData = response.data;
 
