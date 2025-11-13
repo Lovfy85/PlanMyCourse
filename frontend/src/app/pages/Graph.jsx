@@ -180,7 +180,6 @@ const Graph = () => (
     <Navbar className="graph-navbar" />
     <ReactFlowProvider>
       <GraphContent />
-      <MiniMap />
       <Controls />
     </ReactFlowProvider>
   </div>

@@ -127,3 +127,13 @@
   cursor: pointer;
 }
 
+.react-flow__controls {
+  position: absolute;
+  padding-bottom: 7em;
+  padding-left: 15.5em;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  z-index: 5;
+}
+
