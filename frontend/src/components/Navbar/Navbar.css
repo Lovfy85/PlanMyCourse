@@ -30,20 +30,35 @@
   gap: 1.5rem;
 }
 
-
-.nav-links li {
+.nav-links li{
   align-content: center;
-  padding: 1rem;
-  cursor: pointer;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
   font-size: 1em;
   font-weight: bold;
+  padding: 1rem;
+  cursor: pointer;
 }
 
-.nav-links li:hover {
-  background-color: #93c4fd; 
-  transition: background-color 0.3s ease, transform 0.1s ease;
-  border-radius: 2em;
+.nav-links li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(45, 128, 207, 0.2);
+  opacity: 0;
+  border-radius: 12px;
+  transform: scale(0);
+  transition: all 0.4s;
+  z-index: -1;
+}
 
-  color: black;
+.nav-links li:hover::before {
+  opacity: 1;
+  transform: scale(1);
 }
