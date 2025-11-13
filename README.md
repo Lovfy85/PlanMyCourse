@@ -19,14 +19,10 @@ This is a full stack application designed for students at USASK,to help them pla
 
         If on windows just follow the instructions normally    
 
-        a) Make sure you are in the project directory itself in the terminal. Once you are, do the following: 
-            docker-compose up -d
+        Make sure you are in the project directory itself in the terminal. Once you are, do the following: 
+            docker-compose up -d (It needs to be reworked right now since it gets the previous course catalogue table)
 
-        b) Then, open and use another terminal tab where you are to run the server, which you would run the command: 
-            docker logs -f main_server
-
-        c) Then, open and use another terminal tab where you are to open that of the PlanMyCourse website which you would run the command: 
-            docker logs -f main_frontend
+        --> This will start up that of server and if you want to go into the website, the link is: http://localhost:5173/
         
         --> If you want to stop the docker-compose.yml from running: 
             docker-compose down
