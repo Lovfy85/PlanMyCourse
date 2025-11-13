@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const deperatment = 'cmpt'
-
 // redirect component
 function Redirect() {
     const [query, setQuery] = useState("");
@@ -10,8 +8,7 @@ function Redirect() {
 
     const handleSearch = async () => {
         if (!query) {
-            navigate(`./catalogue/${deperatment}`);
-            alert("Opps, it seems that the input is invalid!")
+            navigate(`./catalogue`);
             return
         };
 

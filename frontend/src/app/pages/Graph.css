@@ -127,3 +127,23 @@
   cursor: pointer;
 }
 
+/* Edge styles */
+.react-flow__edge.graph-edge .react-flow__edge-path {
+  stroke: #3a3a3a;
+  stroke-width: 2;
+}
+
+.react-flow__edge.graph-edge .react-flow__edge-path marker {
+  fill: #000000;
+}
+
+.react-flow__controls {
+  position: absolute;
+  padding-bottom: 7em;
+  padding-left: 15.5em;
+  background: none;
+  border: none;
+  box-shadow: none;
+  z-index: 5;
+}
+
