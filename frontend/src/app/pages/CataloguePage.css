@@ -1,7 +1,7 @@
-.content {
+.catalogue-content {
     display: flex;
     flex-direction: column;
-    margin: 4rem;
+    margin: 0 4rem;
 }
 
 .catalogue-header {
@@ -27,3 +27,4 @@
     margin: 1.2rem auto;
     row-gap: 25px;
 }
+

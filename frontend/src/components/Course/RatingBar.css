@@ -1,0 +1,14 @@
+.rating {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    align-items: center;
+}
+
+.bar {
+    width: 85%;
+    height: 32px;
+    background-color: #E6E6E6;
+}

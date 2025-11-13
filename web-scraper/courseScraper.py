@@ -109,6 +109,19 @@ def findPrereq(arr):
          
     return cleanedPrereqs
 
+def fetch_subjects():
+    url = f"https://catalogue.usask.ca/"
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    # Find the select element by id
+    select = soup.find("select", id="subj-code")
+
+    # Extract all option values
+    subjects = [option['value'] for option in select.find_all("option") if option['value']]
+
+    # Print the results
+    return subjects
 
 def fetch_courses(courseSubject):
     """
@@ -180,29 +193,32 @@ def fetch_courses(courseSubject):
     return courses
 
 def main():
-    courses = fetch_courses('CMPT')
-    for i in courses:
-        mycursor.execute("""
-        INSERT INTO Courses (
-            title,
-            subject,
-            number,
-            class_name,
-            description,
-            notes)
-            VALUES (%s, %s, %s, %s, %s, %s)
-        """, (i['title'], i['subject'], i['number'], i['class_name'], i['description'], i['notes']))
-    db.commit()
-
-    for i in courses:
-        if i['prerequisite'] == []:
-            continue
-        for j in i['prerequisite']:
+    subjects = fetch_subjects()
+    for subject in subjects:
+        courses = fetch_courses(subject)
+        for i in courses:
             mycursor.execute("""
-            INSERT INTO Prerequisites (course, prereq)
-            VALUES (%s, %s)
-        """, (i['class_name'], j))
-    db.commit()
+            INSERT INTO Courses (
+                title,
+                subject,
+                number,
+                class_name,
+                description,
+                notes)
+                VALUES (%s, %s, %s, %s, %s, %s)
+            """, (i['title'], i['subject'], i['number'], i['class_name'], i['description'], i['notes']))
+        db.commit()
+
+        for i in courses:
+            if i['prerequisite'] == []:
+                continue
+            for j in i['prerequisite']:
+                mycursor.execute("""
+                INSERT INTO Prerequisites (course, prereq)
+                VALUES (%s, %s)
+            """, (i['class_name'], j))
+        db.commit()
+    print("courses and prerequisites have been added successfully")    
 
 
 if __name__=="__main__":

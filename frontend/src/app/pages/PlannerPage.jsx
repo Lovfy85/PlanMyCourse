@@ -2,7 +2,7 @@ import './PlannerPage.css'
 import Accordion from '../../components/Planner/Accordion'
 
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function PlannerPage() {
     const [mappableCourses, setMappableCourses] = useState([]);
@@ -26,7 +26,7 @@ function PlannerPage() {
 
         return mappableList;
     }
-    useEffect(() => {
+    const fetchCourses = () => {
         axios.get("http://localhost:3001/coursesadded/")
         .then(response => {
             // console.log(response.data);
@@ -36,17 +36,20 @@ function PlannerPage() {
         .catch(error => {
             console.error("Error fetching courses added", error)
         });
+    };
+    useEffect(() => {
+        fetchCourses();
     }, []);
     return (
     <>
-        <div className="content">
+        <div className="planner-content">
             <div className="planner-header">
                 <h1>Class Planner</h1>
                 <hr></hr>
             </div>
             <div className="class-sections">
                 {mappableCourses.map(({ level, courses }) => (
-                    <Accordion level={level} courses={courses} />
+                    <Accordion key={level} level={level} courses={courses} onDelete={fetchCourses} />
                 ))}
             </div>
         </div>
@@ -55,3 +58,4 @@ function PlannerPage() {
 }
 
 export default PlannerPage
+

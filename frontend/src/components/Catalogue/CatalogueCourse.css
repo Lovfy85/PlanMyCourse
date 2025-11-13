@@ -1,9 +1,9 @@
 .catalogue-course {
   margin-left: 20px;
   margin-right: 20px;
+  z-index: 0;
   padding: 1rem 1rem;
   text-align: left;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
@@ -19,11 +19,81 @@
 }
 
 .course-title {
+  cursor: pointer;
   margin-bottom: 10px;
   font-weight: bold;
   font-size: 22px;
 }
 
-.course-description {
-  font-size: 20px;
+.course-title:hover{
+  text-decoration-line: underline;
+}
+
+.information {
+  display: grid;
+  grid-template-columns: 4fr .7fr;
+  gap: 3rem;
+  justify-items: end;
+  align-items: end;
+}
+
+.add-course {
+  display: flex;
+  justify-self: end;
+  align-self: center;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 10;
+  color: #ffffff;
+  background-color: #1a5b98;
+  border: 0px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.15s ease;
+  transform: scale(1);
+  transform: 0.15s ease;
+  cursor: pointer;
+}
+
+.add-course.added {
+  background-color: #828282;
+  cursor: default;
+}
+
+.add-course {
+  text-decoration: none;
+  position: relative;
+  border-radius: 5px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.add-course:not(.added)::before,
+.add-course:not(.added)::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(45, 128, 207, 0.2);
+  width: 0%;
+  height: 100%;
+  top: 0;
+  transition: width 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.add-course:not(.added)::before {
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+.add-course:not(.added)::after {
+  right: 50%;
+  transform: translateX(50%);
+  border-radius: 5px;
+}
+
+.add-course:not(.added):hover::before,
+.add-course:not(.added):hover::after {
+  width: 100%;
 }

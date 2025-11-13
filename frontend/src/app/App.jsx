@@ -6,9 +6,7 @@ import Planner from './pages/PlannerPage'
 import Graph from './pages/Graph'
 import Catalogue from './pages/CataloguePage'
 import Course from './pages/CoursePage'
-
 function App() {
-
   return (
     <div>
       <Routes>
@@ -16,11 +14,10 @@ function App() {
         <Route path='/planner' element={<Planner />}/>
         <Route path='/graph' element={<Graph />}/>
         <Route path='/catalogue/:term' element={<Catalogue />}/>
-        <Route path='/course/:coursenumber' element={<Course />}/>
+        <Route path='/catalogue/course/:courseId' element={<Course />}/>
       </Routes>
       <Navbar />
     </div>
   )
 }
-
 export default App

@@ -23,15 +23,15 @@ function CataloguePage() {
     }, [term]);
     
   return (
-    <div className="content">
+    <div className="catalogue-content">
       <div className="catalogue-header">
         <h1>Course Catalogue</h1>
         <hr></hr>
       </div>
       <div className='catalogue-courses'>
-          {courses.map((course, index) => {
+          {courses.map((course) => {
               return (
-                <CatalogueCourse title={course.title} description={course.description}/>
+                <CatalogueCourse title={course.title} description={course.description} courseId={course.class_name} id={course.courseId}/>
               );
           })}
       </div>
@@ -40,3 +40,4 @@ function CataloguePage() {
 }
 
 export default CataloguePage
+
