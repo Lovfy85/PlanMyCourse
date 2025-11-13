@@ -54,7 +54,7 @@
 .search-bar-container {
   position: fixed;     
   background: none;  
-  bottom: 3.5em;
+  top: 5em;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -99,7 +99,7 @@
   border: 5px solid #1a5b98;
   border-radius: 1%;
   margin-left: 15%;
-  margin-top: 1%;
+  margin-top: 4%;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -139,7 +139,7 @@
 
 .react-flow__controls {
   position: absolute;
-  padding-bottom: 7em;
+  padding-bottom: 4em;
   padding-left: 15.5em;
   background: none;
   border: none;
