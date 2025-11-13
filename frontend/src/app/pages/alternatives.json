@@ -1,0 +1,419 @@
+{
+  "courseAlternatives": {
+    "CMPT111": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT115": {
+      "alternatives": [
+        ["CMPT111"]
+      ],
+      "description": "CMPT 111"
+    },
+    "CMPT116": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT140": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT141": {
+      "alternatives": [
+        ["CMPT111"]
+      ],
+      "description": "CMPT 111"
+    },
+    "CMPT145": {
+      "alternatives": [
+        ["CMPT141"]
+      ],
+      "description": "CMPT 141"
+    },
+    "CMPT166": {
+      "alternatives": [
+        ["CMPT141"]
+      ],
+      "description": "CMPT 141"
+    },
+    "CMPT214": {
+      "alternatives": [
+        ["CMPT145"],
+        ["CMPT115"]
+      ],
+      "description": "CMPT 145 OR CMPT 115"
+    },
+    "CMPT215": {
+      "alternatives": [
+        ["CMPT145"],
+        ["CMPT115"]
+      ],
+      "description": "CMPT 145 OR CMPT 115"
+    },
+    "CMPT260": {
+      "alternatives": [
+        ["CMPT145"],
+        ["CMPT115"]
+      ],
+      "description": "CMPT 145 OR CMPT 115"
+    },
+    "CMPT270": {
+      "alternatives": [
+        ["CMPT145"],
+        ["CMPT115"]
+      ],
+      "description": "CMPT 145 OR CMPT 115"
+    },
+    "CMPT276": {
+      "alternatives": [
+        ["CMPT145"],
+        ["CMPT115"]
+      ],
+      "description": "CMPT 145 OR CMPT 115"
+    },
+    "CMPT280": {
+      "alternatives": [
+        ["CMPT145"],
+        ["CMPT115"]
+      ],
+      "description": "CMPT 145 OR CMPT 115"
+    },
+    "CMPT300": {
+      "alternatives": [
+        ["CMPT280"],
+        ["CMPT215"]
+      ],
+      "description": "CMPT 280 OR CMPT 215"
+    },
+    "CMPT306": {
+      "alternatives": [
+        ["CMPT280"],
+        ["CMPT215"]
+      ],
+      "description": "CMPT 280 OR CMPT 215"
+    },
+    "CMPT307": {
+      "alternatives": [
+        ["CMPT280"],
+        ["CMPT215"]
+      ],
+      "description": "CMPT 280 OR CMPT 215"
+    },
+    "CMPT308": {
+      "alternatives": [
+        ["CMPT280"],
+        ["CMPT215"]
+      ],
+      "description": "CMPT 280 OR CMPT 215"
+    },
+    "CMPT317": {
+      "alternatives": [
+        ["CMPT280"],
+        ["CMPT215"]
+      ],
+      "description": "CMPT 280 OR CMPT 215"
+    },
+    "CMPT318": {
+      "alternatives": [
+        ["CMPT280", "STAT245"],
+        ["CMPT215", "STAT245"]
+      ],
+      "description": "(CMPT 280 AND STAT 245) OR (CMPT 215 AND STAT 245)"
+    },
+    "CMPT332": {
+      "alternatives": [
+        ["CMPT280"],
+        ["CMPT215"]
+      ],
+      "description": "CMPT 280 OR CMPT 215"
+    },
+    "CMPT333": {
+      "alternatives": [
+        ["CMPT332"]
+      ],
+      "description": "CMPT 332"
+    },
+    "CMPT340": {
+      "alternatives": [
+        ["CMPT280", "MATH280"],
+        ["CMPT215", "MATH280"]
+      ],
+      "description": "(CMPT 280 AND MATH 280) OR (CMPT 215 AND MATH 280)"
+    },
+    "CMPT341": {
+      "alternatives": [
+        ["CMPT340"]
+      ],
+      "description": "CMPT 340"
+    },
+    "CMPT350": {
+      "alternatives": [
+        ["CMPT280", "MATH280"],
+        ["CMPT215", "MATH280"]
+      ],
+      "description": "(CMPT 280 AND MATH 280) OR (CMPT 215 AND MATH 280)"
+    },
+    "CMPT353": {
+      "alternatives": [
+        ["CMPT280"],
+        ["CMPT215"]
+      ],
+      "description": "CMPT 280 OR CMPT 215"
+    },
+    "CMPT360": {
+      "alternatives": [
+        ["CMPT280"],
+        ["CMPT215"]
+      ],
+      "description": "CMPT 280 OR CMPT 215"
+    },
+    "CMPT361": {
+      "alternatives": [
+        ["CMPT360"]
+      ],
+      "description": "CMPT 360"
+    },
+    "CMPT370": {
+      "alternatives": [
+        ["CMPT270", "CMPT280"],
+        ["CMPT270", "CMPT215"]
+      ],
+      "description": "(CMPT 270 AND CMPT 280) OR (CMPT 270 AND CMPT 215)"
+    },
+    "CMPT371": {
+      "alternatives": [
+        ["CMPT370"]
+      ],
+      "description": "CMPT 370"
+    },
+    "CMPT372": {
+      "alternatives": [
+        ["CMPT370"]
+      ],
+      "description": "CMPT 370"
+    },
+    "CMPT373": {
+      "alternatives": [
+        ["CMPT370"]
+      ],
+      "description": "CMPT 370"
+    },
+    "CMPT383": {
+      "alternatives": [
+        ["CMPT280"],
+        ["CMPT215"]
+      ],
+      "description": "CMPT 280 OR CMPT 215"
+    },
+    "CMPT384": {
+      "alternatives": [
+        ["CMPT280", "CMPT214"],
+        ["CMPT215", "CMPT214"]
+      ],
+      "description": "(CMPT 280 AND CMPT 214) OR (CMPT 215 AND CMPT 214)"
+    },
+    "CMPT385": {
+      "alternatives": [
+        ["CMPT280"],
+        ["CMPT215"]
+      ],
+      "description": "CMPT 280 OR CMPT 215"
+    },
+    "CMPT400": {
+      "alternatives": [
+        ["CMPT300"]
+      ],
+      "description": "CMPT 300"
+    },
+    "CMPT405": {
+      "alternatives": [
+        ["CMPT280", "MATH280"],
+        ["CMPT215", "MATH280"]
+      ],
+      "description": "(CMPT 280 AND MATH 280) OR (CMPT 215 AND MATH 280)"
+    },
+    "CMPT406": {
+      "alternatives": [
+        ["CMPT306"]
+      ],
+      "description": "CMPT 306"
+    },
+    "CMPT409": {
+      "alternatives": [
+        ["CMPT280", "MATH280"],
+        ["CMPT215", "MATH280"]
+      ],
+      "description": "(CMPT 280 AND MATH 280) OR (CMPT 215 AND MATH 280)"
+    },
+    "CMPT417": {
+      "alternatives": [
+        ["CMPT317"]
+      ],
+      "description": "CMPT 317"
+    },
+    "CMPT418": {
+      "alternatives": [
+        ["CMPT318"]
+      ],
+      "description": "CMPT 318"
+    },
+    "CMPT434": {
+      "alternatives": [
+        ["CMPT332"]
+      ],
+      "description": "CMPT 332"
+    },
+    "CMPT435": {
+      "alternatives": [
+        ["CMPT332"]
+      ],
+      "description": "CMPT 332"
+    },
+    "CMPT436": {
+      "alternatives": [
+        ["CMPT332"]
+      ],
+      "description": "CMPT 332"
+    },
+    "CMPT440": {
+      "alternatives": [
+        ["CMPT340"]
+      ],
+      "description": "CMPT 340"
+    },
+    "CMPT454": {
+      "alternatives": [
+        ["CMPT280", "MATH280"],
+        ["CMPT215", "MATH280"]
+      ],
+      "description": "(CMPT 280 AND MATH 280) OR (CMPT 215 AND MATH 280)"
+    },
+    "CMPT455": {
+      "alternatives": [
+        ["CMPT280", "MATH280"],
+        ["CMPT215", "MATH280"]
+      ],
+      "description": "(CMPT 280 AND MATH 280) OR (CMPT 215 AND MATH 280)"
+    },
+    "CMPT456": {
+      "alternatives": [
+        ["CMPT455"]
+      ],
+      "description": "CMPT 455"
+    },
+    "CMPT477": {
+      "alternatives": [
+        ["CMPT370"]
+      ],
+      "description": "CMPT 370"
+    },
+    "CMPT479": {
+      "alternatives": [
+        ["CMPT370"]
+      ],
+      "description": "CMPT 370"
+    },
+    "CMPT481": {
+      "alternatives": [
+        ["CMPT280"],
+        ["CMPT215"]
+      ],
+      "description": "CMPT 280 OR CMPT 215"
+    },
+    "CMPT485": {
+      "alternatives": [
+        ["CMPT384"]
+      ],
+      "description": "CMPT 384"
+    },
+    "ENG114": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "MATH100": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "MATH110": {
+      "alternatives": [
+        ["MATH100"]
+      ],
+      "description": "MATH 100"
+    },
+    "MATH125": {
+      "alternatives": [
+        ["MATH110"],
+        ["MATH100"]
+      ],
+      "description": "MATH 110 OR MATH 100"
+    },
+    "MATH176": {
+      "alternatives": [
+        ["MATH125"],
+        ["MATH110"]
+      ],
+      "description": "MATH 125 OR MATH 110"
+    },
+    "MATH177": {
+      "alternatives": [
+        ["MATH176"]
+      ],
+      "description": "MATH 176"
+    },
+    "MATH266": {
+      "alternatives": [
+        ["MATH176"]
+      ],
+      "description": "MATH 176"
+    },
+    "MATH280": {
+      "alternatives": [
+        ["MATH110"],
+        ["MATH125"]
+      ],
+      "description": "MATH 110 OR MATH 125"
+    },
+    "PHIL120": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "PHIL133": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "STAT245": {
+      "alternatives": [
+        ["MATH125"],
+        ["MATH110"]
+      ],
+      "description": "MATH 125 OR MATH 110"
+    },
+    "STAT246": {
+      "alternatives": [
+        ["STAT245"]
+      ],
+      "description": "STAT 245"
+    },
+    "STAT344": {
+      "alternatives": [
+        ["STAT245", "MATH176"],
+        ["STAT245", "MATH125"]
+      ],
+      "description": "(STAT 245 AND MATH 176) OR (STAT 245 AND MATH 125)"
+    }
+  }
+}
