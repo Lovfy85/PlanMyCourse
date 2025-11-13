@@ -13,11 +13,11 @@
   padding: 0.75rem 1rem;
   text-align: left;
   background-color: #215591;
-  color:#f9f9f9;
+  color: #f9f9f9;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 555;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .accordion-classes {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
 }
 
@@ -42,18 +42,57 @@
   align-items: center;
 }
 
-.accordion-class-actions {
+.accordion-class-head {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 10px;
 }
 
-.accordion-class-actions .accordion-class-checkbox {
-  padding-left: 0;
-  margin: 0;
+.accordion-class-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
   width: 30px;
   height: 30px;
-  display: inline-block;
+}
+
+.accordion-class-checkbox input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #215591;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: background-color 0.2s, border-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  cursor: pointer;
+}
+
+.accordion-class-checkbox:hover input {
+  background-color: #ccc;
+}
+
+.accordion-class-checkbox input:checked {
+  background-color: #215591;
+  border-color: #215591;
+}
+
+.accordion-class-checkbox input:checked::after {
+  content: "";
+  width: 7px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  margin-bottom: 6px;
 }
 
 .accordion-class:nth-child(odd) {
@@ -68,85 +107,42 @@
   margin: 0.25rem 0 0;
 }
 
-.accordion-class-checkbox {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.accordion-class-checkbox input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* CHECKBOX */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 30px;
-  width: 30px;
-  background-color: #fff;
-  border: 3px solid #215591;
-  border-radius: 2px;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.accordion-class-checkbox:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-.accordion-class-checkbox input:checked ~ .checkmark {
-  background-color: #215591;
-}
-
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-  transition: opacity 0.3s ease;
-}
-
-.accordion-class-checkbox input:checked ~ .checkmark:after {
-  display: block;
-}
-
-.accordion-class-checkbox .checkmark:after {
-  left: 10px;
-  top: 2px;
-  width: 8px;
-  height: 18px;
-  border: solid white;
-  border-width: 0 4px 4px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  transition: opacity 0.3s ease;
-}
-
 /* DELETE BUTTON */
 .accordion-delete-btn {
-  background-color: transparent;
-  border: 2px solid #215591;
-  color: #215591;
-  border-radius: 3px;
-  font-size: 16px;
-  padding: 0.4rem 0.8rem;
+  position: relative;
+  width: 14px;        /* size of X */
+  height: 14px;
+  background: none;
+  border: none;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  white-space: nowrap;
 }
 
-.accordion-delete-btn:hover {
+.accordion-delete-btn::before,
+.accordion-delete-btn::after {
+  content: "";
+  position: absolute;
+  width: 3px;            /* line thickness */
+  height: 100%;          /* full height of button */
+  background-color: #215591;
+  top: 0;
+  left: 50%;
+  transform-origin: center;
+  transition: background-color 0.2s;
+}
+
+.accordion-delete-btn::before {
+  transform: rotate(45deg);
+}
+
+.accordion-delete-btn::after {
+  transform: rotate(-45deg);
+}
+
+/* Hover color */
+.accordion-delete-btn:hover::before,
+.accordion-delete-btn:hover::after {
   background-color: #ff5959;
-  color: #f9f9f9;
 }
-

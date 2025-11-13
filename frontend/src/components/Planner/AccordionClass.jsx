@@ -24,14 +24,13 @@ function AccordionClass({title, id, onDelete}) {
 
   return (
     <div className="accordion-class">
-        <span>{title}</span>
-        <div className="accordion-class-actions">
+        <div className="accordion-class-head">
           <label className="accordion-class-checkbox">
-              <input type="checkbox"></input>
-              <span className="checkmark"></span>
+            <input type="checkbox"></input>
           </label>
-          <button className="accordion-delete-btn" onClick={handleDelete}>Remove</button>
+          <span>{title}</span>
         </div>
+        <button className="accordion-delete-btn" onClick={handleDelete}></button>
     </div>
   );
 };
