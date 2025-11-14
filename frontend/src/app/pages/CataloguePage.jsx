@@ -10,20 +10,16 @@ function CataloguePage() {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    // If term exists → search
-    // If no term → fetch ALL courses
-    const url = term
-      ? `http://localhost:3001/courses/search?term=${term}`
-      : `http://localhost:3001/courses`;
+  let url = `http://localhost:3001/courses`;
 
-    axios.get(url)
-      .then(response => {
-        setCourses(response.data);
-      })
-      .catch(error => {
-        console.error("Error fetching courses", error);
-      });
-  }, [term]);
+  if (term) {
+    url += `/search?term=${term}`;
+  }
+
+  axios.get(url)
+    .then(res => setCourses(res.data))
+    .catch(console.error);
+}, [term]);
 
   return (
     <div className="catalogue-content">
