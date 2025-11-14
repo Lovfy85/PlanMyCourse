@@ -14,6 +14,8 @@ RESTful API built with Express.js, Node.js and MySQL for course management, prer
    DB_PASS=your_database_password
    DB_NAME=your_database_name
    DB_PORT=your_database_port
+
+   JWT_SECRET=Really_Cool_Key
    ```
 3. Ensure MySQL database has `Courses` and `Prerequisites` tables
 4. Start server: `npm start` (runs on port 3001)
@@ -74,7 +76,8 @@ Base URL: `http://localhost:3001`
 
 - `POST /auth/signup` - Create a new user account (signup)
   - Body: `{ "username": "string", "password": "string" }`
-  - Notes: Passwords are hashed using bcrypt before storage. Returns `201 Created` on success with a JSON message `{ message: "User created successfully", username: "..." }`. Returns `400 Bad Request` if required fields are missing or the username already exists.
+- `POST /auth/login` - Authenticate user
+  - Body: `{ "username": "string", "password": "string" }`
 
 ## Response Codes
 
