@@ -19,7 +19,7 @@ function AddCourse({ courseId, id, buttonClass = "add-course" }) {
         try {
             axios.post("http://localhost:3001/coursesadded/",{
                 courseId: id,
-                taken: false
+                taken: true
             }).then(response => {
                 setAdded(true)
             }).catch(error => {
