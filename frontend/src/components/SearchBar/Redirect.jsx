@@ -6,15 +6,24 @@ import "./Redirect.css"
 // redirect component
 function Redirect() {
     const [searchTerm, setSearchTerm] = useState("");
+    const [onFocus, setOnFocused] = useState(false);
     const navigate = useNavigate();
 
-    const handleSearch = async () => {
+    const handleSearch = () => {
         if (!searchTerm) {
             navigate(`./catalogue/${deperatment}`);
             return;
         }
 
         navigate(`./catalogue/${searchTerm.toUpperCase().trim()}`);
+    }
+
+    const handleBlur = (e) => {
+        const nextFocused = e.relatedTarget;
+        if (document.getElementById("recommendation").contains(nextFocused)) {
+            return;
+        }
+        setOnFocused(false)
     }
 
     return (
@@ -25,8 +34,10 @@ function Redirect() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={(e) => e.key == "Enter" && handleSearch()}
+                onFocus={() => setOnFocused(true)}
+                onBlur={(e) => handleBlur(e)}
             />
-            <Recommendation searchTerm={searchTerm}/>
+            <Recommendation searchTerm={searchTerm} onFocused={onFocus}/>
         </div>
     )
 }
