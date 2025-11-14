@@ -1,14 +1,19 @@
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './CoursePage.css';
 import RatingBar from '../../components/Course/RatingBar.jsx';
+import CourseReview from '../../components/Course/CourseReview.jsx'
+import AddCourse from '../../components/Catalogue/AddCourse.jsx';
 
 function CoursePage() {
     const {courseId} = useParams()
+    const [id, setId] = useState(0);
     const [course, setCourse] = useState({});
     const [courseNotes, setCourseNotes] = useState("");
     const [coursePrerequisites, setPrerequisites] = useState("");
+    const [rating, setRating] = useState(0);
+    const [hover, setHover] = useState(0);
 
     function processNotes(rawNotes) {
         const cleanData = rawNotes.split("Prerequisite(s):")[1] || "";
@@ -25,11 +30,13 @@ function CoursePage() {
             const { prerequisites, notes } = processNotes(courseData.notes);
             setPrerequisites(prerequisites);
             setCourseNotes(notes);
+            setId(courseData.courseId);
         })
         .catch(error => {
-            console.error("Error fetching by id", error)
+            console.error("Error fetching by courseNumber", error)
         });
     }, [courseId]);
+
     return (
     <div className="course-content">
         <div className="course-top-section">
@@ -53,12 +60,8 @@ function CoursePage() {
                 </>
                 )}
                 <div className="course-buttons">
-                    <button className="course-planner">
-                        <span>Add to Planner</span>
-                    </button>
-                    <button className="course-view">
-                        <span>View Prerequisite Graph</span>
-                    </button>
+                    <AddCourse courseId={courseId} id={id} buttonClass="course-planner-add" />
+                    <button className="course-view">View Prerequisite Graph</button>
                 </div>
             </div>
         </div>
@@ -82,12 +85,25 @@ function CoursePage() {
                 <textarea required placeholder="Write your review..."></textarea>
                 <div className="course-new-buttons">
                     <div className="course-new-stars">
+                        {[1,2,3,4,5].map((n) => (
+                            <span
+                                key={n}
+                                onClick={() => setRating(n)}
+                                onMouseEnter={() => setHover(n)}
+                                onMouseLeave={() => setHover(0)}
+                                className={(hover || rating) >= n ? "new-star filled" : "new-star"}
+                            >
+★
+                            </span>
+                        ))}
                     </div>
                     <button className="course-new-submit">Post Review</button>
                 </div>
             </form>
         </div>
         <div className="course-reviews">
+            <CourseReview username="USERNAME" message="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet." timestamp="November 11, 2025" rating="3" />
+            <div className="course-review-divider"></div>
         </div>
     </div>
     )

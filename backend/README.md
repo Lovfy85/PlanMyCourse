@@ -14,6 +14,8 @@ RESTful API built with Express.js, Node.js and MySQL for course management, prer
    DB_PASS=your_database_password
    DB_NAME=your_database_name
    DB_PORT=your_database_port
+
+   JWT_SECRET=Really_Cool_Key
    ```
 3. Ensure MySQL database has `Courses` and `Prerequisites` tables
 4. Start server: `npm start` (runs on port 3001)
@@ -57,8 +59,6 @@ Base URL: `http://localhost:3001`
 
 - `GET /users` - Get all users
 - `GET /users/:userId` - Get user by ID
-- `POST /users` - Create user
-  - Body: `{ "username": "string", "password": "string" }`
 - `DELETE /users/:userId` - Delete user by ID
 
 ### Courses Added (Planner)
@@ -71,6 +71,13 @@ Base URL: `http://localhost:3001`
 - `PUT /coursesadded/:id` - Update taken status
   - Body: `{ "taken": boolean }`
 - `DELETE /coursesadded/:id` - Remove course from planner
+
+### Authentication
+
+- `POST /auth/signup` - Create a new user account (signup)
+  - Body: `{ "username": "string", "password": "string" }`
+- `POST /auth/login` - Authenticate user
+  - Body: `{ "username": "string", "password": "string" }`
 
 ## Response Codes
 

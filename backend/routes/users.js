@@ -40,20 +40,6 @@ router.get('/:userId', (req, res) => {
     }
 });
 
-// POST
-// Inserts a user into the Users table. 
-router.post('/', (req, res) => {
-    const {userId, username, password} = req.body;
-    const query = `INSERT INTO Users (username, password) Values (?,?)`;
-    connectMade.query(query, [username, password], (err, result) => {
-        if(err){
-            res.send("Did not insert that of a user successfully in Users table");
-            return;
-        }
-        res.status(201).json({userId, username, password});
-    });
-});
-
 // DELETE
 // Delete a user by their ID
 router.delete('/:userId', (req, res) => {
