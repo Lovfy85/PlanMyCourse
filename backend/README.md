@@ -55,10 +55,10 @@ Base URL: `http://localhost:3001`
 
 ### Users
 
+- `POST /register` - Makes it so that the user can make an account to be registered into the website.
+- `POST /login` - Makes it so that the user can login into the website.
 - `GET /users` - Get all users
 - `GET /users/:userId` - Get user by ID
-- `POST /users` - Create user
-  - Body: `{ "username": "string", "password": "string" }`
 - `DELETE /users/:userId` - Delete user by ID
 
 ### Courses Added (Planner)
