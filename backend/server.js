@@ -6,6 +6,7 @@ const coursesRoutes = require('./routes/courses');
 const prerequisitesRoutes = require('./routes/prerequisites');
 const userRoutes = require('./routes/users');
 const coursesAddedRoutes = require('./routes/coursesadded');
+const reviewsMadeRoutes = require('./routes/reviewsmade');
 
 //This is used to make sure that of there can be a connection of the server.js with that of the frontend overall. 
 const cors = require('cors');
@@ -14,6 +15,7 @@ const cors = require('cors');
 // the project soon).
 const { createCoursesAddedTable } = require('./models/coursesAdded');
 const { createUsersTable } = require('./models/Users');
+const { createReviewsTable } = require('./models/reviewsMade');
 
 const app = express();
 
@@ -28,10 +30,12 @@ app.use('/courses', coursesRoutes);
 app.use('/prerequisites', prerequisitesRoutes);
 app.use('/users', userRoutes);
 app.use('/coursesadded', coursesAddedRoutes);
+app.use('/reviewsmade', reviewsMadeRoutes);
 
 //Calls that of the tables that were made in 'models' folder, which are the tables of CoursesAdded Table and Users Table. 
 createCoursesAddedTable()
 createUsersTable()
+createReviewsTable()
 
 //This is to send that of the message to the terminal (which is towards that of the container that runs port 3001) to say that the server is up and running. 
 app.listen(3001, () => {
