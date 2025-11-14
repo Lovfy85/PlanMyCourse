@@ -101,7 +101,10 @@ function PlannerPage() {
     <>
         <div className="planner-content">
             <div className="planner-header">
-                <h1>Class Planner</h1>
+                <div className='header-line'>
+                    <h1>Class Planner</h1>
+                    <button className='planner-graph'>Planner Graph</button>
+                </div>
                 <hr></hr>
             </div>
             <div className="class-sections">
