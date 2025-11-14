@@ -57,8 +57,6 @@ Base URL: `http://localhost:3001`
 
 - `GET /users` - Get all users
 - `GET /users/:userId` - Get user by ID
-- `POST /users` - Create user
-  - Body: `{ "username": "string", "password": "string" }`
 - `DELETE /users/:userId` - Delete user by ID
 
 ### Courses Added (Planner)
