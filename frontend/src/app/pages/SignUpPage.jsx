@@ -8,7 +8,8 @@ import './SignUpPage.css'
 const schema = z.object({
   username: z.string()
     .nonempty("Username must be not empty")
-    .max(20, "Username must be less than 20 characters"),
+    .max(20, "Username must be less than 20 characters")
+    .regex(/^\S*$/, "Username cannot contain spaces"),
   password: z.string()
     .nonempty("Password must be not empty")
     .min(5, "Password Must be at least 5 characters"),
