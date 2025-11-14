@@ -8,6 +8,7 @@ import CatalogueCourse from '../../components/Catalogue/CatalogueCourse';
 function CataloguePage() {
   const { term } = useParams();
   const [courses, setCourses] = useState([]);
+  const [setSortVariant] = useState(null);
 
   useEffect(() => {
   let url = `http://localhost:3001/courses`;
@@ -21,11 +22,33 @@ function CataloguePage() {
     .catch(console.error);
 }, [term]);
 
+const getSortVariant = (variant) => {
+  axios.get(`http://localhost:3001/courses/sort/${variant}`).then(res => {
+    setCourses(res.data);
+    setSortVariant(variant);
+  }).catch(console.error);
+};
+
   return (
     <div className="catalogue-content">
       <div className="catalogue-header">
         <h1>Course Catalogue</h1>
         <hr></hr>
+
+    <div className="catalogue-sort">
+        <button onClick = {() => getSortVariant("alphabetical")}>
+          Course Name Alphabetical Sort
+        </button>
+
+        <button onClick = {() => getSortVariant("number")}>
+          Course Number Sort
+        </button>
+
+        <button onClick = {() => getSortVariant("taken")}>
+          Taken/Untaken Sort
+        </button>
+
+        </div>
       </div>
 
       <div className='catalogue-courses'>
