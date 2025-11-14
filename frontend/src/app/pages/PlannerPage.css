@@ -23,3 +23,74 @@
   background-color: #215591;
   margin-bottom: 30px;
 }
+
+/* Undo Notification Styles */
+.undo-notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #215591;
+  color: #ffffff;
+  padding: 16px 24px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-in-out;
+  z-index: 1000;
+  max-width: 500px;
+}
+
+@keyframes slideUp {
+  from {
+    bottom: -80px;
+    opacity: 0;
+  }
+  to {
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+
+.undo-notification span {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.undo-btn {
+  background-color: #ffffff;
+  color: #215591;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 13px;
+}
+
+.undo-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.close-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.close-btn:hover {
+  opacity: 0.8;
+}
