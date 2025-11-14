@@ -36,7 +36,6 @@ function Recommendation( {searchTerm, onFocused} ) {
 
     useEffect(() => {
         if (!hasMounted.current) {
-            console.log(onFocused)
             hasMounted.current = true;
             document.getElementById("recommendation").style.visibility = "hidden";
             return;
