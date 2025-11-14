@@ -12,7 +12,6 @@ import "./Graph.css";
  // Used to communicate with the backend API
 import axios from "axios";
 
-
 const computeDepths = (edges) => {
   const graph = {};
   const inDegree = {};

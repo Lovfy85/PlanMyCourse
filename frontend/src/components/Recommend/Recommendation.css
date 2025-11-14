@@ -1,0 +1,56 @@
+.recommendation {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: inherit;
+    overflow-y: auto;
+    max-height: 200px;
+    min-height: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.recommendation::-webkit-scrollbar {
+  width: 15px;
+  background: transparent;
+}
+
+.recommendation::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 40px;
+}
+
+.recommendation::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 15px;
+  border: 15px solid #b8b8b8;
+}
+
+.recommendation::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.courseRecommended {
+    display: flex;
+    font-size: 16px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.courseRecommended:hover {
+    background-color: #c8c8c8;
+}
+
+.courseRecommended:focus {
+    background-color:   #e3e3e3;
+    outline: none;
+}
+
+.courseRecommended:focus:hover {
+    background-color: #c8c8c8;
+    outline: none;
+}   
