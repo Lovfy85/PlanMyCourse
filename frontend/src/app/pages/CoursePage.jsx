@@ -1,14 +1,14 @@
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './CoursePage.css';
 import RatingBar from '../../components/Course/RatingBar.jsx';
 import CourseReview from '../../components/Course/CourseReview.jsx'
+import AddCourse from '../../components/Catalogue/AddCourse.jsx';
 
 function CoursePage() {
     const {courseId} = useParams()
     const [id, setId] = useState(0);
-    const [added, setAdded] = useState(false);
     const [course, setCourse] = useState({});
     const [courseNotes, setCourseNotes] = useState("");
     const [coursePrerequisites, setPrerequisites] = useState("");
@@ -36,29 +36,7 @@ function CoursePage() {
             console.error("Error fetching by courseNumber", error)
         });
     }, [courseId]);
-    useEffect(() => {
-        axios.get(`http://localhost:3001/coursesadded/${id}`)
-            .then(res => {
-                if (res.data.exists){ 
-                    setAdded(true);
-                }    
-            })
-            .catch(err => console.error(err));
-    }, [id]);
-    const handleAddCourse = () => {
-        try {
-            axios.post("http://localhost:3001/coursesadded/",{
-                courseId: id,
-                taken: false
-            }).then(response => {
-                setAdded(true)
-            }).catch(error => {
-                console.error("Failed to add course to user's coursesAdded data.");
-            })
-        } catch (err) {
-            
-        }
-    }
+
     return (
     <div className="course-content">
         <div className="course-top-section">
@@ -82,11 +60,7 @@ function CoursePage() {
                 </>
                 )}
                 <div className="course-buttons">
-                    <button className={`course-planner-add ${added ? "added" : ""}`}
-                    onClick={(e) => {
-                        e.stopPropagation()
-                        handleAddCourse()
-                    }}>{added ? "Course Added" : "Add to Planner"}</button>
+                    <AddCourse courseId={courseId} id={id} buttonClass="course-planner-add" />
                     <button className="course-view">View Prerequisite Graph</button>
                 </div>
             </div>

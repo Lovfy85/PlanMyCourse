@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "./AddCourse.css";
 
-function AddCourse({ courseId, id }) {
+function AddCourse({ courseId, id, buttonClass = "add-course" }) {
     const [added, setAdded] = useState(false);
 
     useEffect(() => {
@@ -31,7 +32,7 @@ function AddCourse({ courseId, id }) {
     
     return (
         <button 
-            className={`add-course ${added ? "added" : ""}`}
+            className={`${buttonClass} ${added ? "added" : ""}`}
             onClick={(e) => {
                 e.stopPropagation()
                 handleAddCourse()
