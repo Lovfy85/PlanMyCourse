@@ -7,11 +7,13 @@ import CourseReview from '../../components/Course/CourseReview.jsx'
 
 function CoursePage() {
     const {courseId} = useParams()
-    const [id, setId] = useState("");
+    const [id, setId] = useState(0);
     const [added, setAdded] = useState(false);
     const [course, setCourse] = useState({});
     const [courseNotes, setCourseNotes] = useState("");
     const [coursePrerequisites, setPrerequisites] = useState("");
+    const [rating, setRating] = useState(0);
+    const [hover, setHover] = useState(0);
 
     function processNotes(rawNotes) {
         const cleanData = rawNotes.split("Prerequisite(s):")[1] || "";
@@ -109,6 +111,17 @@ function CoursePage() {
                 <textarea required placeholder="Write your review..."></textarea>
                 <div className="course-new-buttons">
                     <div className="course-new-stars">
+                        {[1,2,3,4,5].map((n) => (
+                            <span
+                                key={n}
+                                onClick={() => setRating(n)}
+                                onMouseEnter={() => setHover(n)}
+                                onMouseLeave={() => setHover(0)}
+                                className={(hover || rating) >= n ? "new-star filled" : "new-star"}
+                            >
+★
+                            </span>
+                        ))}
                     </div>
                     <button className="course-new-submit">Post Review</button>
                 </div>

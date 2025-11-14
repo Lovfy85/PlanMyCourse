@@ -65,7 +65,7 @@ h3, h5 {
 .course-planner-add {
     z-index: 1;
     color: #ffffff;
-    background-color: #1a5b98;
+    background-color: #215591;
     border: 0px;
     transition: background-color 0.15s ease;
     transform: 0.15s ease;
@@ -183,10 +183,23 @@ h3, h5 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: end;
+    margin-top: 1rem;
+}
+
+
+.new-star {
+  font-size: 40px;
+  color: #828282;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.new-star.filled {
+  color:#215591
 }
 
 .course-new-submit {
-    margin-top: 2rem;
     width: 140px;
     height: 50px;
     font-size: 16px;
@@ -210,4 +223,5 @@ h3, h5 {
   height: 4px;
   width: 100%;
   background-color: #1a5b98;
+  margin: 1.6rem auto;
 }
