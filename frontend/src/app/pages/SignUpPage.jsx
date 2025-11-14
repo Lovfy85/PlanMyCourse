@@ -1,6 +1,9 @@
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import axios from 'axios';
+import { useState } from 'react';
+import './SignUpPage.css'
 
 const schema = z.object({
   username: z.string()
@@ -19,20 +22,30 @@ function SignUpPage() {
   const { register, handleSubmit, formState: {errors} } = useForm({
     resolver: zodResolver(schema),
   })
+  const [serverError, setServerError] = useState("");
 
   const onSubmit = async (data) => {
     const userData = {
       username: data.username,
       password: data.password
     }
-    console.log(userData)
-
+    try {
+        await axios.post('http://localhost:3001/auth', userData)
+        .then((response) => {
+            console.log('User registered successfully:', response.data);
+        })
+        .catch((error) => {
+            setServerError(error.response.data.error);
+        });
+    } catch (error) {
+        console.error('Error registering user:', error);
+    }
   }
 
   return (
-    <div className='registrationContainer'>
-        <form className='registrationCard' onSubmit={handleSubmit(onSubmit)}>
-          <div className='registrationTitle'>Registration</div>
+    <div className='signUpContainer'>
+        <form className='signUpCard' onSubmit={handleSubmit(onSubmit)}>
+          <div className='signUpTitle'>Sign Up</div>
           <p> Username </p>
           <input className='usernameInput' 
             placeholder='Enter Username'
@@ -53,6 +66,7 @@ function SignUpPage() {
             {...register("confirmPassword")}
           />
           <p className='errorMessage'>{errors.confirmPassword?.message}</p>
+          <p className='errorMessage'>{serverError}</p>
           <button className='saveBtn' type='submit'>Submit</button>
         </form>
     </div>
