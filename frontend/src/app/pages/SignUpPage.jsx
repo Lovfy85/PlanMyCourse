@@ -30,9 +30,10 @@ function SignUpPage() {
       password: data.password
     }
     try {
-        await axios.post('http://localhost:3001/auth', userData)
+        await axios.post('http://localhost:3001/auth/signup', userData)
         .then((response) => {
             console.log('User registered successfully:', response.data);
+            setServerError("");
         })
         .catch((error) => {
             setServerError(error.response.data.error);
