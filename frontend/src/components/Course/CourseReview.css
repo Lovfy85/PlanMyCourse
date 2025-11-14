@@ -1,0 +1,17 @@
+.course-review {
+    display: flex;
+    flex-direction: column;
+    margin: auto 2rem;
+
+}
+
+.review-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.course-review h4{
+    font-size: 24px;
+}
