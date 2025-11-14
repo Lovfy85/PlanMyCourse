@@ -6,7 +6,7 @@ const coursesRoutes = require('./routes/courses');
 const prerequisitesRoutes = require('./routes/prerequisites');
 const userRoutes = require('./routes/users');
 const coursesAddedRoutes = require('./routes/coursesadded');
-
+const authRoutes = require('./routes/auth');
 //This is used to make sure that of there can be a connection of the server.js with that of the frontend overall. 
 const cors = require('cors');
 
@@ -28,6 +28,7 @@ app.use('/courses', coursesRoutes);
 app.use('/prerequisites', prerequisitesRoutes);
 app.use('/users', userRoutes);
 app.use('/coursesadded', coursesAddedRoutes);
+app.use('/auth', authRoutes);
 
 //Calls that of the tables that were made in 'models' folder, which are the tables of CoursesAdded Table and Users Table. 
 createCoursesAddedTable()
