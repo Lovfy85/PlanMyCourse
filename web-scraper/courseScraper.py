@@ -1,4 +1,6 @@
 import requests
+import json
+import os
 from bs4 import BeautifulSoup
 
 import mysql.connector
@@ -193,9 +195,12 @@ def fetch_courses(courseSubject):
     return courses
 
 def main():
+    all_courses = []
     subjects = fetch_subjects()
     for subject in subjects:
         courses = fetch_courses(subject)
+        if not os.path.exists("courses.json"):
+            all_courses.extend(courses)
         for i in courses:
             mycursor.execute("""
             INSERT INTO Courses (
@@ -218,8 +223,16 @@ def main():
                 VALUES (%s, %s)
             """, (i['class_name'], j))
         db.commit()
-    print("courses and prerequisites have been added successfully")    
+    print("courses and prerequisites have been added successfully")
 
+    # create course.js for frontend
+    if os.path.exists("courses.json"):
+        print("courses.json already exists.")
+    else:
+        with open("courses.json", "w", encoding="utf-8") as f:
+            json.dump(all_courses, f, ensure_ascii=False, indent=2) 
+        print("courses.json does not exist. Creating it now...")
+        # proceed to write the file
 
 if __name__=="__main__":
     main()
