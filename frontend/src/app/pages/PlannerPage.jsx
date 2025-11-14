@@ -6,6 +6,9 @@ import { useEffect, useState } from 'react'
 
 function PlannerPage() {
     const [mappableCourses, setMappableCourses] = useState([]);
+    const [undoData, setUndoData] = useState(null);
+    const [undoTimer, setUndoTimer] = useState(null);
+
     function processData(data) {
         const sortedCourses = {};
         data.forEach(course => {
@@ -22,14 +25,12 @@ function PlannerPage() {
             level: Number(level),
             courses
         }));
-        // console.log(mappableList);
-
         return mappableList;
     }
+
     const fetchCourses = () => {
         axios.get("http://localhost:3001/coursesadded/")
         .then(response => {
-            // console.log(response.data);
             const processedData = processData(response.data);
             setMappableCourses(processedData);
         })
@@ -37,9 +38,65 @@ function PlannerPage() {
             console.error("Error fetching courses added", error)
         });
     };
+
+    const handleDelete = (deletedCourse) => {
+        // Clear any existing undo timer
+        if (undoTimer) {
+            clearTimeout(undoTimer);
+        }
+
+        // Store the deleted course data for undo
+        setUndoData({
+            id: deletedCourse.id,
+            courseId: deletedCourse.courseId,
+            taken: deletedCourse.taken,
+            title: deletedCourse.title
+        });
+
+        // Set up auto-dismiss after 5 seconds
+        const timer = setTimeout(() => {
+            setUndoData(null);
+        }, 5000);
+
+        setUndoTimer(timer);
+        fetchCourses();
+    };
+
+    const handleUndo = async () => {
+        if (!undoData) return;
+
+        try {
+            // Re-add the course to the planner
+            await axios.post("http://localhost:3001/coursesadded/", {
+                courseId: undoData.courseId,
+                taken: undoData.taken
+            });
+
+            // Clear undo data and timer
+            if (undoTimer) {
+                clearTimeout(undoTimer);
+            }
+            setUndoData(null);
+            setUndoTimer(null);
+
+            // Refresh the courses list
+            fetchCourses();
+        } catch (error) {
+            console.error("Error restoring course:", error);
+        }
+    };
+
     useEffect(() => {
         fetchCourses();
+        
+        // Cleanup timer on unmount
+        return () => {
+            if (undoTimer) {
+                clearTimeout(undoTimer);
+            }
+        };
     }, []);
+
     return (
     <>
         <div className="planner-content">
@@ -49,9 +106,18 @@ function PlannerPage() {
             </div>
             <div className="class-sections">
                 {mappableCourses.map(({ level, courses }) => (
-                    <Accordion key={level} level={level} courses={courses} onDelete={fetchCourses} />
+                    <Accordion key={level} level={level} courses={courses} onDelete={handleDelete} />
                 ))}
             </div>
+
+            {/* Undo Notification */}
+            {undoData && (
+                <div className="undo-notification">
+                    <span>"{undoData.title}" removed from planner</span>
+                    <button className="undo-btn" onClick={handleUndo}>Undo</button>
+                    <button className="close-btn" onClick={() => setUndoData(null)}>✕</button>
+                </div>
+            )}
         </div>
     </>
   )

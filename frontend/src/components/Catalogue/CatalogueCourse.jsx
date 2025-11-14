@@ -12,7 +12,7 @@ function CatalogueCourse( {title, description, courseId, id} ) {
             .then(res => {
                 if (res.data.exists){ 
                     setAdded(true);
-                }    
+                }
             })
             .catch(err => console.error(err));
     }, [id]);

@@ -10,12 +10,18 @@ import axios from 'axios'
  * @param {function} onDelete - Callback function to refresh the list after deletion
  * @returns {JSX.Element}
  */
-function AccordionClass({title, id, onDelete}) {
+function AccordionClass({title, id, courseId, taken, onDelete}) {
   const handleDelete = async () => {
     try {
       await axios.delete(`http://localhost:3001/coursesadded/${id}`);
       if (onDelete) {
-        onDelete();
+        // Pass the deleted course data for undo functionality
+        onDelete({
+          id,
+          courseId,
+          taken,
+          title
+        });
       }
     } catch (error) {
       console.error("Error deleting course:", error);

@@ -10,6 +10,7 @@
     border-bottom-right-radius: 10px;
     background-color: #ffffff;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    visibility: hidden;
 }
 
 .recommendation::-webkit-scrollbar {
@@ -34,11 +35,19 @@
 
 .courseRecommended {
     display: flex;
+    justify-content: space-between;
     font-size: 16px;
     border: none;
     padding: 10px;
     cursor: pointer;
     background-color: transparent;
+}
+
+.icon {
+    justify-self: right;
+    filter: invert(30%) saturate(100%) contrast(90%) brightness(90%);
+    width: 20px;
+    height: 20px;
 }
 
 .courseRecommended:hover {
