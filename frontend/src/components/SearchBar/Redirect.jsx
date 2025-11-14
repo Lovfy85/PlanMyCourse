@@ -12,18 +12,37 @@ function Redirect() {
 
     // redirect the user to the catalogue page
     const handleSearch = () => {
-        if (!searchTerm) return;
-        if (Number(searchTerm)) {
-            var filtered = Courses.filter(item => Math.floor(Number(item.number)/100)*100 == Number(searchTerm));
-        } else {
-            var filtered = Courses.filter(item => item.subject == searchTerm.slice(0,4).toUpperCase());
-        }
+        const term = searchTerm.trim().toUpperCase()
 
-        if (filtered.length == 0) {
+        if (!term)  {
+            setSearchTerm("")
+            document.getElementById("searchBox").placeholder = "Oops, it seems you tried entering nothing!"
+
+            setTimeout(() => {
+                searchBox.placeholder = "Search for courses...";
+            }, 3000);
             return;
         }
 
-        navigate(`./catalogue/${searchTerm.toUpperCase().trim()}`);
+        if (Number(term)) {
+            var filtered = Courses.filter(item => Math.floor(Number(item.number)/100)*100 == Number(term));
+        } else if (term.length == 4) {
+            var filtered = Courses.filter(item => item.subject == term);
+        } else {
+            var filtered = Courses.filter(item => item.class_name == term);
+        }
+
+        if (filtered.length == 0) {
+            setSearchTerm("")
+            document.getElementById("searchBox").placeholder = "Oops, it seems that we can't find what you're looking for!"
+
+            setTimeout(() => {
+                searchBox.placeholder = "Search for courses...";
+            }, 3000);
+            return;
+        }
+
+        navigate(`./catalogue/${term}`);
     }
 
     // to prevent blur when the user tabs onto the drop down recommended courses
@@ -38,6 +57,7 @@ function Redirect() {
     return (
         <div className="redirectSearchBar">
             <input
+                id="searchBox"
                 type="text"
                 placeholder="Search courses..." 
                 value={searchTerm}
