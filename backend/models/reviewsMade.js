@@ -6,7 +6,9 @@ const createReviewsTable = async () => {
         reviewId INT AUTO_INCREMENT PRIMARY KEY,
         post VARCHAR(255),
         userId INT,
-        FOREIGN KEY (userId) REFERENCES Users(userId)
+        courseId INT,
+        FOREIGN KEY (userId) REFERENCES Users(userId),
+        FOREIGN KEY (courseId) REFERENCES Courses(courseId)
         )
     `;
 
