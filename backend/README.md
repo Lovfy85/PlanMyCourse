@@ -43,6 +43,9 @@ Base URL: `http://localhost:3001`
 - `GET /courses/search?term={searchTerm}` - Search courses by name, subject or level
 - `GET /courses/:id` - Get course by ID
 - `GET /courses/:name` - Get course by class name
+- `GET /sort/alphabetical` - Get courses and order them alphabetically by their course name.
+- `GET /sort/number` - Get courses and order them by their course number.
+- `GET /sort/taken` - Get courses and orders alphabetically where it shows that of the taken courses first and the untaken ones below it.
 
 ### Prerequisites
 

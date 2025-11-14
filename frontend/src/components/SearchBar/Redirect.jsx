@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Recommendation from "../Recommend/Recommendations";
 import "./Redirect.css"
 
-const deperatment = 'cmpt' // default department
-
 // redirect component
 function Redirect() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -14,7 +12,7 @@ function Redirect() {
         if (!searchTerm) {
             navigate(`./catalogue/${deperatment}`);
             return;
-        };
+        }
 
         navigate(`./catalogue/${searchTerm.toUpperCase().trim()}`);
     }

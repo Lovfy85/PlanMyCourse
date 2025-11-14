@@ -68,7 +68,7 @@ const GraphContent = () => {
     try {
       // Fetch prerequisite data from backend
       const response = await axios.get(
-        `http://localhost:3001/prerequisites/search?term=${lowerQuery}`
+        `http://localhost:3001/prerequisites/recurse/${lowerQuery}`
       );
       const prereqData = response.data;
 
@@ -92,11 +92,7 @@ const GraphContent = () => {
         target: row.course,
         type: "step",
         animated: true,
-        style: { 
-          stroke: "#3a3a3aff", 
-          strokeWidth: 2 },
-        markerEnd: { 
-          type: "arrowclosed", color: "#000000ff" },
+        className: "graph-edge",
       }));
 
       // Compute depth level for each node (how far from root)
@@ -154,6 +150,8 @@ const GraphContent = () => {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          // Make user be able to use enter button to search
+          onKeyDown={(e) => e.key === "Enter" && handleSearch()}
           placeholder="Enter course name, e.g., CMPT280 or 280"
           className="search-input"
         />
@@ -179,7 +177,6 @@ const Graph = () => (
     <Navbar className="graph-navbar" />
     <ReactFlowProvider>
       <GraphContent />
-      <MiniMap />
       <Controls />
     </ReactFlowProvider>
   </div>

@@ -77,4 +77,50 @@ router.get('/:id', (req,res) => {
     });
 });
 
+//Get courses in that of an alphabetical order by that of their class name.
+router.get('/sort/alphabetical', (req, res) => {
+    connectMade.query(`SELECT * FROM Courses ORDER BY class_name ASC`, (err, results) => {
+        if(err){
+            console.error('There has been an error getting that of the courses for the course catalogue through that alphabetical.');
+            res.status(500).send('Seems to be that of courses to be sorted through alphabetical order cannot be done.');
+            return;
+        }
+        res.json(results);
+    });
+});
+
+//Get courses in that of an alphabetical order by that of their class name.
+router.get('/sort/number', (req, res) => {
+    connectMade.query(`SELECT * FROM Courses ORDER BY number ASC`, (err, results) => {
+        if(err){
+            console.error('There has been an error getting that of the courses for the course catalogue through that of course number.');
+            res.status(500).send('Seems to be that of courses to be sorted through course number order cannot be done.');
+            return;
+        }
+        res.json(results);
+    });
+});
+
+//Get courses in which it sorts the catalogue in alphabetical order but have of the taken courses be displayed first and the untaken courses 
+// to be displayed down below.
+router.get('/sort/taken', (req, res) => {
+    const query = `
+        SELECT 
+            c.*,
+            IF(ca.taken IS NULL, 0, ca.taken) AS taken
+        FROM Courses c
+        LEFT JOIN CoursesAdded ca ON c.courseId = ca.courseId
+        ORDER BY taken DESC, class_name ASC
+    `
+
+    connectMade.query(query, (err, results) => {
+        if(err){
+            console.error('There has been an error getting that of the courses for the course catalogue that are seperated whether it is taken or not.');
+            res.status(500).send('Seems to be that of courses to be sorted by the first half being taken courses and second half being untaken courses.');
+            return;
+        }
+        res.json(results);
+    });
+})
+
 module.exports = router;
