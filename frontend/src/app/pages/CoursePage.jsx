@@ -3,12 +3,17 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import './CoursePage.css';
 import RatingBar from '../../components/Course/RatingBar.jsx';
+import CourseReview from '../../components/Course/CourseReview.jsx'
 
 function CoursePage() {
     const {courseId} = useParams()
+    const [id, setId] = useState(0);
+    const [added, setAdded] = useState(false);
     const [course, setCourse] = useState({});
     const [courseNotes, setCourseNotes] = useState("");
     const [coursePrerequisites, setPrerequisites] = useState("");
+    const [rating, setRating] = useState(0);
+    const [hover, setHover] = useState(0);
 
     function processNotes(rawNotes) {
         const cleanData = rawNotes.split("Prerequisite(s):")[1] || "";
@@ -25,11 +30,35 @@ function CoursePage() {
             const { prerequisites, notes } = processNotes(courseData.notes);
             setPrerequisites(prerequisites);
             setCourseNotes(notes);
+            setId(courseData.courseId);
         })
         .catch(error => {
-            console.error("Error fetching by id", error)
+            console.error("Error fetching by courseNumber", error)
         });
     }, [courseId]);
+    useEffect(() => {
+        axios.get(`http://localhost:3001/coursesadded/${id}`)
+            .then(res => {
+                if (res.data.exists){ 
+                    setAdded(true);
+                }    
+            })
+            .catch(err => console.error(err));
+    }, [id]);
+    const handleAddCourse = () => {
+        try {
+            axios.post("http://localhost:3001/coursesadded/",{
+                courseId: id,
+                taken: false
+            }).then(response => {
+                setAdded(true)
+            }).catch(error => {
+                console.error("Failed to add course to user's coursesAdded data.");
+            })
+        } catch (err) {
+            
+        }
+    }
     return (
     <div className="course-content">
         <div className="course-top-section">
@@ -53,12 +82,12 @@ function CoursePage() {
                 </>
                 )}
                 <div className="course-buttons">
-                    <button className="course-planner">
-                        <span>Add to Planner</span>
-                    </button>
-                    <button className="course-view">
-                        <span>View Prerequisite Graph</span>
-                    </button>
+                    <button className={`course-planner-add ${added ? "added" : ""}`}
+                    onClick={(e) => {
+                        e.stopPropagation()
+                        handleAddCourse()
+                    }}>{added ? "Course Added" : "Add to Planner"}</button>
+                    <button className="course-view">View Prerequisite Graph</button>
                 </div>
             </div>
         </div>
@@ -82,12 +111,25 @@ function CoursePage() {
                 <textarea required placeholder="Write your review..."></textarea>
                 <div className="course-new-buttons">
                     <div className="course-new-stars">
+                        {[1,2,3,4,5].map((n) => (
+                            <span
+                                key={n}
+                                onClick={() => setRating(n)}
+                                onMouseEnter={() => setHover(n)}
+                                onMouseLeave={() => setHover(0)}
+                                className={(hover || rating) >= n ? "new-star filled" : "new-star"}
+                            >
+★
+                            </span>
+                        ))}
                     </div>
                     <button className="course-new-submit">Post Review</button>
                 </div>
             </form>
         </div>
         <div className="course-reviews">
+            <CourseReview username="USERNAME" message="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet." timestamp="November 11, 2025" rating="3" />
+            <div className="course-review-divider"></div>
         </div>
     </div>
     )
