@@ -5,7 +5,7 @@ const router = express.Router();
 
 // POST
 // Inserts a user into the Users table. 
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
     const { username, password } = req.body;
 
@@ -26,15 +26,15 @@ router.post('/', async (req, res) => {
       if (existingUsers.length > 0) {
         return res.status(400).json({ error: "Username already exists." });
       }
-    });
-
-    // Insert new user
-    connectMade.query('INSERT INTO Users (username, password) VALUES (?, ?)',[username, hashedPassword], (err, result) => {
+      // Insert new user
+      connectMade.query('INSERT INTO Users (username, password) VALUES (?, ?)',[username, hashedPassword], (err, result) => {
         if(err){
             res.status(500).send('Error inserting new user.');
             return;
         }
         res.status(201).json({ message: "User created successfully", username: username });
+     });
+
     });
 
   } catch (err) {
