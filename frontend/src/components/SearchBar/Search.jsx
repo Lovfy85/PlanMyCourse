@@ -1,6 +1,7 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Recommendation from "../Recommend/Recommendations";
+import "./Search.css";
 
 const deperatment = 'cmpt'; // default department
 
@@ -28,8 +29,11 @@ function Redirect() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-            />
-        );
+            />,
+        <div className="recommendation">
+            
+        </div>
+    )
 }
 
 export default Search
