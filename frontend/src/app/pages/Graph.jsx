@@ -72,21 +72,15 @@ const GraphContent = () => {
       );
       const prereqData = response.data;
 
-      // Only do CMPT prerequisites
-      const filteredData = prereqData.filter(
-        (row) =>
-          row.course?.toUpperCase().startsWith("CMPT") &&
-          row.prereq?.toUpperCase().startsWith("CMPT")
-      );
+    
 
       // Don't display course if no prerequisites exist
-      if (!filteredData.length) {
-        alert("No CMPT prerequisites found!");
-        return;
+      if (prereqData.length < 1) {
+        alert("No prerequisites found for this course!");
       }
 
       // Build edges between courses and connect lines (by using steps)
-      const edges = filteredData.map((row) => ({
+      const edges = prereqData.map((row) => ({
         id: `${row.course}-${row.prereq}`,
         source: row.prereq,
         target: row.course,
@@ -100,7 +94,7 @@ const GraphContent = () => {
 
       // Collect all course names
       const courseNames = new Set();
-      filteredData.forEach((r) => {
+      prereqData.forEach((r) => {
         courseNames.add(r.course);
         courseNames.add(r.prereq);
       });
