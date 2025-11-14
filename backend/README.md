@@ -72,6 +72,12 @@ Base URL: `http://localhost:3001`
   - Body: `{ "taken": boolean }`
 - `DELETE /coursesadded/:id` - Remove course from planner
 
+### Authentication
+
+- `POST /auth/signup` - Create a new user account (signup)
+  - Body: `{ "username": "string", "password": "string" }`
+  - Notes: Passwords are hashed using bcrypt before storage. Returns `201 Created` on success with a JSON message `{ message: "User created successfully", username: "..." }`. Returns `400 Bad Request` if required fields are missing or the username already exists.
+
 ## Response Codes
 
 - `200 OK` - Successful GET, PUT, DELETE
