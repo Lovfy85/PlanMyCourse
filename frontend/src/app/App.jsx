@@ -6,6 +6,7 @@ import Planner from './pages/PlannerPage'
 import Graph from './pages/Graph'
 import Catalogue from './pages/CataloguePage'
 import Course from './pages/CoursePage'
+import SignUpPage from './pages/SignUpPage'
 function App() {
   return (
     <div>
@@ -16,6 +17,7 @@ function App() {
         <Route path='/catalogue' element={<Catalogue />}/>
         <Route path='/catalogue/:term' element={<Catalogue />}/>
         <Route path='/catalogue/course/:courseId' element={<Course />}/>
+        <Route path='/signup' element={<SignUpPage />}/>
       </Routes>
       <Navbar />
     </div>

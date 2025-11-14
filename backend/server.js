@@ -1,11 +1,10 @@
-//Express is used in order to refer to that of using the routes in which to make to refer to endpoints used. 
 const express = require('express');
 
-//These are to refer to the nodejs files in that of 'routes' folder to which gets that of the endpoints in those nodejs files.
 const coursesRoutes = require('./routes/courses');
 const prerequisitesRoutes = require('./routes/prerequisites');
 const userRoutes = require('./routes/users');
 const coursesAddedRoutes = require('./routes/coursesadded');
+const authRoutes = require('./routes/auth');
 const reviewsMadeRoutes = require('./routes/reviewsmade');
 
 //This is used to make sure that of there can be a connection of the server.js with that of the frontend overall. 
@@ -31,6 +30,7 @@ app.use('/prerequisites', prerequisitesRoutes);
 app.use('/users', userRoutes);
 app.use('/coursesadded', coursesAddedRoutes);
 app.use('/reviewsmade', reviewsMadeRoutes);
+app.use('/auth', authRoutes);
 
 //Calls that of the tables that were made in 'models' folder, which are the tables of CoursesAdded Table and Users Table. 
 createCoursesAddedTable()

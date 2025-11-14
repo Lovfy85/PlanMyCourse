@@ -1,29 +1,7 @@
 const express = require('express');
 const connectMade = require('../config.js');
-const jwt = require('jsonwebtoken');
-
 const router = express.Router();
-
-const JWT_SECRET = process.env.JWT_SECRET;
-
-function getToken(req, res, next){
-    const authenticationThings = req.headers.authorization;
-
-    if(!authenticationThings){
-        return res.status(401).json({message: "There was no token gotten."});
-    }
-
-    const gottenToken = authenticationThings.split(" ")[1];
-
-    jwt.verify(gottenToken, JWT_SECRET, (err, decoded) => {
-        if(err){
-            return res.status(401).json({message: "The gotten token seems to be invalid."});
-        }
-
-        req.user = decoded;
-        next();
-    });
-}
+const { getToken } = require('../middleware/authMiddleware.js');
 
 router.post('/', getToken, (req, res) => {
     const {post, courseId} = req.body;
