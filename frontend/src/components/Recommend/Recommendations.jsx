@@ -14,7 +14,7 @@ function Recommendation( {searchTerm, onFocused} ) {
     const maxRecentSearches = 5;
     const hasMounted = useRef(false)
 
-    localStorage.removeItem("recentSearches"); // to clear the recentSearches
+    //localStorage.removeItem("recentSearches"); // to clear the recentSearches
 
     useEffect(() => {
         localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
