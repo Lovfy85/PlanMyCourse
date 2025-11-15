@@ -50,8 +50,8 @@ Base URL: `http://localhost:3001`
 
 - `GET /courses` - Get all courses
 - `GET /courses/search?term={searchTerm}` - Search courses by name, subject or level
-- `GET /courses/:id` - Get course by ID
-- `GET /courses/:name` - Get course by class name
+- `GET /courses/id/:id` - Get course by ID
+- `GET /courses/name/:name` - Get course by class name
 - `GET /sort/alphabetical` - Get courses and order them alphabetically by their course name.
 - `GET /sort/number` - Get courses and order them by their course number.
 - `GET /sort/addedtoplanner` - Get courses and orders alphabetically where it shows that of the courses added to the planner first and the unadded ones below them.

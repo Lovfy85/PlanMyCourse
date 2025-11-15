@@ -56,7 +56,7 @@ router.get('/search', (req,res) => {
 
 // GET
 // Get by class_name
-router.get('/:name', (req,res) => {
+router.get('/name/:name', (req,res) => {
     connectMade.query(`SELECT * FROM Courses WHERE class_name = ?`, [req.params.name], (err, results) => {
         if(err){
             console.error('There has been an error getting the course from the courses table.');
@@ -69,8 +69,8 @@ router.get('/:name', (req,res) => {
 
 // GET
 // Get by courseId
-router.get('/:id', (req,res) => {
-    connectMade.query(`SELECT * FROM Courses WHERE courseId = ?`, [req.params.name], (err, results) => {
+router.get('/id/:id', (req,res) => {
+    connectMade.query(`SELECT * FROM Courses WHERE courseId = ?`, [req.params.id], (err, results) => {
         if(err){
             console.error('There has been an error getting the course from the courses table.');
             res.status(500).send('Seems to be that of course to be selected is not at all being seen in the courses table.');
