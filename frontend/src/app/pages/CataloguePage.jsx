@@ -8,6 +8,8 @@ import CatalogueCourse from '../../components/Catalogue/CatalogueCourse';
 function CataloguePage() {
   const { term } = useParams();
   const [courses, setCourses] = useState([]);
+  const [allCourses, setAllCourses] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   //Sets that of the sort variant to null considering no type of way of sorting the catalogue has been chosen.
   const [setSortVariant] = useState(null);
@@ -20,13 +22,33 @@ function CataloguePage() {
   }
 
   axios.get(url)
-    .then(res => setCourses(res.data))
+    .then(res => {
+      setCourses(res.data);
+      setAllCourses(res.data);
+    })
     .catch(console.error);
 }, [term]);
+
+  // Filter courses based on search term
+  useEffect(() => {
+    if (!searchTerm.trim()) {
+      setCourses(allCourses);
+      return;
+    }
+
+    const searchLower = searchTerm.toLowerCase();
+    const filtered = allCourses.filter(course => 
+      course.title.toLowerCase().includes(searchLower) ||
+      course.class_name.toLowerCase().includes(searchLower) ||
+      course.description.toLowerCase().includes(searchLower)
+    );
+    setCourses(filtered);
+  }, [searchTerm, allCourses]);
 
 const getSortVariant = (variant) => {
   axios.get(`http://localhost:3001/courses/sort/${variant}`).then(res => {
     setCourses(res.data);
+    setAllCourses(res.data);
     setSortVariant(variant);
   }).catch(console.error);
 };
@@ -36,6 +58,19 @@ const getSortVariant = (variant) => {
       <div className="catalogue-header">
         <h1>Course Catalogue</h1>
         <hr></hr>
+
+    {/**
+     * Search bar for filtering courses
+     */}
+    <div className="catalogue-search">
+      <input
+        type="text"
+        placeholder="Search courses by name, code, or description..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="catalogue-search-input"
+      />
+    </div>
 
     {/**
      * The buttons in which are respsonible for the type of sorting options in which how the course catalogue is to be displayed.

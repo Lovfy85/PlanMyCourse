@@ -2,10 +2,15 @@
     display: flex;
     flex-direction: column;
     margin: 0 4rem;
+    padding-top: 4em;
 }
 
 .catalogue-header {
-    margin-top: 0;
+    position: sticky;
+    top: 4em;
+    z-index: 99;
+    background-color: #F2F0EF;
+    margin-top: -10em;
 }
 
 .catalogue-header h1 {
@@ -25,8 +30,56 @@
     display: flex;
     flex-direction: column;
     margin: 1.2rem auto;
+    margin-top: 5em;
     row-gap: 25px;
     width: 100%;
 }
 
 
+
+.catalogue-search {
+    margin: 20px 0;
+    padding: 0 16px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.catalogue-search-input {
+    width: 50%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.catalogue-search-input:focus {
+    border-color: #215591;
+}
+
+.catalogue-search-input::placeholder {
+    color: #999;
+}
+
+.catalogue-sort {
+    display: flex;
+    gap: 10px;
+    padding: 0 16px 15px 16px;
+    flex-wrap: wrap;
+}
+
+.catalogue-sort button {
+    padding: 10px 20px;
+    background-color: #215591;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.catalogue-sort button:hover {
+    background-color: #1a4575;
+}
