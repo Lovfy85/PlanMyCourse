@@ -12,11 +12,12 @@ function Redirect() {
 
     // redirect the user to the catalogue page
     const handleSearch = () => {
-        const term = searchTerm.trim().toUpperCase()
+        const term = searchTerm.trim().toUpperCase();
 
+        // check for invalid terms
         if (!term)  {
-            setSearchTerm("")
-            document.getElementById("searchBox").placeholder = "Oops, it seems you tried entering nothing!"
+            setSearchTerm("");
+            document.getElementById("searchBox").placeholder = "Oops, it seems you tried entering nothing!";
 
             setTimeout(() => {
                 searchBox.placeholder = "Search for courses...";
@@ -24,17 +25,19 @@ function Redirect() {
             return;
         }
 
-        if (Number(term)) {
+        // different filters depending on search input
+        if (Number(term)) { // search by course level
             var filtered = Courses.filter(item => Math.floor(Number(item.number)/100)*100 == Number(term));
-        } else if (term.length == 4) {
+        } else if (term.length == 4) { // search by depertment
             var filtered = Courses.filter(item => item.subject == term);
-        } else {
+        } else { // search by exact course subject
             var filtered = Courses.filter(item => item.class_name == term);
         }
 
+        // check if filters return nothing so don't redirect the user to catalogue page
         if (filtered.length == 0) {
-            setSearchTerm("")
-            document.getElementById("searchBox").placeholder = "Oops, it seems that we can't find what you're looking for!"
+            setSearchTerm("");
+            document.getElementById("searchBox").placeholder = "Oops, it seems that we can't find what you're looking for!";
 
             setTimeout(() => {
                 searchBox.placeholder = "Search for courses...";
@@ -42,16 +45,26 @@ function Redirect() {
             return;
         }
 
+        // redirect the user to the catalogue page with their search result
         navigate(`./catalogue/${term}`);
     }
 
-    // to prevent blur when the user tabs onto the drop down recommended courses
+    // hides the dropdown recommended courses
     const handleBlur = (e) => {
+
+        // to prevent blur when the user tabs onto the drop down recommended courses
         const nextFocused = e.relatedTarget;
         if (document.getElementById("recommendation").contains(nextFocused)) {
             return;
         }
-        setOnFocused(false)
+        document.getElementById("searchBox").classList.remove("showDropdown");
+        setOnFocused(false);
+    }
+
+    // shows the dropdown recommended courses
+    const handleFocus = (e) => {
+        document.getElementById("searchBox").classList.add("showDropdown");
+        setOnFocused(true);
     }
 
     return (
@@ -63,7 +76,7 @@ function Redirect() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={(e) => e.key == "Enter" && handleSearch()}
-                onFocus={() => setOnFocused(true)}
+                onFocus={(e) => handleFocus(e)}
                 onBlur={(e) => handleBlur(e)}
             />
             <Recommendation searchTerm={searchTerm} onFocused={onFocus}/>

@@ -35,6 +35,13 @@ The `Users` and `CoursesAdded` tables are automatically created on server start.
 - `taken` (BOOLEAN, DEFAULT FALSE)
 - `createdAt` (TIMESTAMP)
 
+**Reviews**
+-`reviewId` (INT, PRIMARY KEY, AUTO_INCREMENT)
+-`post` (VARCHAR)
+-`userId` (INT)
+-`courseId` (INT)
+
+
 ## API Endpoints
 
 Base URL: `http://localhost:3001`
@@ -47,7 +54,7 @@ Base URL: `http://localhost:3001`
 - `GET /courses/name/:name` - Get course by class name
 - `GET /sort/alphabetical` - Get courses and order them alphabetically by their course name.
 - `GET /sort/number` - Get courses and order them by their course number.
-- `GET /sort/taken` - Get courses and orders alphabetically where it shows that of the taken courses first and the untaken ones below it.
+- `GET /sort/addedtoplanner` - Get courses and orders alphabetically where it shows that of the courses added to the planner first and the unadded ones below them.
 
 ### Prerequisites
 
@@ -71,6 +78,13 @@ Base URL: `http://localhost:3001`
 - `PUT /coursesadded/:id` - Update taken status
   - Body: `{ "taken": boolean }`
 - `DELETE /coursesadded/:id` - Remove course from planner
+
+## Reviews Made 
+- `POST /reviewsmade` - A user can make that of a review in that of the selected course.
+  -Headers: `{Key: Authorization, Value: Bearer <Token Given When A User Logs In>
+              Key: Content-Type, Value: application/json}`
+  -Body: `{"post": "string", "courseId": int }`
+- `GET /reviewsmade`- Gets all the reviews from all courses made from all users.
 
 ### Authentication
 

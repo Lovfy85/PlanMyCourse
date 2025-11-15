@@ -2,9 +2,14 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./AddCourse.css";
 
+//This function is responsible for adding that of a course in that of the planner. The default for each class in the course catalogue
+// is that they have not been added yet (hence false).
 function AddCourse({ courseId, id, buttonClass = "add-course", added: initialAdded = false }) {
+
+    //Gets to see if that of the class will be added and sets that of the class of whether it is added or not.
     const [added, setAdded] = useState(initialAdded);
 
+    //This is to check if that of the course that is added is seen in that of the planner.
     useEffect(() => {
         axios.get(`http://localhost:3001/coursesadded/${id}`)
             .then(res => {
@@ -15,6 +20,7 @@ function AddCourse({ courseId, id, buttonClass = "add-course", added: initialAdd
             .catch(err => console.error(err));
     }, [id]);
 
+    //This is responsible for that of setting up to see on that of adding a course to the planner overall.
     const handleAddCourse = () => {
         try {
             axios.post("http://localhost:3001/coursesadded/",{

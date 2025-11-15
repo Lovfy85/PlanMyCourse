@@ -20,7 +20,8 @@ router.get('/', (req, res) => {
     }
 });
 
-// Get a user by their Id
+// GET
+// Get a user by their Id from the table.
 router.get('/:userId', (req, res) => {
     const userId = req.params.userId;
 
@@ -41,7 +42,7 @@ router.get('/:userId', (req, res) => {
 });
 
 // DELETE
-// Delete a user by their ID
+// Delete a user by their ID from the table.
 router.delete('/:userId', (req, res) => {
     const userId = req.params.userId;
     const query = `DELETE FROM Users WHERE userId = ?`;

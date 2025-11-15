@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: column;
     justify-items: center;
-    width: inherit;
+    width: 109%;
     overflow-y: auto;
     max-height: 200px;
     min-height: 20px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     background-color: #ffffff;
     box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3);
     visibility: hidden;

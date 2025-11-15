@@ -1,0 +1,54 @@
+.loading, .no-courses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 18px;
+    color: #636363;
+}
+
+.course-node {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.course-code {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+/* ReactFlow Nodes */
+.graph-node {
+    color: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.graph-node.taken {
+    background: #2177c8;
+}
+
+.graph-node.not-taken {
+    background: #aab3bb;
+}
+
+/* ReactFlow Edge */
+.graph-edge {
+    stroke: #636363;
+    stroke-width: 2px;
+}
+
+.graph-edge .react-flow__edge-path {
+    stroke: #636363;
+    stroke-width: 2;
+}

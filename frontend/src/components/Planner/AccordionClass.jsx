@@ -1,16 +1,7 @@
 import './Accordion.css'
 import axios from 'axios'
 
-/** AccordionClass Component
- * 
- * Displays a class row with a title and checkbox, to be inserted as an accordion list element
- * 
- * @param {string} The course title and USASK description
- * @param {number} id - The course ID in the planner
- * @param {function} onDelete - Callback function to refresh the list after deletion
- * @returns {JSX.Element}
- */
-function AccordionClass({title, id, courseId, taken, onDelete}) {
+function AccordionClass({title, id, courseId, taken, onDelete, onTakenChange}) {
   const handleDelete = async () => {
     try {
       await axios.delete(`http://localhost:3001/coursesadded/${id}`);
@@ -28,11 +19,29 @@ function AccordionClass({title, id, courseId, taken, onDelete}) {
     }
   };
 
+  const handleCheckboxChange = async (e) => {
+    const newTakenValue = e.target.checked;
+    try {
+      await axios.put(`http://localhost:3001/coursesadded/${id}`, {
+        taken: newTakenValue
+      });
+      if (onTakenChange) {
+        onTakenChange(id, newTakenValue);
+      }
+    } catch (error) {
+      console.error("Error updating taken status:", error);
+    }
+  };
+
   return (
     <div className="accordion-class">
         <div className="accordion-class-head">
           <label className="accordion-class-checkbox">
-            <input type="checkbox"></input>
+            <input 
+              type="checkbox" 
+              checked={taken}
+              onChange={handleCheckboxChange}
+            />
           </label>
           <span>{title}</span>
         </div>
