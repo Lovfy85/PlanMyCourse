@@ -51,9 +51,6 @@
 .graph-edge .react-flow__edge-path {
     stroke: #636363;
     stroke-width: 2;
-<<<<<<< HEAD
-}
-=======
 }
 
 /* Arrowhead styles */
@@ -64,4 +61,3 @@
 marker {
     fill: #000000;
 }
->>>>>>> antoinette
