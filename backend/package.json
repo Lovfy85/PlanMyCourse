@@ -7,7 +7,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-  "test": "cross-env NODE_ENV=test jest",
+  "test": "jest --coverage",
   "start": "nodemon server.js"
   },
   "dependencies": {
