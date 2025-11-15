@@ -37,15 +37,15 @@ const getSortVariant = (variant) => {
 
     <div className="catalogue-sort">
         <button onClick = {() => getSortVariant("alphabetical")}>
-          Course Name Alphabetical Sort
+          Sort By Alphabetical
         </button>
 
         <button onClick = {() => getSortVariant("number")}>
-          Course Number Sort
+          Sort By Course Number
         </button>
 
-        <button onClick = {() => getSortVariant("taken")}>
-          Taken/Untaken Sort
+        <button onClick = {() => getSortVariant("addedtoplanner")}>
+          Sort By Added To Planner/Not In Planner
         </button>
 
         </div>
@@ -60,6 +60,7 @@ const getSortVariant = (variant) => {
               description={course.description}
               courseId={course.class_name}
               id={course.courseId}
+              added={course.taken === 1}
             />
           );
         })}

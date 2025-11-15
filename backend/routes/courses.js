@@ -103,11 +103,11 @@ router.get('/sort/number', (req, res) => {
 
 //Get courses in which it sorts the catalogue in alphabetical order but have of the taken courses be displayed first and the untaken courses 
 // to be displayed down below.
-router.get('/sort/taken', (req, res) => {
+router.get('/sort/addedtoplanner', (req, res) => {
     const query = `
         SELECT 
             c.*,
-            IF(ca.taken IS NULL, 0, ca.taken) AS taken
+            IF(ca.taken IS NULL, 0, 1) AS added
         FROM Courses c
         LEFT JOIN CoursesAdded ca ON c.courseId = ca.courseId
         ORDER BY taken DESC, class_name ASC
