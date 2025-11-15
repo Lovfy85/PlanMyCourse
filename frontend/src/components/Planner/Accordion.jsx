@@ -8,7 +8,7 @@ import Class from './AccordionClass'
  * 
  * @returns {JSX.Element}
  */
-function Accordion({level, courses, onDelete}) {
+function Accordion({level, courses, onDelete, onTakenChange}) {
   const [isExpanded, setIsExpanded] = useState(true);
 
   return (
@@ -19,7 +19,7 @@ function Accordion({level, courses, onDelete}) {
         <div className={`accordion-body ${isExpanded ? "expanded" : ""}`}>
             <div className="accordion-classes">
               {courses.map(course => (
-                <Class key={course.id} title={course.title} id={course.id} courseId={course.courseId} taken={course.taken} onDelete={onDelete}/>
+                <Class key={course.id} title={course.title} id={course.id} courseId={course.courseId} taken={course.taken} onDelete={onDelete} onTakenChange={onTakenChange}/>
               ))}
             </div>
         </div>

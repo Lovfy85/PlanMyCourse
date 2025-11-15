@@ -6,51 +6,18 @@
   flex-direction: column;
 }
 
-
 .graph-main {
   flex: 1;
   position: relative;
 }
 
-
-/* Input field */
-.search-input {
-  width: 300px;
-  padding: 10px;
-  border-radius: 5px 0 0 5px;
-  border: 1px solid #ccc;
-  outline: none;
-  font-size: 16px;
-}
-
-/* Search button */
-.search-button {
-  background-color: #2740a0;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-/* Change color on hover */
-.search-button:hover {
-  background-color: #1f3180;
-}
-
-.graph-main {
-  flex: 1;
-  position: relative;
-}
-
-/* Navbar*/
+/* Navbar */
 .graph-navbar {
   width: 100%;
   z-index: 20;
 }
 
-/* Search bar container */
+/* Search bar container - positioned at top */
 .search-bar-container {
   position: fixed;     
   background: none;  
@@ -61,9 +28,8 @@
   height: 3em;
   justify-content: center;
   z-index: 10;
-  pointer-events: auto;  /* allow clicks inside */
+  pointer-events: auto;
 }
-
 
 /* Input field */
 .search-input {
@@ -92,7 +58,8 @@
   transition: ease-in-out 1s;
 }
 
-.graph-flow{
+/* Graph flow container */
+.graph-flow {
   display: flex;
   width: 70%;
   height: 77vh;

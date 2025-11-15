@@ -1,13 +1,15 @@
 import './PlannerPage.css'
 import Accordion from '../../components/Planner/Accordion'
+import PlannerGraph from '../../components/Planner/PlannerGraph'
 
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 function PlannerPage() {
     const [mappableCourses, setMappableCourses] = useState([]);
-    const [undoData, setUndoData] = useState(null);
-    const [undoTimer, setUndoTimer] = useState(null);
+    const [undoStack, setUndoStack] = useState([]);
+    const [isGraphOpen, setIsGraphOpen] = useState(false);
+    const [allCourses, setAllCourses] = useState([]);
 
     function processData(data) {
         const sortedCourses = {};
@@ -33,6 +35,7 @@ function PlannerPage() {
         .then(response => {
             const processedData = processData(response.data);
             setMappableCourses(processedData);
+            setAllCourses(response.data);
         })
         .catch(error => {
             console.error("Error fetching courses added", error)
@@ -40,44 +43,50 @@ function PlannerPage() {
     };
 
     const handleDelete = (deletedCourse) => {
-        // Clear any existing undo timer
-        if (undoTimer) {
-            clearTimeout(undoTimer);
-        }
-
-        // Store the deleted course data for undo
-        setUndoData({
+        // Add deleted course to undo stack with a timer
+        const undoItem = {
             id: deletedCourse.id,
             courseId: deletedCourse.courseId,
             taken: deletedCourse.taken,
-            title: deletedCourse.title
-        });
+            title: deletedCourse.title,
+            timer: setTimeout(() => {
+                // Remove this item from stack after 5 seconds
+                setUndoStack(prev => prev.filter(item => item.id !== deletedCourse.id));
+            }, 5000)
+        };
 
-        // Set up auto-dismiss after 5 seconds
-        const timer = setTimeout(() => {
-            setUndoData(null);
-        }, 5000);
-
-        setUndoTimer(timer);
+        setUndoStack(prev => [...prev, undoItem]);
         fetchCourses();
     };
 
-    const handleUndo = async () => {
-        if (!undoData) return;
+    const handleTakenChange = (id, newTakenValue) => {
+        // Update local state immediately for responsive UI
+        setAllCourses(prevCourses => 
+            prevCourses.map(course => 
+                course.id === id ? { ...course, taken: newTakenValue } : course
+            )
+        );
+        setMappableCourses(prevMappable => 
+            prevMappable.map(levelGroup => ({
+                ...levelGroup,
+                courses: levelGroup.courses.map(course =>
+                    course.id === id ? { ...course, taken: newTakenValue } : course
+                )
+            }))
+        );
+    };
 
+    const handleUndo = async (undoItem) => {
         try {
             // Re-add the course to the planner
             await axios.post("http://localhost:3001/coursesadded/", {
-                courseId: undoData.courseId,
-                taken: undoData.taken
+                courseId: undoItem.courseId,
+                taken: undoItem.taken
             });
 
-            // Clear undo data and timer
-            if (undoTimer) {
-                clearTimeout(undoTimer);
-            }
-            setUndoData(null);
-            setUndoTimer(null);
+            // Clear timer and remove from stack
+            clearTimeout(undoItem.timer);
+            setUndoStack(prev => prev.filter(item => item.id !== undoItem.id));
 
             // Refresh the courses list
             fetchCourses();
@@ -86,14 +95,17 @@ function PlannerPage() {
         }
     };
 
+    const handleDismiss = (undoItem) => {
+        clearTimeout(undoItem.timer);
+        setUndoStack(prev => prev.filter(item => item.id !== undoItem.id));
+    };
+
     useEffect(() => {
         fetchCourses();
         
-        // Cleanup timer on unmount
+        // Cleanup all timers on unmount
         return () => {
-            if (undoTimer) {
-                clearTimeout(undoTimer);
-            }
+            undoStack.forEach(item => clearTimeout(item.timer));
         };
     }, []);
 
@@ -101,24 +113,36 @@ function PlannerPage() {
     <>
         <div className="planner-content">
             <div className="planner-header">
-                <h1>Class Planner</h1>
+                <div className='header-line'>
+                    <h1>Class Planner</h1>
+                    <button className='planner-graph' onClick={() => setIsGraphOpen(true)}>Planner Graph</button>
+                </div>
                 <hr></hr>
             </div>
             <div className="class-sections">
                 {mappableCourses.map(({ level, courses }) => (
-                    <Accordion key={level} level={level} courses={courses} onDelete={handleDelete} />
+                    <Accordion key={level} level={level} courses={courses} onDelete={handleDelete} onTakenChange={handleTakenChange} />
                 ))}
             </div>
 
-            {/* Undo Notification */}
-            {undoData && (
-                <div className="undo-notification">
-                    <span>"{undoData.title}" removed from planner</span>
-                    <button className="undo-btn" onClick={handleUndo}>Undo</button>
-                    <button className="close-btn" onClick={() => setUndoData(null)}>✕</button>
-                </div>
-            )}
+            {/* Undo Notifications */}
+            <div className="undo-notifications-container">
+                {undoStack.map((undoItem) => (
+                    <div key={undoItem.id} className="undo-notification">
+                        <span>"{undoItem.title}" removed from planner</span>
+                        <button className="undo-btn" onClick={() => handleUndo(undoItem)}>Undo</button>
+                        <button className="close-btn" onClick={() => handleDismiss(undoItem)}>✕</button>
+                    </div>
+                ))}
+            </div>
         </div>
+
+        {/* Planner Graph Modal */}
+        <PlannerGraph 
+            isOpen={isGraphOpen} 
+            onClose={() => setIsGraphOpen(false)} 
+            courses={allCourses}
+        />
     </>
   )
 }
