@@ -5,6 +5,8 @@
  * Handles positioning, styling, and relationship building.
  */
 
+import { MarkerType } from "reactflow";
+
 /**
  * Build graph nodes from courses
  * 
@@ -96,6 +98,10 @@ export const buildEdges = (courses, allPrereqs, courseMap) => {
                     type: 'smoothstep',
                     animated: true,
                     className: 'graph-edge',
+                    markerEnd: {
+                        type: MarkerType.ArrowClosed,
+                        color: '#000000',
+                    },
                 });
             }
         });

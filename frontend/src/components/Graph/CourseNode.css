@@ -1,0 +1,40 @@
+.course-node-container {
+    position: relative;
+    background: transparent;
+}
+
+.course-node-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background-color: #508cc5;
+    border: 2px solid #508cc5;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    min-width: 100px;
+    justify-content: center;
+}
+
+.course-node-content:hover {
+    background-color: #6ba3d8;
+    border-color: #4a7ba7;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(39, 64, 160, 0.4);
+    cursor: pointer;
+}
+
+.course-name {
+    text-align: center;
+}
+
+.shuffle-icon {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+    cursor: pointer;
+}
