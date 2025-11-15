@@ -29,7 +29,7 @@ function Recommendation( {searchTerm, onFocused} ) {
                 filtered = filtered.filter(item => item.number.toString().includes(searchTerm.slice(4,8).trim()));
             }
             //  prevent duplicates
-            filtered = filtered.filter(item => !recentSearches.includes(item));
+            filtered = filtered.filter(item => !recentSearches.some(course => item.class_name == course.class_name));
 
             setRecommendResult(filtered);
         } else {
