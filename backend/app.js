@@ -9,6 +9,7 @@ const coursesAddedRoutes = require('./routes/coursesadded');
 const authRoutes = require('./routes/auth');
 const reviewsMadeRoutes = require('./routes/reviewsmade');
 
+// middleware imports
 const cors = require('cors');
 const app = express();
 
