@@ -9,6 +9,11 @@
 
 .course-node {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .course-code {
@@ -17,13 +22,16 @@
 }
 
 
-/* ReactFlow Node Styles */
+/* ReactFlow Nodes */
 .graph-node {
     color: white;
     border: 2px solid #333;
     border-radius: 8px;
     padding: 10px;
     width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .graph-node.taken {
@@ -34,7 +42,7 @@
     background: #aab3bb;
 }
 
-/* ReactFlow Edge Styles */
+/* ReactFlow Edge */
 .graph-edge {
     stroke: #636363;
     stroke-width: 2px;

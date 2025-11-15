@@ -9,7 +9,7 @@ function GraphPopUp() {
                     <span>Taken</span>
                 </div>
                 <div className="course-node">
-                    <div className="course-color not-taken"></div>
+                    <div className="course-colour not-taken"></div>
                     <span>Not Taken</span>
                 </div>
             </div>

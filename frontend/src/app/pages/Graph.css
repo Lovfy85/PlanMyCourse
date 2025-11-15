@@ -82,6 +82,9 @@
   font-weight: 500;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Hover effect */
@@ -100,7 +103,16 @@
   stroke-width: 2;
 }
 
-.react-flow__edge.graph-edge .react-flow__edge-path marker {
+/* Arrowhead styles */
+.react-flow__arrowhead {
+  fill: #000000;
+}
+
+.react-flow__edge-path {
+  stroke: #3a3a3a;
+}
+
+marker {
   fill: #000000;
 }
 
