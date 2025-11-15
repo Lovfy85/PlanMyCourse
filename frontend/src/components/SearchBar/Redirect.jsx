@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Recommendation from "../Recommend/Recommendations";
 import "./Redirect.css"
@@ -8,10 +8,11 @@ import Courses from "../../../../web-scraper/courses.json"
 function Redirect() {
     const [searchTerm, setSearchTerm] = useState("");
     const [onFocus, setOnFocused] = useState(false);
+    const [onRecommended, setOnRecommend] = useState(false);
     const navigate = useNavigate();
 
     // redirect the user to the catalogue page
-    const handleSearch = () => {
+    function handleSearch() {
         const term = searchTerm.trim().toUpperCase();
 
         // check for invalid terms
@@ -63,9 +64,20 @@ function Redirect() {
 
     // shows the dropdown recommended courses
     const handleFocus = (e) => {
-        document.getElementById("searchBox").classList.add("showDropdown");
         setOnFocused(true);
+        if (localStorage.getItem("recentSearches").length > 0) {
+            document.getElementById("searchBox").classList.add("showDropdown");
+        }
     }
+
+    // handle searchbar border change if there exists recommendations
+    useEffect((e) => {
+        if (onRecommended) {
+            document.getElementById("searchBox").classList.add("showDropdown");
+        } else {
+            document.getElementById("searchBox").classList.remove("showDropdown");
+        }
+    }, [onRecommended])
 
     return (
         <div className="redirectSearchBar">
@@ -79,7 +91,7 @@ function Redirect() {
                 onFocus={(e) => handleFocus(e)}
                 onBlur={(e) => handleBlur(e)}
             />
-            <Recommendation searchTerm={searchTerm} onFocused={onFocus}/>
+            <Recommendation searchTerm={searchTerm} onFocused={onFocus} onRecommended={setOnRecommend}/>
         </div>
     )
 }

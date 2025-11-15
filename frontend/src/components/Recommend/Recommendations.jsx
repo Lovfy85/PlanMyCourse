@@ -4,7 +4,7 @@ import Courses from "../../../../web-scraper/courses.json"
 import { useNavigate } from "react-router-dom";
 
 // recommendation component
-function Recommendation( {searchTerm, onFocused} ) {
+function Recommendation( {searchTerm, onFocused, onRecommended} ) {
     const [recommendResult, setRecommendResult] = useState([]);
     const [recentSearches, setRecentSearches] = useState(() => {
         const stored = localStorage.getItem("recentSearches");
@@ -13,6 +13,8 @@ function Recommendation( {searchTerm, onFocused} ) {
     const navigate = useNavigate();
     const maxRecentSearches = 5; // limit the recent searchs to prevent overflow
     const hasMounted = useRef(false); // used for dropdown visiblity control
+
+    localStorage.setItem("recentSearches","")
 
     // update the localstorage for recent searches to save locally
     useEffect(() => {
@@ -43,15 +45,18 @@ function Recommendation( {searchTerm, onFocused} ) {
         if (!hasMounted.current) {
             hasMounted.current = true;
             document.getElementById("recommendation").style.visibility = "hidden";
+            onRecommended(false)
             return;
         }
 
         // to prevent dropdown visibility the searchbox or the dropdown loses focus
         if (onFocused == false || recommendResult.length == 0 && recentSearches.length == 0) {
             document.getElementById("recommendation").style.visibility = "hidden";
+            onRecommended(false)
             return;
         } else if (onFocused == true) { // display if its being focused on
             document.getElementById("recommendation").style.visibility = "visible";
+            onRecommended(true)
         }
     }, [onFocused, recommendResult, recentSearches]);
 
