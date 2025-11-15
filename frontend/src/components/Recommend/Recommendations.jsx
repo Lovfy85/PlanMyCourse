@@ -3,7 +3,7 @@ import "./Recommendation.css";
 import Courses from "../../../../web-scraper/courses.json"
 import { useNavigate } from "react-router-dom";
 
-// redirect component
+// recommendation component
 function Recommendation( {searchTerm, onFocused} ) {
     const [recommendResult, setRecommendResult] = useState([])
     const [recentSearches, setRecentSearches] = useState(() => {
@@ -11,15 +11,17 @@ function Recommendation( {searchTerm, onFocused} ) {
         return stored ? JSON.parse(stored) : [];
     })
     const navigate = useNavigate()
-    const maxRecentSearches = 5;
+    const maxRecentSearches = 5; // limit the recent searchs to prevent overflow
     const hasMounted = useRef(false)
 
-    //localStorage.removeItem("recentSearches"); // to clear the recentSearches
+    //localStorage.removeItem("recentSearches"); // to clear the user's recent searches when the page reloads
 
+    // update the localstorage for recent searches to save locally
     useEffect(() => {
         localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
     }, [recentSearches]);
 
+    // collects recommended courses by the course subject similar to the given term
     useEffect(() => {
         if (searchTerm.length >= 4) {
             var filtered = Courses.filter(item => item.subject == searchTerm.slice(0,4).toUpperCase());
@@ -34,6 +36,7 @@ function Recommendation( {searchTerm, onFocused} ) {
         }
     }, [searchTerm])
 
+    // controls the visibility of the drop down recommendations
     useEffect(() => {
         if (!hasMounted.current) {
             hasMounted.current = true;
@@ -49,7 +52,8 @@ function Recommendation( {searchTerm, onFocused} ) {
         }
     }, [onFocused, recommendResult, recentSearches])
 
-    function autoFillSearch(course) {
+    // redirect the user to another page if any of the recommended courses is interacted with
+    function redirect(course) {
         if (course) {
             setRecentSearches(recentSearches => {
                 const filtered = recentSearches.filter(item => item.title != course.title)
@@ -68,15 +72,15 @@ function Recommendation( {searchTerm, onFocused} ) {
             {recentSearches.map((course, index) => {
                 return (
                     <button
-                        key={index}
+                        key={course.number}
                         className="courseRecommended"
                         tabIndex={0}
                         onKeyDown={(e) => {
                             if (e.key == "Enter") {
-                                autoFillSearch(course)
+                                redirect(course)
                             }
                         }}
-                        onClick={() => autoFillSearch(course)}
+                        onClick={() => redirect(course)}
                         >
                         {course.title}
                         <img 
@@ -88,15 +92,15 @@ function Recommendation( {searchTerm, onFocused} ) {
             {recommendResult.map((course, index) => {
                 return (
                     <button
-                        key={index}
+                        key={course.number}
                         className="courseRecommended"
                         tabIndex={0}
                         onKeyDown={(e) => {
                             if (e.key == "Enter") {
-                                autoFillSearch(course)
+                                redirect(course)
                             }
                         }}
-                        onClick={() => autoFillSearch(course)}
+                        onClick={() => redirect(course)}
                         >
                         {course.title}
                         <img 
