@@ -5,59 +5,62 @@ import { useNavigate } from "react-router-dom";
 
 // recommendation component
 function Recommendation( {searchTerm, onFocused} ) {
-    const [recommendResult, setRecommendResult] = useState([])
+    const [recommendResult, setRecommendResult] = useState([]);
     const [recentSearches, setRecentSearches] = useState(() => {
         const stored = localStorage.getItem("recentSearches");
         return stored ? JSON.parse(stored) : [];
-    })
-    const navigate = useNavigate()
+    });
+    const navigate = useNavigate();
     const maxRecentSearches = 5; // limit the recent searchs to prevent overflow
-    const hasMounted = useRef(false)
-
-    //localStorage.removeItem("recentSearches"); // to clear the user's recent searches when the page reloads
+    const hasMounted = useRef(false); // used for dropdown visiblity control
 
     // update the localstorage for recent searches to save locally
     useEffect(() => {
         localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
     }, [recentSearches]);
 
-    // collects recommended courses by the course subject similar to the given term
+    // updates and filters recommendedResult depending on the search term
     useEffect(() => {
         if (searchTerm.length >= 4) {
+            // filter by subject
             var filtered = Courses.filter(item => item.subject == searchTerm.slice(0,4).toUpperCase());
             if (searchTerm.length > 4) {
+                // filter the subjects by level
                 filtered = filtered.filter(item => item.number.toString().includes(searchTerm.slice(4,8).trim()));
             }
-            filtered = filtered.filter(item => !recentSearches.includes(item))
+            //  prevent duplicates
+            filtered = filtered.filter(item => !recentSearches.includes(item));
 
-            setRecommendResult(filtered)
+            setRecommendResult(filtered);
         } else {
             setRecommendResult([]);
         }
-    }, [searchTerm])
+    }, [searchTerm]);
 
     // controls the visibility of the drop down recommendations
     useEffect(() => {
+        // to prevent dropdown visibility when the page reloads first
         if (!hasMounted.current) {
             hasMounted.current = true;
             document.getElementById("recommendation").style.visibility = "hidden";
             return;
         }
 
+        // to prevent dropdown visibility the searchbox or the dropdown loses focus
         if (onFocused == false || recommendResult.length == 0 && recentSearches.length == 0) {
             document.getElementById("recommendation").style.visibility = "hidden";
             return;
-        } else if (onFocused == true) {
+        } else if (onFocused == true) { // display if its being focused on
             document.getElementById("recommendation").style.visibility = "visible";
         }
-    }, [onFocused, recommendResult, recentSearches])
+    }, [onFocused, recommendResult, recentSearches]);
 
     // redirect the user to another page if any of the recommended courses is interacted with
     function redirect(course) {
         if (course) {
             setRecentSearches(recentSearches => {
-                const filtered = recentSearches.filter(item => item.title != course.title)
-                const updated = [course, ...filtered]
+                const filtered = recentSearches.filter(item => item.title != course.title);
+                const updated = [course, ...filtered];
                 return updated.slice(0,maxRecentSearches - 1);
             });
             navigate(`./catalogue/${course.class_name.toUpperCase().trim()}`);

@@ -70,3 +70,5 @@ const getSortVariant = (variant) => {
 }
 
 export default CataloguePage;
+
+
