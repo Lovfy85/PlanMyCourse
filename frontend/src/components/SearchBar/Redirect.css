@@ -11,3 +11,10 @@
     width: 100%;
     max-height: 20px;
 }
+
+.showDropdown {
+    border-top-right-radius: 25px !important;
+    border-top-left-radius: 25px !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}

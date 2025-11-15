@@ -51,7 +51,13 @@ function Redirect() {
         if (document.getElementById("recommendation").contains(nextFocused)) {
             return;
         }
+        document.getElementById("searchBox").classList.remove("showDropdown");
         setOnFocused(false)
+    }
+
+    const handleFocus = (e) => {
+        document.getElementById("searchBox").classList.add("showDropdown");
+        setOnFocused(true)
     }
 
     return (
@@ -63,7 +69,7 @@ function Redirect() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={(e) => e.key == "Enter" && handleSearch()}
-                onFocus={() => setOnFocused(true)}
+                onFocus={(e) => handleFocus(e)}
                 onBlur={(e) => handleBlur(e)}
             />
             <Recommendation searchTerm={searchTerm} onFocused={onFocus}/>
