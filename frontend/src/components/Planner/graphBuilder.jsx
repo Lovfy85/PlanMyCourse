@@ -1,5 +1,22 @@
 import { getMarkerEnd, MarkerType } from "reactflow";
 
+<<<<<<< HEAD
+=======
+import { MarkerType } from "reactflow";
+
+/**
+ * Build graph nodes from courses
+ * 
+ * Creates positioned, styled nodes for each course in the planner.
+ * Uses saved positions if available, otherwise calculates default positions.
+ * Nodes are arranged by level (100, 200, 300, etc.) vertically.
+ * 
+ * @param {Array} courses - Array of course objects from the planner
+ * @param {Object} levelGroups - Courses grouped by level
+ * @param {Object} savedPositions - Previously saved node positions from localStorage
+ * @returns {Array} Array of node objects for ReactFlow
+ */
+>>>>>>> antoinette
 export const buildNodes = (courses, levelGroups, savedPositions) => {
     const graphNodes = [];
     const levels = Object.keys(levelGroups).sort((a, b) => a - b);
@@ -80,8 +97,11 @@ export const buildEdges = (courses, allPrereqs, courseMap) => {
                     markerEnd: {
                         type: MarkerType.ArrowClosed,
                         color: '#000000',
+<<<<<<< HEAD
                         width: 20,
                         height: 20,
+=======
+>>>>>>> antoinette
                     },
                 });
             }

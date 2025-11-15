@@ -29,7 +29,7 @@ function SearchBar({ query, onQueryChange, onSearch }) {
                 value={query}
                 onChange={(e) => onQueryChange(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="Enter course name, e.g., CMPT280 or 280"
+                placeholder="Enter course name, e.g., CMPT280 or cmpt370"
                 className="search-input"
             />
             <button onClick={onSearch} className="search-button">

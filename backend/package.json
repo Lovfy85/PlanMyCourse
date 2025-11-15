@@ -7,8 +7,14 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
   "test": "jest --coverage",
   "start": "nodemon server.js"
+=======
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "generate-alternatives": "node scripts/generateAlternatives.js"
+>>>>>>> antoinette
   },
   "dependencies": {
     "axios": "^1.12.2",

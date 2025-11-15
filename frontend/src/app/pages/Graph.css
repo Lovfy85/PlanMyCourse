@@ -116,13 +116,12 @@ marker {
   fill: #000000;
 }
 
-.react-flow__controls {
-  position: absolute;
-  padding-bottom: 4em;
-  padding-left: 15.5em;
-  background: none;
-  border: none;
-  box-shadow: none;
-  z-index: 5;
+.react-flow__edge-path {
+  stroke: #3a3a3a;
 }
+
+marker {
+  fill: #000000;
+}
+
 
