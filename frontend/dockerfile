@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 5173
 
 #Runs that of the website to start up from frontend.
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "dev", "--", "--host"]
