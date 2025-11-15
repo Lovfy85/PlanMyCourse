@@ -1,6 +1,9 @@
-.course-node-container {
-    position: relative;
-    background: transparent;
+/* Override ReactFlow default node styles */
+.react-flow__node {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
 }
 
 .course-node-content {

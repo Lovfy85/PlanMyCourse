@@ -12,7 +12,7 @@ import './CourseNode.css';
 
 function CourseNode({ data }) {
     return (
-        <div className="course-node-container">
+        <>
             <Handle type="target" position={Position.Top} />
             <div className="course-node-content">
                 <span className="course-name">{data.label}</span>
@@ -26,7 +26,7 @@ function CourseNode({ data }) {
                 )}
             </div>
             <Handle type="source" position={Position.Bottom} />
-        </div>
+        </>
     );
 }
 
