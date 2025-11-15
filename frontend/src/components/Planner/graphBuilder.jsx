@@ -1,7 +1,10 @@
-import { getMarkerEnd, MarkerType } from "reactflow";
+/**
+ * Graph Builder Functions
+ * 
+ * Functions to construct graph nodes and edges for the planner visualization.
+ * Handles positioning, styling, and relationship building.
+ */
 
-<<<<<<< HEAD
-=======
 import { MarkerType } from "reactflow";
 
 /**
@@ -16,7 +19,6 @@ import { MarkerType } from "reactflow";
  * @param {Object} savedPositions - Previously saved node positions from localStorage
  * @returns {Array} Array of node objects for ReactFlow
  */
->>>>>>> antoinette
 export const buildNodes = (courses, levelGroups, savedPositions) => {
     const graphNodes = [];
     const levels = Object.keys(levelGroups).sort((a, b) => a - b);
@@ -97,11 +99,6 @@ export const buildEdges = (courses, allPrereqs, courseMap) => {
                     markerEnd: {
                         type: MarkerType.ArrowClosed,
                         color: '#000000',
-<<<<<<< HEAD
-                        width: 20,
-                        height: 20,
-=======
->>>>>>> antoinette
                     },
                 });
             }
