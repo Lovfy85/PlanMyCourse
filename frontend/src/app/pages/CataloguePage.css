@@ -40,6 +40,8 @@
 .catalogue-search {
     margin: 20px 0;
     padding: 0 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: flex-start;
 }
