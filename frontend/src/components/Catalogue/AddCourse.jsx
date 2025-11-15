@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./AddCourse.css";
 
-function AddCourse({ courseId, id, buttonClass = "add-course" }) {
-    const [added, setAdded] = useState(false);
+function AddCourse({ courseId, id, buttonClass = "add-course", added: initialAdded = false }) {
+    const [added, setAdded] = useState(initialAdded);
 
     useEffect(() => {
         axios.get(`http://localhost:3001/coursesadded/${id}`)
@@ -19,7 +19,7 @@ function AddCourse({ courseId, id, buttonClass = "add-course" }) {
         try {
             axios.post("http://localhost:3001/coursesadded/",{
                 courseId: id,
-                taken: true
+                taken: false
             }).then(response => {
                 setAdded(true)
             }).catch(error => {
