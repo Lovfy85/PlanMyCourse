@@ -34,7 +34,7 @@ function CatalogueCourse( {title, description, courseId, id} ) {
     
     return (    
         <div className="catalogue-course">
-            <span className="course-title" onClick={() => navigate(`/catalogue/course/${courseId}`)}>{title}</span>
+            <span className="course-title" onClick={() => navigate(`/catalogue/course/${courseId.toLowerCase()}`)}>{title}</span>
             <div className="information">
                 <span className="description">{description}</span>
                 <button className={`add-course ${added ? "added" : ""}`}

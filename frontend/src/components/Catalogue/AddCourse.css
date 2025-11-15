@@ -16,6 +16,8 @@
   position: relative;
   border-radius: 15px;
   z-index: 1;
+  width: 150px;
+  justify-content: center;
 }
 
 .add-course.added {

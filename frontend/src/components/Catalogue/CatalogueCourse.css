@@ -30,9 +30,11 @@
 }
 
 .information {
-  display: grid;
-  grid-template-columns: 4fr .7fr;
-  gap: 3rem;
-  justify-items: end;
-  align-items: end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.description {
+  width: 90%;
 }
