@@ -10,8 +10,8 @@ const reviewsMadeRoutes = require('./routes/reviewsmade');
 //This is used to make sure that of there can be a connection of the server.js with that of the frontend overall. 
 const cors = require('cors');
 
-//These refer to that of the tables made that are for the courses added (the planner) and that of the users (which they will be implemented in the 
-// the project soon).
+//These refer to that of the tables made that are for the courses added (the planner), the users (in which there can be registered users for the website soon)
+// and that for of reviews (which stores that of comments done by users for a specific course. will be improved later).
 const { createCoursesAddedTable } = require('./models/coursesAdded');
 const { createUsersTable } = require('./models/Users');
 const { createReviewsTable } = require('./models/reviewsMade');
@@ -32,7 +32,7 @@ app.use('/coursesadded', coursesAddedRoutes);
 app.use('/reviewsmade', reviewsMadeRoutes);
 app.use('/auth', authRoutes);
 
-//Calls that of the tables that were made in 'models' folder, which are the tables of CoursesAdded Table and Users Table. 
+//Calls that of the tables that were made in 'models' folder, which are the tables of CoursesAdded Table, Users Table and Reviews Table.
 createCoursesAddedTable()
 createUsersTable()
 createReviewsTable()

@@ -21,6 +21,7 @@ router.get('/', (req, res) => {
     }
 });
 
+// GET
 // Get a course by name, subject or level
 router.get('/search', (req,res) => {
     const searchTerm = req.query.term;
@@ -53,6 +54,7 @@ router.get('/search', (req,res) => {
     });
 });
 
+// GET
 // Get by class_name
 router.get('/:name', (req,res) => {
     connectMade.query(`SELECT * FROM Courses WHERE class_name = ?`, [req.params.name], (err, results) => {
@@ -65,6 +67,7 @@ router.get('/:name', (req,res) => {
     });
 });
 
+// GET
 // Get by courseId
 router.get('/:id', (req,res) => {
     connectMade.query(`SELECT * FROM Courses WHERE courseId = ?`, [req.params.name], (err, results) => {
@@ -77,6 +80,7 @@ router.get('/:id', (req,res) => {
     });
 });
 
+// GET
 //Get courses in that of an alphabetical order by that of their class name.
 router.get('/sort/alphabetical', (req, res) => {
     connectMade.query(`SELECT * FROM Courses ORDER BY class_name ASC`, (err, results) => {
@@ -89,6 +93,7 @@ router.get('/sort/alphabetical', (req, res) => {
     });
 });
 
+// GET
 //Get courses in that of an alphabetical order by that of their class name.
 router.get('/sort/number', (req, res) => {
     connectMade.query(`SELECT * FROM Courses ORDER BY number ASC`, (err, results) => {
@@ -101,8 +106,9 @@ router.get('/sort/number', (req, res) => {
     });
 });
 
-//Get courses in which it sorts the catalogue in alphabetical order but have of the taken courses be displayed first and the untaken courses 
-// to be displayed down below.
+// GET
+//Get courses in which it sorts the catalogue in alphabetical order but have of the courses that were added in the planner be displayed first and the 
+// courses that are not added to the planner be displayed before. 
 router.get('/sort/addedtoplanner', (req, res) => {
     const query = `
         SELECT 

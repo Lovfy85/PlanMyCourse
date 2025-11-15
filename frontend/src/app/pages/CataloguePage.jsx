@@ -8,6 +8,8 @@ import CatalogueCourse from '../../components/Catalogue/CatalogueCourse';
 function CataloguePage() {
   const { term } = useParams();
   const [courses, setCourses] = useState([]);
+
+  //Sets that of the sort variant to null considering no type of way of sorting the catalogue has been chosen.
   const [setSortVariant] = useState(null);
 
   useEffect(() => {
@@ -35,6 +37,9 @@ const getSortVariant = (variant) => {
         <h1>Course Catalogue</h1>
         <hr></hr>
 
+    {/**
+     * The buttons in which are respsonible for the type of sorting options in which how the course catalogue is to be displayed.
+     */}
     <div className="catalogue-sort">
         <button onClick = {() => getSortVariant("alphabetical")}>
           Sort By Alphabetical
@@ -51,6 +56,10 @@ const getSortVariant = (variant) => {
         </div>
       </div>
 
+      {/**
+      * This is to display that of each of the courses to be seen in the course catalogue.
+      * Also, that of the 'added' part, that is implemented to make sure that the sort for courses that are added in the planner and courses not added in the planner works.
+     */}
       <div className='catalogue-courses'>
         {courses.map((course) => {
           return (
