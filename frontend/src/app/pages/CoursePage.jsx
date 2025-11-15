@@ -23,7 +23,7 @@ function CoursePage() {
         return { prerequisites, notes };
     }
     useEffect(() => {
-        axios.get(`http://localhost:3001/courses/${courseId}`)
+        axios.get(`http://localhost:3001/courses/name/${courseId}`)
         .then(response => {
             const courseData = response.data[0];
             setCourse(courseData);

@@ -54,7 +54,7 @@ router.get('/search', (req,res) => {
 });
 
 // Get by class_name
-router.get('/:name', (req,res) => {
+router.get('/name/:name', (req,res) => {
     connectMade.query(`SELECT * FROM Courses WHERE class_name = ?`, [req.params.name], (err, results) => {
         if(err){
             console.error('There has been an error getting the course from the courses table.');
@@ -66,7 +66,7 @@ router.get('/:name', (req,res) => {
 });
 
 // Get by courseId
-router.get('/:id', (req,res) => {
+router.get('/id/:id', (req,res) => {
     connectMade.query(`SELECT * FROM Courses WHERE courseId = ?`, [req.params.name], (err, results) => {
         if(err){
             console.error('There has been an error getting the course from the courses table.');
