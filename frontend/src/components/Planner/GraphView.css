@@ -26,20 +26,39 @@
 .graph-node {
     color: white;
     border: 2px solid #333;
-    border-radius: 8px;
+    border-radius: 0.8em;
     padding: 10px;
-    width: 200px;
+    width: 10em;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.graph-node:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(39, 64, 160, 0.4);
+    cursor: pointer;
 }
 
 .graph-node.taken {
     background: #2177c8;
 }
 
+.graph-node.taken:hover {
+    background: #3a8dd9;
+}
+
 .graph-node.not-taken {
     background: #aab3bb;
+}
+
+.graph-node.not-taken:hover {
+    background: #bcc4cc;
 }
 
 /* ReactFlow Edge */
