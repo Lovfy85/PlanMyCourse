@@ -1,9 +1,11 @@
 /* Override ReactFlow default node styles */
 .react-flow__node.react-flow__node-courseNode {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    box-shadow: none !important;
+    background: transparent;
+    border: solid black;
+    padding: 0;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    background-color: #508cc5;
 }
 
 .course-node-content {
