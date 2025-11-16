@@ -6,6 +6,7 @@ import {
     buildGraphNodes
 } from '../../components/Planner/graphUtils';
 import alternativesData from './alternatives.json';
+import coursesData from '../../../../web-scraper/courses.json';
 import CourseNode from '../../components/Graph/CourseNode';
 
 export const useGraphData = (fitView) => {
@@ -126,12 +127,17 @@ export const useGraphData = (fitView) => {
                 }
             });
             
+            // Get course title from courses.json
+            const course = coursesData.find(c => c.class_name === node.id);
+            const courseTitle = course ? course.title : node.id;
+            
             return {
                 ...node,
                 type: 'courseNode',
                 data: {
                     label: node.id,
-                    hasAlternatives: hasAlternatives
+                    hasAlternatives: hasAlternatives,
+                    title: courseTitle
                 }
             };
         });
@@ -227,12 +233,17 @@ export const useGraphData = (fitView) => {
                 }
             });
             
+            // Get course title from courses.json
+            const course = coursesData.find(c => c.class_name === node.id);
+            const courseTitle = course ? course.title : node.id;
+            
             return {
                 ...node,
                 type: 'courseNode',
                 data: {
                     label: node.id,
-                    hasAlternatives: hasAlternatives
+                    hasAlternatives: hasAlternatives,
+                    title: courseTitle
                 }
             };
         });

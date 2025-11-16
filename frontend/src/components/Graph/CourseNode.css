@@ -2,32 +2,32 @@
 .react-flow__node.react-flow__node-courseNode {
     background: transparent;
     border: solid black;
+    width: 10em;
     padding: 0;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
-    background-color: #508cc5;
+    border-radius: 0.8em;
+    background-color: #2177c8;
 }
 
 .course-node-content {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 15px;
-    background-color: #508cc5;
-    border: 2px solid #508cc5;
-    border-radius: 15px;
-    color: #ffffff;
+    padding: 10px;
+    border-radius: 0.5em;
+    color: white;
     font-size: 16px;
     font-weight: 500;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease;
-    min-width: 100px;
+    width: 10em;
+    height: auto;
     justify-content: center;
 }
 
 .course-node-content:hover {
-    background-color: #6ba3d8;
-    border-color: #4a7ba7;
+    background-color: #3a8dd9;
+    border-color: #333;
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(39, 64, 160, 0.4);
     cursor: pointer;
@@ -35,11 +35,14 @@
 
 .course-name {
     text-align: center;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .shuffle-icon {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     filter: brightness(0) invert(1);
     cursor: pointer;
+    flex-shrink: 0;
 }

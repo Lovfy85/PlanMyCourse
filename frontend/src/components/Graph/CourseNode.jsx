@@ -14,14 +14,13 @@ function CourseNode({ data }) {
     return (
         <>
             <Handle type="target" position={Position.Top} />
-            <div className="course-node-content">
+            <div className="course-node-content" title={data.title || data.label}>
                 <span className="course-name">{data.label}</span>
                 {data.hasAlternatives && (
                     <img 
                         className="shuffle-icon" 
                         src="https://images.icon-icons.com/2024/PNG/512/clockwise_refresh_arrow_icon_123836.png"
                         alt="Switch alternative"
-                        title="Click to see alternatives"
                     />
                 )}
             </div>
