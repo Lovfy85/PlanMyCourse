@@ -52,7 +52,7 @@ export const buildNodes = (courses, levelGroups, savedPositions) => {
                 id: course.class_name,
                 data: { 
                     label: (
-                        <div className="course-node">
+                        <div className="course-node" title={course.title || course.class_name}>
                             <div className="course-code">{course.class_name}</div>
                         </div>
                     )
