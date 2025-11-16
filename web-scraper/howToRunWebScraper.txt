@@ -8,8 +8,6 @@ create a .env file inside the web-scraper directory with the following attribute
     DB_HOST= <The host (You can usually just have "localhost" for this)>
     DB_NAME= <The name of the database/schema you want to import the data into>
 
-    JWT_SECRET=Really_Cool_Key
-
 Once you have all of the above configured you can start the following:
 
     cd web-scraper folder
