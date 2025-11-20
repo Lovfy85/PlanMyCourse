@@ -8,7 +8,7 @@ function CatalogueCourse( {title, description, courseId, id} ) {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/coursesadded/${id}`)
+        axios.get(`http://localhost:3001/coursesadded/${id}`, {withCredentials: true})
             .then(res => {
                 if (res.data.exists){ 
                     setAdded(true);
@@ -22,7 +22,7 @@ function CatalogueCourse( {title, description, courseId, id} ) {
             axios.post("http://localhost:3001/coursesadded/",{
                 courseId: id,
                 taken: false
-            }).then(response => {
+            }, {withCredentials: true}).then(response => {
                 setAdded(true)
             }).catch(error => {
                 console.error("Failed to add course to user's coursesAdded data.");

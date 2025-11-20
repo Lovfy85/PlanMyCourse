@@ -59,8 +59,9 @@ router.get('/:courseId', (req, res) => {
 
 // POST
 // Insert courses to the CoursesAdded table 
-router.post('/', (req, res) => {
-    const { courseId, taken, userId } = req.body;
+router.post('/',verifyToken, (req, res) => {
+    const userId = req.user.userId;
+    const { courseId, taken} = req.body;
     // const userId = req.user.userId;
     const checkQuery = 'SELECT * FROM CoursesAdded WHERE courseId = ?';
 
@@ -96,12 +97,13 @@ router.post('/', (req, res) => {
 
 // PUT
 // Update taken from false to true, or true to false
-router.put('/:id', (req, res) => {
+router.put('/:id', verifyToken,(req, res) => {
+    const userId = req.user.userId;
     const id = req.params.id
     const { taken } = req.body
 
-    const query = `UPDATE CoursesAdded SET taken = ? WHERE id = ?`
-    connectMade.query(query, [taken, id], (err, result) => {
+    const query = `UPDATE CoursesAdded SET taken = ? WHERE id = ? AND userId = ?`;
+    connectMade.query(query, [taken, id, userId], (err, result) => {
         if(err){
             res.send("Did not change taken value in CoursesAdded table")
             return
@@ -113,10 +115,11 @@ router.put('/:id', (req, res) => {
 
 // DELETE
 // Deletes that of the course that was added in the table overall by referring to its id in the table. 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', verifyToken,(req, res) => {
+    const userId = req.user.userId;
     const id = req.params.id;
-    const query = `DELETE FROM CoursesAdded WHERE id = ?`;
-    connectMade.query(query, [id], (err, result) => {
+    const query = `DELETE FROM CoursesAdded WHERE id = ? AND userId = ?`;
+    connectMade.query(query, [id, userId], (err, result) => {
         if(err){
             res.send("Did not delete a course from CoursesAdded table")
             return;
@@ -124,6 +127,6 @@ router.delete('/:id', (req, res) => {
         res.json({message: "The course that was added before is now deleted."});
     })
 
-})
+});
 
 module.exports = router;

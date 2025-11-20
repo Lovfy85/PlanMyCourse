@@ -11,7 +11,7 @@ function AddCourse({ courseId, id, buttonClass = "add-course", added: initialAdd
 
     //This is to check if that of the course that is added is seen in that of the planner.
     useEffect(() => {
-        axios.get(`http://localhost:3001/coursesadded/${id}`)
+        axios.get(`http://localhost:3001/coursesadded/${id}`, {withCredentials: true})
             .then(res => {
                 if (res.data.exists){ 
                     setAdded(true);
@@ -26,7 +26,7 @@ function AddCourse({ courseId, id, buttonClass = "add-course", added: initialAdd
             axios.post("http://localhost:3001/coursesadded/",{
                 courseId: id,
                 taken: false
-            }).then(response => {
+            }, {withCredentials: true}).then(response => {
                 setAdded(true)
             }).catch(error => {
                 console.error("Failed to add course to user's coursesAdded data.");

@@ -4,7 +4,7 @@ import axios from 'axios'
 function AccordionClass({title, id, courseId, taken, onDelete, onTakenChange}) {
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3001/coursesadded/${id}`);
+      await axios.delete(`http://localhost:3001/coursesadded/${id}`, {withCredentials: true});
       if (onDelete) {
         // Pass the deleted course data for undo functionality
         onDelete({
@@ -24,7 +24,7 @@ function AccordionClass({title, id, courseId, taken, onDelete, onTakenChange}) {
     try {
       await axios.put(`http://localhost:3001/coursesadded/${id}`, {
         taken: newTakenValue
-      });
+      }, {withCredentials: true});
       if (onTakenChange) {
         onTakenChange(id, newTakenValue);
       }
