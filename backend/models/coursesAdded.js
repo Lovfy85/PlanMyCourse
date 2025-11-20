@@ -9,8 +9,10 @@ const createCoursesAddedTable = async () => {
         id INT AUTO_INCREMENT PRIMARY KEY,
         courseId INT,
         taken BOOLEAN DEFAULT FALSE,
+        userId INT,
         createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (courseId) REFERENCES Courses(courseId)
+        FOREIGN KEY (courseId) REFERENCES Courses(courseId) ON DELETE CASCADE,
+        FOREIGN KEY (userId) REFERENCES Users(userId) ON DELETE CASCADE
         )
     `;
     try {

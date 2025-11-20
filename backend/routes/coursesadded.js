@@ -2,10 +2,12 @@
 const express = require('express');
 const connectMade = require('../config.js');
 const router = express.Router();
+const { verifyToken } = require('../middleware/authMiddleware.js');
 
 // GET 
 // Get all the courses added to the courses added table
-router.get('/', (req, res) => {
+router.get('/', verifyToken, (req, res) => {
+    const userId = req.user.userId;
     try{
         const query = `
             SELECT 
@@ -16,8 +18,10 @@ router.get('/', (req, res) => {
                 c.subject,
                 c.number,
                 c.class_name
-            FROM CoursesAdded ca JOIN Courses c ON ca.courseId = c.courseId`
-        connectMade.query(query, (err, results) => {
+            FROM CoursesAdded ca JOIN Courses c ON ca.courseId = c.courseId
+            WHERE ca.userId = ?`
+            
+        connectMade.query(query, [userId], (err, results) => {
         if(err){
             console.error('There has been a query error.', err);
             res.status(500).send('There has been an error with getting the coursesadded table.');
@@ -56,8 +60,14 @@ router.get('/:courseId', (req, res) => {
 // POST
 // Insert courses to the CoursesAdded table 
 router.post('/', (req, res) => {
-    const { courseId, taken } = req.body;
+    const { courseId, taken, userId } = req.body;
+    // const userId = req.user.userId;
     const checkQuery = 'SELECT * FROM CoursesAdded WHERE courseId = ?';
+
+    // Check for userId
+    if (!userId) {
+        return res.status(400).json({ error: 'User ID is required' });
+    }
 
     // Check if courseId already exists
     connectMade.query(checkQuery, [courseId], (err, results) => {
@@ -71,8 +81,8 @@ router.post('/', (req, res) => {
         }
 
         // If not found, insert new course
-        const insertQuery = 'INSERT INTO CoursesAdded (courseId, taken) VALUES (?, ?)';
-        connectMade.query(insertQuery, [courseId, taken], (err, result) => {
+        const insertQuery = 'INSERT INTO CoursesAdded (courseId, taken, userId) VALUES (?, ?, ?)';
+        connectMade.query(insertQuery, [courseId, taken, userId], (err, result) => {
             if (err) {
                 console.error('Error inserting course:', err);
                 return res.status(500).json({ error: 'Failed to insert course' });

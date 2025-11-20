@@ -1,11 +1,11 @@
 const express = require('express');
 const connectMade = require('../config.js');
 const router = express.Router();
-const { getToken } = require('../middleware/authMiddleware.js');
+const { verifyToken } = require('../middleware/authMiddleware.js');
 
 // POST
 // This is so that the logged in user can make that of comments for a specific course that they selected.
-router.post('/', getToken, (req, res) => {
+router.post('/', verifyToken, (req, res) => {
 
     //Needs that of the course's id in order for the user to make a comment to that specific course, the content they will submit inside the review 
     // and the user's id to make sure who made such comment.

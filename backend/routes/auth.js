@@ -51,34 +51,39 @@ router.post('/login', (req, res) => {
     //In order for that of the registered user to login that of the website, they need to input their username and their password. Make sure they do.
     const {username, password} = req.body;
     if (!username || !password) {
-      return res.status(400).json({ error: "You need to have that of a username and password be submitted to log in." });
+      return res.status(400).json({ error: "Username and password is required" });
     }
     
-    //Go through that of the users table to search if that of the username exists in that of the users table overall in order for that user to login.
+    // Check if user exists
     connectMade.query(`SELECT * FROM Users WHERE username = ?`, [username], async (err, results) => {
 
-        //This error only occurs if that of the server has an error, which would affect the user loggining into the website.
+        // Check for server error
         if(err){
-            return res.status(500).json({message: "There seems to be an error in that of a server"});
+            return res.status(500).json({error: "Server error"});
         }
 
         //If that of the username cannot be found, then that means that the username does not exist.
         if(results.length === 0){
-            return res.status(401).json({message: "There seems to be an invalid match that of username and password."});
+            return res.status(401).json({error: "Invalid username or password."});
         }
 
         //This is to find that of the username and that of the username's password. If the password for that username is not found, that means that the password given is invalid for that username.
         const userFound = results[0];
         const passwordFound = await bcrypt.compare(password, userFound.password);
-        if(!passwordFound){
-            return res.status(401).json({message: "The password seems to not be found by the user who is entering it."});
+        if (!passwordFound) {
+            return res.status(401).json({ error: "Invalid username or password." });
         }
 
         //If found, make sure that the user can login into the website freely, which that of the token given to the user for the website expires in 30 years.
         const tokenGiven = jwt.sign(
             {userId: userFound.userId, username: userFound.username},
             process.env.JWT_SECRET,
-            {expiresIn: 946080000});
+            {expiresIn: "1y"}
+        );
+        res.cookie("jwt", tokenGiven, {
+            httpOnly: true,
+            maxAge: 1000 * 60 * 60 * 24 // 1 day
+        });
         res.json({message: "Registered User is now logged in the website.", tokenGiven});
     });
 });
