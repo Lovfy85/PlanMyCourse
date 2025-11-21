@@ -1,186 +1,130 @@
-import React, { useState } from "react";
-import ReactFlow, {
-  Background,
-  MiniMap,
-  Controls,
-  ReactFlowProvider,
-  useReactFlow,
-} from "reactflow";
+/**
+ * Graph Page Component
+ * 
+ * Main page for displaying course prerequisite graphs.
+ * Users can search for a course and see all its prerequisites in a visual graph.
+ */
+
+import { useState } from "react";
+import { Controls, ReactFlowProvider, useReactFlow } from "reactflow";
 import "reactflow/dist/style.css";
 import Navbar from "../../components/Navbar/Navbar";
+import SearchBar from "../../components/Graph/SearchBar";
+import GraphFlow from "../../components/Graph/GraphFlow";
+import AlternativeSelector from "../../components/Graph/AlternativeSelector";
+import { useGraphData } from "./useGraphData";
+import alternativesData from "./alternatives.json";
 import "./Graph.css";
- // Used to communicate with the backend API
-import axios from "axios";
 
-
-const computeDepths = (edges) => {
-  const graph = {};
-  const inDegree = {};
-
-  // Build a graph and count incoming edges for each node
-  edges.forEach(({ source, target }) => {
-    if (!graph[source]) graph[source] = [];
-    graph[source].push(target);
-    inDegree[target] = (inDegree[target] || 0) + 1;
-    if (!inDegree[source]) inDegree[source] = 0;
-  });
-
-  // Start with nodes that have no prerequisites (inDegree = 0)
-  const queue = Object.keys(inDegree).filter((k) => inDegree[k] === 0);
-  const depth = {};
-  queue.forEach((n) => (depth[n] = 0));
-
-  // Use a simple breadth-first traversal to assign depth levels
-  while (queue.length) {
-    const node = queue.shift();
-    const currDepth = depth[node];
-    (graph[node] || []).forEach((neighbor) => {
-      depth[neighbor] = Math.max(depth[neighbor] || 0, currDepth + 1);
-      inDegree[neighbor]--;
-      if (inDegree[neighbor] === 0) queue.push(neighbor);
-    });
-  }
-
-  return depth;
-};
-
-
-// Main Graph Content
+/**
+ * GraphContent Component
+ * 
+ * Inner component that has access to ReactFlow context.
+ * Manages the search functionality and graph display.
+ */
 const GraphContent = () => {
-  const [nodes, setNodes] = useState([]);
-  const [edges, setEdges] = useState([]);
-  const [query, setQuery] = useState("");
-  // Centeralize the graph using fitView 
-  const { fitView } = useReactFlow(); 
+  // Get fitView function from ReactFlow to center the graph
+  const { fitView } = useReactFlow();
+  
+  // Get graph data and search handlers from custom hook
+  const { nodes, edges, query, setQuery, handleSearch, replaceNode } = useGraphData(fitView);
+  
+  // State for alternative selector
+  const [selectedNode, setSelectedNode] = useState(null);
 
-
-
-  // Handle search button click
-  const handleSearch = async () => {
-    // Allow lowercase and remove spaces
-    let lowerQuery = query.toLowerCase().replace(/\s+/g, "");
-    if (!lowerQuery) return; 
-
-    // If user enters just numbers (e.g., "280"), prepend "cmpt"
-    if (/^\d+$/.test(lowerQuery)) {
-      lowerQuery = `cmpt${lowerQuery}`;
+  // Handle node click to show alternatives
+  const handleNodeClick = (event, node) => {
+    const courseName = node.id;
+    
+    // Find which courses have this node as a prerequisite
+    const dependentCourses = edges.filter(edge => edge.source === courseName);
+    
+    if (dependentCourses.length === 0) {
+      return; // No courses depend on this, so no alternatives to show
     }
-
-    try {
-      // Fetch prerequisite data from backend
-      const response = await axios.get(
-        `http://localhost:3001/prerequisites/search?term=${lowerQuery}`
-      );
-      const prereqData = response.data;
-
-      // Only do CMPT prerequisites
-      const filteredData = prereqData.filter(
-        (row) =>
-          row.course?.toUpperCase().startsWith("CMPT") &&
-          row.prereq?.toUpperCase().startsWith("CMPT")
-      );
-
-      // Don't display course if no prerequisites exist
-      if (!filteredData.length) {
-        alert("No CMPT prerequisites found!");
-        return;
-      }
-
-      // Build edges between courses and connect lines (by using steps)
-      const edges = filteredData.map((row) => ({
-        id: `${row.course}-${row.prereq}`,
-        source: row.prereq,
-        target: row.course,
-        type: "step",
-        animated: true,
-        style: { 
-          stroke: "#3a3a3aff", 
-          strokeWidth: 2 },
-        markerEnd: { 
-          type: "arrowclosed", color: "#000000ff" },
-      }));
-
-      // Compute depth level for each node (how far from root)
-      const depthMap = computeDepths(edges);
-
-      // Collect all course names
-      const courseNames = new Set();
-      filteredData.forEach((r) => {
-        courseNames.add(r.course);
-        courseNames.add(r.prereq);
-      });
-
-      // Group courses by depth level
-      const nodesByDepth = {};
-      Array.from(courseNames).forEach((name) => {
-        const d = depthMap[name] ?? 0;
-        if (!nodesByDepth[d]) nodesByDepth[d] = [];
-        nodesByDepth[d].push(name);
-      });
-
-      // Position nodes based on depth
-      const nodes = [];
-      Object.entries(nodesByDepth).forEach(([depth, names]) => {
-        const count = names.length;
-        const startX = -(count - 1) * 200;
-        names.forEach((name, i) => {
-          nodes.push({
-            id: name,
-            data: { label: name },
-            position: { x: startX + i * 300, y: depth * 200 },
-            className: "node",
+    
+    // For each dependent course, check if there are alternative prerequisites
+    const alternatives = [];
+    dependentCourses.forEach(edge => {
+      const targetCourse = edge.target;
+      const targetData = alternativesData.courseAlternatives[targetCourse];
+      
+      if (targetData && targetData.alternatives && targetData.alternatives.length > 1) {
+        // Find which alternative group contains the current course
+        const currentGroupIndex = targetData.alternatives.findIndex(altGroup => 
+          altGroup.includes(courseName)
+        );
+        
+        if (currentGroupIndex !== -1) {
+          // Get all OTHER alternative groups
+          targetData.alternatives.forEach((altGroup, index) => {
+            if (index !== currentGroupIndex) {
+              // Add all courses from other alternative groups
+              altGroup.forEach(altCourse => {
+                if (!alternatives.includes(altCourse)) {
+                  alternatives.push(altCourse);
+                }
+              });
+            }
           });
-        });
-      });
-
-      // Update states
-      setNodes(nodes);
-      setEdges(edges);
-      setQuery("");
-
-      // Fit graph in fitView
-      setTimeout(() => fitView({ padding: 0.2, duration: 800 }), 200);
-    } catch (err) {
-      console.error("Error fetching course data:", err);
+        }
+      }
+    });
+    
+    if (alternatives.length > 0) {
+      setSelectedNode({ ...node, alternativesList: alternatives });
     }
   };
 
+  // Handle selecting an alternative to replace the current node
+  const handleSelectAlternative = (oldCourse, newCourse) => {
+    replaceNode(oldCourse, newCourse);
+    setSelectedNode(null);
+  };
 
+  // Get alternatives for selected node
+  const getAlternatives = () => {
+    if (!selectedNode || !selectedNode.alternativesList) return null;
+    // Return as array of arrays to match expected format
+    return selectedNode.alternativesList.map(alt => [alt]);
+  };
 
   return (
     <div className="graph-main">
-      {/* Search bar */}
-      <div className="search-bar-container">
-        <input
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Enter course name, e.g., CMPT280 or 280"
-          className="search-input"
-        />
-        <button onClick={handleSearch} className="search-button">
-          Search
-        </button>
-      </div>
-
-      {/* Graph view */}
-      <div className="graph-flow">
-        <ReactFlow nodes={nodes} edges={edges} fitView>
-          <Background />
-        </ReactFlow>
-      </div>
+      {/* Search bar for entering course names */}
+      <SearchBar 
+        query={query}
+        onQueryChange={setQuery}
+        onSearch={handleSearch}
+      />
+      {/* Graph visualization */}
+      <GraphFlow 
+        nodes={nodes} 
+        edges={edges}
+        onNodeClick={handleNodeClick}
+      />
+      {/* Alternative selector */}
+      <AlternativeSelector
+        selectedNode={selectedNode}
+        alternatives={getAlternatives()}
+        onSelectAlternative={handleSelectAlternative}
+        onClose={() => setSelectedNode(null)}
+      />
     </div>
   );
 };
 
-
-// Graph wrapper with Navbar and ReactFlowProvider
+/**
+ * Graph Component
+ * 
+ * Main wrapper component that provides ReactFlow context.
+ * Includes navbar and graph controls.
+ */
 const Graph = () => (
   <div className="graph-container">
     <Navbar className="graph-navbar" />
     <ReactFlowProvider>
       <GraphContent />
-      <MiniMap />
       <Controls />
     </ReactFlowProvider>
   </div>

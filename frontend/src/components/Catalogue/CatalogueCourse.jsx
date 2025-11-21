@@ -1,36 +1,22 @@
 import { useNavigate } from "react-router-dom";
+import AddCourse from "../Catalogue/AddCourse.jsx";
 import "./CatalogueCourse.css";
-import axios from "axios";
 
-function CatalogueCourse( {title, description, courseId, id} ) {
+function CatalogueCourse( {title, description, courseId, id, user} ) {
     const navigate = useNavigate();
-
-    // add course to user
-    const handleAddCourse = () => {
-        try {
-            axios.post("http://localhost:3001/coursesadded/",{
-                courseId: id,
-                taken: false
-            }).then(response => {
-
-            }).catch(error => {
-                console.error("Failed to add course to user's coursesAdded data.");
-            })
-        } catch (err) {
-            
-        }
-    }
     
     return (    
-        <div className="catalogue-course" onClick={() => navigate(`/catalogue/course/${courseId}`)}>
-            <span className="course-title">{title}</span>
+        <div className="catalogue-course">
+            <span className="course-title" onClick={() => navigate(`/catalogue/course/${courseId.toLowerCase()}`)}>{title}</span>
             <div className="information">
                 <span className="description">{description}</span>
-                <button className="add-course" 
-                onClick={(e) => {
-                    e.stopPropagation()
-                    handleAddCourse()
-                }}>Add to Planner</button>
+
+                <AddCourse 
+                    id={id} 
+                    buttonClass="add-course" 
+                    user={user}
+                />
+
             </div>
         </div>
     );

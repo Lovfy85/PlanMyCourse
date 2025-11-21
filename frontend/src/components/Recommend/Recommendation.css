@@ -1,0 +1,65 @@
+.recommendation {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 109%;
+    overflow-y: auto;
+    max-height: 200px;
+    min-height: 20px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: #ffffff;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+}
+
+.recommendation::-webkit-scrollbar {
+  width: 15px;
+  background: transparent;
+}
+
+.recommendation::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 40px;
+}
+
+.recommendation::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 15px;
+  border: 15px solid #b8b8b8;
+}
+
+.recommendation::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.courseRecommended {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.icon {
+    justify-self: right;
+    filter: invert(30%) saturate(100%) contrast(90%) brightness(90%);
+    width: 20px;
+    height: 20px;
+}
+
+.courseRecommended:hover {
+    background-color: #c8c8c8;
+}
+
+.courseRecommended:focus {
+    background-color:   #e3e3e3;
+    outline: none;
+}
+
+.courseRecommended:focus:hover {
+    background-color: #c8c8c8;
+    outline: none;
+}   

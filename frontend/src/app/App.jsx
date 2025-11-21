@@ -6,17 +6,27 @@ import Planner from './pages/PlannerPage'
 import Graph from './pages/Graph'
 import Catalogue from './pages/CataloguePage'
 import Course from './pages/CoursePage'
+import SignUpPage from './pages/SignUpPage'
+import LoginPage from './pages/LoginPage'
+
+import { useAuth } from '../hooks/useAuth';
+
 function App() {
+  const user = useAuth();
+
   return (
     <div>
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/planner' element={<Planner />}/>
         <Route path='/graph' element={<Graph />}/>
-        <Route path='/catalogue/:term' element={<Catalogue />}/>
+        <Route path='/catalogue' element={<Catalogue user={user} />}/>
+        <Route path='/catalogue/:term' element={<Catalogue user={user}/>}/>
         <Route path='/catalogue/course/:courseId' element={<Course />}/>
+        <Route path='/signup' element={<SignUpPage />}/>
+        <Route path='/login' element={<LoginPage />}/>
       </Routes>
-      <Navbar />
+      <Navbar user={user} />
     </div>
   )
 }

@@ -1,0 +1,9594 @@
+{
+  "courseAlternatives": {
+    "ACC400": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ACC898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ACC899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ACC990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ACC994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ACC996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AGMD800": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AGMD801": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AGMD990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AGMD996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AGRC110": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AGRC111": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AGRC112": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AGRC113": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AGRC211": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AGRC298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AGRC311": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AGRC398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AGRC445": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AGRC498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AGRC800": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANBI110": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANBI298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANBI320": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANBI360": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANBI375": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANBI398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANBI411": {
+      "alternatives": [
+        [
+          "ANSC212"
+        ]
+      ],
+      "description": "ANSC212"
+    },
+    "ANBI420": {
+      "alternatives": [
+        [
+          "BIOL224"
+        ]
+      ],
+      "description": "BIOL224"
+    },
+    "ANBI470": {
+      "alternatives": [
+        [
+          "ANSC313"
+        ],
+        [
+          "VBMS325"
+        ]
+      ],
+      "description": "ANSC313 OR VBMS325"
+    },
+    "ANBI471": {
+      "alternatives": [
+        [
+          "BMSC210"
+        ],
+        [
+          "FABS212"
+        ]
+      ],
+      "description": "BMSC210 OR FABS212"
+    },
+    "ANBI475": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANBI492": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANBI494": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANBI498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC212": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC301": {
+      "alternatives": [
+        [
+          "ANSC212"
+        ]
+      ],
+      "description": "ANSC212"
+    },
+    "ANSC313": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC315": {
+      "alternatives": [
+        [
+          "BMSC230"
+        ]
+      ],
+      "description": "BMSC230"
+    },
+    "ANSC316": {
+      "alternatives": [
+        [
+          "BMSC230"
+        ]
+      ],
+      "description": "BMSC230"
+    },
+    "ANSC355": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC410": {
+      "alternatives": [
+        [
+          "ANSC315"
+        ]
+      ],
+      "description": "ANSC315"
+    },
+    "ANSC430": {
+      "alternatives": [
+        [
+          "ANSC315"
+        ]
+      ],
+      "description": "ANSC315"
+    },
+    "ANSC440": {
+      "alternatives": [
+        [
+          "ANSC212"
+        ],
+        [
+          "ANSC315"
+        ]
+      ],
+      "description": "ANSC212 OR ANSC315"
+    },
+    "ANSC460": {
+      "alternatives": [
+        [
+          "ANSC315"
+        ]
+      ],
+      "description": "ANSC315"
+    },
+    "ANSC485": {
+      "alternatives": [
+        [
+          "ANSC315"
+        ],
+        [
+          "ANSC316"
+        ]
+      ],
+      "description": "ANSC315 OR ANSC316"
+    },
+    "ANSC492": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC494": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC801": {
+      "alternatives": [
+        [
+          "PLSC214"
+        ]
+      ],
+      "description": "PLSC214"
+    },
+    "ANSC802": {
+      "alternatives": [
+        [
+          "ANSC315"
+        ]
+      ],
+      "description": "ANSC315"
+    },
+    "ANSC810": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC811": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC815": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC816": {
+      "alternatives": [
+        [
+          "ANSC815"
+        ]
+      ],
+      "description": "ANSC815"
+    },
+    "ANSC818": {
+      "alternatives": [
+        [
+          "ANSC315"
+        ]
+      ],
+      "description": "ANSC315"
+    },
+    "ANSC840": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC863": {
+      "alternatives": [
+        [
+          "ANSC802"
+        ],
+        [
+          "ANSC810"
+        ],
+        [
+          "ANSC815"
+        ]
+      ],
+      "description": "ANSC802 OR ANSC810 OR ANSC815"
+    },
+    "ANSC870": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANSC996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH111": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH112": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH116": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH202": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH211": {
+      "alternatives": [
+        [
+          "ANTH111"
+        ]
+      ],
+      "description": "ANTH111"
+    },
+    "ANTH226": {
+      "alternatives": [
+        [
+          "ANTH111"
+        ]
+      ],
+      "description": "ANTH111"
+    },
+    "ANTH227": {
+      "alternatives": [
+        [
+          "ANTH111"
+        ]
+      ],
+      "description": "ANTH111"
+    },
+    "ANTH230": {
+      "alternatives": [
+        [
+          "ANTH111"
+        ]
+      ],
+      "description": "ANTH111"
+    },
+    "ANTH231": {
+      "alternatives": [
+        [
+          "ANTH111"
+        ]
+      ],
+      "description": "ANTH111"
+    },
+    "ANTH235": {
+      "alternatives": [
+        [
+          "ANTH111"
+        ]
+      ],
+      "description": "ANTH111"
+    },
+    "ANTH240": {
+      "alternatives": [
+        [
+          "ANTH111"
+        ]
+      ],
+      "description": "ANTH111"
+    },
+    "ANTH241": {
+      "alternatives": [
+        [
+          "ANTH112"
+        ],
+        [
+          "ANTH116"
+        ],
+        [
+          "ARCH112"
+        ],
+        [
+          "ARCH116"
+        ]
+      ],
+      "description": "ANTH112 OR ANTH116 OR ARCH112 OR ARCH116"
+    },
+    "ANTH244": {
+      "alternatives": [
+        [
+          "ANTH111"
+        ],
+        [
+          "ANTH112"
+        ],
+        [
+          "ARCH112"
+        ]
+      ],
+      "description": "ANTH111 OR ANTH112 OR ARCH112"
+    },
+    "ANTH250": {
+      "alternatives": [
+        [
+          "ANTH112"
+        ],
+        [
+          "ANTH116"
+        ],
+        [
+          "ARCH112"
+        ],
+        [
+          "ARCH116"
+        ]
+      ],
+      "description": "ANTH112 OR ANTH116 OR ARCH112 OR ARCH116"
+    },
+    "ANTH251": {
+      "alternatives": [
+        [
+          "ANTH112"
+        ],
+        [
+          "ANTH116"
+        ],
+        [
+          "ARCH112"
+        ],
+        [
+          "ARCH116"
+        ]
+      ],
+      "description": "ANTH112 OR ANTH116 OR ARCH112 OR ARCH116"
+    },
+    "ANTH252": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH257": {
+      "alternatives": [
+        [
+          "ANTH112"
+        ],
+        [
+          "ANTH116"
+        ],
+        [
+          "ARCH112"
+        ],
+        [
+          "ARCH116"
+        ]
+      ],
+      "description": "ANTH112 OR ANTH116 OR ARCH112 OR ARCH116"
+    },
+    "ANTH258": {
+      "alternatives": [
+        [
+          "ANTH112"
+        ],
+        [
+          "ANTH116"
+        ],
+        [
+          "ARCH112"
+        ],
+        [
+          "ARCH116"
+        ]
+      ],
+      "description": "ANTH112 OR ANTH116 OR ARCH112 OR ARCH116"
+    },
+    "ANTH259": {
+      "alternatives": [
+        [
+          "ANTH112"
+        ],
+        [
+          "ANTH116"
+        ],
+        [
+          "ARCH112"
+        ],
+        [
+          "ARCH116"
+        ]
+      ],
+      "description": "ANTH112 OR ANTH116 OR ARCH112 OR ARCH116"
+    },
+    "ANTH270": {
+      "alternatives": [
+        [
+          "ANTH112"
+        ],
+        [
+          "ARCH112"
+        ],
+        [
+          "BIOL120"
+        ],
+        [
+          "BIOL121"
+        ]
+      ],
+      "description": "ANTH112 OR ARCH112 OR BIOL120 OR BIOL121"
+    },
+    "ANTH298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH299": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH302": {
+      "alternatives": [
+        [
+          "ANTH111"
+        ]
+      ],
+      "description": "ANTH111"
+    },
+    "ANTH304": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH305": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH306": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH310": {
+      "alternatives": [
+        [
+          "ANTH111"
+        ],
+        [
+          "WGST112"
+        ]
+      ],
+      "description": "ANTH111 OR WGST112"
+    },
+    "ANTH311": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH321": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH326": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH329": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH331": {
+      "alternatives": [
+        [
+          "ANTH250"
+        ],
+        [
+          "ANTH251"
+        ],
+        [
+          "ARCH250"
+        ],
+        [
+          "ARCH251"
+        ]
+      ],
+      "description": "ANTH250 OR ANTH251 OR ARCH250 OR ARCH251"
+    },
+    "ANTH332": {
+      "alternatives": [
+        [
+          "ANTH111"
+        ],
+        [
+          "WGST112"
+        ]
+      ],
+      "description": "ANTH111 OR WGST112"
+    },
+    "ANTH339": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH350": {
+      "alternatives": [
+        [
+          "ANTH250"
+        ],
+        [
+          "ANTH251"
+        ],
+        [
+          "ARCH250"
+        ],
+        [
+          "ARCH251"
+        ]
+      ],
+      "description": "ANTH250 OR ANTH251 OR ARCH250 OR ARCH251"
+    },
+    "ANTH353": {
+      "alternatives": [
+        [
+          "ANTH250"
+        ],
+        [
+          "ANTH251"
+        ],
+        [
+          "ARCH250"
+        ],
+        [
+          "ARCH251"
+        ]
+      ],
+      "description": "ANTH250 OR ANTH251 OR ARCH250 OR ARCH251"
+    },
+    "ANTH355": {
+      "alternatives": [
+        [
+          "ANTH250"
+        ],
+        [
+          "ANTH251"
+        ],
+        [
+          "ARCH250"
+        ],
+        [
+          "ARCH251"
+        ]
+      ],
+      "description": "ANTH250 OR ANTH251 OR ARCH250 OR ARCH251"
+    },
+    "ANTH356": {
+      "alternatives": [
+        [
+          "ANTH244"
+        ],
+        [
+          "ANTH250"
+        ],
+        [
+          "ANTH251"
+        ],
+        [
+          "ARCH250"
+        ],
+        [
+          "ARCH251"
+        ]
+      ],
+      "description": "ANTH244 OR ANTH250 OR ANTH251 OR ARCH250 OR ARCH251"
+    },
+    "ANTH358": {
+      "alternatives": [
+        [
+          "ANTH250"
+        ],
+        [
+          "ARCH250"
+        ]
+      ],
+      "description": "ANTH250 OR ARCH250"
+    },
+    "ANTH359": {
+      "alternatives": [
+        [
+          "ANTH250"
+        ],
+        [
+          "ANTH251"
+        ],
+        [
+          "ARCH250"
+        ],
+        [
+          "ARCH251"
+        ]
+      ],
+      "description": "ANTH250 OR ANTH251 OR ARCH250 OR ARCH251"
+    },
+    "ANTH360": {
+      "alternatives": [
+        [
+          "ANTH250"
+        ],
+        [
+          "ANTH251"
+        ],
+        [
+          "ARCH250"
+        ],
+        [
+          "ARCH251"
+        ]
+      ],
+      "description": "ANTH250 OR ANTH251 OR ARCH250 OR ARCH251"
+    },
+    "ANTH361": {
+      "alternatives": [
+        [
+          "ANTH250"
+        ],
+        [
+          "ANTH251"
+        ],
+        [
+          "ARCH250"
+        ],
+        [
+          "ARCH251"
+        ]
+      ],
+      "description": "ANTH250 OR ANTH251 OR ARCH250 OR ARCH251"
+    },
+    "ANTH365": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH370": {
+      "alternatives": [
+        [
+          "ANTH270"
+        ],
+        [
+          "ARCH270"
+        ]
+      ],
+      "description": "ANTH270 OR ARCH270"
+    },
+    "ANTH386": {
+      "alternatives": [
+        [
+          "ANTH250"
+        ],
+        [
+          "ANTH251"
+        ],
+        [
+          "ARCH250"
+        ],
+        [
+          "ARCH251"
+        ]
+      ],
+      "description": "ANTH250 OR ANTH251 OR ARCH250 OR ARCH251"
+    },
+    "ANTH390": {
+      "alternatives": [
+        [
+          "ANTH111"
+        ]
+      ],
+      "description": "ANTH111"
+    },
+    "ANTH398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH399": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH400": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH401": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH403": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH406": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH422": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH440": {
+      "alternatives": [
+        [
+          "ANTH250"
+        ],
+        [
+          "ANTH251"
+        ],
+        [
+          "ARCH250"
+        ],
+        [
+          "ARCH251"
+        ]
+      ],
+      "description": "ANTH250 OR ANTH251 OR ARCH250 OR ARCH251"
+    },
+    "ANTH458": {
+      "alternatives": [
+        [
+          "ANTH358"
+        ]
+      ],
+      "description": "ANTH358"
+    },
+    "ANTH462": {
+      "alternatives": [
+        [
+          "ANTH251"
+        ]
+      ],
+      "description": "ANTH251"
+    },
+    "ANTH471": {
+      "alternatives": [
+        [
+          "ANTH370"
+        ],
+        [
+          "ARCH470"
+        ]
+      ],
+      "description": "ANTH370 OR ARCH470"
+    },
+    "ANTH472": {
+      "alternatives": [
+        [
+          "ANTH370"
+        ],
+        [
+          "ARCH470"
+        ]
+      ],
+      "description": "ANTH370 OR ARCH470"
+    },
+    "ANTH475": {
+      "alternatives": [
+        [
+          "ANTH270"
+        ],
+        [
+          "ARCH270"
+        ]
+      ],
+      "description": "ANTH270 OR ARCH270"
+    },
+    "ANTH498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH802": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH804": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH806": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH808": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH992": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ANTH996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APEC990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APEC996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APMC825": {
+      "alternatives": [
+        [
+          "BMSC210"
+        ],
+        [
+          "FABS212"
+        ]
+      ],
+      "description": "BMSC210 OR FABS212"
+    },
+    "APMC830": {
+      "alternatives": [
+        [
+          "BMSC210"
+        ],
+        [
+          "FABS212"
+        ]
+      ],
+      "description": "BMSC210 OR FABS212"
+    },
+    "APMC852": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APMC898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APMC990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APMC994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APMC996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APPY801": {
+      "alternatives": [
+        [
+          "ACB210"
+        ]
+      ],
+      "description": "ACB210"
+    },
+    "APPY802": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APPY806": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APPY808": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APPY810": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APPY821": {
+      "alternatives": [
+        [
+          "ACB330"
+        ]
+      ],
+      "description": "ACB330"
+    },
+    "APPY824": {
+      "alternatives": [
+        [
+          "ACB200"
+        ],
+        [
+          "ACB210"
+        ],
+        [
+          "BMSC220"
+        ]
+      ],
+      "description": "ACB200 OR ACB210 OR BMSC220"
+    },
+    "APPY830": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APPY834": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APPY898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APPY899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APPY990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APPY994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "APPY996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARBC114": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARBC117": {
+      "alternatives": [
+        [
+          "ARBC114"
+        ]
+      ],
+      "description": "ARBC114"
+    },
+    "ARCH805": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARCH855": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARCH861": {
+      "alternatives": [
+        [
+          "ARCH350"
+        ]
+      ],
+      "description": "ARCH350"
+    },
+    "ARCH862": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARCH872": {
+      "alternatives": [
+        [
+          "ANTH370"
+        ],
+        [
+          "ANTH470"
+        ]
+      ],
+      "description": "ANTH370 OR ANTH470"
+    },
+    "ARCH898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARCH899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARCH990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARCH994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARCH996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC220": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC222": {
+      "alternatives": [
+        [
+          "AGRC113"
+        ],
+        [
+          "ECON111"
+        ]
+      ],
+      "description": "AGRC113 OR ECON111"
+    },
+    "AREC230": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC238": {
+      "alternatives": [
+        [
+          "AGRC113"
+        ],
+        [
+          "ECON111"
+        ]
+      ],
+      "description": "AGRC113 OR ECON111"
+    },
+    "AREC251": {
+      "alternatives": [
+        [
+          "ECON111"
+        ]
+      ],
+      "description": "ECON111"
+    },
+    "AREC254": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC261": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC262": {
+      "alternatives": [
+        [
+          "AREC261"
+        ]
+      ],
+      "description": "AREC261"
+    },
+    "AREC272": {
+      "alternatives": [
+        [
+          "AGRC113"
+        ],
+        [
+          "ECON111"
+        ]
+      ],
+      "description": "AGRC113 OR ECON111"
+    },
+    "AREC298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC315": {
+      "alternatives": [
+        [
+          "AREC272"
+        ],
+        [
+          "MATH104"
+        ]
+      ],
+      "description": "AREC272 OR MATH104"
+    },
+    "AREC322": {
+      "alternatives": [
+        [
+          "COMM201"
+        ],
+        [
+          "COMM225"
+        ]
+      ],
+      "description": "COMM201 OR COMM225"
+    },
+    "AREC342": {
+      "alternatives": [
+        [
+          "AREC262"
+        ],
+        [
+          "AREC272"
+        ]
+      ],
+      "description": "AREC262 OR AREC272"
+    },
+    "AREC343": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC344": {
+      "alternatives": [
+        [
+          "AGRC113"
+        ],
+        [
+          "ECON111"
+        ]
+      ],
+      "description": "AGRC113 OR ECON111"
+    },
+    "AREC346": {
+      "alternatives": [
+        [
+          "AREC343"
+        ],
+        [
+          "COMM204"
+        ]
+      ],
+      "description": "AREC343 OR COMM204"
+    },
+    "AREC347": {
+      "alternatives": [
+        [
+          "COMM204"
+        ]
+      ],
+      "description": "COMM204"
+    },
+    "AREC348": {
+      "alternatives": [
+        [
+          "AREC272"
+        ],
+        [
+          "ECON211"
+        ]
+      ],
+      "description": "AREC272 OR ECON211"
+    },
+    "AREC354": {
+      "alternatives": [
+        [
+          "COMM201"
+        ]
+      ],
+      "description": "COMM201"
+    },
+    "AREC356": {
+      "alternatives": [
+        [
+          "AREC272"
+        ]
+      ],
+      "description": "AREC272"
+    },
+    "AREC398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC420": {
+      "alternatives": [
+        [
+          "AREC262"
+        ],
+        [
+          "AREC272"
+        ]
+      ],
+      "description": "AREC262 OR AREC272"
+    },
+    "AREC428": {
+      "alternatives": [
+        [
+          "AREC222"
+        ],
+        [
+          "AREC322"
+        ],
+        [
+          "COMM101"
+        ],
+        [
+          "COMM201"
+        ]
+      ],
+      "description": "AREC222 OR AREC322 OR COMM101 OR COMM201"
+    },
+    "AREC430": {
+      "alternatives": [
+        [
+          "AREC238"
+        ],
+        [
+          "ECON275"
+        ],
+        [
+          "ECON277"
+        ]
+      ],
+      "description": "AREC238 OR ECON275 OR ECON277"
+    },
+    "AREC432": {
+      "alternatives": [
+        [
+          "AREC272"
+        ],
+        [
+          "ECON211"
+        ]
+      ],
+      "description": "AREC272 OR ECON211"
+    },
+    "AREC440": {
+      "alternatives": [
+        [
+          "AREC272"
+        ],
+        [
+          "AREC342"
+        ],
+        [
+          "ECON211"
+        ]
+      ],
+      "description": "AREC272 OR AREC342 OR ECON211"
+    },
+    "AREC445": {
+      "alternatives": [
+        [
+          "AREC262"
+        ],
+        [
+          "AREC342"
+        ]
+      ],
+      "description": "AREC262 OR AREC342"
+    },
+    "AREC451": {
+      "alternatives": [
+        [
+          "AREC272"
+        ],
+        [
+          "AREC342"
+        ],
+        [
+          "ECON211"
+        ]
+      ],
+      "description": "AREC272 OR AREC342 OR ECON211"
+    },
+    "AREC459": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC492": {
+      "alternatives": [
+        [
+          "AREC262"
+        ],
+        [
+          "AREC272"
+        ]
+      ],
+      "description": "AREC262 OR AREC272"
+    },
+    "AREC494": {
+      "alternatives": [
+        [
+          "AREC262"
+        ],
+        [
+          "AREC272"
+        ]
+      ],
+      "description": "AREC262 OR AREC272"
+    },
+    "AREC495": {
+      "alternatives": [
+        [
+          "AREC322"
+        ],
+        [
+          "AREC347"
+        ]
+      ],
+      "description": "AREC322 OR AREC347"
+    },
+    "AREC498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC820": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC825": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC837": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC840": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC842": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC845": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC851": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC855": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC890": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "AREC996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART110": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART122": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART123": {
+      "alternatives": [
+        [
+          "ART122"
+        ]
+      ],
+      "description": "ART122"
+    },
+    "ART124": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART125": {
+      "alternatives": [
+        [
+          "ART124"
+        ]
+      ],
+      "description": "ART124"
+    },
+    "ART136": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART141": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART151": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART152": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART161": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART217": {
+      "alternatives": [
+        [
+          "ART161"
+        ]
+      ],
+      "description": "ART161"
+    },
+    "ART220": {
+      "alternatives": [
+        [
+          "ART112"
+        ],
+        [
+          "ART125"
+        ]
+      ],
+      "description": "ART112 OR ART125"
+    },
+    "ART221": {
+      "alternatives": [
+        [
+          "ART220"
+        ]
+      ],
+      "description": "ART220"
+    },
+    "ART222": {
+      "alternatives": [
+        [
+          "ART111"
+        ],
+        [
+          "ART123"
+        ]
+      ],
+      "description": "ART111 OR ART123"
+    },
+    "ART223": {
+      "alternatives": [
+        [
+          "ART222"
+        ]
+      ],
+      "description": "ART222"
+    },
+    "ART230": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART231": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART235": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART236": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART237": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART241": {
+      "alternatives": [
+        [
+          "ART141"
+        ]
+      ],
+      "description": "ART141"
+    },
+    "ART242": {
+      "alternatives": [
+        [
+          "ART141"
+        ]
+      ],
+      "description": "ART141"
+    },
+    "ART250": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART251": {
+      "alternatives": [
+        [
+          "ART113"
+        ],
+        [
+          "ART151"
+        ],
+        [
+          "ART152"
+        ]
+      ],
+      "description": "ART113 OR ART151 OR ART152"
+    },
+    "ART298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART299": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART317": {
+      "alternatives": [
+        [
+          "ART217"
+        ]
+      ],
+      "description": "ART217"
+    },
+    "ART318": {
+      "alternatives": [
+        [
+          "ART317"
+        ]
+      ],
+      "description": "ART317"
+    },
+    "ART320": {
+      "alternatives": [
+        [
+          "ART221"
+        ]
+      ],
+      "description": "ART221"
+    },
+    "ART321": {
+      "alternatives": [
+        [
+          "ART320"
+        ]
+      ],
+      "description": "ART320"
+    },
+    "ART322": {
+      "alternatives": [
+        [
+          "ART223"
+        ]
+      ],
+      "description": "ART223"
+    },
+    "ART323": {
+      "alternatives": [
+        [
+          "ART322"
+        ]
+      ],
+      "description": "ART322"
+    },
+    "ART326": {
+      "alternatives": [
+        [
+          "ART213"
+        ],
+        [
+          "ART251"
+        ]
+      ],
+      "description": "ART213 OR ART251"
+    },
+    "ART327": {
+      "alternatives": [
+        [
+          "ART326"
+        ]
+      ],
+      "description": "ART326"
+    },
+    "ART330": {
+      "alternatives": [
+        [
+          "ART230"
+        ]
+      ],
+      "description": "ART230"
+    },
+    "ART331": {
+      "alternatives": [
+        [
+          "ART231"
+        ]
+      ],
+      "description": "ART231"
+    },
+    "ART338": {
+      "alternatives": [
+        [
+          "ART236"
+        ],
+        [
+          "ART237"
+        ]
+      ],
+      "description": "ART236 OR ART237"
+    },
+    "ART339": {
+      "alternatives": [
+        [
+          "ART236"
+        ],
+        [
+          "ART237"
+        ]
+      ],
+      "description": "ART236 OR ART237"
+    },
+    "ART341": {
+      "alternatives": [
+        [
+          "ART214"
+        ],
+        [
+          "ART241"
+        ],
+        [
+          "ART242"
+        ]
+      ],
+      "description": "ART214 OR ART241 OR ART242"
+    },
+    "ART342": {
+      "alternatives": [
+        [
+          "ART241"
+        ],
+        [
+          "ART242"
+        ]
+      ],
+      "description": "ART241 OR ART242"
+    },
+    "ART350": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART355": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART399": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART417": {
+      "alternatives": [
+        [
+          "ART318"
+        ]
+      ],
+      "description": "ART318"
+    },
+    "ART418": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART441": {
+      "alternatives": [
+        [
+          "ART341"
+        ],
+        [
+          "ART342"
+        ]
+      ],
+      "description": "ART341 OR ART342"
+    },
+    "ART442": {
+      "alternatives": [
+        [
+          "ART341"
+        ],
+        [
+          "ART342"
+        ]
+      ],
+      "description": "ART341 OR ART342"
+    },
+    "ART450": {
+      "alternatives": [
+        [
+          "ART416"
+        ],
+        [
+          "ART439"
+        ],
+        [
+          "ART442"
+        ],
+        [
+          "ART460"
+        ],
+        [
+          "ART461"
+        ],
+        [
+          "ART470"
+        ],
+        [
+          "ART471"
+        ],
+        [
+          "ART472"
+        ],
+        [
+          "ART473"
+        ],
+        [
+          "ART476"
+        ],
+        [
+          "ART477"
+        ]
+      ],
+      "description": "ART416 OR ART439 OR ART442 OR ART460 OR ART461 OR ART470 OR ART471 OR ART472 OR ART473 OR ART476 OR ART477"
+    },
+    "ART451": {
+      "alternatives": [
+        [
+          "ART450"
+        ]
+      ],
+      "description": "ART450"
+    },
+    "ART452": {
+      "alternatives": [
+        [
+          "ART423"
+        ],
+        [
+          "ART451"
+        ],
+        [
+          "ART480"
+        ],
+        [
+          "ART481"
+        ],
+        [
+          "ART484"
+        ],
+        [
+          "ART485"
+        ]
+      ],
+      "description": "ART423 OR ART451 OR ART480 OR ART481 OR ART484 OR ART485"
+    },
+    "ART453": {
+      "alternatives": [
+        [
+          "ART452"
+        ]
+      ],
+      "description": "ART452"
+    },
+    "ART460": {
+      "alternatives": [
+        [
+          "ART330"
+        ]
+      ],
+      "description": "ART330"
+    },
+    "ART461": {
+      "alternatives": [
+        [
+          "ART331"
+        ]
+      ],
+      "description": "ART331"
+    },
+    "ART470": {
+      "alternatives": [
+        [
+          "ART321"
+        ]
+      ],
+      "description": "ART321"
+    },
+    "ART471": {
+      "alternatives": [
+        [
+          "ART470"
+        ]
+      ],
+      "description": "ART470"
+    },
+    "ART472": {
+      "alternatives": [
+        [
+          "ART323"
+        ]
+      ],
+      "description": "ART323"
+    },
+    "ART473": {
+      "alternatives": [
+        [
+          "ART472"
+        ]
+      ],
+      "description": "ART472"
+    },
+    "ART476": {
+      "alternatives": [
+        [
+          "ART327"
+        ]
+      ],
+      "description": "ART327"
+    },
+    "ART477": {
+      "alternatives": [
+        [
+          "ART476"
+        ]
+      ],
+      "description": "ART476"
+    },
+    "ART495": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART830": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART831": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART832": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART838": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART839": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART841": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART842": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART851": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART852": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART861": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART871": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART872": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART881": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART882": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ART995": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARTH120": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARTH121": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARTH250": {
+      "alternatives": [
+        [
+          "ARTH120"
+        ],
+        [
+          "ARTH121"
+        ]
+      ],
+      "description": "ARTH120 OR ARTH121"
+    },
+    "ARTH251": {
+      "alternatives": [
+        [
+          "ARTH120"
+        ],
+        [
+          "ARTH121"
+        ]
+      ],
+      "description": "ARTH120 OR ARTH121"
+    },
+    "ARTH253": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARTH255": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARTH256": {
+      "alternatives": [
+        [
+          "ARTH120"
+        ],
+        [
+          "ARTH121"
+        ]
+      ],
+      "description": "ARTH120 OR ARTH121"
+    },
+    "ARTH257": {
+      "alternatives": [
+        [
+          "ARTH120"
+        ],
+        [
+          "ARTH121"
+        ]
+      ],
+      "description": "ARTH120 OR ARTH121"
+    },
+    "ARTH258": {
+      "alternatives": [
+        [
+          "ARTH120"
+        ],
+        [
+          "ARTH121"
+        ]
+      ],
+      "description": "ARTH120 OR ARTH121"
+    },
+    "ARTH298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARTH299": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARTH306": {
+      "alternatives": [
+        [
+          "ARTH120"
+        ],
+        [
+          "ARTH121"
+        ],
+        [
+          "CMRS111"
+        ]
+      ],
+      "description": "ARTH120 OR ARTH121 OR CMRS111"
+    },
+    "ARTH308": {
+      "alternatives": [
+        [
+          "ARTH120"
+        ],
+        [
+          "ARTH121"
+        ]
+      ],
+      "description": "ARTH120 OR ARTH121"
+    },
+    "ARTH318": {
+      "alternatives": [
+        [
+          "ARTH120"
+        ],
+        [
+          "ARTH121"
+        ]
+      ],
+      "description": "ARTH120 OR ARTH121"
+    },
+    "ARTH351": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARTH355": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARTH358": {
+      "alternatives": [
+        [
+          "ARTH120"
+        ]
+      ],
+      "description": "ARTH120"
+    },
+    "ARTH398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARTH399": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARTH418": {
+      "alternatives": [
+        [
+          "ARTH120"
+        ]
+      ],
+      "description": "ARTH120"
+    },
+    "ARTH420": {
+      "alternatives": [
+        [
+          "ARTH120"
+        ],
+        [
+          "ARTH121"
+        ]
+      ],
+      "description": "ARTH120 OR ARTH121"
+    },
+    "ARTH451": {
+      "alternatives": [
+        [
+          "ARTH120"
+        ],
+        [
+          "ARTH121"
+        ]
+      ],
+      "description": "ARTH120 OR ARTH121"
+    },
+    "ARTH455": {
+      "alternatives": [
+        [
+          "ARTH355"
+        ]
+      ],
+      "description": "ARTH355"
+    },
+    "ARTH498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARTH499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARTH898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARTH899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ARTH994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASKI101": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASKI102": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASKI103": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASKI104": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASKI105": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASKI201": {
+      "alternatives": [
+        [
+          "ASKI101"
+        ],
+        [
+          "ASKI102"
+        ],
+        [
+          "ASKI104"
+        ],
+        [
+          "ASKI105"
+        ],
+        [
+          "INDG107"
+        ]
+      ],
+      "description": "ASKI101 OR ASKI102 OR ASKI104 OR ASKI105 OR INDG107"
+    },
+    "ASKI202": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASKI204": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASKI298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASTR102": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASTR104": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASTR113": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASTR213": {
+      "alternatives": [
+        [
+          "ASTR113"
+        ],
+        [
+          "PHYS115"
+        ],
+        [
+          "PHYS155"
+        ],
+        [
+          "PHYS156"
+        ]
+      ],
+      "description": "ASTR113 OR PHYS115 OR PHYS155 OR PHYS156"
+    },
+    "ASTR214": {
+      "alternatives": [
+        [
+          "ASTR213"
+        ]
+      ],
+      "description": "ASTR213"
+    },
+    "ASTR298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASTR299": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASTR310": {
+      "alternatives": [
+        [
+          "ASTR113"
+        ],
+        [
+          "ASTR213"
+        ],
+        [
+          "ASTR214"
+        ],
+        [
+          "MATH224"
+        ],
+        [
+          "MATH226"
+        ],
+        [
+          "MATH238"
+        ],
+        [
+          "PHYS252"
+        ]
+      ],
+      "description": "ASTR113 OR ASTR213 OR ASTR214 OR MATH224 OR MATH226 OR MATH238 OR PHYS252"
+    },
+    "ASTR312": {
+      "alternatives": [
+        [
+          "ASTR113"
+        ],
+        [
+          "ASTR213"
+        ],
+        [
+          "ASTR214"
+        ],
+        [
+          "MATH224"
+        ],
+        [
+          "MATH226"
+        ],
+        [
+          "MATH238"
+        ],
+        [
+          "PHYS252"
+        ]
+      ],
+      "description": "ASTR113 OR ASTR213 OR ASTR214 OR MATH224 OR MATH226 OR MATH238 OR PHYS252"
+    },
+    "ASTR398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASTR399": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASTR411": {
+      "alternatives": [
+        [
+          "PHYS252"
+        ]
+      ],
+      "description": "PHYS252"
+    },
+    "ASTR498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "ASTR499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BINF151": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ],
+        [
+          "BIOL121"
+        ],
+        [
+          "BMSC200"
+        ]
+      ],
+      "description": "BIOL120 OR BIOL121 OR BMSC200"
+    },
+    "BINF298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BINF299": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BINF351": {
+      "alternatives": [
+        [
+          "BINF151"
+        ],
+        [
+          "BIOL121"
+        ],
+        [
+          "BMSC200"
+        ],
+        [
+          "CMPT141"
+        ],
+        [
+          "CMPT145"
+        ]
+      ],
+      "description": "BINF151 OR BIOL121 OR BMSC200 OR CMPT141 OR CMPT145"
+    },
+    "BINF398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BINF399": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BINF498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BINF499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOE805": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOE850": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOE898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOE899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOE990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOE992": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOE994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOE996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL102": {
+      "alternatives": [
+        [
+          "GE102"
+        ]
+      ],
+      "description": "GE102"
+    },
+    "BIOL108": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL120": {
+      "alternatives": [
+        [
+          "BIOL107"
+        ],
+        [
+          "BIOL108"
+        ]
+      ],
+      "description": "BIOL107 OR BIOL108"
+    },
+    "BIOL121": {
+      "alternatives": [
+        [
+          "BIOL107"
+        ],
+        [
+          "BIOL108"
+        ]
+      ],
+      "description": "BIOL107 OR BIOL108"
+    },
+    "BIOL222": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ]
+      ],
+      "description": "BIOL120"
+    },
+    "BIOL224": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ]
+      ],
+      "description": "BIOL120"
+    },
+    "BIOL226": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ]
+      ],
+      "description": "BIOL120"
+    },
+    "BIOL228": {
+      "alternatives": [
+        [
+          "BIOL121"
+        ]
+      ],
+      "description": "BIOL121"
+    },
+    "BIOL298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL299": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL301": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ],
+        [
+          "BIOL121"
+        ],
+        [
+          "PLSC214"
+        ],
+        [
+          "STAT245"
+        ],
+        [
+          "STAT246"
+        ]
+      ],
+      "description": "BIOL120 OR BIOL121 OR PLSC214 OR STAT245 OR STAT246"
+    },
+    "BIOL302": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ],
+        [
+          "BIOL121"
+        ],
+        [
+          "BIOL226"
+        ]
+      ],
+      "description": "BIOL120 OR BIOL121 OR BIOL226"
+    },
+    "BIOL316": {
+      "alternatives": [
+        [
+          "BIOL226"
+        ]
+      ],
+      "description": "BIOL226"
+    },
+    "BIOL317": {
+      "alternatives": [
+        [
+          "BIOL224"
+        ],
+        [
+          "CHEM112"
+        ],
+        [
+          "CHEM115"
+        ],
+        [
+          "CHEM115"
+        ],
+        [
+          "CHEM250"
+        ]
+      ],
+      "description": "BIOL224 OR CHEM112 OR CHEM115 OR CHEM115 OR CHEM250"
+    },
+    "BIOL321": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ],
+        [
+          "BIOL121"
+        ],
+        [
+          "MATH110"
+        ],
+        [
+          "MATH123"
+        ],
+        [
+          "MATH125"
+        ],
+        [
+          "MATH133"
+        ],
+        [
+          "MATH164"
+        ],
+        [
+          "MATH176"
+        ]
+      ],
+      "description": "BIOL120 OR BIOL121 OR MATH110 OR MATH123 OR MATH125 OR MATH133 OR MATH164 OR MATH176"
+    },
+    "BIOL323": {
+      "alternatives": [
+        [
+          "BIOL121"
+        ],
+        [
+          "BIOL222"
+        ]
+      ],
+      "description": "BIOL121 OR BIOL222"
+    },
+    "BIOL324": {
+      "alternatives": [
+        [
+          "BIOL107"
+        ]
+      ],
+      "description": "BIOL107"
+    },
+    "BIOL325": {
+      "alternatives": [
+        [
+          "BIOL121"
+        ]
+      ],
+      "description": "BIOL121"
+    },
+    "BIOL326": {
+      "alternatives": [
+        [
+          "BIOL222"
+        ]
+      ],
+      "description": "BIOL222"
+    },
+    "BIOL331": {
+      "alternatives": [
+        [
+          "BIOL222"
+        ]
+      ],
+      "description": "BIOL222"
+    },
+    "BIOL336": {
+      "alternatives": [
+        [
+          "BIOL121"
+        ]
+      ],
+      "description": "BIOL121"
+    },
+    "BIOL342": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ]
+      ],
+      "description": "BIOL120"
+    },
+    "BIOL345": {
+      "alternatives": [
+        [
+          "BIOL121"
+        ]
+      ],
+      "description": "BIOL121"
+    },
+    "BIOL350": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL361": {
+      "alternatives": [
+        [
+          "BIOL121"
+        ]
+      ],
+      "description": "BIOL121"
+    },
+    "BIOL363": {
+      "alternatives": [
+        [
+          "BIOL228"
+        ]
+      ],
+      "description": "BIOL228"
+    },
+    "BIOL365": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ]
+      ],
+      "description": "BIOL120"
+    },
+    "BIOL373": {
+      "alternatives": [
+        [
+          "BIOL228"
+        ],
+        [
+          "PLSC213"
+        ],
+        [
+          "PLSC214"
+        ],
+        [
+          "STAT245"
+        ],
+        [
+          "STAT246"
+        ]
+      ],
+      "description": "BIOL228 OR PLSC213 OR PLSC214 OR STAT245 OR STAT246"
+    },
+    "BIOL380": {
+      "alternatives": [
+        [
+          "BIOL301"
+        ]
+      ],
+      "description": "BIOL301"
+    },
+    "BIOL398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL399": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL410": {
+      "alternatives": [
+        [
+          "BIOL228"
+        ],
+        [
+          "BIOL301"
+        ]
+      ],
+      "description": "BIOL228 OR BIOL301"
+    },
+    "BIOL412": {
+      "alternatives": [
+        [
+          "BIOL121"
+        ],
+        [
+          "BIOL228"
+        ],
+        [
+          "CHEM112"
+        ]
+      ],
+      "description": "BIOL121 OR BIOL228 OR CHEM112"
+    },
+    "BIOL418": {
+      "alternatives": [
+        [
+          "BIOL317"
+        ],
+        [
+          "CPPS302"
+        ],
+        [
+          "CPPS303"
+        ],
+        [
+          "VBMS324"
+        ],
+        [
+          "VBMS325"
+        ]
+      ],
+      "description": "BIOL317 OR CPPS302 OR CPPS303 OR VBMS324 OR VBMS325"
+    },
+    "BIOL420": {
+      "alternatives": [
+        [
+          "BIOL121"
+        ],
+        [
+          "BIOL316"
+        ],
+        [
+          "BIOL325"
+        ],
+        [
+          "BIOL331"
+        ],
+        [
+          "BIOL345"
+        ],
+        [
+          "BMSC320"
+        ]
+      ],
+      "description": "BIOL121 OR BIOL316 OR BIOL325 OR BIOL331 OR BIOL345 OR BMSC320"
+    },
+    "BIOL421": {
+      "alternatives": [
+        [
+          "BIOL316"
+        ],
+        [
+          "BMIS340"
+        ]
+      ],
+      "description": "BIOL316 OR BMIS340"
+    },
+    "BIOL430": {
+      "alternatives": [
+        [
+          "BIOL317"
+        ],
+        [
+          "NEUR350"
+        ]
+      ],
+      "description": "BIOL317 OR NEUR350"
+    },
+    "BIOL437": {
+      "alternatives": [
+        [
+          "BIOL301"
+        ],
+        [
+          "BIOL336"
+        ],
+        [
+          "BIOL365"
+        ],
+        [
+          "BIOL436"
+        ]
+      ],
+      "description": "BIOL301 OR BIOL336 OR BIOL365 OR BIOL436"
+    },
+    "BIOL440": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ]
+      ],
+      "description": "BIOL120"
+    },
+    "BIOL451": {
+      "alternatives": [
+        [
+          "BIOL121"
+        ],
+        [
+          "BIOL228"
+        ]
+      ],
+      "description": "BIOL121 OR BIOL228"
+    },
+    "BIOL455": {
+      "alternatives": [
+        [
+          "BIOL121"
+        ],
+        [
+          "BIOL228"
+        ]
+      ],
+      "description": "BIOL121 OR BIOL228"
+    },
+    "BIOL458": {
+      "alternatives": [
+        [
+          "BIOL121"
+        ],
+        [
+          "BIOL228"
+        ]
+      ],
+      "description": "BIOL121 OR BIOL228"
+    },
+    "BIOL470": {
+      "alternatives": [
+        [
+          "BIOL228"
+        ],
+        [
+          "BIOL301"
+        ]
+      ],
+      "description": "BIOL228 OR BIOL301"
+    },
+    "BIOL472": {
+      "alternatives": [
+        [
+          "BIOL228"
+        ],
+        [
+          "PLSC214"
+        ],
+        [
+          "STAT245"
+        ],
+        [
+          "STAT246"
+        ]
+      ],
+      "description": "BIOL228 OR PLSC214 OR STAT245 OR STAT246"
+    },
+    "BIOL475": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ],
+        [
+          "BIOL228"
+        ]
+      ],
+      "description": "BIOL120 OR BIOL228"
+    },
+    "BIOL479": {
+      "alternatives": [
+        [
+          "ACB406"
+        ],
+        [
+          "ANBI470"
+        ],
+        [
+          "ANSC313"
+        ],
+        [
+          "ARCH270"
+        ],
+        [
+          "BINF200"
+        ],
+        [
+          "BIOL301"
+        ],
+        [
+          "BMIS487"
+        ],
+        [
+          "BMSC210"
+        ],
+        [
+          "BMSC220"
+        ],
+        [
+          "FABS212"
+        ],
+        [
+          "GEOL343"
+        ],
+        [
+          "PLSC405"
+        ],
+        [
+          "PLSC411"
+        ],
+        [
+          "PLSC416"
+        ],
+        [
+          "PLSC422"
+        ],
+        [
+          "PLSC425"
+        ],
+        [
+          "TOX300"
+        ],
+        [
+          "TOX301"
+        ]
+      ],
+      "description": "ACB406 OR ANBI470 OR ANSC313 OR ARCH270 OR BINF200 OR BIOL301 OR BMIS487 OR BMSC210 OR BMSC220 OR FABS212 OR GEOL343 OR PLSC405 OR PLSC411 OR PLSC416 OR PLSC422 OR PLSC425 OR TOX300 OR TOX301"
+    },
+    "BIOL480": {
+      "alternatives": [
+        [
+          "BIOL301"
+        ],
+        [
+          "BIOL380"
+        ]
+      ],
+      "description": "BIOL301 OR BIOL380"
+    },
+    "BIOL481": {
+      "alternatives": [
+        [
+          "BIOL301"
+        ],
+        [
+          "BIOL380"
+        ]
+      ],
+      "description": "BIOL301 OR BIOL380"
+    },
+    "BIOL498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL801": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL811": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL815": {
+      "alternatives": [
+        [
+          "BIOL412"
+        ]
+      ],
+      "description": "BIOL412"
+    },
+    "BIOL818": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL830": {
+      "alternatives": [
+        [
+          "BIOL430"
+        ]
+      ],
+      "description": "BIOL430"
+    },
+    "BIOL836": {
+      "alternatives": [
+        [
+          "BIOL331"
+        ]
+      ],
+      "description": "BIOL331"
+    },
+    "BIOL841": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL865": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL872": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL875": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL883": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL889": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL90": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOL996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOS990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOS994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BIOS996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BLE205": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BLE303": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BLE398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BLE498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BLE811": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BLE840": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BLE850": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BLE855": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BLE898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BLE899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BLE990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BLE994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BLE996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS308": {
+      "alternatives": [
+        [
+          "BMSC200"
+        ],
+        [
+          "BMSC210"
+        ]
+      ],
+      "description": "BMSC200 OR BMSC210"
+    },
+    "BMIS310": {
+      "alternatives": [
+        [
+          "BMSC240"
+        ],
+        [
+          "CHEM250"
+        ]
+      ],
+      "description": "BMSC240 OR CHEM250"
+    },
+    "BMIS317": {
+      "alternatives": [
+        [
+          "BMSC200"
+        ],
+        [
+          "BMSC210"
+        ],
+        [
+          "BMSC220"
+        ]
+      ],
+      "description": "BMSC200 OR BMSC210 OR BMSC220"
+    },
+    "BMIS319": {
+      "alternatives": [
+        [
+          "BMSC210"
+        ]
+      ],
+      "description": "BMSC210"
+    },
+    "BMIS321": {
+      "alternatives": [
+        [
+          "BMSC200"
+        ],
+        [
+          "BMSC210"
+        ]
+      ],
+      "description": "BMSC200 OR BMSC210"
+    },
+    "BMIS325": {
+      "alternatives": [
+        [
+          "BMSC210"
+        ],
+        [
+          "BMSC230"
+        ]
+      ],
+      "description": "BMSC210 OR BMSC230"
+    },
+    "BMIS340": {
+      "alternatives": [
+        [
+          "BIOL226"
+        ],
+        [
+          "BMSC210"
+        ],
+        [
+          "BMSC220"
+        ],
+        [
+          "BMSC240"
+        ]
+      ],
+      "description": "BIOL226 OR BMSC210 OR BMSC220 OR BMSC240"
+    },
+    "BMIS380": {
+      "alternatives": [
+        [
+          "BMSC210"
+        ],
+        [
+          "BMSC240"
+        ]
+      ],
+      "description": "BMSC210 OR BMSC240"
+    },
+    "BMIS390": {
+      "alternatives": [
+        [
+          "BMIS321"
+        ],
+        [
+          "BMSC240"
+        ]
+      ],
+      "description": "BMIS321 OR BMSC240"
+    },
+    "BMIS398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS399": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS400": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS412": {
+      "alternatives": [
+        [
+          "BMIS310"
+        ],
+        [
+          "CHEM250"
+        ]
+      ],
+      "description": "BMIS310 OR CHEM250"
+    },
+    "BMIS417": {
+      "alternatives": [
+        [
+          "BMSC200"
+        ]
+      ],
+      "description": "BMSC200"
+    },
+    "BMIS420": {
+      "alternatives": [
+        [
+          "BMIS325"
+        ]
+      ],
+      "description": "BMIS325"
+    },
+    "BMIS423": {
+      "alternatives": [
+        [
+          "BMIS321"
+        ],
+        [
+          "BMIS390"
+        ]
+      ],
+      "description": "BMIS321 OR BMIS390"
+    },
+    "BMIS425": {
+      "alternatives": [
+        [
+          "BMIS325"
+        ]
+      ],
+      "description": "BMIS325"
+    },
+    "BMIS430": {
+      "alternatives": [
+        [
+          "BMSC230"
+        ],
+        [
+          "BMSC240"
+        ],
+        [
+          "CHEM250"
+        ]
+      ],
+      "description": "BMSC230 OR BMSC240 OR CHEM250"
+    },
+    "BMIS435": {
+      "alternatives": [
+        [
+          "BMSC230"
+        ],
+        [
+          "BMSC320"
+        ],
+        [
+          "CHEM250"
+        ]
+      ],
+      "description": "BMSC230 OR BMSC320 OR CHEM250"
+    },
+    "BMIS436": {
+      "alternatives": [
+        [
+          "BMIS340"
+        ]
+      ],
+      "description": "BMIS340"
+    },
+    "BMIS450": {
+      "alternatives": [
+        [
+          "BMIS325"
+        ]
+      ],
+      "description": "BMIS325"
+    },
+    "BMIS455": {
+      "alternatives": [
+        [
+          "BMIS310"
+        ]
+      ],
+      "description": "BMIS310"
+    },
+    "BMIS487": {
+      "alternatives": [
+        [
+          "BMSC320"
+        ]
+      ],
+      "description": "BMSC320"
+    },
+    "BMIS489": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS800": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS812": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS816": {
+      "alternatives": [
+        [
+          "BIOL211"
+        ],
+        [
+          "BIOL226"
+        ]
+      ],
+      "description": "BIOL211 OR BIOL226"
+    },
+    "BMIS817": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS819": {
+      "alternatives": [
+        [
+          "BMSC210"
+        ]
+      ],
+      "description": "BMSC210"
+    },
+    "BMIS821": {
+      "alternatives": [
+        [
+          "BMSC210"
+        ]
+      ],
+      "description": "BMSC210"
+    },
+    "BMIS823": {
+      "alternatives": [
+        [
+          "MCIM321"
+        ],
+        [
+          "MICR421"
+        ]
+      ],
+      "description": "MCIM321 OR MICR421"
+    },
+    "BMIS825": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS830": {
+      "alternatives": [
+        [
+          "BMSC220"
+        ]
+      ],
+      "description": "BMSC220"
+    },
+    "BMIS836": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS860": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS861": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMIS996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "BMSC200": {
+      "alternatives": [
+        [
+          "CHEM112"
+        ]
+      ],
+      "description": "CHEM112"
+    },
+    "BMSC207": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ]
+      ],
+      "description": "BIOL120"
+    },
+    "BMSC208": {
+      "alternatives": [
+        [
+          "BMSC207"
+        ]
+      ],
+      "description": "BMSC207"
+    },
+    "BMSC210": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ]
+      ],
+      "description": "BIOL120"
+    },
+    "BMSC220": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ]
+      ],
+      "description": "BIOL120"
+    },
+    "BMSC230": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ],
+        [
+          "BMSC200"
+        ]
+      ],
+      "description": "BIOL120 OR BMSC200"
+    },
+    "BMSC240": {
+      "alternatives": [
+        [
+          "CHEM112"
+        ]
+      ],
+      "description": "CHEM112"
+    },
+    "BMSC320": {
+      "alternatives": [
+        [
+          "BMSC210"
+        ],
+        [
+          "BMSC220"
+        ]
+      ],
+      "description": "BMSC210 OR BMSC220"
+    },
+    "BMSC405": {
+      "alternatives": [
+        [
+          "BMIS321"
+        ],
+        [
+          "BMSC320"
+        ],
+        [
+          "CHEP350"
+        ],
+        [
+          "CPPS304"
+        ],
+        [
+          "PATH205"
+        ]
+      ],
+      "description": "BMIS321 OR BMSC320 OR CHEP350 OR CPPS304 OR PATH205"
+    },
+    "CE171": {
+      "alternatives": [
+        [
+          "CE201"
+        ],
+        [
+          "CE202"
+        ],
+        [
+          "ENVE201"
+        ],
+        [
+          "GE133"
+        ]
+      ],
+      "description": "CE201 OR CE202 OR ENVE201 OR GE133"
+    },
+    "CE202": {
+      "alternatives": [
+        [
+          "GE133"
+        ]
+      ],
+      "description": "GE133"
+    },
+    "CE212": {
+      "alternatives": [
+        [
+          "CHEM146"
+        ]
+      ],
+      "description": "CHEM146"
+    },
+    "CE213": {
+      "alternatives": [
+        [
+          "GE123"
+        ]
+      ],
+      "description": "GE123"
+    },
+    "CE217": {
+      "alternatives": [
+        [
+          "CE213"
+        ],
+        [
+          "GE213"
+        ]
+      ],
+      "description": "CE213 OR GE213"
+    },
+    "CE225": {
+      "alternatives": [
+        [
+          "GE123"
+        ],
+        [
+          "MATH223"
+        ]
+      ],
+      "description": "GE123 OR MATH223"
+    },
+    "CE295": {
+      "alternatives": [
+        [
+          "CE202"
+        ],
+        [
+          "CE212"
+        ]
+      ],
+      "description": "CE202 OR CE212"
+    },
+    "CE315": {
+      "alternatives": [
+        [
+          "CE225"
+        ],
+        [
+          "CHE210"
+        ]
+      ],
+      "description": "CE225 OR CHE210"
+    },
+    "CE317": {
+      "alternatives": [
+        [
+          "CE213"
+        ],
+        [
+          "GE213"
+        ]
+      ],
+      "description": "CE213 OR GE213"
+    },
+    "CE318": {
+      "alternatives": [
+        [
+          "CE213"
+        ],
+        [
+          "CE225"
+        ],
+        [
+          "CMPT142"
+        ],
+        [
+          "GE213"
+        ],
+        [
+          "MATH224"
+        ]
+      ],
+      "description": "CE213 OR CE225 OR CMPT142 OR GE213 OR MATH224"
+    },
+    "CE319": {
+      "alternatives": [
+        [
+          "CE225"
+        ],
+        [
+          "GE210"
+        ],
+        [
+          "MATH224"
+        ]
+      ],
+      "description": "CE225 OR GE210 OR MATH224"
+    },
+    "CE320": {
+      "alternatives": [
+        [
+          "CE395"
+        ],
+        [
+          "ENVE201"
+        ]
+      ],
+      "description": "CE395 OR ENVE201"
+    },
+    "CE321": {
+      "alternatives": [
+        [
+          "CE217"
+        ],
+        [
+          "GE210"
+        ]
+      ],
+      "description": "CE217 OR GE210"
+    },
+    "CE327": {
+      "alternatives": [
+        [
+          "CE315"
+        ],
+        [
+          "CHEM146"
+        ]
+      ],
+      "description": "CE315 OR CHEM146"
+    },
+    "CE328": {
+      "alternatives": [
+        [
+          "CE213"
+        ],
+        [
+          "CE225"
+        ],
+        [
+          "GE213"
+        ],
+        [
+          "GEOE218"
+        ]
+      ],
+      "description": "CE213 OR CE225 OR GE213 OR GEOE218"
+    },
+    "CE329": {
+      "alternatives": [
+        [
+          "CE171"
+        ],
+        [
+          "CE202"
+        ],
+        [
+          "CE271"
+        ],
+        [
+          "GE210"
+        ]
+      ],
+      "description": "CE171 OR CE202 OR CE271 OR GE210"
+    },
+    "CE330": {
+      "alternatives": [
+        [
+          "CE328"
+        ]
+      ],
+      "description": "CE328"
+    },
+    "CE395": {
+      "alternatives": [
+        [
+          "CE315"
+        ],
+        [
+          "CE320"
+        ],
+        [
+          "CE329"
+        ],
+        [
+          "GE348"
+        ],
+        [
+          "RCM200"
+        ]
+      ],
+      "description": "CE315 OR CE320 OR CE329 OR GE348 OR RCM200"
+    },
+    "CE415": {
+      "alternatives": [
+        [
+          "CE315"
+        ]
+      ],
+      "description": "CE315"
+    },
+    "CE417": {
+      "alternatives": [
+        [
+          "CE328"
+        ],
+        [
+          "CE329"
+        ]
+      ],
+      "description": "CE328 OR CE329"
+    },
+    "CE418": {
+      "alternatives": [
+        [
+          "CE321"
+        ]
+      ],
+      "description": "CE321"
+    },
+    "CE421": {
+      "alternatives": [
+        [
+          "CE320"
+        ]
+      ],
+      "description": "CE320"
+    },
+    "CE463": {
+      "alternatives": [
+        [
+          "CE317"
+        ],
+        [
+          "CE318"
+        ]
+      ],
+      "description": "CE317 OR CE318"
+    },
+    "CE464": {
+      "alternatives": [
+        [
+          "CE315"
+        ],
+        [
+          "CE319"
+        ],
+        [
+          "GE348"
+        ]
+      ],
+      "description": "CE315 OR CE319 OR GE348"
+    },
+    "CE466": {
+      "alternatives": [
+        [
+          "CE318"
+        ],
+        [
+          "CE330"
+        ]
+      ],
+      "description": "CE318 OR CE330"
+    },
+    "CE467": {
+      "alternatives": [
+        [
+          "CE329"
+        ],
+        [
+          "GE348"
+        ]
+      ],
+      "description": "CE329 OR GE348"
+    },
+    "CE468": {
+      "alternatives": [
+        [
+          "CE328"
+        ]
+      ],
+      "description": "CE328"
+    },
+    "CE470": {
+      "alternatives": [
+        [
+          "CE321"
+        ]
+      ],
+      "description": "CE321"
+    },
+    "CE474": {
+      "alternatives": [
+        [
+          "CE418"
+        ]
+      ],
+      "description": "CE418"
+    },
+    "CE495": {
+      "alternatives": [
+        [
+          "CE318"
+        ],
+        [
+          "CE319"
+        ],
+        [
+          "CE320"
+        ],
+        [
+          "CE321"
+        ],
+        [
+          "CE327"
+        ],
+        [
+          "CE329"
+        ],
+        [
+          "CE330"
+        ],
+        [
+          "CE395"
+        ],
+        [
+          "GE348"
+        ]
+      ],
+      "description": "CE318 OR CE319 OR CE320 OR CE321 OR CE327 OR CE329 OR CE330 OR CE395 OR GE348"
+    },
+    "CE498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE800": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE803": {
+      "alternatives": [
+        [
+          "CE418"
+        ]
+      ],
+      "description": "CE418"
+    },
+    "CE804": {
+      "alternatives": [
+        [
+          "MATH338"
+        ]
+      ],
+      "description": "MATH338"
+    },
+    "CE805": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE806": {
+      "alternatives": [
+        [
+          "CE418"
+        ]
+      ],
+      "description": "CE418"
+    },
+    "CE818": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE825": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE826": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE827": {
+      "alternatives": [
+        [
+          "ENVE478"
+        ]
+      ],
+      "description": "ENVE478"
+    },
+    "CE830": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE832": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE834": {
+      "alternatives": [
+        [
+          "CE319"
+        ]
+      ],
+      "description": "CE319"
+    },
+    "CE836": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE850": {
+      "alternatives": [
+        [
+          "CE319"
+        ],
+        [
+          "GEOE375"
+        ],
+        [
+          "SLSC322"
+        ]
+      ],
+      "description": "CE319 OR GEOE375 OR SLSC322"
+    },
+    "CE851": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE852": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE853": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE855": {
+      "alternatives": [
+        [
+          "CE328"
+        ]
+      ],
+      "description": "CE328"
+    },
+    "CE856": {
+      "alternatives": [
+        [
+          "CE328"
+        ]
+      ],
+      "description": "CE328"
+    },
+    "CE864": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE866": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE871": {
+      "alternatives": [
+        [
+          "CE319"
+        ],
+        [
+          "GEOE375"
+        ],
+        [
+          "SLSC322"
+        ]
+      ],
+      "description": "CE319 OR GEOE375 OR SLSC322"
+    },
+    "CE874": {
+      "alternatives": [
+        [
+          "GEOE414"
+        ]
+      ],
+      "description": "GEOE414"
+    },
+    "CE876": {
+      "alternatives": [
+        [
+          "GEOE315"
+        ]
+      ],
+      "description": "GEOE315"
+    },
+    "CE888": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE889": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE992": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CE996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE113": {
+      "alternatives": [
+        [
+          "CHEM146"
+        ],
+        [
+          "GE163"
+        ]
+      ],
+      "description": "CHEM146 OR GE163"
+    },
+    "CHE210": {
+      "alternatives": [
+        [
+          "CHEM115"
+        ],
+        [
+          "CHEM146"
+        ],
+        [
+          "MATH223"
+        ],
+        [
+          "MATH223"
+        ]
+      ],
+      "description": "CHEM115 OR CHEM146 OR MATH223 OR MATH223"
+    },
+    "CHE220": {
+      "alternatives": [
+        [
+          "CHEM115"
+        ],
+        [
+          "CHEM146"
+        ],
+        [
+          "GE163"
+        ]
+      ],
+      "description": "CHEM115 OR CHEM146 OR GE163"
+    },
+    "CHE223": {
+      "alternatives": [
+        [
+          "CHEM242"
+        ],
+        [
+          "ENVE201"
+        ]
+      ],
+      "description": "CHEM242 OR ENVE201"
+    },
+    "CHE260": {
+      "alternatives": [
+        [
+          "CHE113"
+        ]
+      ],
+      "description": "CHE113"
+    },
+    "CHE315": {
+      "alternatives": [
+        [
+          "CHE323"
+        ]
+      ],
+      "description": "CHE323"
+    },
+    "CHE322": {
+      "alternatives": [
+        [
+          "CHE220"
+        ],
+        [
+          "MATH224"
+        ]
+      ],
+      "description": "CHE220 OR MATH224"
+    },
+    "CHE323": {
+      "alternatives": [
+        [
+          "CHE223"
+        ]
+      ],
+      "description": "CHE223"
+    },
+    "CHE324": {
+      "alternatives": [
+        [
+          "CHE210"
+        ]
+      ],
+      "description": "CHE210"
+    },
+    "CHE325": {
+      "alternatives": [
+        [
+          "CHE210"
+        ],
+        [
+          "CHE220"
+        ]
+      ],
+      "description": "CHE210 OR CHE220"
+    },
+    "CHE326": {
+      "alternatives": [
+        [
+          "CHE325"
+        ]
+      ],
+      "description": "CHE325"
+    },
+    "CHE333": {
+      "alternatives": [
+        [
+          "CHE210"
+        ],
+        [
+          "CHE324"
+        ]
+      ],
+      "description": "CHE210 OR CHE324"
+    },
+    "CHE364": {
+      "alternatives": [
+        [
+          "CHE220"
+        ],
+        [
+          "CHEM250"
+        ]
+      ],
+      "description": "CHE220 OR CHEM250"
+    },
+    "CHE369": {
+      "alternatives": [
+        [
+          "CE225"
+        ],
+        [
+          "CHE210"
+        ],
+        [
+          "ME215"
+        ]
+      ],
+      "description": "CE225 OR CHE210 OR ME215"
+    },
+    "CHE411": {
+      "alternatives": [
+        [
+          "CHE322"
+        ],
+        [
+          "CHEM242"
+        ]
+      ],
+      "description": "CHE322 OR CHEM242"
+    },
+    "CHE414": {
+      "alternatives": [
+        [
+          "CHE315"
+        ],
+        [
+          "CHE333"
+        ]
+      ],
+      "description": "CHE315 OR CHE333"
+    },
+    "CHE421": {
+      "alternatives": [
+        [
+          "CHE315"
+        ]
+      ],
+      "description": "CHE315"
+    },
+    "CHE423": {
+      "alternatives": [
+        [
+          "CHE322"
+        ]
+      ],
+      "description": "CHE322"
+    },
+    "CHE424": {
+      "alternatives": [
+        [
+          "CHE414"
+        ],
+        [
+          "CHE421"
+        ],
+        [
+          "CHE423"
+        ]
+      ],
+      "description": "CHE414 OR CHE421 OR CHE423"
+    },
+    "CHE453": {
+      "alternatives": [
+        [
+          "CHE223"
+        ],
+        [
+          "ME227"
+        ]
+      ],
+      "description": "CHE223 OR ME227"
+    },
+    "CHE454": {
+      "alternatives": [
+        [
+          "CE225"
+        ],
+        [
+          "CHE210"
+        ],
+        [
+          "ME215"
+        ]
+      ],
+      "description": "CE225 OR CHE210 OR ME215"
+    },
+    "CHE460": {
+      "alternatives": [
+        [
+          "CHE210"
+        ],
+        [
+          "CHE220"
+        ]
+      ],
+      "description": "CHE210 OR CHE220"
+    },
+    "CHE461": {
+      "alternatives": [
+        [
+          "CE225"
+        ],
+        [
+          "CHE210"
+        ],
+        [
+          "ME215"
+        ]
+      ],
+      "description": "CE225 OR CHE210 OR ME215"
+    },
+    "CHE462": {
+      "alternatives": [
+        [
+          "CE225"
+        ],
+        [
+          "CHE210"
+        ],
+        [
+          "ME215"
+        ]
+      ],
+      "description": "CE225 OR CHE210 OR ME215"
+    },
+    "CHE463": {
+      "alternatives": [
+        [
+          "CE225"
+        ],
+        [
+          "CHE210"
+        ],
+        [
+          "ME215"
+        ]
+      ],
+      "description": "CE225 OR CHE210 OR ME215"
+    },
+    "CHE464": {
+      "alternatives": [
+        [
+          "CE225"
+        ],
+        [
+          "CHE210"
+        ],
+        [
+          "ME215"
+        ]
+      ],
+      "description": "CE225 OR CHE210 OR ME215"
+    },
+    "CHE468": {
+      "alternatives": [
+        [
+          "CE225"
+        ],
+        [
+          "CHE210"
+        ],
+        [
+          "ME215"
+        ]
+      ],
+      "description": "CE225 OR CHE210 OR ME215"
+    },
+    "CHE469": {
+      "alternatives": [
+        [
+          "CHE369"
+        ]
+      ],
+      "description": "CHE369"
+    },
+    "CHE495": {
+      "alternatives": [
+        [
+          "CHE315"
+        ],
+        [
+          "CHE324"
+        ],
+        [
+          "CHE326"
+        ]
+      ],
+      "description": "CHE315 OR CHE324 OR CHE326"
+    },
+    "CHE498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE811": {
+      "alternatives": [
+        [
+          "CHE411"
+        ]
+      ],
+      "description": "CHE411"
+    },
+    "CHE861": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE868": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE869": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE875": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE881": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE882": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE886": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE888": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE889": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE992": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHE996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM100": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM112": {
+      "alternatives": [
+        [
+          "CHEM100"
+        ]
+      ],
+      "description": "CHEM100"
+    },
+    "CHEM115": {
+      "alternatives": [
+        [
+          "CHEM111"
+        ]
+      ],
+      "description": "CHEM111"
+    },
+    "CHEM142": {
+      "alternatives": [
+        [
+          "CHEM100"
+        ]
+      ],
+      "description": "CHEM100"
+    },
+    "CHEM146": {
+      "alternatives": [
+        [
+          "CHEM100"
+        ],
+        [
+          "CHEM142"
+        ]
+      ],
+      "description": "CHEM100 OR CHEM142"
+    },
+    "CHEM221": {
+      "alternatives": [
+        [
+          "CHEM115"
+        ],
+        [
+          "CHEM146"
+        ]
+      ],
+      "description": "CHEM115 OR CHEM146"
+    },
+    "CHEM231": {
+      "alternatives": [
+        [
+          "CHEM115"
+        ],
+        [
+          "CHEM146"
+        ]
+      ],
+      "description": "CHEM115 OR CHEM146"
+    },
+    "CHEM242": {
+      "alternatives": [
+        [
+          "CHEM115"
+        ],
+        [
+          "CHEM146"
+        ],
+        [
+          "MATH110"
+        ],
+        [
+          "MATH123"
+        ],
+        [
+          "MATH133"
+        ],
+        [
+          "MATH176"
+        ]
+      ],
+      "description": "CHEM115 OR CHEM146 OR MATH110 OR MATH123 OR MATH133 OR MATH176"
+    },
+    "CHEM250": {
+      "alternatives": [
+        [
+          "CHEM112"
+        ],
+        [
+          "CHEM146"
+        ]
+      ],
+      "description": "CHEM112 OR CHEM146"
+    },
+    "CHEM255": {
+      "alternatives": [
+        [
+          "CHEM250"
+        ]
+      ],
+      "description": "CHEM250"
+    },
+    "CHEM298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM299": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM322": {
+      "alternatives": [
+        [
+          "CHEM221"
+        ]
+      ],
+      "description": "CHEM221"
+    },
+    "CHEM332": {
+      "alternatives": [
+        [
+          "CHEM231"
+        ]
+      ],
+      "description": "CHEM231"
+    },
+    "CHEM334": {
+      "alternatives": [
+        [
+          "CHEM231"
+        ]
+      ],
+      "description": "CHEM231"
+    },
+    "CHEM344": {
+      "alternatives": [
+        [
+          "CHEM242"
+        ],
+        [
+          "MATH116"
+        ],
+        [
+          "MATH116"
+        ],
+        [
+          "MATH124"
+        ],
+        [
+          "MATH134"
+        ],
+        [
+          "MATH177"
+        ],
+        [
+          "PHYS117"
+        ],
+        [
+          "PHYS125"
+        ],
+        [
+          "PHYS125"
+        ]
+      ],
+      "description": "CHEM242 OR MATH116 OR MATH116 OR MATH124 OR MATH134 OR MATH177 OR PHYS117 OR PHYS125 OR PHYS125"
+    },
+    "CHEM353": {
+      "alternatives": [
+        [
+          "CHEM250"
+        ]
+      ],
+      "description": "CHEM250"
+    },
+    "CHEM354": {
+      "alternatives": [
+        [
+          "CHEM115"
+        ],
+        [
+          "CHEM146"
+        ],
+        [
+          "CHEM255"
+        ]
+      ],
+      "description": "CHEM115 OR CHEM146 OR CHEM255"
+    },
+    "CHEM369": {
+      "alternatives": [
+        [
+          "CHEM255"
+        ]
+      ],
+      "description": "CHEM255"
+    },
+    "CHEM375": {
+      "alternatives": [
+        [
+          "CHEM115"
+        ],
+        [
+          "CHEM146"
+        ]
+      ],
+      "description": "CHEM115 OR CHEM146"
+    },
+    "CHEM377": {
+      "alternatives": [
+        [
+          "CHEM115"
+        ],
+        [
+          "CHEM146"
+        ],
+        [
+          "MATH110"
+        ],
+        [
+          "MATH123"
+        ],
+        [
+          "MATH125"
+        ],
+        [
+          "MATH133"
+        ],
+        [
+          "MATH176"
+        ]
+      ],
+      "description": "CHEM115 OR CHEM146 OR MATH110 OR MATH123 OR MATH125 OR MATH133 OR MATH176"
+    },
+    "CHEM380": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM399": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM402": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM420": {
+      "alternatives": [
+        [
+          "CHEM322"
+        ]
+      ],
+      "description": "CHEM322"
+    },
+    "CHEM430": {
+      "alternatives": [
+        [
+          "CHEM332"
+        ]
+      ],
+      "description": "CHEM332"
+    },
+    "CHEM435": {
+      "alternatives": [
+        [
+          "CHEM332"
+        ]
+      ],
+      "description": "CHEM332"
+    },
+    "CHEM440": {
+      "alternatives": [
+        [
+          "CHEM242"
+        ]
+      ],
+      "description": "CHEM242"
+    },
+    "CHEM450": {
+      "alternatives": [
+        [
+          "CHEM255"
+        ]
+      ],
+      "description": "CHEM255"
+    },
+    "CHEM479": {
+      "alternatives": [
+        [
+          "CHEM242"
+        ],
+        [
+          "CHEM255"
+        ]
+      ],
+      "description": "CHEM242 OR CHEM255"
+    },
+    "CHEM482": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM483": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM801": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM802": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM815": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM832": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM833": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM834": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM852": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM879": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM90": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM991": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEM996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP350": {
+      "alternatives": [
+        [
+          "PLSC214"
+        ],
+        [
+          "STAT244"
+        ],
+        [
+          "STAT245"
+        ],
+        [
+          "STAT246"
+        ]
+      ],
+      "description": "PLSC214 OR STAT244 OR STAT245 OR STAT246"
+    },
+    "CHEP402": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP403": {
+      "alternatives": [
+        [
+          "CHEP402"
+        ]
+      ],
+      "description": "CHEP402"
+    },
+    "CHEP410": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP411": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP415": {
+      "alternatives": [
+        [
+          "CHEP402"
+        ],
+        [
+          "CHEP403"
+        ],
+        [
+          "CHEP410"
+        ],
+        [
+          "CHEP411"
+        ]
+      ],
+      "description": "CHEP402 OR CHEP403 OR CHEP410 OR CHEP411"
+    },
+    "CHEP498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP800": {
+      "alternatives": [
+        [
+          "STAT244"
+        ],
+        [
+          "STAT245"
+        ]
+      ],
+      "description": "STAT244 OR STAT245"
+    },
+    "CHEP801": {
+      "alternatives": [
+        [
+          "CHEP800"
+        ],
+        [
+          "CHEP805"
+        ],
+        [
+          "PUBH800"
+        ],
+        [
+          "PUBH805"
+        ]
+      ],
+      "description": "CHEP800 OR CHEP805 OR PUBH800 OR PUBH805"
+    },
+    "CHEP805": {
+      "alternatives": [
+        [
+          "STAT244"
+        ]
+      ],
+      "description": "STAT244"
+    },
+    "CHEP806": {
+      "alternatives": [
+        [
+          "CHEP805"
+        ]
+      ],
+      "description": "CHEP805"
+    },
+    "CHEP808": {
+      "alternatives": [
+        [
+          "CHEP805"
+        ]
+      ],
+      "description": "CHEP805"
+    },
+    "CHEP810": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP814": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP815": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP816": {
+      "alternatives": [
+        [
+          "CHEP813"
+        ]
+      ],
+      "description": "CHEP813"
+    },
+    "CHEP817": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP818": {
+      "alternatives": [
+        [
+          "CHEP822"
+        ],
+        [
+          "CHEP824"
+        ]
+      ],
+      "description": "CHEP822 OR CHEP824"
+    },
+    "CHEP819": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP820": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP821": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP822": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP823": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP824": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP840": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP842": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP843": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP844": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHEP996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHIN114": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHIN117": {
+      "alternatives": [
+        [
+          "CHIN114"
+        ]
+      ],
+      "description": "CHIN114"
+    },
+    "CHIN202": {
+      "alternatives": [
+        [
+          "CHIN117"
+        ]
+      ],
+      "description": "CHIN117"
+    },
+    "CHIN212": {
+      "alternatives": [
+        [
+          "CHIN204"
+        ]
+      ],
+      "description": "CHIN204"
+    },
+    "CHIN233": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHIN298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHIN299": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHIN398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHIN399": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHIN498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CHIN499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CLAS101": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CLAS103": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CLAS104": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CLAS105": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CLAS107": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CLAS203": {
+      "alternatives": [
+        [
+          "CLAS103"
+        ]
+      ],
+      "description": "CLAS103"
+    },
+    "CLAS207": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CLAS220": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CLAS225": {
+      "alternatives": [
+        [
+          "CLAS110"
+        ]
+      ],
+      "description": "CLAS110"
+    },
+    "CLAS240": {
+      "alternatives": [
+        [
+          "CLAS110"
+        ]
+      ],
+      "description": "CLAS110"
+    },
+    "CLAS242": {
+      "alternatives": [
+        [
+          "CLAS110"
+        ]
+      ],
+      "description": "CLAS110"
+    },
+    "CLAS298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CLAS299": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CLAS398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CLAS399": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CLAS431": {
+      "alternatives": [
+        [
+          "CLAS203"
+        ]
+      ],
+      "description": "CLAS203"
+    },
+    "CLAS498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CLAS499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CLAS899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CLR800": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CME331": {
+      "alternatives": [
+        [
+          "CMPT116"
+        ],
+        [
+          "CMPT141"
+        ],
+        [
+          "CMPT214"
+        ],
+        [
+          "EE232"
+        ]
+      ],
+      "description": "CMPT116 OR CMPT141 OR CMPT214 OR EE232"
+    },
+    "CME332": {
+      "alternatives": [
+        [
+          "CME331"
+        ],
+        [
+          "CME341"
+        ]
+      ],
+      "description": "CME331 OR CME341"
+    },
+    "CME334": {
+      "alternatives": [
+        [
+          "CME466"
+        ]
+      ],
+      "description": "CME466"
+    },
+    "CME341": {
+      "alternatives": [
+        [
+          "CMPT116"
+        ],
+        [
+          "CMPT141"
+        ],
+        [
+          "CMPT214"
+        ],
+        [
+          "EE232"
+        ]
+      ],
+      "description": "CMPT116 OR CMPT141 OR CMPT214 OR EE232"
+    },
+    "CME342": {
+      "alternatives": [
+        [
+          "EE221"
+        ]
+      ],
+      "description": "EE221"
+    },
+    "CME433": {
+      "alternatives": [
+        [
+          "CME331"
+        ],
+        [
+          "CME341"
+        ]
+      ],
+      "description": "CME331 OR CME341"
+    },
+    "CME435": {
+      "alternatives": [
+        [
+          "CME341"
+        ]
+      ],
+      "description": "CME341"
+    },
+    "CME465": {
+      "alternatives": [
+        [
+          "EE216"
+        ]
+      ],
+      "description": "EE216"
+    },
+    "CME466": {
+      "alternatives": [
+        [
+          "CME465"
+        ]
+      ],
+      "description": "CME465"
+    },
+    "CME495": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CME498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CME898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT140": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT141": {
+      "alternatives": [
+        [
+          "BINF151"
+        ],
+        [
+          "CMPT140"
+        ],
+        [
+          "MATH110"
+        ],
+        [
+          "MATH123"
+        ],
+        [
+          "MATH125"
+        ],
+        [
+          "MATH133"
+        ],
+        [
+          "MATH163"
+        ],
+        [
+          "MATH176"
+        ]
+      ],
+      "description": "BINF151 OR CMPT140 OR MATH110 OR MATH123 OR MATH125 OR MATH133 OR MATH163 OR MATH176"
+    },
+    "CMPT142": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT145": {
+      "alternatives": [
+        [
+          "CMPT111"
+        ],
+        [
+          "CMPT141"
+        ],
+        [
+          "CMPT142"
+        ]
+      ],
+      "description": "CMPT111 OR CMPT141 OR CMPT142"
+    },
+    "CMPT146": {
+      "alternatives": [
+        [
+          "CMPT141"
+        ],
+        [
+          "CMPT142"
+        ]
+      ],
+      "description": "CMPT141 OR CMPT142"
+    },
+    "CMPT214": {
+      "alternatives": [
+        [
+          "CMPT115"
+        ],
+        [
+          "CMPT117"
+        ],
+        [
+          "CMPT145"
+        ],
+        [
+          "CMPT146"
+        ]
+      ],
+      "description": "CMPT115 OR CMPT117 OR CMPT145 OR CMPT146"
+    },
+    "CMPT215": {
+      "alternatives": [
+        [
+          "CMPT214"
+        ],
+        [
+          "CMPT260"
+        ],
+        [
+          "MATH163"
+        ]
+      ],
+      "description": "CMPT214 OR CMPT260 OR MATH163"
+    },
+    "CMPT260": {
+      "alternatives": [
+        [
+          "CMPT115"
+        ],
+        [
+          "CMPT117"
+        ],
+        [
+          "CMPT145"
+        ],
+        [
+          "CMPT146"
+        ],
+        [
+          "MATH110"
+        ],
+        [
+          "MATH133"
+        ],
+        [
+          "MATH163"
+        ],
+        [
+          "MATH176"
+        ]
+      ],
+      "description": "CMPT115 OR CMPT117 OR CMPT145 OR CMPT146 OR MATH110 OR MATH133 OR MATH163 OR MATH176"
+    },
+    "CMPT263": {
+      "alternatives": [
+        [
+          "CMPT145"
+        ],
+        [
+          "CMPT146"
+        ],
+        [
+          "CMPT260"
+        ],
+        [
+          "MATH163"
+        ]
+      ],
+      "description": "CMPT145 OR CMPT146 OR CMPT260 OR MATH163"
+    },
+    "CMPT270": {
+      "alternatives": [
+        [
+          "CMPT115"
+        ],
+        [
+          "CMPT117"
+        ],
+        [
+          "CMPT145"
+        ],
+        [
+          "CMPT146"
+        ],
+        [
+          "MATH104"
+        ],
+        [
+          "MATH110"
+        ],
+        [
+          "MATH121"
+        ],
+        [
+          "MATH123"
+        ],
+        [
+          "MATH125"
+        ],
+        [
+          "MATH133"
+        ],
+        [
+          "MATH163"
+        ],
+        [
+          "MATH176"
+        ],
+        [
+          "STAT242"
+        ],
+        [
+          "STAT245"
+        ]
+      ],
+      "description": "CMPT115 OR CMPT117 OR CMPT145 OR CMPT146 OR MATH104 OR MATH110 OR MATH121 OR MATH123 OR MATH125 OR MATH133 OR MATH163 OR MATH176 OR STAT242 OR STAT245"
+    },
+    "CMPT280": {
+      "alternatives": [
+        [
+          "CMPT270"
+        ]
+      ],
+      "description": "CMPT270"
+    },
+    "CMPT281": {
+      "alternatives": [
+        [
+          "CMPT111"
+        ],
+        [
+          "CMPT141"
+        ]
+      ],
+      "description": "CMPT111 OR CMPT141"
+    },
+    "CMPT298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT299": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT306": {
+      "alternatives": [
+        [
+          "CMPT270"
+        ]
+      ],
+      "description": "CMPT270"
+    },
+    "CMPT317": {
+      "alternatives": [
+        [
+          "CMPT260"
+        ],
+        [
+          "CMPT280"
+        ],
+        [
+          "EE216"
+        ],
+        [
+          "MATH163"
+        ],
+        [
+          "ME251"
+        ],
+        [
+          "STAT242"
+        ],
+        [
+          "STAT245"
+        ]
+      ],
+      "description": "CMPT260 OR CMPT280 OR EE216 OR MATH163 OR ME251 OR STAT242 OR STAT245"
+    },
+    "CMPT318": {
+      "alternatives": [
+        [
+          "CMPT270"
+        ],
+        [
+          "EE216"
+        ],
+        [
+          "MATH164"
+        ],
+        [
+          "STAT242"
+        ],
+        [
+          "STAT245"
+        ]
+      ],
+      "description": "CMPT270 OR EE216 OR MATH164 OR STAT242 OR STAT245"
+    },
+    "CMPT332": {
+      "alternatives": [
+        [
+          "CME331"
+        ],
+        [
+          "CMPT214"
+        ],
+        [
+          "CMPT215"
+        ],
+        [
+          "CMPT280"
+        ]
+      ],
+      "description": "CME331 OR CMPT214 OR CMPT215 OR CMPT280"
+    },
+    "CMPT340": {
+      "alternatives": [
+        [
+          "CMPT214"
+        ],
+        [
+          "CMPT260"
+        ],
+        [
+          "CMPT263"
+        ],
+        [
+          "CMPT270"
+        ]
+      ],
+      "description": "CMPT214 OR CMPT260 OR CMPT263 OR CMPT270"
+    },
+    "CMPT353": {
+      "alternatives": [
+        [
+          "CMPT280"
+        ]
+      ],
+      "description": "CMPT280"
+    },
+    "CMPT360": {
+      "alternatives": [
+        [
+          "CMPT260"
+        ],
+        [
+          "CMPT263"
+        ],
+        [
+          "CMPT280"
+        ]
+      ],
+      "description": "CMPT260 OR CMPT263 OR CMPT280"
+    },
+    "CMPT364": {
+      "alternatives": [
+        [
+          "CMPT260"
+        ],
+        [
+          "MATH163"
+        ]
+      ],
+      "description": "CMPT260 OR MATH163"
+    },
+    "CMPT370": {
+      "alternatives": [
+        [
+          "CMPT280"
+        ]
+      ],
+      "description": "CMPT280"
+    },
+    "CMPT371": {
+      "alternatives": [
+        [
+          "CMPT214"
+        ],
+        [
+          "CMPT370"
+        ]
+      ],
+      "description": "CMPT214 OR CMPT370"
+    },
+    "CMPT381": {
+      "alternatives": [
+        [
+          "CMPT280"
+        ]
+      ],
+      "description": "CMPT280"
+    },
+    "CMPT384": {
+      "alternatives": [
+        [
+          "CMPT280"
+        ]
+      ],
+      "description": "CMPT280"
+    },
+    "CMPT394": {
+      "alternatives": [
+        [
+          "CMPT270"
+        ],
+        [
+          "EE216"
+        ],
+        [
+          "MATH110"
+        ],
+        [
+          "STAT242"
+        ],
+        [
+          "STAT245"
+        ]
+      ],
+      "description": "CMPT270 OR EE216 OR MATH110 OR STAT242 OR STAT245"
+    },
+    "CMPT398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT399": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT400": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT401": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT402": {
+      "alternatives": [
+        [
+          "CMPT401"
+        ]
+      ],
+      "description": "CMPT401"
+    },
+    "CMPT403": {
+      "alternatives": [
+        [
+          "CMPT402"
+        ]
+      ],
+      "description": "CMPT402"
+    },
+    "CMPT404": {
+      "alternatives": [
+        [
+          "CMPT403"
+        ]
+      ],
+      "description": "CMPT403"
+    },
+    "CMPT405": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT406": {
+      "alternatives": [
+        [
+          "CMPT306"
+        ]
+      ],
+      "description": "CMPT306"
+    },
+    "CMPT407": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT412": {
+      "alternatives": [
+        [
+          "CMPT317"
+        ],
+        [
+          "CMPT318"
+        ],
+        [
+          "CMPT353"
+        ]
+      ],
+      "description": "CMPT317 OR CMPT318 OR CMPT353"
+    },
+    "CMPT423": {
+      "alternatives": [
+        [
+          "CMPT317"
+        ],
+        [
+          "EE216"
+        ],
+        [
+          "MATH164"
+        ],
+        [
+          "STAT242"
+        ],
+        [
+          "STAT245"
+        ]
+      ],
+      "description": "CMPT317 OR EE216 OR MATH164 OR STAT242 OR STAT245"
+    },
+    "CMPT432": {
+      "alternatives": [
+        [
+          "CMPT332"
+        ]
+      ],
+      "description": "CMPT332"
+    },
+    "CMPT433": {
+      "alternatives": [
+        [
+          "CMPT332"
+        ]
+      ],
+      "description": "CMPT332"
+    },
+    "CMPT434": {
+      "alternatives": [
+        [
+          "CMPT332"
+        ]
+      ],
+      "description": "CMPT332"
+    },
+    "CMPT435": {
+      "alternatives": [
+        [
+          "CMPT215"
+        ],
+        [
+          "CMPT332"
+        ],
+        [
+          "CMPT340"
+        ],
+        [
+          "CMPT360"
+        ]
+      ],
+      "description": "CMPT215 OR CMPT332 OR CMPT340 OR CMPT360"
+    },
+    "CMPT438": {
+      "alternatives": [
+        [
+          "CMPT332"
+        ]
+      ],
+      "description": "CMPT332"
+    },
+    "CMPT439": {
+      "alternatives": [
+        [
+          "CMPT332"
+        ]
+      ],
+      "description": "CMPT332"
+    },
+    "CMPT440": {
+      "alternatives": [
+        [
+          "CMPT340"
+        ]
+      ],
+      "description": "CMPT340"
+    },
+    "CMPT442": {
+      "alternatives": [
+        [
+          "CMPT215"
+        ],
+        [
+          "CMPT364"
+        ]
+      ],
+      "description": "CMPT215 OR CMPT364"
+    },
+    "CMPT451": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ],
+        [
+          "BMSC200"
+        ],
+        [
+          "CMPT280"
+        ]
+      ],
+      "description": "BIOL120 OR BMSC200 OR CMPT280"
+    },
+    "CMPT453": {
+      "alternatives": [
+        [
+          "CMPT353"
+        ],
+        [
+          "CMPT370"
+        ],
+        [
+          "CMPT381"
+        ]
+      ],
+      "description": "CMPT353 OR CMPT370 OR CMPT381"
+    },
+    "CMPT463": {
+      "alternatives": [
+        [
+          "CMPT360"
+        ]
+      ],
+      "description": "CMPT360"
+    },
+    "CMPT470": {
+      "alternatives": [
+        [
+          "CMPT214"
+        ],
+        [
+          "CMPT370"
+        ]
+      ],
+      "description": "CMPT214 OR CMPT370"
+    },
+    "CMPT479": {
+      "alternatives": [
+        [
+          "CMPT370"
+        ]
+      ],
+      "description": "CMPT370"
+    },
+    "CMPT480": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT481": {
+      "alternatives": [
+        [
+          "CMPT370"
+        ],
+        [
+          "CMPT381"
+        ]
+      ],
+      "description": "CMPT370 OR CMPT381"
+    },
+    "CMPT484": {
+      "alternatives": [
+        [
+          "CMPT360"
+        ],
+        [
+          "CMPT381"
+        ],
+        [
+          "CMPT384"
+        ]
+      ],
+      "description": "CMPT360 OR CMPT381 OR CMPT384"
+    },
+    "CMPT485": {
+      "alternatives": [
+        [
+          "CE318"
+        ],
+        [
+          "EE216"
+        ],
+        [
+          "MATH164"
+        ],
+        [
+          "MATH266"
+        ]
+      ],
+      "description": "CE318 OR EE216 OR MATH164 OR MATH266"
+    },
+    "CMPT487": {
+      "alternatives": [
+        [
+          "CE318"
+        ],
+        [
+          "CMPT317"
+        ],
+        [
+          "CMPT332"
+        ],
+        [
+          "CMPT340"
+        ],
+        [
+          "CMPT370"
+        ],
+        [
+          "EE216"
+        ],
+        [
+          "MATH164"
+        ]
+      ],
+      "description": "CE318 OR CMPT317 OR CMPT332 OR CMPT340 OR CMPT370 OR EE216 OR MATH164"
+    },
+    "CMPT489": {
+      "alternatives": [
+        [
+          "CE318"
+        ],
+        [
+          "CMPT317"
+        ],
+        [
+          "EE216"
+        ],
+        [
+          "MATH164"
+        ],
+        [
+          "MATH266"
+        ],
+        [
+          "STAT242"
+        ],
+        [
+          "STAT245"
+        ]
+      ],
+      "description": "CE318 OR CMPT317 OR EE216 OR MATH164 OR MATH266 OR STAT242 OR STAT245"
+    },
+    "CMPT498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT810": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT811": {
+      "alternatives": [
+        [
+          "CMPT370"
+        ]
+      ],
+      "description": "CMPT370"
+    },
+    "CMPT813": {
+      "alternatives": [
+        [
+          "CMPT360"
+        ]
+      ],
+      "description": "CMPT360"
+    },
+    "CMPT815": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT816": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT817": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT819": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT820": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT821": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT823": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT824": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT827": {
+      "alternatives": [
+        [
+          "CMPT317"
+        ]
+      ],
+      "description": "CMPT317"
+    },
+    "CMPT828": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT829": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT830": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT832": {
+      "alternatives": [
+        [
+          "CMPT332"
+        ]
+      ],
+      "description": "CMPT332"
+    },
+    "CMPT835": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT838": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT839": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT842": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT846": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT851": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT854": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT856": {
+      "alternatives": [
+        [
+          "CMPT816"
+        ]
+      ],
+      "description": "CMPT816"
+    },
+    "CMPT857": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT858": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT865": {
+      "alternatives": [
+        [
+          "CMPT815"
+        ]
+      ],
+      "description": "CMPT815"
+    },
+    "CMPT866": {
+      "alternatives": [
+        [
+          "CMPT481"
+        ],
+        [
+          "CMPT811"
+        ]
+      ],
+      "description": "CMPT481 OR CMPT811"
+    },
+    "CMPT867": {
+      "alternatives": [
+        [
+          "CMPT481"
+        ]
+      ],
+      "description": "CMPT481"
+    },
+    "CMPT868": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT870": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT878": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT885": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT886": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT887": {
+      "alternatives": [
+        [
+          "CMPT886"
+        ]
+      ],
+      "description": "CMPT886"
+    },
+    "CMPT898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT990": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMPT996": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS110": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS111": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS299": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS300": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS315": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS333": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS399": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS401": {
+      "alternatives": [
+        [
+          "CMRS110"
+        ],
+        [
+          "CMRS111"
+        ]
+      ],
+      "description": "CMRS110 OR CMRS111"
+    },
+    "CMRS402": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS403": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS405": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS406": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS415": {
+      "alternatives": [
+        [
+          "CMRS315"
+        ]
+      ],
+      "description": "CMRS315"
+    },
+    "CMRS433": {
+      "alternatives": [
+        [
+          "CMRS333"
+        ]
+      ],
+      "description": "CMRS333"
+    },
+    "CMRS498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS899": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CMRS994": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM100": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM101": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM104": {
+      "alternatives": [
+        [
+          "MATH102"
+        ]
+      ],
+      "description": "MATH102"
+    },
+    "COMM105": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM115": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM120": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM121": {
+      "alternatives": [
+        [
+          "MATH102"
+        ]
+      ],
+      "description": "MATH102"
+    },
+    "COMM201": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM203": {
+      "alternatives": [
+        [
+          "COMM104"
+        ],
+        [
+          "COMM121"
+        ],
+        [
+          "MATH110"
+        ],
+        [
+          "MATH121"
+        ],
+        [
+          "MATH133"
+        ]
+      ],
+      "description": "COMM104 OR COMM121 OR MATH110 OR MATH121 OR MATH133"
+    },
+    "COMM204": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM205": {
+      "alternatives": [
+        [
+          "COMM104"
+        ]
+      ],
+      "description": "COMM104"
+    },
+    "COMM207": {
+      "alternatives": [
+        [
+          "COMM104"
+        ],
+        [
+          "COMM121"
+        ],
+        [
+          "MATH110"
+        ],
+        [
+          "MATH121"
+        ],
+        [
+          "MATH133"
+        ]
+      ],
+      "description": "COMM104 OR COMM121 OR MATH110 OR MATH121 OR MATH133"
+    },
+    "COMM210": {
+      "alternatives": [
+        [
+          "COMM201"
+        ]
+      ],
+      "description": "COMM201"
+    },
+    "COMM211": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM213": {
+      "alternatives": [
+        [
+          "COMM104"
+        ]
+      ],
+      "description": "COMM104"
+    },
+    "COMM225": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM229": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM304": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM306": {
+      "alternatives": [
+        [
+          "COMM101"
+        ]
+      ],
+      "description": "COMM101"
+    },
+    "COMM308": {
+      "alternatives": [
+        [
+          "COMM210"
+        ]
+      ],
+      "description": "COMM210"
+    },
+    "COMM311": {
+      "alternatives": [
+        [
+          "COMM207"
+        ],
+        [
+          "COMM213"
+        ]
+      ],
+      "description": "COMM207 OR COMM213"
+    },
+    "COMM321": {
+      "alternatives": [
+        [
+          "COMM201"
+        ],
+        [
+          "COMM210"
+        ]
+      ],
+      "description": "COMM201 OR COMM210"
+    },
+    "COMM323": {
+      "alternatives": [
+        [
+          "COMM321"
+        ]
+      ],
+      "description": "COMM321"
+    },
+    "COMM324": {
+      "alternatives": [
+        [
+          "COMM201"
+        ],
+        [
+          "COMM210"
+        ]
+      ],
+      "description": "COMM201 OR COMM210"
+    },
+    "COMM325": {
+      "alternatives": [
+        [
+          "COMM201"
+        ],
+        [
+          "COMM225"
+        ]
+      ],
+      "description": "COMM201 OR COMM225"
+    },
+    "COMM326": {
+      "alternatives": [
+        [
+          "COMM201"
+        ],
+        [
+          "COMM225"
+        ]
+      ],
+      "description": "COMM201 OR COMM225"
+    },
+    "COMM337": {
+      "alternatives": [
+        [
+          "COMM308"
+        ]
+      ],
+      "description": "COMM308"
+    },
+    "COMM340": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM341": {
+      "alternatives": [
+        [
+          "COMM101"
+        ],
+        [
+          "COMM201"
+        ],
+        [
+          "COMM204"
+        ]
+      ],
+      "description": "COMM101 OR COMM201 OR COMM204"
+    },
+    "COMM342": {
+      "alternatives": [
+        [
+          "COMM105"
+        ]
+      ],
+      "description": "COMM105"
+    },
+    "COMM343": {
+      "alternatives": [
+        [
+          "COMM105"
+        ],
+        [
+          "COMM211"
+        ]
+      ],
+      "description": "COMM105 OR COMM211"
+    },
+    "COMM345": {
+      "alternatives": [
+        [
+          "COMM204"
+        ]
+      ],
+      "description": "COMM204"
+    },
+    "COMM346": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM347": {
+      "alternatives": [
+        [
+          "COMM101"
+        ]
+      ],
+      "description": "COMM101"
+    },
+    "COMM348": {
+      "alternatives": [
+        [
+          "COMM105"
+        ]
+      ],
+      "description": "COMM105"
+    },
+    "COMM349": {
+      "alternatives": [
+        [
+          "COMM201"
+        ],
+        [
+          "COMM203"
+        ],
+        [
+          "COMM204"
+        ]
+      ],
+      "description": "COMM201 OR COMM203 OR COMM204"
+    },
+    "COMM352": {
+      "alternatives": [
+        [
+          "COMM204"
+        ]
+      ],
+      "description": "COMM204"
+    },
+    "COMM353": {
+      "alternatives": [
+        [
+          "COMM204"
+        ]
+      ],
+      "description": "COMM204"
+    },
+    "COMM354": {
+      "alternatives": [
+        [
+          "COMM204"
+        ]
+      ],
+      "description": "COMM204"
+    },
+    "COMM357": {
+      "alternatives": [
+        [
+          "COMM204"
+        ]
+      ],
+      "description": "COMM204"
+    },
+    "COMM363": {
+      "alternatives": [
+        [
+          "COMM203"
+        ],
+        [
+          "COMM207"
+        ]
+      ],
+      "description": "COMM203 OR COMM207"
+    },
+    "COMM364": {
+      "alternatives": [
+        [
+          "COMM203"
+        ],
+        [
+          "COMM207"
+        ]
+      ],
+      "description": "COMM203 OR COMM207"
+    },
+    "COMM367": {
+      "alternatives": [
+        [
+          "COMM203"
+        ],
+        [
+          "COMM207"
+        ]
+      ],
+      "description": "COMM203 OR COMM207"
+    },
+    "COMM368": {
+      "alternatives": [
+        [
+          "COMM203"
+        ],
+        [
+          "COMM207"
+        ]
+      ],
+      "description": "COMM203 OR COMM207"
+    },
+    "COMM371": {
+      "alternatives": [
+        [
+          "COMM203"
+        ]
+      ],
+      "description": "COMM203"
+    },
+    "COMM380": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM381": {
+      "alternatives": [
+        [
+          "COMM211"
+        ]
+      ],
+      "description": "COMM211"
+    },
+    "COMM382": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM384": {
+      "alternatives": [
+        [
+          "COMM211"
+        ]
+      ],
+      "description": "COMM211"
+    },
+    "COMM385": {
+      "alternatives": [
+        [
+          "COMM105"
+        ],
+        [
+          "COMM211"
+        ]
+      ],
+      "description": "COMM105 OR COMM211"
+    },
+    "COMM387": {
+      "alternatives": [
+        [
+          "COMM381"
+        ]
+      ],
+      "description": "COMM381"
+    },
+    "COMM393": {
+      "alternatives": [
+        [
+          "COMM205"
+        ]
+      ],
+      "description": "COMM205"
+    },
+    "COMM395": {
+      "alternatives": [
+        [
+          "COMM207"
+        ]
+      ],
+      "description": "COMM207"
+    },
+    "COMM398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM401": {
+      "alternatives": [
+        [
+          "COMM306"
+        ],
+        [
+          "COMM308"
+        ]
+      ],
+      "description": "COMM306 OR COMM308"
+    },
+    "COMM402": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM406": {
+      "alternatives": [
+        [
+          "COMM323"
+        ]
+      ],
+      "description": "COMM323"
+    },
+    "COMM407": {
+      "alternatives": [
+        [
+          "COMM406"
+        ]
+      ],
+      "description": "COMM406"
+    },
+    "COMM410": {
+      "alternatives": [
+        [
+          "COMM201"
+        ],
+        [
+          "COMM210"
+        ]
+      ],
+      "description": "COMM201 OR COMM210"
+    },
+    "COMM412": {
+      "alternatives": [
+        [
+          "COMM323"
+        ]
+      ],
+      "description": "COMM323"
+    },
+    "COMM414": {
+      "alternatives": [
+        [
+          "COMM421"
+        ]
+      ],
+      "description": "COMM421"
+    },
+    "COMM419": {
+      "alternatives": [
+        [
+          "COMM363"
+        ],
+        [
+          "COMM367"
+        ]
+      ],
+      "description": "COMM363 OR COMM367"
+    },
+    "COMM420": {
+      "alternatives": [
+        [
+          "COMM210"
+        ]
+      ],
+      "description": "COMM210"
+    },
+    "COMM421": {
+      "alternatives": [
+        [
+          "COMM323"
+        ]
+      ],
+      "description": "COMM323"
+    },
+    "COMM429": {
+      "alternatives": [
+        [
+          "COMM229"
+        ],
+        [
+          "COMM363"
+        ],
+        [
+          "COMM367"
+        ]
+      ],
+      "description": "COMM229 OR COMM363 OR COMM367"
+    },
+    "COMM433": {
+      "alternatives": [
+        [
+          "COMM323"
+        ]
+      ],
+      "description": "COMM323"
+    },
+    "COMM438": {
+      "alternatives": [
+        [
+          "COMM308"
+        ]
+      ],
+      "description": "COMM308"
+    },
+    "COMM440": {
+      "alternatives": [
+        [
+          "COMM340"
+        ]
+      ],
+      "description": "COMM340"
+    },
+    "COMM447": {
+      "alternatives": [
+        [
+          "COMM203"
+        ],
+        [
+          "COMM204"
+        ],
+        [
+          "COMM205"
+        ],
+        [
+          "COMM210"
+        ],
+        [
+          "COMM211"
+        ]
+      ],
+      "description": "COMM203 OR COMM204 OR COMM205 OR COMM210 OR COMM211"
+    },
+    "COMM450": {
+      "alternatives": [
+        [
+          "COMM352"
+        ],
+        [
+          "COMM354"
+        ]
+      ],
+      "description": "COMM352 OR COMM354"
+    },
+    "COMM451": {
+      "alternatives": [
+        [
+          "COMM352"
+        ],
+        [
+          "COMM354"
+        ]
+      ],
+      "description": "COMM352 OR COMM354"
+    },
+    "COMM452": {
+      "alternatives": [
+        [
+          "COMM204"
+        ],
+        [
+          "COMM352"
+        ]
+      ],
+      "description": "COMM204 OR COMM352"
+    },
+    "COMM453": {
+      "alternatives": [
+        [
+          "COMM353"
+        ],
+        [
+          "COMM398"
+        ]
+      ],
+      "description": "COMM353 OR COMM398"
+    },
+    "COMM454": {
+      "alternatives": [
+        [
+          "COMM352"
+        ],
+        [
+          "COMM354"
+        ]
+      ],
+      "description": "COMM352 OR COMM354"
+    },
+    "COMM456": {
+      "alternatives": [
+        [
+          "COMM204"
+        ],
+        [
+          "COMM340"
+        ]
+      ],
+      "description": "COMM204 OR COMM340"
+    },
+    "COMM457": {
+      "alternatives": [
+        [
+          "COMM352"
+        ],
+        [
+          "COMM354"
+        ]
+      ],
+      "description": "COMM352 OR COMM354"
+    },
+    "COMM458": {
+      "alternatives": [
+        [
+          "COMM352"
+        ],
+        [
+          "COMM354"
+        ]
+      ],
+      "description": "COMM352 OR COMM354"
+    },
+    "COMM461": {
+      "alternatives": [
+        [
+          "COMM363"
+        ],
+        [
+          "COMM367"
+        ]
+      ],
+      "description": "COMM363 OR COMM367"
+    },
+    "COMM465": {
+      "alternatives": [
+        [
+          "COMM363"
+        ],
+        [
+          "COMM367"
+        ]
+      ],
+      "description": "COMM363 OR COMM367"
+    },
+    "COMM466": {
+      "alternatives": [
+        [
+          "COMM363"
+        ],
+        [
+          "COMM367"
+        ]
+      ],
+      "description": "COMM363 OR COMM367"
+    },
+    "COMM467": {
+      "alternatives": [
+        [
+          "COMM367"
+        ]
+      ],
+      "description": "COMM367"
+    },
+    "COMM469": {
+      "alternatives": [
+        [
+          "COMM363"
+        ],
+        [
+          "COMM367"
+        ]
+      ],
+      "description": "COMM363 OR COMM367"
+    },
+    "COMM470": {
+      "alternatives": [
+        [
+          "COMM204"
+        ]
+      ],
+      "description": "COMM204"
+    },
+    "COMM471": {
+      "alternatives": [
+        [
+          "COMM363"
+        ],
+        [
+          "COMM367"
+        ]
+      ],
+      "description": "COMM363 OR COMM367"
+    },
+    "COMM473": {
+      "alternatives": [
+        [
+          "COMM352"
+        ],
+        [
+          "COMM354"
+        ],
+        [
+          "COMM357"
+        ]
+      ],
+      "description": "COMM352 OR COMM354 OR COMM357"
+    },
+    "COMM480": {
+      "alternatives": [
+        [
+          "COMM380"
+        ]
+      ],
+      "description": "COMM380"
+    },
+    "COMM483": {
+      "alternatives": [
+        [
+          "COMM480"
+        ]
+      ],
+      "description": "COMM480"
+    },
+    "COMM486": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM487": {
+      "alternatives": [
+        [
+          "COMM381"
+        ]
+      ],
+      "description": "COMM381"
+    },
+    "COMM488": {
+      "alternatives": [
+        [
+          "COMM105"
+        ],
+        [
+          "COMM211"
+        ]
+      ],
+      "description": "COMM105 OR COMM211"
+    },
+    "COMM489": {
+      "alternatives": [
+        [
+          "COMM342"
+        ],
+        [
+          "COMM385"
+        ]
+      ],
+      "description": "COMM342 OR COMM385"
+    },
+    "COMM491": {
+      "alternatives": [
+        [
+          "COMM205"
+        ]
+      ],
+      "description": "COMM205"
+    },
+    "COMM493": {
+      "alternatives": [
+        [
+          "COMM205"
+        ]
+      ],
+      "description": "COMM205"
+    },
+    "COMM495": {
+      "alternatives": [
+        [
+          "COMM205"
+        ]
+      ],
+      "description": "COMM205"
+    },
+    "COMM496": {
+      "alternatives": [
+        [
+          "COMM205"
+        ]
+      ],
+      "description": "COMM205"
+    },
+    "COMM497": {
+      "alternatives": [
+        [
+          "COMM205"
+        ]
+      ],
+      "description": "COMM205"
+    },
+    "COMM498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "COMM898": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CORR810": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CORR820": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CORR830": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CORR860": {
+      "alternatives": [
+        [
+          "CORR810"
+        ],
+        [
+          "CORR830"
+        ]
+      ],
+      "description": "CORR810 OR CORR830"
+    },
+    "CORR870": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CPPS221": {
+      "alternatives": [
+        [
+          "BIOL120"
+        ],
+        [
+          "BIOL121"
+        ],
+        [
+          "BIOL224"
+        ],
+        [
+          "BMSC208"
+        ]
+      ],
+      "description": "BIOL120 OR BIOL121 OR BIOL224 OR BMSC208"
+    },
+    "CPPS302": {
+      "alternatives": [
+        [
+          "BIOL318"
+        ],
+        [
+          "BMSC208"
+        ]
+      ],
+      "description": "BIOL318 OR BMSC208"
+    },
+    "CPPS303": {
+      "alternatives": [
+        [
+          "BIOL318"
+        ],
+        [
+          "BMSC208"
+        ]
+      ],
+      "description": "BIOL318 OR BMSC208"
+    },
+    "CPPS304": {
+      "alternatives": [
+        [
+          "BIOL318"
+        ],
+        [
+          "BMSC208"
+        ]
+      ],
+      "description": "BIOL318 OR BMSC208"
+    },
+    "CPPS306": {
+      "alternatives": [
+        [
+          "CPPS304"
+        ]
+      ],
+      "description": "CPPS304"
+    },
+    "CPPS307": {
+      "alternatives": [
+        [
+          "CPPS304"
+        ]
+      ],
+      "description": "CPPS304"
+    },
+    "CPPS308": {
+      "alternatives": [
+        [
+          "BMSC208"
+        ],
+        [
+          "BMSC240"
+        ]
+      ],
+      "description": "BMSC208 OR BMSC240"
+    },
+    "CPPS310": {
+      "alternatives": [
+        [
+          "BIOL224"
+        ],
+        [
+          "BMSC208"
+        ]
+      ],
+      "description": "BIOL224 OR BMSC208"
+    },
+    "CPPS325": {
+      "alternatives": [
+        [
+          "BMSC220"
+        ]
+      ],
+      "description": "BMSC220"
+    },
+    "CPPS330": {
+      "alternatives": [
+        [
+          "BIOL224"
+        ],
+        [
+          "BMSC208"
+        ],
+        [
+          "BMSC220"
+        ]
+      ],
+      "description": "BIOL224 OR BMSC208 OR BMSC220"
+    },
+    "CPPS331": {
+      "alternatives": [
+        [
+          "BMSC220"
+        ],
+        [
+          "BMSC240"
+        ]
+      ],
+      "description": "BMSC220 OR BMSC240"
+    },
+    "CPPS337": {
+      "alternatives": [
+        [
+          "BMSC208"
+        ]
+      ],
+      "description": "BMSC208"
+    },
+    "CPPS398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CPPS399": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CPPS400": {
+      "alternatives": [
+        [
+          "CPPS310"
+        ],
+        [
+          "PHYS115"
+        ],
+        [
+          "PHYS117"
+        ],
+        [
+          "PHYS125"
+        ]
+      ],
+      "description": "CPPS310 OR PHYS115 OR PHYS117 OR PHYS125"
+    },
+    "CPPS401": {
+      "alternatives": [
+        [
+          "ANTH270"
+        ],
+        [
+          "ANTH470"
+        ],
+        [
+          "CPPS221"
+        ],
+        [
+          "CPPS310"
+        ]
+      ],
+      "description": "ANTH270 OR ANTH470 OR CPPS221 OR CPPS310"
+    },
+    "CPPS402": {
+      "alternatives": [
+        [
+          "CPPS302"
+        ],
+        [
+          "CPPS303"
+        ]
+      ],
+      "description": "CPPS302 OR CPPS303"
+    },
+    "CPPS403": {
+      "alternatives": [
+        [
+          "BIOL226"
+        ],
+        [
+          "BMSC220"
+        ],
+        [
+          "CPPS302"
+        ],
+        [
+          "CPPS303"
+        ],
+        [
+          "CPPS304"
+        ]
+      ],
+      "description": "BIOL226 OR BMSC220 OR CPPS302 OR CPPS303 OR CPPS304"
+    },
+    "CPPS405": {
+      "alternatives": [
+        [
+          "CPPS302"
+        ],
+        [
+          "CPPS303"
+        ],
+        [
+          "CPPS304"
+        ],
+        [
+          "CPPS325"
+        ],
+        [
+          "CPPS415"
+        ]
+      ],
+      "description": "CPPS302 OR CPPS303 OR CPPS304 OR CPPS325 OR CPPS415"
+    },
+    "CPPS406": {
+      "alternatives": [
+        [
+          "BIOL224"
+        ],
+        [
+          "BMSC208"
+        ],
+        [
+          "BMSC220"
+        ]
+      ],
+      "description": "BIOL224 OR BMSC208 OR BMSC220"
+    },
+    "CPPS407": {
+      "alternatives": [
+        [
+          "CPPS221"
+        ],
+        [
+          "CPPS310"
+        ]
+      ],
+      "description": "CPPS221 OR CPPS310"
+    },
+    "CPPS415": {
+      "alternatives": [
+        [
+          "CPPS302"
+        ],
+        [
+          "CPPS304"
+        ]
+      ],
+      "description": "CPPS302 OR CPPS304"
+    },
+    "CPPS417": {
+      "alternatives": [
+        [
+          "CPPS308"
+        ]
+      ],
+      "description": "CPPS308"
+    },
+    "CPPS432": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CPPS498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CPPS499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CPSJ112": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CPSJ203": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CPSJ205": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CPSJ310": {
+      "alternatives": [
+        [
+          "CPSJ112"
+        ],
+        [
+          "INTS112"
+        ]
+      ],
+      "description": "CPSJ112 OR INTS112"
+    },
+    "CPSJ400": {
+      "alternatives": [
+        [
+          "CPSJ203"
+        ],
+        [
+          "INTS203"
+        ]
+      ],
+      "description": "CPSJ203 OR INTS203"
+    },
+    "CPSJ498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CREE101": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CREE110": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CREE212": {
+      "alternatives": [
+        [
+          "CREE101"
+        ],
+        [
+          "CREE110"
+        ]
+      ],
+      "description": "CREE101 OR CREE110"
+    },
+    "CREE298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CREE299": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CREE398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CREE399": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CREE498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CREE499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CSCH298": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CSCH299": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CSCH398": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CSCH399": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CSCH498": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CSCH499": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CTST200": {
+      "alternatives": [
+        [
+          "RLST112"
+        ]
+      ],
+      "description": "RLST112"
+    },
+    "CTST204": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "CTST300": {
+      "alternatives": [
+        [
+          "CTST200"
+        ]
+      ],
+      "description": "CTST200"
+    },
+    "DEHY101": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DEHY102": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DEHY103": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DEHY104": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DEHY105": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DEHY106": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DEHY107": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DEHY108": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DEHY111": {
+      "alternatives": [
+        [
+          "DEHY101"
+        ],
+        [
+          "DEHY102"
+        ],
+        [
+          "DEHY103"
+        ],
+        [
+          "DEHY104"
+        ],
+        [
+          "DEHY105"
+        ],
+        [
+          "DEHY106"
+        ],
+        [
+          "DEHY107"
+        ],
+        [
+          "DEHY108"
+        ]
+      ],
+      "description": "DEHY101 OR DEHY102 OR DEHY103 OR DEHY104 OR DEHY105 OR DEHY106 OR DEHY107 OR DEHY108"
+    },
+    "DEHY112": {
+      "alternatives": [
+        [
+          "DEHY101"
+        ],
+        [
+          "DEHY102"
+        ],
+        [
+          "DEHY103"
+        ],
+        [
+          "DEHY104"
+        ],
+        [
+          "DEHY105"
+        ],
+        [
+          "DEHY106"
+        ],
+        [
+          "DEHY107"
+        ],
+        [
+          "DEHY108"
+        ]
+      ],
+      "description": "DEHY101 OR DEHY102 OR DEHY103 OR DEHY104 OR DEHY105 OR DEHY106 OR DEHY107 OR DEHY108"
+    },
+    "DEHY113": {
+      "alternatives": [
+        [
+          "DEHY101"
+        ],
+        [
+          "DEHY102"
+        ],
+        [
+          "DEHY103"
+        ],
+        [
+          "DEHY104"
+        ],
+        [
+          "DEHY105"
+        ],
+        [
+          "DEHY106"
+        ],
+        [
+          "DEHY107"
+        ],
+        [
+          "DEHY108"
+        ]
+      ],
+      "description": "DEHY101 OR DEHY102 OR DEHY103 OR DEHY104 OR DEHY105 OR DEHY106 OR DEHY107 OR DEHY108"
+    },
+    "DEHY114": {
+      "alternatives": [
+        [
+          "DEHY101"
+        ],
+        [
+          "DEHY102"
+        ],
+        [
+          "DEHY103"
+        ],
+        [
+          "DEHY104"
+        ],
+        [
+          "DEHY105"
+        ],
+        [
+          "DEHY106"
+        ],
+        [
+          "DEHY107"
+        ],
+        [
+          "DEHY108"
+        ]
+      ],
+      "description": "DEHY101 OR DEHY102 OR DEHY103 OR DEHY104 OR DEHY105 OR DEHY106 OR DEHY107 OR DEHY108"
+    },
+    "DEHY115": {
+      "alternatives": [
+        [
+          "DEHY101"
+        ],
+        [
+          "DEHY102"
+        ],
+        [
+          "DEHY103"
+        ],
+        [
+          "DEHY104"
+        ],
+        [
+          "DEHY105"
+        ],
+        [
+          "DEHY106"
+        ],
+        [
+          "DEHY107"
+        ],
+        [
+          "DEHY108"
+        ]
+      ],
+      "description": "DEHY101 OR DEHY102 OR DEHY103 OR DEHY104 OR DEHY105 OR DEHY106 OR DEHY107 OR DEHY108"
+    },
+    "DEHY116": {
+      "alternatives": [
+        [
+          "DEHY101"
+        ],
+        [
+          "DEHY102"
+        ],
+        [
+          "DEHY103"
+        ],
+        [
+          "DEHY104"
+        ],
+        [
+          "DEHY105"
+        ],
+        [
+          "DEHY106"
+        ],
+        [
+          "DEHY107"
+        ],
+        [
+          "DEHY108"
+        ]
+      ],
+      "description": "DEHY101 OR DEHY102 OR DEHY103 OR DEHY104 OR DEHY105 OR DEHY106 OR DEHY107 OR DEHY108"
+    },
+    "DEHY117": {
+      "alternatives": [
+        [
+          "DEHY101"
+        ],
+        [
+          "DEHY102"
+        ],
+        [
+          "DEHY103"
+        ],
+        [
+          "DEHY104"
+        ],
+        [
+          "DEHY105"
+        ],
+        [
+          "DEHY106"
+        ],
+        [
+          "DEHY107"
+        ],
+        [
+          "DEHY108"
+        ]
+      ],
+      "description": "DEHY101 OR DEHY102 OR DEHY103 OR DEHY104 OR DEHY105 OR DEHY106 OR DEHY107 OR DEHY108"
+    },
+    "DEHY118": {
+      "alternatives": [
+        [
+          "DEHY101"
+        ],
+        [
+          "DEHY102"
+        ],
+        [
+          "DEHY103"
+        ],
+        [
+          "DEHY104"
+        ],
+        [
+          "DEHY105"
+        ],
+        [
+          "DEHY106"
+        ],
+        [
+          "DEHY107"
+        ],
+        [
+          "DEHY108"
+        ]
+      ],
+      "description": "DEHY101 OR DEHY102 OR DEHY103 OR DEHY104 OR DEHY105 OR DEHY106 OR DEHY107 OR DEHY108"
+    },
+    "DEHY201": {
+      "alternatives": [
+        [
+          "DEHY111"
+        ],
+        [
+          "DEHY112"
+        ],
+        [
+          "DEHY113"
+        ],
+        [
+          "DEHY114"
+        ],
+        [
+          "DEHY115"
+        ],
+        [
+          "DEHY116"
+        ],
+        [
+          "DEHY117"
+        ]
+      ],
+      "description": "DEHY111 OR DEHY112 OR DEHY113 OR DEHY114 OR DEHY115 OR DEHY116 OR DEHY117"
+    },
+    "DEHY202": {
+      "alternatives": [
+        [
+          "DEHY111"
+        ],
+        [
+          "DEHY112"
+        ],
+        [
+          "DEHY113"
+        ],
+        [
+          "DEHY114"
+        ],
+        [
+          "DEHY115"
+        ],
+        [
+          "DEHY116"
+        ],
+        [
+          "DEHY117"
+        ]
+      ],
+      "description": "DEHY111 OR DEHY112 OR DEHY113 OR DEHY114 OR DEHY115 OR DEHY116 OR DEHY117"
+    },
+    "DEHY203": {
+      "alternatives": [
+        [
+          "DEHY111"
+        ],
+        [
+          "DEHY112"
+        ],
+        [
+          "DEHY113"
+        ],
+        [
+          "DEHY114"
+        ],
+        [
+          "DEHY115"
+        ],
+        [
+          "DEHY116"
+        ],
+        [
+          "DEHY117"
+        ],
+        [
+          "DETH118"
+        ]
+      ],
+      "description": "DEHY111 OR DEHY112 OR DEHY113 OR DEHY114 OR DEHY115 OR DEHY116 OR DEHY117 OR DETH118"
+    },
+    "DEHY204": {
+      "alternatives": [
+        [
+          "DEHY111"
+        ],
+        [
+          "DEHY112"
+        ],
+        [
+          "DEHY113"
+        ],
+        [
+          "DEHY114"
+        ],
+        [
+          "DEHY115"
+        ],
+        [
+          "DEHY116"
+        ],
+        [
+          "DEHY117"
+        ],
+        [
+          "DEHY118"
+        ]
+      ],
+      "description": "DEHY111 OR DEHY112 OR DEHY113 OR DEHY114 OR DEHY115 OR DEHY116 OR DEHY117 OR DEHY118"
+    },
+    "DEHY208": {
+      "alternatives": [
+        [
+          "DEHY111"
+        ],
+        [
+          "DEHY112"
+        ],
+        [
+          "DEHY113"
+        ],
+        [
+          "DEHY114"
+        ],
+        [
+          "DEHY115"
+        ],
+        [
+          "DEHY116"
+        ],
+        [
+          "DEHY117"
+        ],
+        [
+          "DEHY118"
+        ]
+      ],
+      "description": "DEHY111 OR DEHY112 OR DEHY113 OR DEHY114 OR DEHY115 OR DEHY116 OR DEHY117 OR DEHY118"
+    },
+    "DEHY211": {
+      "alternatives": [
+        [
+          "DEHY201"
+        ],
+        [
+          "DEHY202"
+        ],
+        [
+          "DEHY203"
+        ],
+        [
+          "DEHY204"
+        ],
+        [
+          "DEHY208"
+        ]
+      ],
+      "description": "DEHY201 OR DEHY202 OR DEHY203 OR DEHY204 OR DEHY208"
+    },
+    "DEHY212": {
+      "alternatives": [
+        [
+          "DEHY201"
+        ],
+        [
+          "DEHY202"
+        ],
+        [
+          "DEHY203"
+        ],
+        [
+          "DEHY204"
+        ],
+        [
+          "DEHY208"
+        ]
+      ],
+      "description": "DEHY201 OR DEHY202 OR DEHY203 OR DEHY204 OR DEHY208"
+    },
+    "DEHY213": {
+      "alternatives": [
+        [
+          "DEHY201"
+        ],
+        [
+          "DEHY202"
+        ],
+        [
+          "DEHY203"
+        ],
+        [
+          "DEHY204"
+        ],
+        [
+          "DEHY208"
+        ]
+      ],
+      "description": "DEHY201 OR DEHY202 OR DEHY203 OR DEHY204 OR DEHY208"
+    },
+    "DEHY214": {
+      "alternatives": [
+        [
+          "DEHY201"
+        ],
+        [
+          "DEHY202"
+        ],
+        [
+          "DEHY203"
+        ],
+        [
+          "DEHY204"
+        ],
+        [
+          "DEHY208"
+        ]
+      ],
+      "description": "DEHY201 OR DEHY202 OR DEHY203 OR DEHY204 OR DEHY208"
+    },
+    "DEHY218": {
+      "alternatives": [
+        [
+          "DEHY201"
+        ],
+        [
+          "DEHY202"
+        ],
+        [
+          "DEHY203"
+        ],
+        [
+          "DEHY204"
+        ],
+        [
+          "DEHY208"
+        ]
+      ],
+      "description": "DEHY201 OR DEHY202 OR DEHY203 OR DEHY204 OR DEHY208"
+    },
+    "DEHY301": {
+      "alternatives": [
+        [
+          "DEHY211"
+        ],
+        [
+          "DEHY212"
+        ],
+        [
+          "DEHY213"
+        ],
+        [
+          "DEHY214"
+        ],
+        [
+          "DEHY218"
+        ]
+      ],
+      "description": "DEHY211 OR DEHY212 OR DEHY213 OR DEHY214 OR DEHY218"
+    },
+    "DEHY302": {
+      "alternatives": [
+        [
+          "DEHY211"
+        ],
+        [
+          "DEHY212"
+        ],
+        [
+          "DEHY213"
+        ],
+        [
+          "DEHY214"
+        ],
+        [
+          "DEHY218"
+        ]
+      ],
+      "description": "DEHY211 OR DEHY212 OR DEHY213 OR DEHY214 OR DEHY218"
+    },
+    "DEHY303": {
+      "alternatives": [
+        [
+          "DEHY211"
+        ],
+        [
+          "DEHY212"
+        ],
+        [
+          "DEHY213"
+        ],
+        [
+          "DEHY214"
+        ],
+        [
+          "DEHY218"
+        ]
+      ],
+      "description": "DEHY211 OR DEHY212 OR DEHY213 OR DEHY214 OR DEHY218"
+    },
+    "DEHY304": {
+      "alternatives": [
+        [
+          "DEHY211"
+        ],
+        [
+          "DEHY212"
+        ],
+        [
+          "DEHY213"
+        ],
+        [
+          "DEHY214"
+        ],
+        [
+          "DEHY218"
+        ]
+      ],
+      "description": "DEHY211 OR DEHY212 OR DEHY213 OR DEHY214 OR DEHY218"
+    },
+    "DEHY308": {
+      "alternatives": [
+        [
+          "DEHY211"
+        ],
+        [
+          "DEHY212"
+        ],
+        [
+          "DEHY213"
+        ],
+        [
+          "DEHY214"
+        ],
+        [
+          "DEHY218"
+        ]
+      ],
+      "description": "DEHY211 OR DEHY212 OR DEHY213 OR DEHY214 OR DEHY218"
+    },
+    "DEHY311": {
+      "alternatives": [
+        [
+          "DEHY301"
+        ],
+        [
+          "DEHY302"
+        ],
+        [
+          "DEHY303"
+        ],
+        [
+          "DEHY304"
+        ],
+        [
+          "DEHY308"
+        ]
+      ],
+      "description": "DEHY301 OR DEHY302 OR DEHY303 OR DEHY304 OR DEHY308"
+    },
+    "DEHY312": {
+      "alternatives": [
+        [
+          "DEHY301"
+        ],
+        [
+          "DEHY302"
+        ],
+        [
+          "DEHY303"
+        ],
+        [
+          "DEHY304"
+        ],
+        [
+          "DEHY308"
+        ]
+      ],
+      "description": "DEHY301 OR DEHY302 OR DEHY303 OR DEHY304 OR DEHY308"
+    },
+    "DEHY313": {
+      "alternatives": [
+        [
+          "DEHY301"
+        ],
+        [
+          "DEHY302"
+        ],
+        [
+          "DEHY303"
+        ],
+        [
+          "DEHY304"
+        ],
+        [
+          "DEHY308"
+        ]
+      ],
+      "description": "DEHY301 OR DEHY302 OR DEHY303 OR DEHY304 OR DEHY308"
+    },
+    "DEHY314": {
+      "alternatives": [
+        [
+          "DEHY301"
+        ],
+        [
+          "DEHY302"
+        ],
+        [
+          "DEHY303"
+        ],
+        [
+          "DEHY304"
+        ],
+        [
+          "DEHY308"
+        ]
+      ],
+      "description": "DEHY301 OR DEHY302 OR DEHY303 OR DEHY304 OR DEHY308"
+    },
+    "DEHY318": {
+      "alternatives": [
+        [
+          "DEHY301"
+        ],
+        [
+          "DEHY302"
+        ],
+        [
+          "DEHY303"
+        ],
+        [
+          "DEHY304"
+        ],
+        [
+          "DEHY308"
+        ]
+      ],
+      "description": "DEHY301 OR DEHY302 OR DEHY303 OR DEHY304 OR DEHY308"
+    },
+    "DENA11": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DENA14": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DENA15": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DENA17": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DENA18": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DENA20": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DENA28": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DENA30": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DENA37": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DENA50": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DENA53": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DENA63": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DENA64": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DENA650": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DENA80": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    },
+    "DENE110": {
+      "alternatives": [
+        []
+      ],
+      "description": "No prerequisites"
+    }
+  }
+}

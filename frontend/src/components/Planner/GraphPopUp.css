@@ -1,0 +1,38 @@
+.pop-up-footer {
+    padding: 15px 30px;
+    border-top: 2px solid #e0e0e0;
+    background-color: #f9f9f9;
+}
+
+.pop-up-window {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.course-node {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 10em;
+}
+
+.course-colour {
+    width: 24px;
+    height: 24px;
+    border-radius: 0.2em;
+    border: 2px solid #333;
+}
+
+.course-colour.taken {
+    background-color: #2177c8;
+}
+
+.course-colour.not-taken {
+    background-color: #aab3bb;
+}
+
+.course-node span {
+    font-size: 14px;
+    color: #333;
+}

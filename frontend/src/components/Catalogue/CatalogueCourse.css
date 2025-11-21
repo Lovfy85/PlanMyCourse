@@ -4,7 +4,6 @@
   z-index: 0;
   padding: 1rem 1rem;
   text-align: left;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
@@ -20,48 +19,22 @@
 }
 
 .course-title {
+  cursor: pointer;
   margin-bottom: 10px;
   font-weight: bold;
   font-size: 22px;
 }
 
+.course-title:hover{
+  text-decoration-line: underline;
+}
+
 .information {
-  display: grid;
-  grid-template-columns: 4fr .7fr;
-  gap: 3rem;
-  justify-items: end;
-  align-items: end;
-}
-
-.add-course {
   display: flex;
-  justify-self: end;
-  align-self: end;
-  padding: 15px;
-  font-size: 16px;
-  font-weight: bold;
-  z-index: 10;
-  color: #ffffff;
-  background-color: #1a5b98;
-  border-width: 0px;
-  border-radius: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.15s ease;
-  transform: scale(1);
-  transform: 0.15s ease;
-  transition: 
-    background-color .15s ease,
-    transform .15s ease,
-    color .15s ease;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.add-course:hover {
-  background-color: #b9daff;
-  color: black;
-}
-
-.add-course:active {
-  transform: scale(0.95);
-  transition: background-position 2s ease;
-  transition: scale 2s ease;
+.description {
+  width: 90%;
 }
