@@ -6,7 +6,7 @@ import RatingBar from '../../components/Course/RatingBar.jsx';
 import CourseReview from '../../components/Course/CourseReview.jsx'
 import AddCourse from '../../components/Catalogue/AddCourse.jsx';
 
-function CoursePage() {
+function CoursePage({user}) {
     const {courseId} = useParams()
     const [id, setId] = useState(0);
     const [course, setCourse] = useState({});
@@ -60,7 +60,7 @@ function CoursePage() {
                 </>
                 )}
                 <div className="course-buttons">
-                    <AddCourse courseId={courseId} id={id} buttonClass="course-planner-add" />
+                    <AddCourse courseId={courseId} id={id} user={user} buttonClass="course-planner-add" />
                     <button className="course-view">View Prerequisite Graph</button>
                 </div>
             </div>
