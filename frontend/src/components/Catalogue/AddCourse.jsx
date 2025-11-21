@@ -13,11 +13,18 @@ function AddCourse({ courseId, id, buttonClass = "add-course", added: initialAdd
     useEffect(() => {
         axios.get(`http://localhost:3001/coursesadded/${id}`, {withCredentials: true})
             .then(res => {
-                if (res.data.exists){ 
-                    setAdded(true);
-                }    
+                try{
+                    if (res.data.exists){ 
+                        console.log(res.data.exists);
+                        setAdded(true);
+                    }
+                } catch (err) {
+                    setAdded(false);
+                }        
             })
-            .catch(err => console.error(err));
+            .catch(err => {
+                setAdded(false);
+            });
     }, [id]);
 
     //This is responsible for that of setting up to see on that of adding a course to the planner overall.

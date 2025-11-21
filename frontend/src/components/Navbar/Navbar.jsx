@@ -1,7 +1,17 @@
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Navbar() {
     const navigate = useNavigate();
+
+    const handleLogout = async () => {
+      try {
+        await axios.get('http://localhost:3001/auth/logout', { withCredentials: true });
+        navigate('/login');
+      } catch (error) {
+        console.error("Error during logout:", error);
+      }
+    };
     return (    
         <nav className='navbar'>
           <div className='title-section'>
@@ -9,6 +19,7 @@ function Navbar() {
           </div>
           <div className='nav-links'>
             <ul>
+              <li onClick={handleLogout}>Logout</li>
               <li onClick={() => navigate("/")}>Home</li>
               <li onClick={() => navigate("/catalogue")}>Courses</li>
               <li onClick={() => navigate("/planner")}>Planner</li>

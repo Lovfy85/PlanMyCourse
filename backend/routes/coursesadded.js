@@ -36,12 +36,13 @@ router.get('/', verifyToken, (req, res) => {
 });
 
 // Get course by courseId, only returns a true or false
-router.get('/:courseId', (req, res) => {
+router.get('/:courseId', verifyToken,(req, res) => {
+    const userId = req.user.userId;
     const courseId = req.params.courseId;
 
-    const query = `SELECT * FROM CoursesAdded WHERE courseId = ?`;
+    const query = `SELECT * FROM CoursesAdded WHERE courseId = ? AND userId = ?`;
 
-    connectMade.query(query, [courseId], (err, results) => {
+    connectMade.query(query, [courseId, userId], (err, results) => {
         if (err) {
             console.error('Error checking courseId:', err);
             return res.status(500).json({ error: 'Internal server error' });
@@ -63,7 +64,7 @@ router.post('/',verifyToken, (req, res) => {
     const userId = req.user.userId;
     const { courseId, taken} = req.body;
     // const userId = req.user.userId;
-    const checkQuery = 'SELECT * FROM CoursesAdded WHERE courseId = ?';
+    const checkQuery = 'SELECT * FROM CoursesAdded WHERE courseId = ? AND userId = ?';
 
     // Check for userId
     if (!userId) {
@@ -71,7 +72,7 @@ router.post('/',verifyToken, (req, res) => {
     }
 
     // Check if courseId already exists
-    connectMade.query(checkQuery, [courseId], (err, results) => {
+    connectMade.query(checkQuery, [courseId, userId], (err, results) => {
         if (err) {
             console.error('Error checking courseId:', err);
             return res.status(500).json({ error: 'Internal server error' });

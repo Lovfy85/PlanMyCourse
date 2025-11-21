@@ -3,6 +3,7 @@ const connectMade = require('../config.js');
 const bcrypt = require('bcrypt');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
+const { verifyToken } = require('../middleware/authMiddleware.js');
 require('dotenv').config();
 
 // SIGNUP
@@ -78,7 +79,7 @@ router.post('/login', (req, res) => {
         const tokenGiven = jwt.sign(
             {userId: userFound.userId, username: userFound.username},
             process.env.JWT_SECRET,
-            {expiresIn: "1y"}
+            {expiresIn: "1d"}
         );
         res.cookie("jwt", tokenGiven, {
             httpOnly: true,
@@ -87,6 +88,19 @@ router.post('/login', (req, res) => {
         res.json({message: "Registered User is now logged in the website.", tokenGiven});
     });
 });
+
+// LOGOUT
+router.get('/logout', (req, res) => {
+
+    // Delete the JWT cookie to log out the user
+    res.clearCookie('jwt');
+    res.json({message: "Log out successful."});
+});
+
+// Check current user
+router.get('/me', verifyToken,(req, res) => {
+    res.json({ userId: req.user.userId, username: req.user.username });
+});  
 
 module.exports = router;
 
