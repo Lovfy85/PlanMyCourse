@@ -22,7 +22,7 @@ function App() {
         <Route path='/graph' element={<Graph />}/>
         <Route path='/catalogue' element={<Catalogue user={user} />}/>
         <Route path='/catalogue/:term' element={<Catalogue user={user}/>}/>
-        <Route path='/catalogue/course/:courseId' element={<Course />}/>
+        <Route path='/catalogue/course/:courseId' element={<Course user={user} />}/>
         <Route path='/signup' element={<SignUpPage />}/>
         <Route path='/login' element={<LoginPage />}/>
       </Routes>
