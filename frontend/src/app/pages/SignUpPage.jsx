@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import axios from 'axios';
 import { useState } from 'react';
 import './SignUpPage.css'
+import { useNavigate } from 'react-router-dom';
 
 const schema = z.object({
   username: z.string()
@@ -24,6 +25,7 @@ function SignUpPage() {
     resolver: zodResolver(schema),
   })
   const [serverError, setServerError] = useState("");
+  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     const userData = {
@@ -35,6 +37,7 @@ function SignUpPage() {
         .then((response) => {
             console.log('User registered successfully:', response.data);
             setServerError("");
+            navigate('/login');
         })
         .catch((error) => {
             setServerError(error.response.data.error);

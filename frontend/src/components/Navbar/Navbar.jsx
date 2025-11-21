@@ -20,6 +20,8 @@ function Navbar() {
           <div className='nav-links'>
             <ul>
               <li onClick={handleLogout}>Logout</li>
+              <li onClick={() => navigate("/login")}>Login</li>
+              <li onClick={() => navigate("/signup")}>Sign Up</li>
               <li onClick={() => navigate("/")}>Home</li>
               <li onClick={() => navigate("/catalogue")}>Courses</li>
               <li onClick={() => navigate("/planner")}>Planner</li>
