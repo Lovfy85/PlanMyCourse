@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useAuth } from "../../hooks/useAuth";
 import axios from "axios";
 import "./AddCourse.css";
 

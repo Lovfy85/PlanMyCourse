@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import AddCourse from "../Catalogue/AddCourse.jsx";
 import "./CatalogueCourse.css";
 
