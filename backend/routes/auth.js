@@ -99,6 +99,10 @@ router.get('/logout', (req, res) => {
 
 // Check current user
 router.get('/me', verifyToken,(req, res) => {
+    if (!req.user) {
+        return res.status(401).json({ error: "You are not authenticated" });
+    }
+    
     res.json({ userId: req.user.userId, username: req.user.username });
 });  
 

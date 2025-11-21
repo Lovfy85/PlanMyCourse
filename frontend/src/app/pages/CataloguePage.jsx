@@ -1,15 +1,16 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
 import "./CataloguePage.css";
 import CatalogueCourse from '../../components/Catalogue/CatalogueCourse';
+import { useAuth } from '../../hooks/useAuth';
 
 function CataloguePage() {
   const { term } = useParams();
   const [courses, setCourses] = useState([]);
   const [allCourses, setAllCourses] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const user = useAuth();
 
   //Sets that of the sort variant to null considering no type of way of sorting the catalogue has been chosen.
   const [setSortVariant] = useState(null);
@@ -105,6 +106,7 @@ const getSortVariant = (variant) => {
               courseId={course.class_name}
               id={course.courseId}
               added={course.taken === 1}
+              user={user}
             />
           );
         })}
