@@ -37,7 +37,7 @@ The `Users` and `CoursesAdded` tables are automatically created on server start.
 
 **Reviews**
 -`reviewId` (INT, PRIMARY KEY, AUTO_INCREMENT)
--`post` (VARCHAR)
+-`post` (TEXT)
 -`userId` (INT)
 -`courseId` (INT)
 
@@ -92,6 +92,8 @@ Base URL: `http://localhost:3001`
   - Body: `{ "username": "string", "password": "string" }`
 - `POST /auth/login` - Authenticate user
   - Body: `{ "username": "string", "password": "string" }`
+- `GET /auth/logout` - To log out user from the website
+- `GET /auth/me` - To get that of the current user logged in the website.
 
 ## Response Codes
 
