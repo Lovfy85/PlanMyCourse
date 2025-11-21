@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function Navbar() {
+function Navbar({user}) {
     const navigate = useNavigate();
 
     const handleLogout = async () => {
       try {
         await axios.get('http://localhost:3001/auth/logout', { withCredentials: true });
-        navigate('/login');
+        window.location.href = '/login'; // reload and navigate to login
       } catch (error) {
         console.error("Error during logout:", error);
       }
@@ -16,6 +16,9 @@ function Navbar() {
         <nav className='navbar'>
           <div className='title-section'>
             <h2 className='nav-title' onClick={() => navigate("/")}>PlanMyCourse</h2>
+          </div>
+          <div className="username">
+            {user ? `Welcome, ${user.username}` : ""}
           </div>
           <div className='nav-links'>
             <ul>
