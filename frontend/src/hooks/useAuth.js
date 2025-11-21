@@ -7,7 +7,7 @@ import axios from "axios";
     - undefined: authentication status is loading
     - null: user is not logged in
     - object: user is logged in, contains:
-        { id, username,}
+        { userId, username,}
 */
 export function useAuth() {
   const [user, setUser] = useState(undefined); // undefined = loading
