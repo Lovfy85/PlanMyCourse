@@ -1,6 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+/*
+  Custom hook to manage user authentication state.
+  Returns:
+    - undefined: authentication status is loading
+    - null: user is not logged in
+    - object: user is logged in, contains:
+        { id, username,}
+*/
 export function useAuth() {
   const [user, setUser] = useState(undefined); // undefined = loading
 
