@@ -1,11 +1,10 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
 import "./CataloguePage.css";
 import CatalogueCourse from '../../components/Catalogue/CatalogueCourse';
 
-function CataloguePage() {
+function CataloguePage({user}) {
   const { term } = useParams();
   const [courses, setCourses] = useState([]);
   const [allCourses, setAllCourses] = useState([]);
@@ -105,6 +104,7 @@ const getSortVariant = (variant) => {
               courseId={course.class_name}
               id={course.courseId}
               added={course.taken === 1}
+              user={user}
             />
           );
         })}

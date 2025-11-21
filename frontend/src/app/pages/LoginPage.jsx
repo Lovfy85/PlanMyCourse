@@ -4,7 +4,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import axios from 'axios';
 import { useState } from 'react';
 import './SignUpPage.css'
-import { useNavigate } from 'react-router-dom';
 
 const schema = z.object({
   username: z.string()
@@ -14,18 +13,13 @@ const schema = z.object({
   password: z.string()
     .nonempty("Password must be not empty")
     .min(5, "Password Must be at least 5 characters"),
-  confirmPassword: z.string()
-}).refine((data) => data.password === data.confirmPassword, {
-  message: "Passwords do not match",
-  path: ["confirmPassword"], 
 });
 
-function SignUpPage() {
+function LoginPage() {
   const { register, handleSubmit, formState: {errors} } = useForm({
     resolver: zodResolver(schema),
   })
   const [serverError, setServerError] = useState("");
-  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     const userData = {
@@ -33,11 +27,12 @@ function SignUpPage() {
       password: data.password
     }
     try {
-        await axios.post('http://localhost:3001/auth/signup', userData)
+        await axios.post('http://localhost:3001/auth/login', userData, {withCredentials: true})
         .then((response) => {
             console.log('User registered successfully:', response.data);
             setServerError("");
-            navigate('/login');
+            window.location.href = '/'; // reload and navigate to home
+
         })
         .catch((error) => {
             setServerError(error.response.data.error);
@@ -50,7 +45,7 @@ function SignUpPage() {
   return (
     <div className='signUpContainer'>
         <form className='signUpCard' onSubmit={handleSubmit(onSubmit)}>
-          <div className='signUpTitle'>Sign Up</div>
+          <div className='signUpTitle'>Login</div>
           <p> Username </p>
           <input className='usernameInput' 
             placeholder='Enter Username'
@@ -64,13 +59,6 @@ function SignUpPage() {
             {...register("password")}
           />
           <p className='errorMessage'>{errors.password?.message}</p>
-          <p> Confirm Password </p>
-          <input className='confirmPasswordInput' 
-            type='password' 
-            placeholder='Confirm Password'
-            {...register("confirmPassword")}
-          />
-          <p className='errorMessage'>{errors.confirmPassword?.message}</p>
           <p className='errorMessage'>{serverError}</p>
           <button className='saveBtn' type='submit'>Submit</button>
         </form>
@@ -78,4 +66,4 @@ function SignUpPage() {
   )
 }
 
-export default SignUpPage
+export default LoginPage
