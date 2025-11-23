@@ -36,16 +36,13 @@ function Navbar({user}) {
                 <li onClick={() => navigate("/signup")}>Sign Up</li>
               </>
               )}
-            </ul>
             {/* Only show this if user is logged in */}
               {user && 
               <>
                 <li onClick={handleLogout}>Logout</li>
-                <div className='profile-button'>
-                  <button onClick={() => navigate("/profile")}>Profile</button>
-                </div>
               </>  
               }
+            </ul>
           </div>
         </nav>
     );
