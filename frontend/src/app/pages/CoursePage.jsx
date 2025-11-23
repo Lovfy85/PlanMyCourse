@@ -14,6 +14,14 @@ function CoursePage({user}) {
     const [coursePrerequisites, setPrerequisites] = useState("");
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
+    const [error, setError] = useState("");
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        if (rating === 0) {
+            
+        }
+    }
 
     function processNotes(rawNotes) {
         const cleanData = rawNotes.split("Prerequisite(s):")[1] || "";

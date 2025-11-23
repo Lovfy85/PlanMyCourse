@@ -5,9 +5,11 @@ const createReviewsTable = async () => {
     const query = `
         CREATE TABLE IF NOT EXISTS Reviews (
         reviewId INT AUTO_INCREMENT PRIMARY KEY,
-        post TEXT,
+        post TEXT NOT NULL,
+        rating TINYINT NOT NULL CHECK (rating BETWEEN 1 AND 5),
         userId INT,
         courseId INT,
+        createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (userId) REFERENCES Users(userId),
         FOREIGN KEY (courseId) REFERENCES Courses(courseId)
         )
