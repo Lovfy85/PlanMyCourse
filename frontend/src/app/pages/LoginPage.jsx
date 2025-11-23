@@ -46,6 +46,7 @@ function LoginPage() {
     <div className='signUpContainer'>
         <form className='signUpCard' onSubmit={handleSubmit(onSubmit)}>
           <div className='signUpTitle'>Login</div>
+          <div className = 'signUpDiv'></div>
           <p> Username </p>
           <input className='usernameInput' 
             placeholder='Enter Username'
@@ -60,7 +61,7 @@ function LoginPage() {
           />
           <p className='errorMessage'>{errors.password?.message}</p>
           <p className='errorMessage'>{serverError}</p>
-          <button className='saveBtn' type='submit'>Submit</button>
+          <button className='saveBtn' type='submit'>Log In</button>
         </form>
     </div>
   )

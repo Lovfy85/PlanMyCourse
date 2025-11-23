@@ -51,6 +51,7 @@ function SignUpPage() {
     <div className='signUpContainer'>
         <form className='signUpCard' onSubmit={handleSubmit(onSubmit)}>
           <div className='signUpTitle'>Sign Up</div>
+          <div className='signUpDiv'></div>
           <p> Username </p>
           <input className='usernameInput' 
             placeholder='Enter Username'
@@ -72,7 +73,7 @@ function SignUpPage() {
           />
           <p className='errorMessage'>{errors.confirmPassword?.message}</p>
           <p className='errorMessage'>{serverError}</p>
-          <button className='saveBtn' type='submit'>Submit</button>
+          <button className='saveBtn' type='submit'>Sign Up</button>
         </form>
     </div>
   )
