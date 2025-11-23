@@ -8,7 +8,7 @@
 .catalogue-header {
     position: sticky;
     top: 4em;
-    z-index: 99;
+    z-index: 2;
     background-color: #F2F0EF;
     margin-top: -10em;
 }
