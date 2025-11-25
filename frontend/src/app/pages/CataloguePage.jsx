@@ -6,57 +6,97 @@ import CatalogueCourse from '../../components/Catalogue/CatalogueCourse';
 
 function CataloguePage({user}) {
   const { term } = useParams();
+
   const [courses, setCourses] = useState([]);
-  const [allCourses, setAllCourses] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [currentSearch, setSearch] = useState('');
 
   //Sets that of the sort variant to null considering no type of way of sorting the catalogue has been chosen.
-  const [setSortVariant] = useState(null);
+  const [sortVariant, setSortVariant] = useState(null);
 
-  useEffect(() => {
-  let url = `http://localhost:3001/courses`;
+  const [offset, setOffset] = useState(0);
+  const limit = 20;
+  const [loadMore, setLoadMore] = useState(true);
+  const [waiting, setWaiting] = useState(false);
 
-  if (term) {
-    url += `/search?term=${term}`;
-  }
-
-  axios.get(url)
-    .then(res => {
-      setCourses(res.data);
-      setAllCourses(res.data);
-    })
-    .catch(console.error);
-}, [term]);
-
-  // Filter courses based on search term
-  useEffect(() => {
-    if (!searchTerm.trim()) {
-      setCourses(allCourses);
+  const getCourses = async (reset = false, variant = null, search = '') => {
+    if(waiting){
       return;
     }
 
-    const searchLower = searchTerm.toLowerCase();
-    const filtered = allCourses.filter(course => 
-      course.title.toLowerCase().includes(searchLower) ||
-      course.class_name.toLowerCase().includes(searchLower) ||
-      course.description.toLowerCase().includes(searchLower)
-    );
-    setCourses(filtered);
-  }, [searchTerm, allCourses]);
+    setWaiting(true);
 
-const getSortVariant = (variant) => {
-  axios.get(`http://localhost:3001/courses/sort/${variant}`).then(res => {
-    setCourses(res.data);
-    setAllCourses(res.data);
+    let newOffset = reset ? 0 : offset;
+    let url = `http://localhost:3001/courses?offset=${newOffset}&limit=${limit}`;
+
+    if(search){
+      url = `http://localhost:3001/courses/search?term=${search}&offset=${newOffset}&limit=${limit}`;
+    }
+
+    if(variant){
+      url = `http://localhost:3001/courses/sort/${variant}?offset=${newOffset}&limit=${limit}`;
+    }
+
+    try{
+      const res = await axios.get(url, {withCredentials: true});
+      const fetchedCourses = res.data.courses || res.data;
+
+      if(reset){
+        setCourses(fetchedCourses);
+        setOffset(fetchedCourses.length);
+      }
+      else{
+        setCourses(prev => [...prev, ...fetchedCourses]);
+        setOffset(prev => prev + fetchedCourses.length);
+      }
+      setLoadMore(fetchedCourses.length === limit);
+    }
+    catch(err){
+      console.error("There seems to be an error getting the courses", err);
+    }
+    finally{
+      setWaiting(false);
+    }
+  };
+
+  useEffect(() => {
+    const search = term || ''
+    setSearch(search);
+    setOffset(0);
+    getCourses(true, sortVariant, search);
+  }, [term]);
+
+  useEffect(() => {
+    const delayTime = setTimeout(() => {
+      setSearch(searchTerm);
+      setOffset(0);
+      getCourses(true, sortVariant, searchTerm);
+    }, 300)
+    return () => clearTimeout(delayTime);
+  }, [searchTerm]);
+
+  useEffect(() => {
+    const loadScroll = () => {
+      if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 300 && loadMore && !waiting){
+        getCourses(false, sortVariant, currentSearch);
+      }
+    };
+
+    window.addEventListener('scroll', loadScroll);
+    return () => window.removeEventListener('scroll', loadScroll);
+  }, [loadMore, waiting, sortVariant, currentSearch]);
+
+  const sortHandler = (variant) => {
     setSortVariant(variant);
-  }).catch(console.error);
-};
+    setOffset(0);
+    getCourses(true, variant, currentSearch);
+  };
 
   return (
     <div className="catalogue-content">
       <div className="catalogue-header">
         <h1>Course Catalogue</h1>
-        <hr></hr>
+        <hr />
 
     {/**
      * Search bar for filtering courses
@@ -75,15 +115,15 @@ const getSortVariant = (variant) => {
      * The buttons in which are respsonible for the type of sorting options in which how the course catalogue is to be displayed.
      */}
     <div className="catalogue-sort">
-        <button onClick = {() => getSortVariant("alphabetical")}>
+        <button onClick = {() => sortHandler("alphabetical")}>
           Sort By Alphabetical
         </button>
 
-        <button onClick = {() => getSortVariant("number")}>
+        <button onClick = {() => sortHandler("number")}>
           Sort By Course Number
         </button>
 
-        <button onClick = {() => getSortVariant("addedtoplanner")}>
+        <button onClick = {() => sortHandler("addedtoplanner")}>
           Sort By Added To Planner/Not In Planner
         </button>
 
@@ -109,6 +149,10 @@ const getSortVariant = (variant) => {
           );
         })}
       </div>
+
+    {waiting && (
+      <div style = {{textAlign: 'center', margin: '20px 0'}}>More Courses Loading In...</div>
+    )}
     </div>
   );
 }
