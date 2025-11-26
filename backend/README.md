@@ -80,11 +80,27 @@ Base URL: `http://localhost:3001`
 - `DELETE /coursesadded/:id` - Remove course from planner
 
 ## Reviews Made 
-- `POST /reviewsmade` - A user can make that of a review in that of the selected course.
-  -Headers: `{Key: Authorization, Value: Bearer <Token Given When A User Logs In>
-              Key: Content-Type, Value: application/json}`
-  -Body: `{"post": "string", "courseId": int }`
-- `GET /reviewsmade`- Gets all the reviews from all courses made from all users.
+- `POST /reviewsmade/rating` - signed-in user can star rate that of a course (they cannot star rate course more than once. They must remove it first in order to rate the course again).
+  - Headers: 
+    Authorization: Bearer <Given Token Of User When Signed In>
+    Content-Type: application/json
+  - Body: `{"rating": number, "courseId": number}`
+- `POST /reviewsmade/review`- signed-in user can leave a comment for that of a course.
+  - Headers: 
+    Authorization: Bearer <Given Token Of User When Signed In>
+    Content-Type: application/json
+  - Body: `{"rating": number, "post": string}`
+- `GET /reviewsmade/rating/:courseId` - Gets that of ratings gotten by that of a specified course from its course id.
+- `GET /reviewsmade/review/:courseId` - Gets that of review comment gotten by that of a specified course from its course id.
+- `GET /reviewsmade/rating/average/:courseId` - Gets that of the star ratings established for a specified course and averages them all out.
+- `DELETE /reviewsmade/review:/reviewId` - Remove that of the review comment from a specified course made by a user that is currently logged in.
+  -Headers:
+    Authorization: Bearer <Given Token Of User When Signed In>
+- `DELETE /reviewsmade/rating:/reviewId` - Remove that of the star rating from a specified course made by a user that is currently logged in.
+  -Headers:
+    Authorization: Bearer <Given Token Of User When Signed In>
+- `GET /reviewsmade/rating` - Gets all that of star ratings made by all users for those courses that were star rated.
+- `GET /reviewsmade/review` - Gets all that of review comments made by all users for those courses that were commented on.
 
 ### Authentication
 
