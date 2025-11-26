@@ -62,6 +62,7 @@ function CataloguePage({user}) {
   useEffect(() => {
     const search = term || ''
     setSearch(search);
+    setSearchTerm(search);
     setOffset(0);
     getCourses(true, sortVariant, search);
   }, [term]);
