@@ -28,7 +28,7 @@ function Navbar({user}) {
               <li onClick={() => navigate("/")}>Home</li>
               <li onClick={() => navigate("/catalogue")}>Courses</li>
               <li onClick={() => navigate("/planner")}>Planner</li>
-              <li onClick={() => navigate("/graph")}>Graph</li>
+              <li onClick={() => navigate("/tree")}>Tree</li>
               {/* Only show these if user is not logged in */}
               {!user && (
               <>
