@@ -32,8 +32,7 @@ function Navbar({user}) {
               {/* Only show these if user is not logged in */}
               {!user && (
               <>
-                <li onClick={() => navigate("/login")}>Login</li>
-                <li onClick={() => navigate("/signup")}>Sign Up</li>
+                <li onClick={() => navigate("/signup")}>Login</li>
               </>
               )}
             {/* Only show this if user is logged in */}
