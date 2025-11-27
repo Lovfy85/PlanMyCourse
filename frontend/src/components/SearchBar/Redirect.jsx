@@ -29,7 +29,7 @@ function Redirect() {
         // different filters depending on search input
         if (Number(term)) { // search by course level
             var filtered = Courses.filter(item => Math.floor(Number(item.number)/100)*100 == Number(term));
-        } else if (term.length == 4) { // search by depertment
+        } else if (term.length >= 2) { // search by depertment
             var filtered = Courses.filter(item => item.subject == term);
         } else { // search by exact course subject
             var filtered = Courses.filter(item => item.class_name == term);

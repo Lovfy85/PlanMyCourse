@@ -31,7 +31,7 @@ function PlannerPage() {
     }
 
     const fetchCourses = () => {
-        axios.get("http://localhost:3001/coursesadded/")
+        axios.get("http://localhost:3001/coursesadded/", {withCredentials: true})
         .then(response => {
             const processedData = processData(response.data);
             setMappableCourses(processedData);
@@ -82,7 +82,7 @@ function PlannerPage() {
             await axios.post("http://localhost:3001/coursesadded/", {
                 courseId: undoItem.courseId,
                 taken: undoItem.taken
-            });
+            }, {withCredentials: true});
 
             // Clear timer and remove from stack
             clearTimeout(undoItem.timer);

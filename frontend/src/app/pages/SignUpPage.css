@@ -1,30 +1,71 @@
 .signUpContainer {
+  height: 80vh;
   display: flex;
-  flex-direction: column;  
-  justify-content: flex-start; 
-  align-items: center;     
-  height: 100vh;       
-  padding: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.signUpDiv {
+  height: 4px;
+  background-color: #215591;
+  margin: 12px 4rem;
 }
 
 .signUpCard {
-  width: 100%;
-  max-width: 420px;
+  width: 420px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   padding: 28px;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+}
+
+.signUpCard p {
+  margin-bottom: 4px;
+  font-size: 20px;
+  font-weight: 550;
+}
+
+.signUpCard input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.signUpCard input:focus {
+    border-color: #215591;
 }
 
 .signUpTitle {
   font-size: 28px;
   text-align: center;
+  font-weight: bold;
 }
 
 .errorMessage {
   color: #ff0004;
+  margin: 8px 0px;
+}
+
+.saveBtn {
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  height: 48px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 12px;
+  background-color: #215591;
+  color:#ffffff;
+  border: none;
+  font-weight: bold;
+}
+
+.saveBtn:hover {
+    background-color: #1e63a3;
 }

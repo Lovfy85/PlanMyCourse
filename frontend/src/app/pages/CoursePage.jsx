@@ -6,7 +6,7 @@ import RatingBar from '../../components/Course/RatingBar.jsx';
 import CourseReview from '../../components/Course/CourseReview.jsx'
 import AddCourse from '../../components/Catalogue/AddCourse.jsx';
 
-function CoursePage() {
+function CoursePage({user}) {
     const {courseId} = useParams()
     const [id, setId] = useState(0);
     const [course, setCourse] = useState({});
@@ -14,6 +14,14 @@ function CoursePage() {
     const [coursePrerequisites, setPrerequisites] = useState("");
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
+    const [error, setError] = useState("");
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        if (rating === 0) {
+            
+        }
+    }
 
     function processNotes(rawNotes) {
         const cleanData = rawNotes.split("Prerequisite(s):")[1] || "";
@@ -60,7 +68,7 @@ function CoursePage() {
                 </>
                 )}
                 <div className="course-buttons">
-                    <AddCourse courseId={courseId} id={id} buttonClass="course-planner-add" />
+                    <AddCourse courseId={courseId} id={id} user={user} buttonClass="course-planner-add" />
                     <button className="course-view">View Prerequisite Graph</button>
                 </div>
             </div>
