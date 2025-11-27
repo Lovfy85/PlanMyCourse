@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import './Accordion.css'
 import axios from 'axios'
 
-function AccordionClass({title, id, courseId, taken, onDelete, onTakenChange}) {
+function AccordionClass({title, id, courseId, courseName, taken, onDelete, onTakenChange}) {
+  const navigate = useNavigate();
   const handleDelete = async () => {
     try {
       await axios.delete(`http://localhost:3001/coursesadded/${id}`, {withCredentials: true});
@@ -43,7 +45,7 @@ function AccordionClass({title, id, courseId, taken, onDelete, onTakenChange}) {
               onChange={handleCheckboxChange}
             />
           </label>
-          <span>{title}</span>
+          <span className="accordion-class-title" onClick={() => navigate(`/catalogue/course/${courseName.toLowerCase()}`)}>{title}</span>
         </div>
         <button className="accordion-delete-btn" onClick={handleDelete}></button>
     </div>
