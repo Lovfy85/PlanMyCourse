@@ -92,7 +92,6 @@ Base URL: `http://localhost:3001`
   - Body: `{"rating": number, "post": string}`
 - `GET /reviewsmade/rating/:courseId` - Gets that of ratings gotten by that of a specified course from its course id.
 - `GET /reviewsmade/review/:courseId` - Gets that of review comment gotten by that of a specified course from its course id.
-- `GET /reviewsmade/rating/average/:courseId` - Gets that of the star ratings established for a specified course and averages them all out.
 - `DELETE /reviewsmade/review:/reviewId` - Remove that of the review comment from a specified course made by a user that is currently logged in.
   -Headers:
     Authorization: Bearer <Given Token Of User When Signed In>
