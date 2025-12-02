@@ -20,16 +20,39 @@ router.post('/rating', verifyToken, (req, res) => {
         }
 
         if(results.length > 0){
-            return res.status(400).json({message: "You cannot rate a course that you already have."});
+            connectMade.query(`UPDATE REVIEWS SET rating = ? WHERE reviewId = ?`, [rating, results[0].reviewId], (updateErr) => {
+                if(updateErr){
+                    return res.status(500).json({message: "You cannot update that of the star rating."});
+                }
+                return res.status(200).json({...results[0], rating});
+            });
         }
 
-        connectMade.query(`INSERT INTO REVIEWS (rating, userId, courseId) VALUES (?, ?, ?)`, [rating, userId, courseId], (error, results2) => {
-            if(error){
-                console.error("There seems to be that of an error of making a star rating for a course overall.", error);
-                return res.status(500).json({message: "Making that of a start rating towards that of a course cannot be done overall."});
-            }
-            res.status(201).json({message: "The star rating for a course is submitted by the logged in user", reviewId: results2.insertId, userId, courseId, rating});
-        });
+        else{
+
+            connectMade.query(`INSERT INTO REVIEWS (rating, userId, courseId) VALUES (?, ?, ?)`, [rating, userId, courseId], (error, results2) => {
+                if(error){
+                    console.error("There seems to be that of an error of making a star rating for a course overall.", error);
+                    return res.status(500).json({message: "Making that of a start rating towards that of a course cannot be done overall."});
+                }
+
+                const gottenQuery = `
+                    SELECT R.reviewId, R.rating, R.createdAt, U.username, C.class_name, C.courseId
+                    FROM Reviews R
+                    JOIN Users U ON R.userId = U.userId
+                    JOIN Courses C on R.courseId = C.courseId
+                    WHERE R.reviewId = ?
+                `
+
+                connectMade.query(gottenQuery, [results2.insertId], (error1, rows) => {
+                    if(error1){
+                        console.error("There seems to be that of an error of making a star rating for a course overall.", error);
+                        return res.status(500).json({message: "Making that of a start rating towards that of a course cannot be done overall."});
+                    }
+                    res.status(201).json(rows[0]);
+                });
+            });
+        }
     });
 });
 
@@ -55,8 +78,22 @@ router.post('/review', verifyToken, (req, res) => {
             console.error("There seems to be that of an error of making a comment with the logged in user.", err);
             return res.status(500).json({message: "Making a comment cannot be done."});
         }
-
-        res.status(201).json({message: "Review made is successful towards that of a selected course.", reviewId: results.insertId, userId, courseId, post});
+        
+        const gottenQuery = `
+            SELECT R.reviewId, R.post, R.createdAt, U.username, C.class_name, C.courseId
+            FROM Reviews R
+            JOIN Users U ON R.userId = U.userId
+            JOIN Courses C on R.courseId = C.courseId
+            WHERE R.reviewId = ?
+        `;
+        
+        connectMade.query(gottenQuery, [results.insertId], (error1, rows) => {
+            if(error1){
+                console.error("There seems to be that of an error of making a star rating for a course overall.", error);
+                return res.status(500).json({message: "Making that of a start rating towards that of a course cannot be done overall."});
+            }
+            res.status(201).json(rows[0]);
+        });
     });
 });
 
@@ -103,35 +140,6 @@ router.get('/review/:courseId', (req, res) => {
             return res.status(500).json({message: "Getting that of the review comments for a selected course is not possible. "})
         }
         res.json(results);
-    });
-});
-
-// GET 
-// This is to get that of the star ratings' average from THE SELECTED COURSE ONLY made by signed-in users.
-router.get('/rating/average/:courseId', (req, res) => {
-    
-    const {courseId} = req.params;
-
-    const query = `
-        SELECT C.class_name, AVG(R.rating) AS averageGiven, SUM(R.rating) AS averageFinal
-        FROM Reviews R
-        JOIN Courses C on R.courseId = C.courseId
-        WHERE R.courseId = ? AND R.rating IS NOT NULL
-    `;
-
-    connectMade.query(query, [courseId], (err, results) => {
-        if(err){
-            console.error("There seems to be an error in getting that of the average star rating overall for a course", err);
-            return res.status(500).json({message: "Could not get that of the average rating for the selected course."});
-        }
-
-        if(results.length === 0 || results[0].averageFinal === 0){
-            return res.json({courseId, class_name: null, averageGiven: 0, averageFinal: 0});
-        }
-
-        const{class_name, averageGiven, averageFinal} = results[0];
-
-        res.json({courseId, class_name, averageGiven: averageGiven !== null ? parseFloat(parseFloat(averageGiven).toFixed(2)) : 0, averageFinal: averageFinal !== null ? averageFinal : 0});
     });
 });
 

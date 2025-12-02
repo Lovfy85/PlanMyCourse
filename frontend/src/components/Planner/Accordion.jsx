@@ -19,7 +19,7 @@ function Accordion({level, courses, onDelete, onTakenChange}) {
         <div className={`accordion-body ${isExpanded ? "expanded" : ""}`}>
             <div className="accordion-classes">
               {courses.map(course => (
-                <Class key={course.id} title={course.title} id={course.id} courseId={course.courseId} taken={course.taken} onDelete={onDelete} onTakenChange={onTakenChange}/>
+                <Class key={course.id} title={course.title} id={course.id} courseId={course.courseId} taken={course.taken} courseName={course.class_name} onDelete={onDelete} onTakenChange={onTakenChange}/>
               ))}
             </div>
         </div>

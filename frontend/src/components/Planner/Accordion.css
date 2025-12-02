@@ -58,6 +58,14 @@
   height: 30px;
 }
 
+.accordion-class-title {
+  cursor: pointer;
+}
+
+.accordion-class-title:hover {
+  text-decoration-line: underline;
+}
+
 .accordion-class-checkbox input {
   appearance: none;
   -webkit-appearance: none;

@@ -67,5 +67,19 @@
 }
 
 .saveBtn:hover {
-    background-color: #1e63a3;
+  background-color: #1e63a3;
+}
+
+.signUpRegister {
+  font-size: 16xpx;
+  margin-top: 4px;
+}
+
+.signUpRegister span {
+  color: #1e63a3;
+  cursor: pointer;
+}
+
+.signUpRegister span:hover {
+  text-decoration: underline;
 }
