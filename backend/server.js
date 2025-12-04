@@ -7,8 +7,8 @@ const { createUsersTable } = require('./models/Users');
 const { createReviewsTable } = require('./models/reviewsMade');
 
 // Create tables on server startup
-createCoursesAddedTable();
 createUsersTable();
+createCoursesAddedTable();
 createReviewsTable();
 
 // Start the server
