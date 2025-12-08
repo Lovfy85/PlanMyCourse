@@ -44,7 +44,7 @@
 
 /* Search button */
 .search-button {
-  background-color: #1a5b98;
+  background-color: var(--primary-color);
   font-size: 1em;
   color: white;
   border: none;
@@ -64,7 +64,7 @@
   display: flex;
   width: 70%;
   height: 77vh;
-  border: 5px solid #1a5b98;
+  border: 5px solid var(--primary-color);
   border-radius: 1%;
   margin-left: 15%;
   margin-top: 4%;

@@ -5,7 +5,7 @@
   right: 0;
   height: 4em;
   justify-self: stretch;
-  background-color: #1a5b98; 
+  background-color: var(--primary-color); 
   display: flex;
   justify-content: space-between;
   align-items: center;

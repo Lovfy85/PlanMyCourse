@@ -18,7 +18,7 @@
 .website-name h1 {
   font-size: 5rem;
   text-shadow: black;
-  color: #1a5b98;
+  color: var(--primary-color);
   font-weight: 550;
   margin-bottom: 1rem;
   text-align: center;

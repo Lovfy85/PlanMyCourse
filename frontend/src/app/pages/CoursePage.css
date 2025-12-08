@@ -22,7 +22,7 @@ body {
 .course-header hr {
     height: 4px;
     border: none;
-    background-color: #215591;
+    background-color: var(--primary-color);
 }
 
 .course-info  {
@@ -65,7 +65,7 @@ h3, h5 {
 .course-planner-add {
     z-index: 1;
     color: #ffffff;
-    background-color: #215591;
+    background-color: var(--primary-color);
     border: 0px;
     transition: background-color 0.15s ease;
     transform: 0.15s ease;
@@ -108,7 +108,7 @@ h3, h5 {
 }
 
 .course-planner {
-    background-color: #215591;
+    background-color: var(--primary-color);
     color: #FFFFFF;
     border: none;
 }
@@ -161,7 +161,7 @@ h3, h5 {
     width: 4px;
     align-self: stretch;
     transform: scaleY(0.8);
-    background-color: #215591;
+    background-color: var(--primary-color);
 }
 
 .course-new-review textarea {
@@ -174,7 +174,7 @@ h3, h5 {
     outline: none;
     padding: 16px;
     border-radius: 10px;
-    border: 1px solid #215591;
+    border: 1px solid var(--primary-color);
     font-family: Inter;
     color:#454545
 }
@@ -196,7 +196,7 @@ h3, h5 {
 }
 
 .new-star.filled {
-  color:#215591
+  color:var(--primary-color);
 }
 
 .course-new-submit {
@@ -207,7 +207,7 @@ h3, h5 {
     cursor: pointer;
     font-weight: bold;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
-    background-color: #215591;
+    background-color: var(--primary-color);
     color: #FFFFFF;
     border: none;
 }
@@ -222,6 +222,6 @@ h3, h5 {
 .course-review-divider {
   height: 4px;
   width: 100%;
-  background-color: #1a5b98;
+  background-color: var(--primary-color);
   margin: 1.6rem auto;
 }

@@ -1,11 +1,14 @@
 #root {
   margin: 5rem auto;
+  --primary-color: #215591;
+  /* --primary-color: #0B6A41; */
 }
 
 body {
   font-family: "Inter", serif;
   color: #454545;
-  background-color: #F2F0EF;
+  /* background-color: #F2F0EF; */
+  background-color: 
 }
 
 @font-face {

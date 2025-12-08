@@ -18,6 +18,6 @@
 
 .bar-fill{
     height: 100%;
-    background-color: #2151b0;
+    background-color: var(--primary-color);
     transition: width 0.3s ease;
 }

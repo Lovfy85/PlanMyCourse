@@ -23,7 +23,7 @@
 .catalogue-header hr {
     height: 4px;
     border: none;
-    background-color: #215591;
+    background-color: var(--primary-color);
 }
 
 .catalogue-courses {
@@ -55,7 +55,7 @@
 }
 
 .catalogue-search-input:focus {
-    border-color: #215591;
+    border-color: var(--primary-color);
 }
 
 .catalogue-search-input::placeholder {
@@ -71,7 +71,7 @@
 
 .catalogue-sort button {
     padding: 10px 20px;
-    background-color: #215591;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 8px;

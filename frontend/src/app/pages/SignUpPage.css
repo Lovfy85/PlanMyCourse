@@ -7,7 +7,7 @@
 
 .signUpDiv {
   height: 4px;
-  background-color: #215591;
+  background-color: var(--primary-color);
   margin: 12px 4rem;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .signUpCard input:focus {
-    border-color: #215591;
+    border-color: var(--primary-color);
 }
 
 .signUpTitle {
@@ -60,7 +60,7 @@
   border-radius: 10px;
   cursor: pointer;
   margin-top: 12px;
-  background-color: #215591;
+  background-color: var(--primary-color);
   color:#ffffff;
   border: none;
   font-weight: bold;
