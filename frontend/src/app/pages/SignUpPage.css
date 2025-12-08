@@ -13,7 +13,8 @@
 
 .signUpCard {
   width: 420px;
-  background-color: #ffffff;
+  background-color: var(--bg-elevated);
+  border: 2px solid var(--primary-color);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   padding: 28px;
@@ -30,7 +31,9 @@
 .signUpCard input {
   padding: 10px 12px;
   font-size: 14px;
-  border: 2px solid #ddd;
+  border: 2px solid var(--bg-color);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   border-radius: 10px;
   outline: none;
   transition: border-color 0.2s ease;
@@ -61,7 +64,7 @@
   cursor: pointer;
   margin-top: 12px;
   background-color: var(--primary-color);
-  color:#ffffff;
+  color:#FFFFFF;
   border: none;
   font-weight: bold;
 }

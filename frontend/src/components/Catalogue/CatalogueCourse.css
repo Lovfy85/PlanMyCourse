@@ -10,13 +10,14 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
 }
 
-.catalogue-course:nth-child(odd) {
-  background-color: #D6D6D4;
-}
-
-.catalogue-course:nth-child(even) {
+.catalogue-course {
   background-color: #E6E6E6;
 }
+
+[data-theme="dark"] .catalogue-course {
+  background-color: #2E2E2E;
+}
+
 
 .course-title {
   cursor: pointer;

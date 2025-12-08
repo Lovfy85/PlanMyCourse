@@ -123,9 +123,13 @@ h3, h5 {
     display: flex;
     justify-content: space-evenly;
     background-color: #D9D9D9;
-    width: 100%;
-    margin: 3rem 0;
+    width: 110%;
+    margin: 3rem -5%;
     box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .course-review-section {
+    background-color: var(--bg-elevated);
 }
 
 .course-statistics,
@@ -174,9 +178,19 @@ h3, h5 {
     outline: none;
     padding: 16px;
     border-radius: 10px;
-    border: 1px solid var(--primary-color);
+    border: 2px solid #828282;
     font-family: Inter;
-    color:#454545
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    transition: border-color 0.2s ease;
+}
+
+.course-new-review textarea:focus {
+    border-color: var(--primary-color);
+}
+
+[data-theme="dark"].course-new-review textarea {
+    border-color: var(--primary-color);
 }
 
 .course-new-buttons {
@@ -186,7 +200,6 @@ h3, h5 {
     align-items: end;
     margin-top: 1rem;
 }
-
 
 .new-star {
   font-size: 40px;

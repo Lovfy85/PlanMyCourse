@@ -13,7 +13,6 @@
   padding: 0.75rem 1rem;
   text-align: left;
   background-color: var(--primary-color);
-  color: #f9f9f9;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -73,7 +72,7 @@
   height: 30px;
   border: 3px solid var(--primary-color);
   border-radius: 4px;
-  background-color: #fff;
+  background-color: #FFFFFF;
   transition: background-color 0.2s, border-color 0.2s;
   display: flex;
   align-items: center;
@@ -109,6 +108,14 @@
 
 .accordion-class:nth-child(even) {
   background-color: #E6E6E6;
+}
+
+[data-theme="dark"] .accordion-class:nth-child(odd) {
+  background-color: #2E2E2E;
+}
+
+[data-theme="dark"] .accordion-class:nth-child(even) {
+  background-color: #282828;
 }
 
 .accordion-class p {

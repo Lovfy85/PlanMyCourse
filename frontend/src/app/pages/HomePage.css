@@ -24,6 +24,10 @@
   text-align: center;
 }
 
+[data-theme="dark"] .website-name h1 {
+  color: #FFFFFF;
+}
+
 .search-bar {
   display: flex;
   width: 50em;
@@ -33,7 +37,8 @@
   flex: 1;
   padding: 1rem 2em;
   font-size: 1rem;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--secondary-color); 
+  background-color: var(--secondary-color);
   border-radius: 50px; 
   outline: none;
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3);

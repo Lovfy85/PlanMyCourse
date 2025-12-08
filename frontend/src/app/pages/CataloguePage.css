@@ -9,7 +9,7 @@
     position: sticky;
     top: 4em;
     z-index: 2;
-    background-color: #F2F0EF;
+    background-color: var(--bg-color);
     margin-top: -10em;
 }
 
@@ -49,9 +49,15 @@
     padding: 12px 20px;
     font-size: 16px;
     border: 2px solid #ddd;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     border-radius: 10px;
     outline: none;
     transition: border-color 0.2s ease;
+}
+
+[data-theme="dark"] .catalogue-search-input {
+  border: 2px solid #2E2E2E;
 }
 
 .catalogue-search-input:focus {
@@ -59,7 +65,7 @@
 }
 
 .catalogue-search-input::placeholder {
-    color: #999;
+    color: var(--text-muted);
 }
 
 .catalogue-sort {
@@ -72,7 +78,7 @@
 .catalogue-sort button {
     padding: 10px 20px;
     background-color: var(--primary-color);
-    color: white;
+    color: #FFFFFF;
     border: none;
     border-radius: 8px;
     font-size: 14px;

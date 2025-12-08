@@ -1,14 +1,31 @@
-#root {
+:root {
   margin: 5rem auto;
   --primary-color: #215591;
-  /* --primary-color: #0B6A41; */
+  --secondary-color: #FFFFFF;
+  --text-color: #454545;
+  --text-muted: #454545;
+  --bg-color: #F2F0EF;
+  --bg-elevated: #F7F6F5;
+}
+
+[data-theme="dark"] {
+  --primary-color: #181818;
+  --secondary-color: #464646;
+  --text-color: #F5F5F5;
+  --text-muted: #a1a1a1;
+  --bg-color: #212121;
+  --bg-elevated: #303030;
 }
 
 body {
   font-family: "Inter", serif;
-  color: #454545;
-  /* background-color: #F2F0EF; */
-  background-color: 
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  caret-color: var(--text-color);
+}
+
+::placeholder {
+  color: var(--text-muted);
 }
 
 @font-face {
