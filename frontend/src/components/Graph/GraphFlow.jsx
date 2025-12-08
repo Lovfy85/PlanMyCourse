@@ -28,6 +28,8 @@ function GraphFlow({ nodes, edges, onNodeClick }) {
                 nodeTypes={nodeTypes}
                 onNodeClick={onNodeClick}
                 fitView
+                proOptions={{ hideAttribution: true }}
+
             >
                 <Background />
             </ReactFlow>
