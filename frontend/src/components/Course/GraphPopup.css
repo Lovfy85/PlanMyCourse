@@ -10,3 +10,14 @@
     align-items: center;
     z-index: 1000;
 }
+
+.popup-content {
+    background-color: var(--bg-color);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
