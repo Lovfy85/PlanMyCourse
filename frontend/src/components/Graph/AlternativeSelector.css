@@ -22,7 +22,7 @@
     position: absolute;
     background: linear-gradient(135deg, var(--primary-color) 100%, var(--secondary-color) 0%);
     color: #FFFFFF;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--bg-color);
     border-radius: 12px;
     padding: 12px 20px;
     font-size: 15px;

@@ -12,7 +12,7 @@
 }
 
 .model-content {
-    background: white;
+    background: var(--bg-elevated);
     border-radius: 12px;
     width: 90vw;
     height: 85vh;
@@ -27,12 +27,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
-    border-bottom: 2px solid #e0e0e0;
+    background-color: var(--bg-color);
+    border-bottom: 2px solid var(--primary-color);
 }
 
 .model-header h2 {
     margin: 0;
-    color: #333;
+    color: var(--text-color);
     font-size: 24px;
 }
 

@@ -24,7 +24,7 @@
 
 /* ReactFlow Nodes */
 .graph-node {
-    color: white;
+    color: #FFFFFF;
     border: 2px solid #333;
     border-radius: 0.8em;
     padding: 10px;
@@ -40,13 +40,11 @@
 }
 
 .graph-node:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(39, 64, 160, 0.4);
     cursor: pointer;
 }
 
 .graph-node.taken {
-    background: #2177c8;
+    background: var(--primary-color);
 }
 
 .graph-node.taken:hover {
@@ -54,7 +52,7 @@
 }
 
 .graph-node.not-taken {
-    background: #aab3bb;
+    background: var(--secondary-color);
 }
 
 .graph-node.not-taken:hover {
@@ -68,7 +66,7 @@
 }
 
 .graph-edge .react-flow__edge-path {
-    stroke: #636363;
+    stroke: var(--text-color);
     stroke-width: 2;
 }
 

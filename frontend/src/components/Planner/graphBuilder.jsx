@@ -98,7 +98,7 @@ export const buildEdges = (courses, allPrereqs, courseMap) => {
                     className: 'graph-edge',
                     markerEnd: {
                         type: MarkerType.ArrowClosed,
-                        color: '#000000',
+                        color: '#ddd',
                     },
                 });
             }
