@@ -1,3 +1,10 @@
+.popup-body {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -51,4 +58,13 @@
     justify-content: center;
     border-radius: 50%;
     transition: background-color 0.2s ease;
+}
+
+
+.popup-close:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .popup-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
