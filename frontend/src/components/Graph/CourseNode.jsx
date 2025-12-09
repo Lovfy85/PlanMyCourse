@@ -13,7 +13,7 @@ import './CourseNode.css';
 function CourseNode({ data }) {
     return (
         <>
-            <Handle type="target" position={Position.Top} />
+            <Handle className="graph-handle" type="target" position={Position.Top} />
             <div className="course-node-content" title={data.title || data.label}>
                 <span className="course-name">{data.label}</span>
                 {data.hasAlternatives && (
@@ -24,7 +24,7 @@ function CourseNode({ data }) {
                     />
                 )}
             </div>
-            <Handle type="source" position={Position.Bottom} />
+            <Handle className="graph-handle" type="source" position={Position.Bottom} />
         </>
     );
 }

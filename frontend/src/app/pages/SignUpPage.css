@@ -7,13 +7,14 @@
 
 .signUpDiv {
   height: 4px;
-  background-color: #215591;
+  background-color: var(--primary-color);
   margin: 12px 4rem;
 }
 
 .signUpCard {
   width: 420px;
-  background-color: #ffffff;
+  background-color: var(--bg-elevated);
+  border: 2px solid var(--primary-color);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   padding: 28px;
@@ -30,14 +31,16 @@
 .signUpCard input {
   padding: 10px 12px;
   font-size: 14px;
-  border: 2px solid #ddd;
+  border: 2px solid var(--bg-color);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   border-radius: 10px;
   outline: none;
   transition: border-color 0.2s ease;
 }
 
 .signUpCard input:focus {
-    border-color: #215591;
+    border-color: var(--primary-color);
 }
 
 .signUpTitle {
@@ -54,20 +57,20 @@
 .saveBtn {
   width: 100%;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease;
   height: 48px;
   font-size: 16px;
   border-radius: 10px;
   cursor: pointer;
   margin-top: 12px;
-  background-color: #215591;
-  color:#ffffff;
+  background-color: var(--primary-color);
+  color:#FFFFFF;
   border: none;
   font-weight: bold;
 }
 
 .saveBtn:hover {
-  background-color: #1e63a3;
+  background-color: var(--hover-color);
 }
 
 .signUpRegister {

@@ -11,17 +11,10 @@
   position: relative;
 }
 
-/* Navbar */
-.graph-navbar {
-  width: 100%;
-  z-index: 20;
-}
-
 /* Search bar container - positioned at top */
 .search-bar-container {
   position: fixed;     
   background: none;  
-  top: 5em;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -29,7 +22,6 @@
   justify-content: center;
   z-index: 10;
   pointer-events: auto;
-  border-radius: 50%;
 }
 
 /* Input field */
@@ -37,92 +29,62 @@
   width: 300px;
   padding: 10px;
   border-radius: 10px 0 0 10px;
-  border: 1px solid #ccc;
+  border: 2px solid #ddd;
   outline: none;
   font-size: 14px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transition: border-color 0.2s ease;
+}
+
+[data-theme="dark"] .search-input {
+  border: 2px solid #2E2E2E;
+}
+
+.search-input:focus {
+  border-color: var(--primary-color);
 }
 
 /* Search button */
 .search-button {
-  background-color: #1a5b98;
+  background-color: var(--primary-color);
   font-size: 1em;
-  color: white;
+  color: #FFFFFF;
   border: none;
   padding: 10px 15px;
   border-radius: 0 10px 10px 0;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
 }
 
 .search-button:hover {
-  background-color: #1f3180;
-  transition: ease-in-out 1s;
+  background-color: var(--hover-color);
 }
 
 /* Graph flow container */
 .graph-flow {
   display: flex;
   width: 70%;
-  height: 77vh;
-  border: 5px solid #1a5b98;
+  height: 70vh;
+  border: 5px solid var(--primary-color);
   border-radius: 1%;
   margin-left: 15%;
   margin-top: 4%;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  background-color: var(--bg-elevated);
 }
 
 .node {
-  background-color: #508cc5;
-  border: 2px solid #508cc5;
-  border-radius: 15px;
-  color: #ffffff;
-  font-size: 16px;
-  padding: 10px 15px;
-  text-align: center;
-  min-width: 100px;
-  font-weight: 500;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* Hover effect */
-.node:hover {
-  transition: ease-in-out 0.25s;
-  background-color: #dcdcdc;
-  border: 1px solid #2b2b32;
-  color: #4d4d4d;
-  box-shadow: 0 4px 10px rgba(39, 64, 160, 0.3);
-  cursor: pointer;
-}
-
-/* Edge styles */
-.react-flow__edge.graph-edge .react-flow__edge-path {
-  stroke: #3a3a3a;
+/* Edge and arrowhead style*/
+.react-flow__edge-path {
+  stroke: var(--text-color);
   stroke-width: 2;
 }
 
-/* Arrowhead styles */
-.react-flow__arrowhead {
-  fill: #000000;
+.react-flow__edge.animated path {
+  animation: none !important;
 }
-
-.react-flow__edge-path {
-  stroke: #3a3a3a;
-}
-
-marker {
-  fill: #000000;
-}
-
-.react-flow__edge-path {
-  stroke: #3a3a3a;
-}
-
-marker {
-  fill: #000000;
-}
-
-

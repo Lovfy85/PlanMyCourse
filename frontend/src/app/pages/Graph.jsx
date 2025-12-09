@@ -102,6 +102,7 @@ const GraphContent = () => {
         nodes={nodes} 
         edges={edges}
         onNodeClick={handleNodeClick}
+        proOptions={{ hideAttribution: true }}
       />
       {/* Alternative selector */}
       <AlternativeSelector
@@ -122,7 +123,7 @@ const GraphContent = () => {
  */
 const Graph = () => (
   <div className="graph-container">
-    <Navbar className="graph-navbar" />
+    <Navbar />
     <ReactFlowProvider>
       <GraphContent />
       <Controls />

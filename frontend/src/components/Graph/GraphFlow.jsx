@@ -12,7 +12,6 @@ import { useMemo } from "react";
 import ReactFlow, { Background } from "reactflow";
 import "reactflow/dist/style.css";
 import CourseNode from "./CourseNode";
-import './GraphFlow.css';
 
 function GraphFlow({ nodes, edges, onNodeClick }) {
     // Define custom node types
@@ -28,6 +27,8 @@ function GraphFlow({ nodes, edges, onNodeClick }) {
                 nodeTypes={nodeTypes}
                 onNodeClick={onNodeClick}
                 fitView
+                proOptions={{ hideAttribution: true }}
+
             >
                 <Background />
             </ReactFlow>

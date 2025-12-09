@@ -3,13 +3,14 @@ import './App.css'
 import Navbar from '../components/Navbar/Navbar'
 import Home from './pages/HomePage'
 import Planner from './pages/PlannerPage'
-import Tree from './pages/Graph'
+import Graph from './pages/Graph'
 import Catalogue from './pages/CataloguePage'
 import Course from './pages/CoursePage'
 import SignUpPage from './pages/SignUpPage'
 import LoginPage from './pages/LoginPage'
 
 import { useAuth } from '../hooks/useAuth';
+import { useEffect } from 'react';
 
 function App() {
   const user = useAuth();
@@ -19,7 +20,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/planner' element={<Planner />}/>
-        <Route path='/tree' element={<Tree />}/>
+        <Route path='/graph' element={<Graph />}/>
         <Route path='/catalogue' element={<Catalogue user={user} />}/>
         <Route path='/catalogue/:term' element={<Catalogue user={user}/>}/>
         <Route path='/catalogue/course/:courseId' element={<Course user={user} />}/>

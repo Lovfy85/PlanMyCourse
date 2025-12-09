@@ -6,50 +6,22 @@
   font-size: 16px;
   font-weight: bold;
   color: #ffffff;
-  background-color: #215591;
-  border: 0px;
+  background-color: var(--primary-color);
+  border: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.15s ease;
-  transform: 0.15s ease;
+  transition: background-color 0.3s ease;
   cursor: pointer;
   text-decoration: none;
-  position: relative;
   border-radius: 15px;
-  z-index: 1;
   width: 150px;
   justify-content: center;
+}
+
+.add-course:not(.added):hover {
+  background-color: var(--hover-color);
 }
 
 .add-course.added {
   background-color: #828282;
   cursor: default;
-}
-
-.add-course:not(.added)::before,
-.add-course:not(.added)::after {
-  content: "";
-  position: absolute;
-  background-color: rgba(45, 128, 207, 0.2);
-  width: 0%;
-  height: 100%;
-  top: 0;
-  transition: width 0.4s ease-in-out;
-  z-index: -1;
-}
-
-.add-course:not(.added)::before {
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 15px;
-}
-
-.add-course:not(.added)::after {
-  right: 50%;
-  transform: translateX(50%);
-  border-radius: 15px;
-}
-
-.add-course:not(.added):hover::before,
-.add-course:not(.added):hover::after {
-  width: 100%;
 }
