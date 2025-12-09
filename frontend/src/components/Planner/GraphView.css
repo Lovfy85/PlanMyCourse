@@ -52,6 +52,10 @@
 }
 
 .graph-node.not-taken {
+    background: #666;
+}
+
+[data-theme="dark"].graph-node.not-taken {
     background: var(--secondary-color);
 }
 

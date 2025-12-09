@@ -29,7 +29,11 @@
 }
 
 .course-colour.not-taken {
-    background-color: var(--secondary-color);
+    background-color: #666;
+}
+
+[data-theme="dark"].course-colour.not-taken {
+    background-color: #666;
 }
 
 .course-node span {

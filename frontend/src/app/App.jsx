@@ -14,9 +14,9 @@ import { useEffect } from 'react';
 
 function App() {
   const user = useAuth();
-  useEffect(() => {
-    document.documentElement.dataset.theme = "dark";
-  }, []);
+  // useEffect(() => {
+  //   document.documentElement.dataset.theme = "dark";
+  // }, []);
 
   return (
     <div>
