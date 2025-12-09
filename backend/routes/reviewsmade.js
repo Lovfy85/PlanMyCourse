@@ -171,6 +171,99 @@ router.delete('/rating/:reviewId', verifyToken, (req, res) => {
     });
 });
 
+// PUT
+// Edit a review comment (owner only)
+router.put('/review/:reviewId', verifyToken, (req, res) => {
+    const { reviewId } = req.params;
+    const { post } = req.body;
+    const userId = req.user.userId;
+
+    if (!post || String(post).trim() === '') {
+        return res.status(400).json({ message: 'A comment is required.' });
+    }
+
+    connectMade.query('SELECT * FROM Reviews WHERE reviewId = ? AND userId = ?', [reviewId, userId], (selErr, rows) => {
+        if (selErr) {
+            console.error('Error checking review ownership', selErr);
+            return res.status(500).json({ message: 'Could not verify review ownership.' });
+        }
+        if (!rows || rows.length === 0) {
+            return res.status(404).json({ message: 'Review not found or not owned by user.' });
+        }
+
+        connectMade.query('UPDATE Reviews SET post = ? WHERE reviewId = ?', [post.trim(), reviewId], (updErr) => {
+            if (updErr) {
+                console.error('Error updating review comment', updErr);
+                return res.status(500).json({ message: 'Could not update review comment.' });
+            }
+
+            const gottenQuery = `
+                SELECT R.reviewId, R.post, R.rating, R.createdAt, U.username, C.class_name, C.courseId
+                FROM Reviews R
+                JOIN Users U ON R.userId = U.userId
+                JOIN Courses C ON R.courseId = C.courseId
+                WHERE R.reviewId = ?
+            `;
+
+            connectMade.query(gottenQuery, [reviewId], (selErr2, selRows) => {
+                if (selErr2) {
+                    console.error('Error fetching updated review', selErr2);
+                    return res.status(500).json({ message: 'Review updated but could not be retrieved.' });
+                }
+                res.json(selRows[0]);
+            });
+        });
+    });
+});
+
+// PUT
+// Edit a star rating (owner only)
+router.put('/rating/:reviewId', verifyToken, (req, res) => {
+    const { reviewId } = req.params;
+    const { rating } = req.body;
+    const userId = req.user.userId;
+
+    if (rating === undefined || rating === null) {
+        return res.status(400).json({ message: 'A star rating is required.' });
+    }
+    if (!Number.isInteger(rating) || rating < 1 || rating > 5) {
+        return res.status(400).json({ message: 'A star rating must be an integer between 1 and 5.' });
+    }
+
+    connectMade.query('SELECT * FROM Reviews WHERE reviewId = ? AND userId = ?', [reviewId, userId], (selErr, rows) => {
+        if (selErr) {
+            console.error('Error checking review ownership for rating update', selErr);
+            return res.status(500).json({ message: 'Could not verify review ownership.' });
+        }
+        if (!rows || rows.length === 0) {
+            return res.status(404).json({ message: 'Review not found or not owned by user.' });
+        }
+
+        connectMade.query('UPDATE Reviews SET rating = ? WHERE reviewId = ?', [rating, reviewId], (updErr) => {
+            if (updErr) {
+                console.error('Error updating review rating', updErr);
+                return res.status(500).json({ message: 'Could not update review rating.' });
+            }
+
+            const gottenQuery = `
+                SELECT R.reviewId, R.post, R.rating, R.createdAt, U.username, C.class_name, C.courseId
+                FROM Reviews R
+                JOIN Users U ON R.userId = U.userId
+                JOIN Courses C ON R.courseId = C.courseId
+                WHERE R.reviewId = ?
+            `;
+
+            connectMade.query(gottenQuery, [reviewId], (selErr2, selRows) => {
+                if (selErr2) {
+                    console.error('Error fetching updated rating', selErr2);
+                    return res.status(500).json({ message: 'Rating updated but could not be retrieved.' });
+                }
+                res.json(selRows[0]);
+            });
+        });
+    });
+});
+
 
 // GET
 // This is to get all star ratings directed from all courses done by signed-in users.
