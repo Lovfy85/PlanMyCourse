@@ -14,7 +14,7 @@ function CourseNode({ data }) {
     return (
         <>
             <Handle className="graph-handle" type="target" position={Position.Top} />
-            <div className="course-node-content" title={data.title || data.label}>
+            <div className="course-node-content">
                 <span className="course-name">{data.label}</span>
                 {data.hasAlternatives && (
                     <img 
