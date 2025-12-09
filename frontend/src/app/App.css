@@ -35,3 +35,14 @@ body {
   src: url('../assets/fonts/Inter-VariableFont_opsz,wght.ttf') format('opentype');
   font-style: normal;
 }
+
+body, html,
+.navbar, .nav-links li, .catalogue-header, .catalogue-search-input,
+.catalogue-sort button, .course-new-submit, .course-planner-add,
+.course-card, .course-review-section, .accordion-class,
+textarea, input {
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}

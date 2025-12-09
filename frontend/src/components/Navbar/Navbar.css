@@ -62,3 +62,21 @@
 .nav-links li:hover {
   border-bottom: 4px solid var(--secondary-color);
 }
+
+.nav-links div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-right: 1rem;
+}
+
+.nav-darkmode i {
+  transition: opacity 0.15s ease-in-out;
+  display: inline-block;
+  position: relative;
+}
+
+.nav-darkmode:active i {
+  opacity: 0.3;
+}

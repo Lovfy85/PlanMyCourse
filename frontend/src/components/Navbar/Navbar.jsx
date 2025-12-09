@@ -1,8 +1,19 @@
 import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import axios from "axios";
+import 'boxicons/css/boxicons.min.css';
 
 function Navbar({user}) {
     const navigate = useNavigate();
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    const toggleDarkMode = () => {
+      setIsDarkMode(prev => !prev);
+      document.documentElement.setAttribute(
+        'data-theme',
+        !isDarkMode ? 'dark' : 'light'
+      );
+    };
 
     const handleLogout = async () => {
       try {
@@ -41,6 +52,12 @@ function Navbar({user}) {
                 <li onClick={handleLogout}>Logout</li>
               </>  
               }
+              <div onClick={toggleDarkMode} className="nav-darkmode" style={{ cursor: 'pointer' }}>
+                  {isDarkMode 
+                      ? <i className='bx bx-sun' style={{ fontSize: '24px' }}></i> 
+                      : <i className='bx bx-moon' style={{ fontSize: '24px' }}></i>
+                  }
+              </div>
             </ul>
           </div>
         </nav>
