@@ -3,7 +3,7 @@
   width: 100%;
   max-width: 1100px;
   margin: 1.2rem auto;
-  border: 1px solid #215591;
+  border: 1px solid var(--primary-color);
   border-radius: 15px;
   overflow: hidden;
 }
@@ -12,13 +12,13 @@
   width: 100%;
   padding: 0.75rem 1rem;
   text-align: left;
-  background-color: #215591;
-  color: #f9f9f9;
+  background-color: var(--primary-color);
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   font-size: 26px;
   font-weight: 555;
+  color: #FFFFFF;
 }
 
 .accordion-body {
@@ -58,14 +58,22 @@
   height: 30px;
 }
 
+.accordion-class-title {
+  cursor: pointer;
+}
+
+.accordion-class-title:hover {
+  text-decoration-line: underline;
+}
+
 .accordion-class-checkbox input {
   appearance: none;
   -webkit-appearance: none;
   width: 30px;
   height: 30px;
-  border: 3px solid #215591;
+  border: 3px solid var(--primary-color);
   border-radius: 4px;
-  background-color: #fff;
+  background-color: #FFFFFF;
   transition: background-color 0.2s, border-color 0.2s;
   display: flex;
   align-items: center;
@@ -81,8 +89,8 @@
 }
 
 .accordion-class-checkbox input:checked {
-  background-color: #215591;
-  border-color: #215591;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .accordion-class-checkbox input:checked::after {
@@ -101,6 +109,14 @@
 
 .accordion-class:nth-child(even) {
   background-color: #E6E6E6;
+}
+
+[data-theme="dark"] .accordion-class:nth-child(odd) {
+  background-color: #2E2E2E;
+}
+
+[data-theme="dark"] .accordion-class:nth-child(even) {
+  background-color: #282828;
 }
 
 .accordion-class p {
@@ -126,11 +142,15 @@
   position: absolute;
   width: 3px;            /* line thickness */
   height: 100%;          /* full height of button */
-  background-color: #215591;
+  background-color: var(--primary-color);
   top: 0;
   left: 50%;
   transform-origin: center;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s;
+}
+[data-theme="dark"] .accordion-delete-btn::before,
+[data-theme="dark"] .accordion-delete-btn::after {
+  background-color: var(--text-muted);
 }
 
 .accordion-delete-btn::before {

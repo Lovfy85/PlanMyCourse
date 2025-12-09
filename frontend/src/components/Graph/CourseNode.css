@@ -1,12 +1,12 @@
 /* Override ReactFlow default node styles */
 .react-flow__node.react-flow__node-courseNode {
     background: transparent;
-    border: solid black;
+    border: solid var(--bg-color);
     width: 10em;
     padding: 0;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
     border-radius: 0.8em;
-    background-color: #2177c8;
+    background-color: var(--primary-color);
 }
 
 .course-node-content {
@@ -15,21 +15,19 @@
     gap: 8px;
     padding: 10px;
     border-radius: 0.5em;
-    color: white;
+    color: #FFFFFF;
     font-size: 16px;
     font-weight: 500;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
-    transition: all 0.2s ease;
     width: 10em;
     height: auto;
     justify-content: center;
+    transition: background-color 0.3s ease;
+    
 }
 
 .course-node-content:hover {
-    background-color: #3a8dd9;
-    border-color: #333;
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(39, 64, 160, 0.4);
+    background-color: var(--hover-color);
     cursor: pointer;
 }
 
@@ -45,4 +43,13 @@
     filter: brightness(0) invert(1);
     cursor: pointer;
     flex-shrink: 0;
+}
+
+.graph-handle {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  background: transparent;
+  border: none;
+  pointer-events: none;
 }

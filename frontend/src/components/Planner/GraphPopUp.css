@@ -1,7 +1,7 @@
 .pop-up-footer {
     padding: 15px 30px;
-    border-top: 2px solid #e0e0e0;
-    background-color: #f9f9f9;
+    border-top: 2px solid var(--primary-color);
+    background-color: var(--bg-color);
 }
 
 .pop-up-window {
@@ -25,14 +25,18 @@
 }
 
 .course-colour.taken {
-    background-color: #2177c8;
+    background-color: var(--primary-color);
 }
 
 .course-colour.not-taken {
-    background-color: #aab3bb;
+    background-color: #666;
+}
+
+[data-theme="dark"].course-colour.not-taken {
+    background-color: #666;
 }
 
 .course-node span {
     font-size: 14px;
-    color: #333;
+    color: var(--text-color);
 }

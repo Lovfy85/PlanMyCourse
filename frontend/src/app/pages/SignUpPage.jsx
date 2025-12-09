@@ -74,6 +74,9 @@ function SignUpPage() {
           <p className='errorMessage'>{errors.confirmPassword?.message}</p>
           <p className='errorMessage'>{serverError}</p>
           <button className='saveBtn' type='submit'>Sign Up</button>
+          <span className='signUpRegister'>
+            <span id='signUpRegisterLink' onClick={() => navigate("/login")}>Already have an account?</span>
+          </span>
         </form>
     </div>
   )

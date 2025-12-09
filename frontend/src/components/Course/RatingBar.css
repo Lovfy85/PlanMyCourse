@@ -8,7 +8,16 @@
 }
 
 .bar {
+    flex: 1;
     width: 85%;
     height: 32px;
     background-color: #E6E6E6;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar-fill{
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
 }

@@ -8,10 +8,10 @@ function GraphView({ nodes, edges, onNodesChange, onEdgesChange, courses, loadin
         const course = courses.find(c => c.class_name === node.id);
         // Colour node blue if taken
         if (course && course.taken) {
-            return '#2177c8';
+            return '#215591';
         }
         // Colour node grey if not taken yet
-        return '#aab3bb';
+        return '#666';
     };
 
     // Show loading state
@@ -35,6 +35,7 @@ function GraphView({ nodes, edges, onNodesChange, onEdgesChange, courses, loadin
             nodesDraggable={true}
             nodesConnectable={false}
             elementsSelectable={true}
+            proOptions={{ hideAttribution: true }}
         >
             <Background />
             <Controls />

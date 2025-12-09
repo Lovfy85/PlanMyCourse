@@ -7,6 +7,7 @@ function CourseReview( {username, message, rating, timestamp} ) {
                 <h4>{username}</h4>
                 <p>{timestamp}</p>
             </div>
+            {rating && <p> Rating: {rating} / 5 </p>}
             <span>{message}</span>
 
         </div>
