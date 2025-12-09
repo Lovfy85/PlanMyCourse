@@ -54,13 +54,12 @@
   padding: 10px 15px;
   border-radius: 0 10px 10px 0;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease;
   font-weight: bold;
 }
 
 .search-button:hover {
-  background-color: #1f3180;
-  transition: ease-in-out 1s;
+  background-color: var(--hover-color);
 }
 
 /* Graph flow container */

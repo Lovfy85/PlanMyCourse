@@ -38,7 +38,7 @@
 /* Undo Notification Styles */
 .undo-notification {
   background-color: var(--primary-color);;
-  color: #ffffff;
+  color: #FFFFFF;
   padding: 16px 24px;
   border-radius: 8px;
   display: flex;
@@ -65,14 +65,14 @@
 }
 
 .undo-btn {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: var(--primary-color);;
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease;
   font-size: 13px;
 }
 
@@ -120,5 +120,9 @@
   height: 2em;
   color: #FFFFFF;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
 }
 
+.planner-graph:hover {
+  background-color: var(--hover-color);
+}

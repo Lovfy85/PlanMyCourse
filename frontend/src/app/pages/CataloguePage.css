@@ -86,5 +86,5 @@
 }
 
 .catalogue-sort button:hover {
-    background-color: #1a4575;
+    background-color: var(--hover-color);
 }

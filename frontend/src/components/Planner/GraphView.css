@@ -48,19 +48,19 @@
 }
 
 .graph-node.taken:hover {
-    background: #3a8dd9;
+    background: var(--hover-color);
 }
 
 .graph-node.not-taken {
     background: #666;
 }
 
-[data-theme="dark"].graph-node.not-taken {
-    background: var(--secondary-color);
+.graph-node.not-taken:hover {
+    background: #363636;
 }
 
-.graph-node.not-taken:hover {
-    background: #bcc4cc;
+[data-theme="dark"] .graph-node.not-taken:hover {
+    background: #4e4e4e;
 }
 
 /* ReactFlow Edge */

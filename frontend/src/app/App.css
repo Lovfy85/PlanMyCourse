@@ -2,6 +2,7 @@
   margin: 5rem auto;
   --primary-color: #215591;
   --secondary-color: #FFFFFF;
+  --hover-color: #1A4575;
   --text-color: #454545;
   --text-muted: #454545;
   --bg-color: #F2F0EF;
@@ -10,9 +11,10 @@
 
 [data-theme="dark"] {
   --primary-color: #181818;
-  --secondary-color: #464646;
+  --secondary-color: #363636;
+  --hover-color: #272727;
   --text-color: #F5F5F5;
-  --text-muted: #a1a1a1;
+  --text-muted: #A1A1A1;
   --bg-color: #212121;
   --bg-elevated: #303030;
 }

@@ -19,15 +19,15 @@
     font-size: 16px;
     font-weight: 500;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
-    transition: all 0.2s ease;
     width: 10em;
     height: auto;
     justify-content: center;
+    transition: background-color 0.3s ease;
     
 }
 
 .course-node-content:hover {
-    background-color: #3a8dd9;
+    background-color: var(--hover-color);
     cursor: pointer;
 }
 
