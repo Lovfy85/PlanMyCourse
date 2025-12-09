@@ -5,6 +5,7 @@ import './CoursePage.css';
 import RatingBar from '../../components/Course/RatingBar.jsx';
 import CourseReview from '../../components/Course/CourseReview.jsx'
 import AddCourse from '../../components/Catalogue/AddCourse.jsx';
+import GraphPopup from '../../components/Course/GraphPopup.jsx';
 
 function CoursePage({user}) {
     const {courseId} = useParams()
@@ -22,6 +23,8 @@ function CoursePage({user}) {
     const [hover, setHover] = useState(0);
     const [newReview, setNewReview] = useState("");
     const [error, setError] = useState("");
+    
+    const [isGraphPopupOpen, setIsGraphPopupOpen] = useState(false);
 
     function handleSubmit(e){
         e.preventDefault();
@@ -155,7 +158,9 @@ function CoursePage({user}) {
                 )}
                 <div className="course-buttons">
                     <AddCourse courseId={courseId} id={id} user={user} buttonClass="course-planner-add" />
-                    <button className="course-view">View Prerequisite Graph</button>
+                    <button className="course-view" onClick={() => setIsGraphPopupOpen(true)}>
+                        View Prerequisite Graph
+                    </button>
                 </div>
             </div>
         </div>
@@ -219,6 +224,12 @@ function CoursePage({user}) {
                 </div>
             ))}
         </div>
+
+        <GraphPopup 
+            isOpen={isGraphPopupOpen} 
+            onClose={() => setIsGraphPopupOpen(false)} 
+            courseId={courseId} 
+        />
     </div>
     );
 }

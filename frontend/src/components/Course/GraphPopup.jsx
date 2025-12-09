@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { ReactFlowProvider, useReactFlow } from 'reactflow';
 import GraphFlow from '../Graph/GraphFlow';
 import { useGraphData } from '../../app/pages/useGraphData';
 import './GraphPopup.css';
 
-function GraphPopup({ isOpen, onClose, courseId }) {
+function GraphPopupContent({ isOpen, onClose, courseId }) {
     const { fitView } = useReactFlow();
     const { nodes, edges, handleSearch, setQuery } = useGraphData(fitView);
     const hasSearched = useRef(false);
@@ -22,7 +22,7 @@ function GraphPopup({ isOpen, onClose, courseId }) {
         if (!isOpen) {
             hasSearched.current = false;
         }
-    }, [isOpen, courseId]);
+    }, [isOpen, courseId, handleSearch, setQuery]);
 
     if (!isOpen) return null;
 
@@ -48,7 +48,7 @@ function GraphPopup({ isOpen, onClose, courseId }) {
 function GraphPopup({ isOpen, onClose, courseId }) {
     return (
         <ReactFlowProvider>
-            <GraphPopup 
+            <GraphPopupContent 
                 isOpen={isOpen} 
                 onClose={onClose} 
                 courseId={courseId} 
