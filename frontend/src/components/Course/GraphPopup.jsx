@@ -26,19 +26,22 @@ function GraphPopupContent({ isOpen, onClose, courseId }) {
 
     if (!isOpen) return null;
 
+    let graphContent;
+    if (nodes.length > 0) {
+        graphContent = <GraphFlow nodes={nodes} edges={edges} />;
+    } else {
+        graphContent = <div className="popup-loading">Loading graph...</div>;
+    }
+
     return (
         <div className="popup-overlay" onClick={onClose}>
             <div className="popup-content" onClick={(e) => e.stopPropagation()}>
                 <div className="popup-header">
-                    <h2>Prerequisite Graph: {courseId}</h2>
+                    <h2>Prerequisite Graph: {courseId?.toUpperCase()}</h2>
                     <button className="popup-close" onClick={onClose}>×</button>
                 </div>
                 <div className="popup-body">
-                    {nodes.length > 0 ? (
-                        <GraphFlow nodes={nodes} edges={edges} />
-                    ) : (
-                        <div className="popup-loading">Loading graph...</div>
-                    )}
+                    {graphContent}
                 </div>
             </div>
         </div>
