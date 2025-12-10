@@ -218,3 +218,108 @@ h3, h5 {
   background-color: var(--primary-color);
   margin: 1.6rem auto;
 }
+
+/* Review action buttons (edit / delete) */
+.review-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.review-actions .review-edit,
+.review-actions .review-delete {
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    transition: background-color 0.15s ease, transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.review-actions .review-edit {
+    background-color: #1976d2; /* blue */
+    box-shadow: 0 2px 6px rgba(25,118,210,0.18);
+}
+
+.review-actions .review-edit:hover {
+    background-color: #1565c0;
+    transform: translateY(-1px);
+}
+
+.review-actions .review-delete {
+    background-color: #e53935; /* red */
+    box-shadow: 0 2px 6px rgba(229,57,53,0.18);
+}
+
+.review-actions .review-delete:hover {
+    background-color: #d32f2f;
+    transform: translateY(-1px);
+}
+
+.review-actions .review-edit:focus,
+.review-actions .review-delete:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(25,118,210,0.12);
+}
+
+/* Inline edit area styles */
+.course-review-edit {
+    margin: 0.8rem 0 1.2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.course-review-edit textarea {
+    width: 100%;
+    min-height: 80px;
+    max-height: 220px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1.5px solid #bdbdbd;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    resize: vertical;
+    font-size: 15px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    outline: none;
+}
+
+.course-review-edit textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.edit-buttons button {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.edit-buttons button:first-child {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.edit-buttons button:last-child {
+    background: transparent;
+    color: #333;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] .edit-buttons button:first-child {
+    background-color: var(--primary-color);
+}
+
+[data-theme="dark"] .course-review-edit textarea {
+    border-color: rgba(255,255,255,0.08);
+}
