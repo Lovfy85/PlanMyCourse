@@ -27,8 +27,11 @@ function Accordion({level, courses, onDelete, onTakenChange}) {
   return (
     <div className="accordion">
         <div className="accordion-header" onClick={() => setIsExpanded(!isExpanded)}>
-            <span>{level} Level Classes</span>
-            <ProgressBar completed={completed} total={total}/>
+          <span>{level} Level Classes</span>
+          <ProgressBar completed={completed} total={total}/>
+          <div className="accordion-header-indicator">
+            <i className={`bx bx-chevron-down chevron ${isExpanded ? "expanded" : ""}`}></i>
+          </div>
         </div>
         <div className={`accordion-body ${isExpanded ? "expanded" : ""}`}>
             <div className="accordion-classes">

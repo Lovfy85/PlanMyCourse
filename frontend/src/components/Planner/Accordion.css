@@ -15,12 +15,31 @@
   background-color: var(--primary-color);
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
   font-size: 26px;
   font-weight: 555;
   color: #FFFFFF;
   align-items: center;
   gap: 1rem;
+}
+
+.accordion-header-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.4rem;
+  color: #FFFFFF
+}
+
+/* The chevron itself */
+.accordion-header-indicator .chevron {
+  font-size: 32px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+/* When accordion is expanded, rotate the chevron */
+.accordion-header-indicator .chevron.expanded {
+  transform: rotate(180deg);
 }
 
 .accordion-progress-bar {
