@@ -5,96 +5,64 @@ const { verifyToken } = require('../middleware/authMiddleware.js');
 
 // POST 
 // This is so that the logged in user can make that of rating a course without having to make a comment towards that of the selected course.
-router.post('/rating', verifyToken, (req, res) => {
-    const {rating, courseId} = req.body;
+router.post('/reviews', verifyToken, (req, res) => {
+    const { post, rating, courseId } = req.body;
     const userId = req.user.userId;
 
-    if (!rating || rating < 1 || rating > 5){
-        return res.status(400).json({message: "The star rating has to be only between values of 1-5. Anything else than that is invalid."});
+    // Validate presence of required fields
+    if (rating === undefined || rating === null) {
+        return res.status(400).json({ message: 'A star rating is required.' });
+    }
+    if (!Number.isInteger(rating) || rating < 1 || rating > 5) {
+        return res.status(400).json({ message: 'A star rating must be an integer between 1 and 5.' });
+    }
+    if (!post || String(post).trim() === '') {
+        return res.status(400).json({ message: 'A comment is required.' });
     }
 
-    connectMade.query(`SELECT * FROM Reviews WHERE userId = ? AND courseId = ? AND rating IS NOT NULL`, [userId, courseId], (err, results) => {
-        if(err){
-            console.error("There seems to be that of an error of making a star rating for a course overall.", err);
-            return res.status(500).json({message: "Making that of a start rating towards that of a course cannot be done overall."});
-        }
-
-        if(results.length > 0){
-            connectMade.query(`UPDATE REVIEWS SET rating = ? WHERE reviewId = ?`, [rating, results[0].reviewId], (updateErr) => {
-                if(updateErr){
-                    return res.status(500).json({message: "You cannot update that of the star rating."});
-                }
-                return res.status(200).json({...results[0], rating});
-            });
-        }
-
-        else{
-
-            connectMade.query(`INSERT INTO REVIEWS (rating, userId, courseId) VALUES (?, ?, ?)`, [rating, userId, courseId], (error, results2) => {
-                if(error){
-                    console.error("There seems to be that of an error of making a star rating for a course overall.", error);
-                    return res.status(500).json({message: "Making that of a start rating towards that of a course cannot be done overall."});
-                }
-
-                const gottenQuery = `
-                    SELECT R.reviewId, R.rating, R.createdAt, U.username, C.class_name, C.courseId
-                    FROM Reviews R
-                    JOIN Users U ON R.userId = U.userId
-                    JOIN Courses C on R.courseId = C.courseId
-                    WHERE R.reviewId = ?
-                `
-
-                connectMade.query(gottenQuery, [results2.insertId], (error1, rows) => {
-                    if(error1){
-                        console.error("There seems to be that of an error of making a star rating for a course overall.", error);
-                        return res.status(500).json({message: "Making that of a start rating towards that of a course cannot be done overall."});
-                    }
-                    res.status(201).json(rows[0]);
-                });
-            });
-        }
-    });
-});
-
-// POST
-// This is so that the logged in user can make that of comments for a specific course that they selected.
-router.post('/review', verifyToken, (req, res) => {
-
-    //Needs that of the course's id in order for the user to make a comment to that specific course, the content they will submit inside the review 
-    // and the user's id to make sure who made such comment.
-    const {post, courseId} = req.body;
-    const userId = req.user.userId;
-
-    if(!post){
-        return res.status(400).json({message: "The comment to be made for a course cannot be made overall. You need to put something in overall."});
-    }
-
-    //This is to insert that of the reviews made into the table with:
-    // The content of the post, the one who made the review and where that review will be placed in the specified course.
-    connectMade.query(`INSERT INTO Reviews (post, userId, courseId) VALUES (?, ?, ?)`, [post, userId, courseId], (err, results) => {
-
-        //Just sends an error if the user cannot simply make that of a comment inside that of a selected course.
-        if(err){
-            console.error("There seems to be that of an error of making a comment with the logged in user.", err);
-            return res.status(500).json({message: "Making a comment cannot be done."});
-        }
-        
-        const gottenQuery = `
-            SELECT R.reviewId, R.post, R.createdAt, U.username, C.class_name, C.courseId
-            FROM Reviews R
-            JOIN Users U ON R.userId = U.userId
-            JOIN Courses C on R.courseId = C.courseId
-            WHERE R.reviewId = ?
-        `;
-        
-        connectMade.query(gottenQuery, [results.insertId], (error1, rows) => {
-            if(error1){
-                console.error("There seems to be that of an error of making a star rating for a course overall.", error);
-                return res.status(500).json({message: "Making that of a start rating towards that of a course cannot be done overall."});
+    // Ensure user hasn't already posted a review for this course
+    connectMade.query(
+        'SELECT * FROM Reviews WHERE userId = ? AND courseId = ?',
+        [userId, courseId],
+        (err, existing) => {
+            if (err) {
+                console.error('Error checking existing review', err);
+                return res.status(500).json({ message: 'Could not verify existing reviews.' });
             }
-            res.status(201).json(rows[0]);
-        });
-    });
+
+            if (existing.length > 0) {
+                return res.status(400).json({ message: 'You have already reviewed this course. Please edit or delete your existing review.' });
+            }
+
+            // Insert new review
+            connectMade.query(
+                'INSERT INTO Reviews (post, rating, userId, courseId) VALUES (?, ?, ?, ?)',
+                [post.trim(), rating, userId, courseId],
+                (insertErr, insertRes) => {
+                    if (insertErr) {
+                        console.error('Error inserting review', insertErr);
+                        return res.status(500).json({ message: 'Could not create review.' });
+                    }
+
+                    const gottenQuery = `
+                        SELECT R.reviewId, R.post, R.rating, R.createdAt, U.username, C.class_name, C.courseId
+                        FROM Reviews R
+                        JOIN Users U ON R.userId = U.userId
+                        JOIN Courses C ON R.courseId = C.courseId
+                        WHERE R.reviewId = ?
+                    `;
+
+                    connectMade.query(gottenQuery, [insertRes.insertId], (selErr, rows) => {
+                        if (selErr) {
+                            console.error('Error fetching created review', selErr);
+                            return res.status(500).json({ message: 'Review created but could not be retrieved.' });
+                        }
+                        return res.status(201).json(rows[0]);
+                    });
+                }
+            );
+        }
+    );
 });
 
 // GET
@@ -199,6 +167,99 @@ router.delete('/rating/:reviewId', verifyToken, (req, res) => {
             }
 
             res.json({message: "Removing that of the star rating from the course selected", reviewId});
+        });
+    });
+});
+
+// PUT
+// Edit a review comment (owner only)
+router.put('/review/:reviewId', verifyToken, (req, res) => {
+    const { reviewId } = req.params;
+    const { post } = req.body;
+    const userId = req.user.userId;
+
+    if (!post || String(post).trim() === '') {
+        return res.status(400).json({ message: 'A comment is required.' });
+    }
+
+    connectMade.query('SELECT * FROM Reviews WHERE reviewId = ? AND userId = ?', [reviewId, userId], (selErr, rows) => {
+        if (selErr) {
+            console.error('Error checking review ownership', selErr);
+            return res.status(500).json({ message: 'Could not verify review ownership.' });
+        }
+        if (!rows || rows.length === 0) {
+            return res.status(404).json({ message: 'Review not found or not owned by user.' });
+        }
+
+        connectMade.query('UPDATE Reviews SET post = ? WHERE reviewId = ?', [post.trim(), reviewId], (updErr) => {
+            if (updErr) {
+                console.error('Error updating review comment', updErr);
+                return res.status(500).json({ message: 'Could not update review comment.' });
+            }
+
+            const gottenQuery = `
+                SELECT R.reviewId, R.post, R.rating, R.createdAt, U.username, C.class_name, C.courseId
+                FROM Reviews R
+                JOIN Users U ON R.userId = U.userId
+                JOIN Courses C ON R.courseId = C.courseId
+                WHERE R.reviewId = ?
+            `;
+
+            connectMade.query(gottenQuery, [reviewId], (selErr2, selRows) => {
+                if (selErr2) {
+                    console.error('Error fetching updated review', selErr2);
+                    return res.status(500).json({ message: 'Review updated but could not be retrieved.' });
+                }
+                res.json(selRows[0]);
+            });
+        });
+    });
+});
+
+// PUT
+// Edit a star rating (owner only)
+router.put('/rating/:reviewId', verifyToken, (req, res) => {
+    const { reviewId } = req.params;
+    const { rating } = req.body;
+    const userId = req.user.userId;
+
+    if (rating === undefined || rating === null) {
+        return res.status(400).json({ message: 'A star rating is required.' });
+    }
+    if (!Number.isInteger(rating) || rating < 1 || rating > 5) {
+        return res.status(400).json({ message: 'A star rating must be an integer between 1 and 5.' });
+    }
+
+    connectMade.query('SELECT * FROM Reviews WHERE reviewId = ? AND userId = ?', [reviewId, userId], (selErr, rows) => {
+        if (selErr) {
+            console.error('Error checking review ownership for rating update', selErr);
+            return res.status(500).json({ message: 'Could not verify review ownership.' });
+        }
+        if (!rows || rows.length === 0) {
+            return res.status(404).json({ message: 'Review not found or not owned by user.' });
+        }
+
+        connectMade.query('UPDATE Reviews SET rating = ? WHERE reviewId = ?', [rating, reviewId], (updErr) => {
+            if (updErr) {
+                console.error('Error updating review rating', updErr);
+                return res.status(500).json({ message: 'Could not update review rating.' });
+            }
+
+            const gottenQuery = `
+                SELECT R.reviewId, R.post, R.rating, R.createdAt, U.username, C.class_name, C.courseId
+                FROM Reviews R
+                JOIN Users U ON R.userId = U.userId
+                JOIN Courses C ON R.courseId = C.courseId
+                WHERE R.reviewId = ?
+            `;
+
+            connectMade.query(gottenQuery, [reviewId], (selErr2, selRows) => {
+                if (selErr2) {
+                    console.error('Error fetching updated rating', selErr2);
+                    return res.status(500).json({ message: 'Rating updated but could not be retrieved.' });
+                }
+                res.json(selRows[0]);
+            });
         });
     });
 });
