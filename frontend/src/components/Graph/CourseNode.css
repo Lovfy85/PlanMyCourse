@@ -59,7 +59,7 @@
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(-8px);
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: var(--primary-color);
     color: white;
     padding: 12px 16px;
     border-radius: 8px;
@@ -84,28 +84,12 @@
     font-weight: bold;
     font-size: 14px;
     margin-bottom: 4px;
-    color: var(--primary-color);
+    color: #FFFFFF;
 }
 
 .hover-course-title {
     font-size: 13px;
     font-weight: normal;
-    color: #e0e0e0;
+    color: #FFFFFF;
 }
 
-[data-theme="dark"] .course-tooltip {
-    background-color: rgba(255, 255, 255, 0.95);
-    color: #1a1a1a;
-}
-
-[data-theme="dark"] .course-tooltip::after {
-    border-top-color: rgba(255, 255, 255, 0.95);
-}
-
-[data-theme="dark"] .tooltip-course-id {
-    color: var(--primary-color);
-}
-
-[data-theme="dark"] .tooltip-course-title {
-    color: #333;
-}
