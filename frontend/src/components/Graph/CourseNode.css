@@ -92,3 +92,20 @@
     font-weight: normal;
     color: #e0e0e0;
 }
+
+[data-theme="dark"] .course-tooltip {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #1a1a1a;
+}
+
+[data-theme="dark"] .course-tooltip::after {
+    border-top-color: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="dark"] .tooltip-course-id {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .tooltip-course-title {
+    color: #333;
+}
