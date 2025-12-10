@@ -3,16 +3,25 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  pointer-events: none;
   padding: 20px;
   width: 100%;
+  z-index: 2;
 }
 
 .redirectSearchBar input {
-    width: 100%;
-    max-height: 20px;
+  width: 100%;
+  max-height: 20px;
+  pointer-events: auto;
+
+  border-color: var(--secondary-color);
 }
 
-.showDropdown {
+.redirectSearchBar input:focus {
+  border-color: var(--hover-color);
+}
+
+.showDropdow {
     border-top-right-radius: 25px !important;
     border-top-left-radius: 25px !important;
     border-bottom-left-radius: 0px !important;

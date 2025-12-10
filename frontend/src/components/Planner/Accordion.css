@@ -15,10 +15,69 @@
   background-color: var(--primary-color);
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
   font-size: 26px;
   font-weight: 555;
   color: #FFFFFF;
+  align-items: center;
+  gap: 1rem;
+}
+
+.accordion-header-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.4rem;
+  color: #FFFFFF
+}
+
+/* The chevron itself */
+.accordion-header-indicator .chevron {
+  font-size: 32px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+/* When accordion is expanded, rotate the chevron */
+.accordion-header-indicator .chevron.expanded {
+  transform: rotate(180deg);
+}
+
+.accordion-progress-bar {
+  display: flex;
+  align-items: center;       /* vertically center the text */
+  justify-content: flex-start; /* align text to the left */
+  min-width: 370px;
+  width: 33%;
+  height: 28px;
+  background-color: var(--bg-color);
+  border-radius: 15px;
+  margin: auto;
+  border: 2px solid var(--hover-color);
+  overflow: hidden;
+  position: relative;
+}
+
+.accordion-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #D6D6D4;
+  border-radius: 15px 0 0 15px;
+  transition: width 0.35s ease;
+  z-index: 0;
+}
+
+[data-theme="dark"] .accordion-progress-fill {
+  background-color: #2E2E2E;;
+}
+
+.accordion-progress-text {
+  padding-left: 10px;
+  z-index: 1;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-color);
 }
 
 .accordion-body {

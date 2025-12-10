@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Recommendation from "../Recommend/Recommendations";
 import "./Redirect.css"
@@ -8,15 +8,14 @@ import Courses from "../../../../web-scraper/courses.json"
 function Redirect() {
     const [searchTerm, setSearchTerm] = useState("");
     const [onFocus, setOnFocused] = useState(false);
-    const [onRecommended, setOnRecommend] = useState(false);
     const navigate = useNavigate();
 
     // redirect the user to the catalogue page
-    function handleSearch() {
+    const handleSearch = () => {
         const term = searchTerm.trim().toUpperCase();
 
         // check for invalid terms
-        if (!term)  {
+        if (!term || term.trim().length == 0)  {
             setSearchTerm("");
             document.getElementById("searchBox").placeholder = "Oops, it seems you tried entering nothing!";
 
@@ -29,10 +28,12 @@ function Redirect() {
         // different filters depending on search input
         if (Number(term)) { // search by course level
             var filtered = Courses.filter(item => Math.floor(Number(item.number)/100)*100 == Number(term));
-        } else if (term.length >= 2) { // search by depertment
+        } else if (term.length >= 2 && term.length <= 4) { // search by subject
             var filtered = Courses.filter(item => item.subject == term);
+        }  else if (term.length > 4 && term.length <= 7 && /\d/.test(term.slice(-1))) { // search by subject + number, checks if last character is a number
+            var filtered = Courses.filter(item => (item.subject + item.number) == term);
         } else { // search by exact course subject
-            var filtered = Courses.filter(item => item.class_name == term);
+            var filtered = Courses.filter(item => item.title.trim().toUpperCase().indexOf(term));
         }
 
         // check if filters return nothing so don't redirect the user to catalogue page
@@ -47,37 +48,24 @@ function Redirect() {
         }
 
         // redirect the user to the catalogue page with their search result
-        navigate(`./catalogue/${term}`);
+        navigate(`./catalogue/${searchTerm}`);
     }
 
     // hides the dropdown recommended courses
     const handleBlur = (e) => {
-
         // to prevent blur when the user tabs onto the drop down recommended courses
         const nextFocused = e.relatedTarget;
         if (document.getElementById("recommendation").contains(nextFocused)) {
             return;
         }
-        document.getElementById("searchBox").classList.remove("showDropdown");
         setOnFocused(false);
     }
 
     // shows the dropdown recommended courses
     const handleFocus = (e) => {
         setOnFocused(true);
-        if (localStorage.getItem("recentSearches").length > 0) {
-            document.getElementById("searchBox").classList.add("showDropdown");
-        }
+        setSearchTerm("")
     }
-
-    // handle searchbar border change if there exists recommendations
-    useEffect((e) => {
-        if (onRecommended) {
-            document.getElementById("searchBox").classList.add("showDropdown");
-        } else {
-            document.getElementById("searchBox").classList.remove("showDropdown");
-        }
-    }, [onRecommended])
 
     return (
         <div className="redirectSearchBar">
@@ -91,7 +79,7 @@ function Redirect() {
                 onFocus={(e) => handleFocus(e)}
                 onBlur={(e) => handleBlur(e)}
             />
-            <Recommendation searchTerm={searchTerm} onFocused={onFocus} onRecommended={setOnRecommend}/>
+            <Recommendation searchTerm={searchTerm} onFocused={onFocus}/>
         </div>
     )
 }

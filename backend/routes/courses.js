@@ -35,18 +35,32 @@ router.get('/search', (req,res) => {
         return
     }
 
-    const isNumber = !isNaN(Number(searchTerm));
+    const cleaned = searchTerm.toString().trim();
+    const isNumber = !isNaN(Number(cleaned));
     let query = '';
     let params = [];
 
     if (isNumber) {
         // search by level
         query = `SELECT * FROM Courses WHERE FLOOR(number / 100) * 100 = ? LIMIT ?, ?`;
-        params = [Number(searchTerm), offset, limit];
+        params = [Number(cleaned), offset, limit];
     } else {
-        // search by subject or class_name
-        query = `SELECT * FROM Courses WHERE class_name LIKE ? OR subject = ? LIMIT ?, ?`;
-        params = [`${searchTerm}%`, searchTerm, offset, limit];
+        const cleanedUpper = cleaned.toUpperCase();
+
+        // If the term looks like a subject code
+        if (searchTerm.length >=2 && searchTerm.length <=4) {
+            query = `SELECT * FROM Courses WHERE UPPER(subject) = ? OR UPPER(class_name) LIKE ? LIMIT ?, ?`;
+            params = [cleanedUpper, `${cleanedUpper}%`, offset, limit];
+        } else {
+            query = `SELECT * FROM Courses WHERE 
+            UPPER(class_name) LIKE ? OR 
+            UPPER(subject) LIKE ? OR
+            UPPER(title) LIKE ?
+            LIMIT ?, 
+            ?`;
+            const pattern = `%${cleanedUpper}%`;
+            params = [pattern, pattern, pattern, offset, limit];
+        }
     }
 
     connectMade.query(query, params, (err, results) => {
@@ -90,7 +104,26 @@ router.get('/id/:id', (req,res) => {
 router.get('/sort/alphabetical', (req, res) => {
     const limit = parseInt(req.query.limit) || 20;
     const offset = parseInt(req.query.offset) || 0;
-    connectMade.query(`SELECT * FROM Courses ORDER BY class_name ASC LIMIT ?, ?`, [offset, limit], (err, results) => {
+    const search = req.query.search || "";
+
+    let query = "";
+    let params = [];
+
+    if(search){
+        const cleaned = `%${search.toString().trim().toUpperCase()}%`;
+        query = `
+            SELECT * FROM Courses WHERE UPPER (class_name) LIKE ?
+            OR UPPER (subject) LIKE ?
+            OR UPPER (title) LIKE ?
+            ORDER BY class_name ASC LIMIT ?,?`;
+        params = [cleaned, cleaned, cleaned, offset, limit];
+    }
+    else{
+        query = `SELECT * FROM Courses ORDER by class_name ASC LIMIT ?,?`;
+        params = [offset, limit];
+    }
+
+    connectMade.query(query, params, (err, results) => {
         if(err){
             console.error('There has been an error getting that of the courses for the course catalogue through that alphabetical.');
             res.status(500).send('Seems to be that of courses to be sorted through alphabetical order cannot be done.');
@@ -105,7 +138,26 @@ router.get('/sort/alphabetical', (req, res) => {
 router.get('/sort/number', (req, res) => {
     const limit = parseInt(req.query.limit) || 20;
     const offset = parseInt(req.query.offset) || 0;
-    connectMade.query(`SELECT * FROM Courses ORDER BY number ASC LIMIT ?, ?`, [offset, limit], (err, results) => {
+    const search = req.query.search || "";
+
+    let query = "";
+    let params = [];
+
+    if(search){
+        const cleaned = `%${search.toString().trim().toUpperCase()}%`;
+        query = `
+            SELECT * FROM Courses WHERE UPPER (class_name) LIKE ?
+            OR UPPER (subject) LIKE ?
+            OR UPPER (title) LIKE ?
+            ORDER BY number ASC LIMIT ?,?`;
+        params = [cleaned, cleaned, cleaned, offset, limit];
+    }
+    else{
+        query = `SELECT * FROM Courses ORDER by number ASC LIMIT ?,?`;
+        params = [offset, limit];
+    }
+
+    connectMade.query(query, params, (err, results) => {
         if(err){
             console.error('There has been an error getting that of the courses for the course catalogue through that of course number.');
             res.status(500).send('Seems to be that of courses to be sorted through course number order cannot be done.');
@@ -122,23 +174,42 @@ router.get('/sort/addedtoplanner', verifyToken, (req, res) => {
     const limit = parseInt(req.query.limit) || 20;
     const offset = parseInt(req.query.offset) || 0;
     const userId = req.user.userId;
+    const search = req.query.search || "";
 
     if(!userId){
         return res.status(400).send('You must be a logged in user to sort that of the course catalogue based on the courses added to your planner.')
     }
 
-    const query = `
+    let query = "";
+    let params = [];
+
+    if(search){
+        const cleaned = `%${search.toString().trim().toUpperCase()}%`;
+        query = ` 
+            SELECT c.*, IF (ca.taken IS NULL, 0,1) AS added
+            FROM Courses c
+            LEFT JOIN CoursesAdded ca ON c.courseId = ca.courseId AND ca.userId = ?
+            WHERE UPPER (c.class_name) LIKE ?
+            OR UPPER (c.subject) LIKE ?
+            OR UPPER (c.title) LIKE ?
+            ORDER BY added DESC, c.class_name ASC
+            LIMIT ?, ?`;
+        params = [userId, cleaned, cleaned, cleaned, offset, limit];
+    }
+    else{
+        query = `
         SELECT 
             c.*,
             IF(ca.taken IS NULL, 0, 1) AS added
         FROM Courses c
         LEFT JOIN CoursesAdded ca 
             ON c.courseId = ca.courseId AND ca.userId = ?
-        ORDER BY taken DESC, class_name ASC
-        LIMIT ?, ?
-    `;
+        ORDER BY added DESC, class_name ASC
+        LIMIT ?, ?`;
+        params = [userId, offset, limit];
+    }
 
-    connectMade.query(query, [userId, offset, limit], (err, results) => {
+    connectMade.query(query, params, (err, results) => {
         if(err){
             console.error('There has been an error getting that of the courses for the course catalogue that are seperated whether it is taken or not.');
             res.status(500).send('Seems to be that of courses to be sorted by the first half being taken courses and second half being untaken courses.');

@@ -3,16 +3,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import 'boxicons/css/boxicons.min.css';
 
-function Navbar({user}) {
+function Navbar({user,isDarkMode,setIsDarkMode}) {
     const navigate = useNavigate();
-    const [isDarkMode, setIsDarkMode] = useState(false);
 
     const toggleDarkMode = () => {
       setIsDarkMode(prev => !prev);
-      document.documentElement.setAttribute(
-        'data-theme',
-        !isDarkMode ? 'dark' : 'light'
-      );
     };
 
     const handleLogout = async () => {

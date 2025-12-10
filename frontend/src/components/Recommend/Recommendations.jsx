@@ -4,7 +4,7 @@ import Courses from "../../../../web-scraper/courses.json"
 import { useNavigate } from "react-router-dom";
 
 // recommendation component
-function Recommendation( {searchTerm, onFocused, onRecommended} ) {
+function Recommendation( {searchTerm, onFocused} ) {
     const [recommendResult, setRecommendResult] = useState([]);
     const [recentSearches, setRecentSearches] = useState(() => {
         const stored = localStorage.getItem("recentSearches");
@@ -23,20 +23,22 @@ function Recommendation( {searchTerm, onFocused, onRecommended} ) {
 
     // updates and filters recommendedResult depending on the search term
     useEffect(() => {
-        if (searchTerm.length >= 4) {
-            // filter by subject
-            var filtered = Courses.filter(item => item.subject == searchTerm.slice(0,4).toUpperCase());
-            if (searchTerm.length > 4) {
-                // filter the subjects by level
-                filtered = filtered.filter(item => item.number.toString().includes(searchTerm.slice(4,8).trim()));
+        if (searchTerm.length >= 1) {
+            var filtered
+            if (Number(searchTerm)) {
+                filtered = Courses.filter(item => Math.round(item.number/100)*100 == searchTerm)
+            } else {
+                filtered = Courses.filter(item => item.title.toUpperCase().trim().includes(searchTerm.trim().toUpperCase()));
             }
-            //  prevent duplicates
+
             filtered = filtered.filter(item => !recentSearches.some(course => item.class_name == course.class_name));
 
             setRecommendResult(filtered);
         } else {
             setRecommendResult([]);
         }
+
+        
     }, [searchTerm]);
 
     // controls the visibility of the drop down recommendations
@@ -45,18 +47,15 @@ function Recommendation( {searchTerm, onFocused, onRecommended} ) {
         if (!hasMounted.current) {
             hasMounted.current = true;
             document.getElementById("recommendation").style.visibility = "hidden";
-            onRecommended(false)
             return;
         }
 
         // to prevent dropdown visibility the searchbox or the dropdown loses focus
         if (onFocused == false || recommendResult.length == 0 && recentSearches.length == 0) {
             document.getElementById("recommendation").style.visibility = "hidden";
-            onRecommended(false)
             return;
         } else if (onFocused == true) { // display if its being focused on
             document.getElementById("recommendation").style.visibility = "visible";
-            onRecommended(true)
         }
     }, [onFocused, recommendResult, recentSearches]);
 
@@ -80,7 +79,7 @@ function Recommendation( {searchTerm, onFocused, onRecommended} ) {
             {recentSearches.map((course, index) => {
                 return (
                     <button
-                        key={course.number}
+                        key={course.class_name}
                         className="courseRecommended"
                         tabIndex={0}
                         onKeyDown={(e) => {
@@ -98,9 +97,13 @@ function Recommendation( {searchTerm, onFocused, onRecommended} ) {
                     </button>
             )})}
             {recommendResult.map((course, index) => {
+                if (index > 100) {
+                    return
+                }
+
                 return (
                     <button
-                        key={course.number}
+                        key={course.class_name}
                         className="courseRecommended"
                         tabIndex={0}
                         onKeyDown={(e) => {

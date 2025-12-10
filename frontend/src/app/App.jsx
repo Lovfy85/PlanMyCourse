@@ -10,10 +10,25 @@ import SignUpPage from './pages/SignUpPage'
 import LoginPage from './pages/LoginPage'
 
 import { useAuth } from '../hooks/useAuth';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const user = useAuth();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') setIsDarkMode(true);
+  }, []);  
+
+  useEffect(() => {
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+
+    document.documentElement.setAttribute(
+      'data-theme',
+      isDarkMode ? 'dark' : 'light'
+    );
+  }, [isDarkMode]);
 
   return (
     <div>
@@ -27,7 +42,7 @@ function App() {
         <Route path='/signup' element={<SignUpPage />}/>
         <Route path='/login' element={<LoginPage />}/>
       </Routes>
-      <Navbar user={user} />
+      <Navbar user={user} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
     </div>
   )
 }

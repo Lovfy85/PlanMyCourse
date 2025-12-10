@@ -29,3 +29,17 @@
 .course-review span {
     margin: 0;
 }
+
+.review-stars {
+    margin: 0.5rem 0;
+}
+
+.review-star {
+    font-size: 20px;
+    color: #828282;
+    margin-right: 4px;
+}
+
+.review-star.filled {
+    color: var(--primary-color);
+}

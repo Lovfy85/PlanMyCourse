@@ -80,3 +80,8 @@
 .nav-darkmode:active i {
   opacity: 0.3;
 }
+
+.nav-darkmode:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
