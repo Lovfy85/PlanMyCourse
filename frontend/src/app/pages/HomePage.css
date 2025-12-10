@@ -1,3 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.profile-button {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  align-content: center;
+}
+
+
+.profile-button button:hover {
+  background-color: #b9daff;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  color: black;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.profile-button button {
+  align-content: center;
+  height: 2.5rem;
+  width: 5.5rem;
+  border-radius: 0.8em;
+  color: black;
+  font-weight: bold;
+  background-color: #ffffff;
+  font-size: 0.9em;
+  border-style: none;
+}
+
+
 .title-section {
   font-size: 1.4rem;
   margin-left: 2.5rem;

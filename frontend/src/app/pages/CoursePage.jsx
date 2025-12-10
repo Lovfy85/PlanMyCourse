@@ -5,6 +5,7 @@ import './CoursePage.css';
 import RatingBar from '../../components/Course/RatingBar.jsx';
 import CourseReview from '../../components/Course/CourseReview.jsx'
 import AddCourse from '../../components/Catalogue/AddCourse.jsx';
+import GraphPopup from '../../components/Course/GraphPopup.jsx';
 
 export default function CoursePage({ user }) {
     const { courseId } = useParams();
@@ -24,6 +25,8 @@ export default function CoursePage({ user }) {
     const [editingId, setEditingId] = useState(null);
     const [editPost, setEditPost] = useState('');
     const [editRating, setEditRating] = useState(0);
+    
+    const [isGraphPopupOpen, setIsGraphPopupOpen] = useState(false);
 
     function processNotes(rawNotes) {
         const cleanData = rawNotes?.split('Prerequisite(s):')[1] || '';
@@ -173,7 +176,10 @@ export default function CoursePage({ user }) {
                     )}
                     <div className="course-buttons">
                         <AddCourse courseId={courseId} id={id} user={user} buttonClass="course-planner-add" />
-                        <button className="course-view">View Prerequisite Graph</button>
+                        <button className="course-view" onClick={() => setIsGraphPopupOpen(true)}>
+                            View Prerequisite Graph
+                        </button>
+
                     </div>
                 </div>
             </div>
@@ -245,6 +251,12 @@ export default function CoursePage({ user }) {
                     </div>
                 ))}
             </div>
+            <GraphPopup 
+                isOpen={isGraphPopupOpen} 
+                onClose={() => setIsGraphPopupOpen(false)} 
+                courseId={courseId} 
+            />
         </div>
+    
     );
 }
