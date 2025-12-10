@@ -275,6 +275,7 @@ export default function CoursePage({ user }) {
                 isOpen={isGraphPopupOpen} 
                 onClose={() => setIsGraphPopupOpen(false)} 
                 courseId={courseId} 
+                user={user}
             />
         </div>
     

@@ -6,7 +6,7 @@ import { useGraphData } from '../../app/pages/useGraphData';
 import alternativesData from '../../app/pages/alternatives.json';
 import './GraphPopup.css';
 
-function GraphPopupContent({ isOpen, onClose, courseId }) {
+function GraphPopupContent({ isOpen, onClose, courseId, user }) {
     const { fitView } = useReactFlow();
     const { nodes, edges, handleSearch, setQuery, replaceNode } = useGraphData(fitView);
     const hasSearched = useRef(false);
@@ -69,6 +69,11 @@ function GraphPopupContent({ isOpen, onClose, courseId }) {
         });
         
         if (alternatives.length > 0) {
+            // Check authentication before showing alternatives
+            if (!user) {
+                alert("Must be logged in to switch prerequisites");
+                return;
+            }
             setSelectedNode({ ...node, alternativesList: alternatives });
         }
     };
@@ -116,13 +121,14 @@ function GraphPopupContent({ isOpen, onClose, courseId }) {
     );
 }
 
-function GraphPopup({ isOpen, onClose, courseId }) {
+function GraphPopup({ isOpen, onClose, courseId, user }) {
     return (
         <ReactFlowProvider>
             <GraphPopupContent 
                 isOpen={isOpen} 
                 onClose={onClose} 
                 courseId={courseId} 
+                user={user}
             />
         </ReactFlowProvider>
     );

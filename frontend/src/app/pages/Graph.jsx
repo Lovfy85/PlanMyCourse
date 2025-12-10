@@ -22,7 +22,7 @@ import "./Graph.css";
  * Inner component that has access to ReactFlow context.
  * Manages the search functionality and graph display.
  */
-const GraphContent = () => {
+const GraphContent = ({ user }) => {
   // Get fitView function from ReactFlow to center the graph
   const { fitView } = useReactFlow();
   
@@ -72,6 +72,11 @@ const GraphContent = () => {
     });
     
     if (alternatives.length > 0) {
+      // Check authentication before showing alternatives
+      if (!user) {
+        alert("Must be logged in to switch prerequisites");
+        return;
+      }
       setSelectedNode({ ...node, alternativesList: alternatives });
     }
   };
@@ -121,11 +126,11 @@ const GraphContent = () => {
  * Main wrapper component that provides ReactFlow context.
  * Includes navbar and graph controls.
  */
-const Graph = () => (
+const Graph = ({ user }) => (
   <div className="graph-container">
     <Navbar />
     <ReactFlowProvider>
-      <GraphContent />
+      <GraphContent user={user} />
     </ReactFlowProvider>
   </div>
 );
