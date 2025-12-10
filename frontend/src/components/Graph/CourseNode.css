@@ -54,7 +54,7 @@
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
     width: 10em;
     height: auto;
-    justify-content: center;
+    justify-content: flex-start;
     transition: background-color 0.3s ease;
     cursor: pointer;
     min-width: 120px;
@@ -69,6 +69,7 @@
     font-weight: bold;
     font-size: 14px;
     color: inherit;
+    flex: 1;
 }
 
 .shuffle-icon {
@@ -77,6 +78,16 @@
     filter: brightness(0) invert(1);
     cursor: pointer;
     flex-shrink: 0;
+    padding: 4px;
+    margin: 2px 2px 2px auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.shuffle-icon:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
 }
 
 .graph-handle {

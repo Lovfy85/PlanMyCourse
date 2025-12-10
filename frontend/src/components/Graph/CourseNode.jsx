@@ -30,7 +30,7 @@ function CourseNode({ data }) {
                 {data.hasAlternatives && (
                     <img 
                         className="shuffle-icon" 
-                        src="https://images.icon-icons.com/2024/PNG/512/clockwise_refresh_arrow_icon_123836.png"
+                        src="https://cdn-icons-png.flaticon.com/512/9259/9259711.png"
                         alt="Switch alternative"
                     />
                 )}
