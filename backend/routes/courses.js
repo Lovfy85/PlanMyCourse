@@ -33,13 +33,13 @@ router.get('/search', (req,res) => {
                     class_name LIKE ? 
                   OR subject LIKE ?
                   OR courseId LIKE ?
-                  OR FLOOR(number / 100) * 100 = ?
+                  OR FLOOR(number / 100) * 100 LIKE ?
                   OR title LIKE ?
                   `;
     
-    var searchValue = `%${searchTerm}`;
+    var searchValue = `%${searchTerm}%`;
     if (Number(searchTerm)) {
-        searchValue = `${Number(searchTerm)}`;
+        searchValue = `%${searchTerm}%`
     }
 
     connectMade.query(query, [searchValue, searchValue, searchValue, searchValue, searchValue], (err, results) => {

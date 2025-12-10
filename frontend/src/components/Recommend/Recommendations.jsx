@@ -24,7 +24,13 @@ function Recommendation( {searchTerm, onFocused} ) {
     // updates and filters recommendedResult depending on the search term
     useEffect(() => {
         if (searchTerm.length >= 1) {
-            var filtered = Courses.filter(item => item.title.toUpperCase().trim().includes(searchTerm.trim().toUpperCase()));
+            var filtered
+            if (Number(searchTerm)) {
+                filtered = Courses.filter(item => Math.round(item.number/100)*100 == searchTerm)
+            } else {
+                filtered = Courses.filter(item => item.title.toUpperCase().trim().includes(searchTerm.trim().toUpperCase()));
+            }
+
             filtered = filtered.filter(item => !recentSearches.some(course => item.class_name == course.class_name));
 
             setRecommendResult(filtered);
