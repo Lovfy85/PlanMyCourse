@@ -64,7 +64,7 @@ h3, h5 {
 
 .course-planner-add {
     z-index: 1;
-    color: #ffffff;
+    color: #FFFFFF;
     background-color: var(--primary-color);
     border: 0px;
     transition: background-color 0.3s ease;
@@ -78,7 +78,7 @@ h3, h5 {
   cursor: default;
 }
 
-.course-planner-add:hover {
+.course-planner-add:not(.added):hover {
   background-color: var(--hover-color);
 }
 
@@ -89,9 +89,18 @@ h3, h5 {
 }
 
 .course-view {
-    background-color: #D9D9D9;
-    color: #454545;
-    border: 1px solid #454545
+    background-color: var(--bg-elevated);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    transition: background-color 0.3s ease;
+}
+
+.course-view:hover {
+    background-color: #dbdbda;
+}
+
+[data-theme="dark"] .course-view:hover {
+    background-color: #414141;
 }
 
 .course-review-section {
