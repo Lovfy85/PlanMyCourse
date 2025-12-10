@@ -23,7 +23,6 @@ function CourseNode({ data }) {
                         alt="Switch alternative"
                     />
                 )}
-                // Display course id and title on hover
                 {data.title && (
                     <div className="course-hover">
                         <div className="hover-course-id">{data.label}</div>
