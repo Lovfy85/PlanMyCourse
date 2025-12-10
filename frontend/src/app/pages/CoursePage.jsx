@@ -51,6 +51,9 @@ export default function CoursePage({ user }) {
     async function handleSaveEdit(reviewId) {
         setError('');
         try {
+
+            let updatedReview = null;
+
             // update comment
             if (editPost !== undefined) {
                 const res = await axios.put(`http://localhost:3001/reviewsmade/review/${reviewId}`, { post: editPost }, { withCredentials: true });
@@ -64,8 +67,14 @@ export default function CoursePage({ user }) {
             if (Number.isInteger(editRating) && editRating >= 1 && editRating <= 5) {
                 const res2 = await axios.put(`http://localhost:3001/reviewsmade/rating/${reviewId}`, { rating: editRating }, { withCredentials: true });
                 if (res2.data && res2.data.reviewId) {
+                    updatedReview = res2.data;
                     setReviews((prev) => prev.map((r) => (r.reviewId === reviewId ? res2.data : r)));
-                    setRatingsArray((prev) => prev.map((rt) => (rt.reviewId === reviewId ? res2.data : rt)));
+                    setRatingsArray((prev) => {
+                        const updated = prev.map((r) => (r.reviewId === reviewId ? res2.data : r));
+                        const avg = updated.reduce((s,r) => s + r.rating, 0) / updated.length;
+                        setAverageRating(parseFloat(avg.toFixed(2)));
+                        return updated;
+                    });
                 }
             }
 
@@ -144,7 +153,13 @@ export default function CoursePage({ user }) {
         axios.post('http://localhost:3001/reviewsmade/reviews', payload, { withCredentials: true })
             .then((res) => {
                 setReviews((p) => [...p, res.data]);
-                setRatingsArray((p) => [...p, res.data]);
+                setRatingsArray((p) =>{
+                    const updated = [...p, res.data];
+                    const avg = updated.reduce((s, r) => s + r.rating, 0) / updated.length;
+                    setAverageRating(parseFloat(avg.toFixed(2)));
+                    return updated;
+                });
+
                 setNewReview('');
                 setRating(0);
                 setHover(0);
