@@ -9,7 +9,7 @@
  */
 
 import { useMemo } from "react";
-import ReactFlow, { Background, Controls, MiniMap } from "reactflow";
+import ReactFlow, { Background, Controls } from "reactflow";
 import "reactflow/dist/style.css";
 import CourseNode from "./CourseNode";
 

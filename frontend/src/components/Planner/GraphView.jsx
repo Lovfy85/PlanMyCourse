@@ -1,4 +1,4 @@
-import ReactFlow, { Background, Controls, MiniMap } from 'reactflow';
+import ReactFlow, { Background, Controls } from 'reactflow';
 import { useMemo } from 'react';
 import 'reactflow/dist/style.css';
 import CourseNode from '../Graph/CourseNode';
@@ -10,16 +10,7 @@ function GraphView({ nodes, edges, onNodesChange, onEdgesChange, courses, loadin
         plannerNode: CourseNode
     }), []);
 
-    // Get colour for a node in the minimap
-    const getNodeColor = (node) => {
-        const course = courses.find(c => c.class_name === node.id);
-        // Colour node blue if taken
-        if (course && course.taken) {
-            return '#215591';
-        }
-        // Colour node grey if not taken yet
-        return '#707070ff';
-    };
+
 
     // Show loading state
     if (loading) {
@@ -31,6 +22,8 @@ function GraphView({ nodes, edges, onNodesChange, onEdgesChange, courses, loadin
         return <div className="no-courses">No courses to display</div>;
     }
 
+
+
     // Show the graph
     return (
         <ReactFlow
@@ -39,10 +32,10 @@ function GraphView({ nodes, edges, onNodesChange, onEdgesChange, courses, loadin
             nodeTypes={nodeTypes}
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
-            fitView
             nodesDraggable={true}
             nodesConnectable={false}
             elementsSelectable={true}
+            fitView
             proOptions={{ hideAttribution: true }}
         >
             <Background />

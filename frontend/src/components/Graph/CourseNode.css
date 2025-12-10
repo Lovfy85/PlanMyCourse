@@ -166,3 +166,24 @@
     color: #333;
 }
 
+/* Global animated edge styles for all graphs */
+.react-flow__edge.animated .react-flow__edge-path {
+    stroke-dasharray: 5;
+    animation: dashdraw 0.5s linear infinite;
+}
+
+@keyframes dashdraw {
+    to {
+        stroke-dashoffset: -10;
+    }
+}
+
+/* Ensure animated edges are visible in all themes */
+[data-theme="light"] .react-flow__edge.animated .react-flow__edge-path {
+    stroke: #333333;
+}
+
+[data-theme="dark"] .react-flow__edge.animated .react-flow__edge-path {
+    stroke: #cccccc;
+}
+

@@ -54,7 +54,7 @@ export const buildNodes = (courses, levelGroups, savedPositions) => {
                 data: { 
                     courseCode: course.class_name,
                     title: course.title,
-                    showHandles: false // Disable handles for planner nodes
+                    showHandles: true // Enable handles for planner nodes to allow edges
                 },
                 position: position,
                 draggable: true,
@@ -94,10 +94,9 @@ export const buildEdges = (courses, allPrereqs, courseMap) => {
                     target: course.class_name,
                     type: 'smoothstep',
                     animated: true,
-                    className: 'graph-edge',
                     markerEnd: {
-                        type: MarkerType.ArrowClosed,
-                        color: '#ddd',
+                        type: 'arrowclosed',
+                        color: '#3a3a3a',
                     },
                 });
             }

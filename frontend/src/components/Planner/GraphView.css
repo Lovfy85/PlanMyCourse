@@ -58,21 +58,30 @@
 }
 
 /* ReactFlow Edge */
-.graph-edge {
-    stroke: #636363;
-    stroke-width: 2px;
+.react-flow__edge.graph-edge .react-flow__edge-path {
+    stroke: #636363 !important;
+    stroke-width: 2px !important;
 }
 
-.graph-edge .react-flow__edge-path {
-    stroke: var(--text-color);
-    stroke-width: 2;
+[data-theme="dark"] .react-flow__edge.graph-edge .react-flow__edge-path {
+    stroke: #cccccc !important;
+    stroke-width: 2px !important;
 }
 
 /* Arrowhead styles */
 .react-flow__arrowhead {
-    fill: #000000;
+    fill: #636363 !important;
 }
 
-marker {
-    fill: #000000;
+[data-theme="dark"] .react-flow__arrowhead {
+    fill: #cccccc !important;
+}
+
+/* Marker styles for arrow tips */
+.react-flow__edge.graph-edge marker polygon {
+    fill: #636363 !important;
+}
+
+[data-theme="dark"] .react-flow__edge.graph-edge marker polygon {
+    fill: #cccccc !important;
 }
