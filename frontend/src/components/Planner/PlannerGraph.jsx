@@ -11,6 +11,7 @@
  */
 
 import { useEffect, useState } from 'react';
+import { useNodesState, useEdgesState } from 'reactflow';
 import axios from 'axios';
 import GraphModel from './GraphModel';
 import GraphView from './GraphView';
@@ -19,11 +20,11 @@ import { loadSavedPositions, savePositions, groupCoursesByLevel, createCourseMap
 import { buildNodes, buildEdges } from './graphBuilder';
 
 function PlannerGraph({ isOpen, onClose, courses }) {
-    // State for graph nodes
-    const [nodes, setNodes] = useState([]);
+    // State for graph nodes with ReactFlow hooks
+    const [nodes, setNodes, onNodesChange] = useNodesState([]);
     
-    // State for graph edges
-    const [edges, setEdges] = useState([]);
+    // State for graph edges with ReactFlow hooks
+    const [edges, setEdges, onEdgesChange] = useEdgesState([]);
     
     // Loading state for graph building
     const [loading, setLoading] = useState(true);
@@ -96,6 +97,8 @@ function PlannerGraph({ isOpen, onClose, courses }) {
                 <GraphView 
                     nodes={nodes}
                     edges={edges}
+                    onNodesChange={onNodesChange}
+                    onEdgesChange={onEdgesChange}
                     courses={courses}
                     loading={loading}
                 />

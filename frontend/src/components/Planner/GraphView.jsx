@@ -4,7 +4,7 @@ import 'reactflow/dist/style.css';
 import CourseNode from '../Graph/CourseNode';
 import './GraphView.css';
 
-function GraphView({ nodes, edges, courses, loading }) {
+function GraphView({ nodes, edges, onNodesChange, onEdgesChange, courses, loading }) {
     // Define custom node types
     const nodeTypes = useMemo(() => ({
         plannerNode: CourseNode
@@ -30,6 +30,11 @@ function GraphView({ nodes, edges, courses, loading }) {
             nodes={nodes}
             edges={edges}
             nodeTypes={nodeTypes}
+            onNodesChange={onNodesChange}
+            onEdgesChange={onEdgesChange}
+            nodesDraggable={true}
+            nodesConnectable={false}
+            elementsSelectable={true}
             fitView
             proOptions={{ hideAttribution: true }}
         >
