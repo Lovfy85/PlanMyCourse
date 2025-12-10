@@ -88,13 +88,12 @@
     pointer-events: none;
 }
 
-/* Unified Tooltip Styles */
 .course-tooltip {
     position: absolute;
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(-8px);
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: var(--primary-color);
     color: white;
     padding: 12px 16px;
     border-radius: 8px;
@@ -116,7 +115,7 @@
     left: 50%;
     transform: translateX(-50%);
     border: 6px solid transparent;
-    border-top-color: rgba(0, 0, 0, 0.9);
+    border-top-color: var(--primary-color);
 }
 
 .course-node-content:hover .course-tooltip {
@@ -129,7 +128,7 @@
     font-weight: bold;
     font-size: 14px;
     margin-bottom: 4px;
-    color: var(--primary-color);
+    color: white;
 }
 
 .tooltip-course-title {
