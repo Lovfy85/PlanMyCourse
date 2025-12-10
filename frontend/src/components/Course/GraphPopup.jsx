@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ReactFlowProvider, useReactFlow } from 'reactflow';
 import GraphFlow from '../Graph/GraphFlow';
 import AlternativeSelector from '../Graph/AlternativeSelector';
+import MessagePopup from '../MessagePopup/MessagePopup';
 import { useGraphData } from '../../app/pages/useGraphData';
 import alternativesData from '../../app/pages/alternatives.json';
 import './GraphPopup.css';
@@ -11,6 +12,7 @@ function GraphPopupContent({ isOpen, onClose, courseId, user }) {
     const { nodes, edges, handleSearch, setQuery, replaceNode } = useGraphData(fitView);
     const hasSearched = useRef(false);
     const [selectedNode, setSelectedNode] = useState(null);
+    const [showAuthMessage, setShowAuthMessage] = useState(false);
 
     useEffect(() => {
         if (isOpen && courseId && !hasSearched.current) {
@@ -25,6 +27,7 @@ function GraphPopupContent({ isOpen, onClose, courseId, user }) {
         if (!isOpen) {
             hasSearched.current = false;
             setSelectedNode(null);
+            setShowAuthMessage(false);
         }
     }, [isOpen, courseId, handleSearch, setQuery]);
 
@@ -71,7 +74,7 @@ function GraphPopupContent({ isOpen, onClose, courseId, user }) {
         if (alternatives.length > 0) {
             // Check authentication before showing alternatives
             if (!user) {
-                alert("Must be logged in to switch prerequisites");
+                setShowAuthMessage(true);
                 return;
             }
             setSelectedNode({ ...node, alternativesList: alternatives });
@@ -114,6 +117,15 @@ function GraphPopupContent({ isOpen, onClose, courseId, user }) {
                         alternatives={getAlternatives()}
                         onSelectAlternative={handleSelectAlternative}
                         onClose={() => setSelectedNode(null)}
+                    />
+                    
+                    {/* Authentication message popup */}
+                    <MessagePopup
+                        isOpen={showAuthMessage}
+                        onClose={() => setShowAuthMessage(false)}
+                        title="Authentication Required"
+                        message="Must be logged in to switch prerequisites"
+                        buttonText="OK"
                     />
                 </div>
             </div>

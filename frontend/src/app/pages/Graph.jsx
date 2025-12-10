@@ -12,6 +12,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import SearchBar from "../../components/Graph/SearchBar";
 import GraphFlow from "../../components/Graph/GraphFlow";
 import AlternativeSelector from "../../components/Graph/AlternativeSelector";
+import MessagePopup from "../../components/MessagePopup/MessagePopup";
 import { useGraphData } from "./useGraphData";
 import alternativesData from "./alternatives.json";
 import "./Graph.css";
@@ -31,6 +32,9 @@ const GraphContent = ({ user }) => {
   
   // State for alternative selector
   const [selectedNode, setSelectedNode] = useState(null);
+  
+  // State for authentication message popup
+  const [showAuthMessage, setShowAuthMessage] = useState(false);
 
   // Handle node click to show alternatives
   const handleNodeClick = (event, node) => {
@@ -74,7 +78,7 @@ const GraphContent = ({ user }) => {
     if (alternatives.length > 0) {
       // Check authentication before showing alternatives
       if (!user) {
-        alert("Must be logged in to switch prerequisites");
+        setShowAuthMessage(true);
         return;
       }
       setSelectedNode({ ...node, alternativesList: alternatives });
@@ -115,6 +119,15 @@ const GraphContent = ({ user }) => {
         alternatives={getAlternatives()}
         onSelectAlternative={handleSelectAlternative}
         onClose={() => setSelectedNode(null)}
+      />
+      
+      {/* Authentication message popup */}
+      <MessagePopup
+        isOpen={showAuthMessage}
+        onClose={() => setShowAuthMessage(false)}
+        title="Authentication Required"
+        message="Must be logged in to switch prerequisites"
+        buttonText="OK"
       />
     </div>
   );
