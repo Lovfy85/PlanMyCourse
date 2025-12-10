@@ -23,6 +23,13 @@ function CourseNode({ data }) {
                         alt="Switch alternative"
                     />
                 )}
+                // Display course id and title on hover
+                {data.title && (
+                    <div className="course-hover">
+                        <div className="hover-course-id">{data.label}</div>
+                        <div className="hover-course-title">{data.title}</div>
+                    </div>
+                )}
             </div>
             <Handle className="graph-handle" type="source" position={Position.Bottom} />
         </>
