@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1100; /* Higher than other popups */
+    z-index: 1100;
 }
 
 .message-popup-content {
@@ -54,10 +54,6 @@
 
 .message-popup-close:hover {
     background-color: rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="dark"] .message-popup-close:hover {
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .message-popup-body {
