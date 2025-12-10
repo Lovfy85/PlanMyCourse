@@ -60,6 +60,9 @@ services:
     #The command to run that of executing the web scraper when the docker-compose.yml is built.
     command: ["python3", "courseScraper.py"]
 
+    volumes:
+      - courses_data:/app/data
+
   #The container that runs that of the server.
   backend:
 
@@ -109,6 +112,7 @@ services:
     #Builds that of the dockerfile that is connected to the 'frontend' directory.
     build: 
       context: ./frontend
+      dockerfile: dockerfile
     
     #The container name of running the frontend.
     container_name: main_frontend
@@ -131,7 +135,8 @@ services:
     # that relates on using nodejs.
     volumes:
       - ./frontend:/app
-      - /app/node_modules
+      - ./web-scraper:/web-scraper
+      - /app/node_modules 
     
     #When accessing that of the container, you can have access that of the website overall. 
     command: ["npm", "run", "dev", "--", "--host"]
@@ -139,3 +144,4 @@ services:
 #This refers to that of the volume being used, which is 'db_data'.
 volumes:
   db_data:
+  courses_data: 

@@ -10,7 +10,7 @@ COPY package*.json ./
 #Runs that of installing the node package dependencies.
 RUN npm install
 
-#Copies that of the files seen in frontend and puts it in the working directory.
+#Copies that of the files seen in frontend root directory and puts it in the working directory.
 COPY . .
 
 #Exposes 5173 port. This connects to that of the frontend container.
