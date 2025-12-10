@@ -74,8 +74,15 @@
     text-align: center;
 }
 
-.course-node-content:hover .course-tooltip {
+.course-node-content:hover .course-hover {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(-12px);
+}
+
+.hover-course-id {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: var(--primary-color);
 }
