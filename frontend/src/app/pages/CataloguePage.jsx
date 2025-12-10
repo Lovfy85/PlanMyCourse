@@ -34,7 +34,7 @@ function CataloguePage({user}) {
     }
 
     if(variant){
-      url = `http://localhost:3001/courses/sort/${variant}?offset=${newOffset}&limit=${limit}`;
+      url = `http://localhost:3001/courses/sort/${variant}?search=${search}&offset=${newOffset}&limit=${limit}`;
     }
 
     try{
@@ -90,7 +90,7 @@ function CataloguePage({user}) {
   const sortHandler = (variant) => {
     setSortVariant(variant);
     setOffset(0);
-    getCourses(true, variant, currentSearch);
+    getCourses(true, variant, searchTerm);
   };
 
   return (
