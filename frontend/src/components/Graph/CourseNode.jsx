@@ -14,7 +14,7 @@ function CourseNode({ data }) {
     return (
         <>
             <Handle className="graph-handle" type="target" position={Position.Top} />
-            <div className="course-node-content" title={data.title || data.label}>
+            <div className="course-node-content">
                 <span className="course-name">{data.label}</span>
                 {data.hasAlternatives && (
                     <img 
@@ -22,6 +22,12 @@ function CourseNode({ data }) {
                         src="https://images.icon-icons.com/2024/PNG/512/clockwise_refresh_arrow_icon_123836.png"
                         alt="Switch alternative"
                     />
+                )}
+                {data.title && (
+                    <div className="course-hover">
+                        <div className="hover-course-id">{data.label}</div>
+                        <div className="hover-course-title">{data.title}</div>
+                    </div>
                 )}
             </div>
             <Handle className="graph-handle" type="source" position={Position.Bottom} />
