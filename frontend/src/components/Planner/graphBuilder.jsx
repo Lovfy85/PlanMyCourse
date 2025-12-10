@@ -50,12 +50,11 @@ export const buildNodes = (courses, levelGroups, savedPositions) => {
             // Create node object
             graphNodes.push({
                 id: course.class_name,
+                type: 'plannerNode',
                 data: { 
-                    label: (
-                        <div className="course-node" title={course.title || course.class_name}>
-                            <div className="course-code">{course.class_name}</div>
-                        </div>
-                    )
+                    courseCode: course.class_name,
+                    title: course.title,
+                    showHandles: false // Disable handles for planner nodes
                 },
                 position: position,
                 draggable: true,

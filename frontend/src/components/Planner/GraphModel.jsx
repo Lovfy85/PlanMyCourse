@@ -4,10 +4,10 @@
  * Reusable modal wrapper for displaying the graph.
  * Provides overlay, close functionality, and header.
  * 
- * @param {boolean} isOpen - Whether the modal is visible
- * @param {Function} onClose - Handler for closing the modal
- * @param {ReactNode} children - Content to display in the modal body
- * @param {string} title - Title to display in the modal header
+ * @param {boolean} isOpen - Handler for opening the model
+ * @param {Function} onClose - Handler for closing the model
+ * @param {ReactNode} children - Content to display in the model body
+ * @param {string} title - Title to display in the model header
  */
 
 import './GraphModel.css';

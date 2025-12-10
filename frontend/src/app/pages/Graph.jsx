@@ -6,7 +6,7 @@
  */
 
 import { useState } from "react";
-import { Controls, ReactFlowProvider, useReactFlow } from "reactflow";
+import { ReactFlowProvider, useReactFlow } from "reactflow";
 import "reactflow/dist/style.css";
 import Navbar from "../../components/Navbar/Navbar";
 import SearchBar from "../../components/Graph/SearchBar";
@@ -126,7 +126,6 @@ const Graph = () => (
     <Navbar />
     <ReactFlowProvider>
       <GraphContent />
-      <Controls />
     </ReactFlowProvider>
   </div>
 );

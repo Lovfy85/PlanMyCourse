@@ -1,8 +1,15 @@
 import ReactFlow, { Background, Controls, MiniMap } from 'reactflow';
+import { useMemo } from 'react';
 import 'reactflow/dist/style.css';
+import CourseNode from '../Graph/CourseNode';
 import './GraphView.css';
 
 function GraphView({ nodes, edges, onNodesChange, onEdgesChange, courses, loading }) {
+    // Define custom node types
+    const nodeTypes = useMemo(() => ({
+        plannerNode: CourseNode
+    }), []);
+
     // Get colour for a node in the minimap
     const getNodeColor = (node) => {
         const course = courses.find(c => c.class_name === node.id);
@@ -11,7 +18,7 @@ function GraphView({ nodes, edges, onNodesChange, onEdgesChange, courses, loadin
             return '#215591';
         }
         // Colour node grey if not taken yet
-        return '#666';
+        return '#707070ff';
     };
 
     // Show loading state
@@ -29,6 +36,7 @@ function GraphView({ nodes, edges, onNodesChange, onEdgesChange, courses, loadin
         <ReactFlow
             nodes={nodes}
             edges={edges}
+            nodeTypes={nodeTypes}
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
             fitView
@@ -38,8 +46,7 @@ function GraphView({ nodes, edges, onNodesChange, onEdgesChange, courses, loadin
             proOptions={{ hideAttribution: true }}
         >
             <Background />
-            <Controls />
-            <MiniMap nodeColor={getNodeColor} />
+            <Controls position="bottom-left" />
         </ReactFlow>
     );
 }

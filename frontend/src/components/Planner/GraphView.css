@@ -23,43 +23,37 @@
 
 
 /* ReactFlow Nodes */
-.graph-node {
+.react-flow__node.react-flow__node-plannerNode {
+    background: transparent;
+    border: none;
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+
+.react-flow__node.react-flow__node-plannerNode.taken .planner-node-content {
+    background: var(--primary-color);
     color: #FFFFFF;
     border: 2px solid #333;
-    border-radius: 0.8em;
-    padding: 10px;
-    width: 10em;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    font-weight: 500;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
-    transition: all 0.2s ease;
 }
 
-.graph-node:hover {
-    cursor: pointer;
-}
-
-.graph-node.taken {
-    background: var(--primary-color);
-}
-
-.graph-node.taken:hover {
+.react-flow__node.react-flow__node-plannerNode.taken .planner-node-content:hover {
     background: var(--hover-color);
 }
 
-.graph-node.not-taken {
+.react-flow__node.react-flow__node-plannerNode.not-taken .planner-node-content {
     background: #666;
+    color: #FFFFFF;
+    border: 2px solid #333;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
 }
 
-.graph-node.not-taken:hover {
+.react-flow__node.react-flow__node-plannerNode.not-taken .planner-node-content:hover {
     background: #363636;
 }
 
-[data-theme="dark"] .graph-node.not-taken:hover {
+[data-theme="dark"] .react-flow__node.react-flow__node-plannerNode.not-taken .planner-node-content:hover {
     background: #4e4e4e;
 }
 

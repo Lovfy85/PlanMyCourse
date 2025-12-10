@@ -9,7 +9,7 @@
  */
 
 import { useMemo } from "react";
-import ReactFlow, { Background } from "reactflow";
+import ReactFlow, { Background, Controls, MiniMap } from "reactflow";
 import "reactflow/dist/style.css";
 import CourseNode from "./CourseNode";
 
@@ -31,6 +31,7 @@ function GraphFlow({ nodes, edges, onNodeClick }) {
 
             >
                 <Background />
+                <Controls position="bottom-left" />
             </ReactFlow>
         </div>
     );
