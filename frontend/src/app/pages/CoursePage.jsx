@@ -126,6 +126,11 @@ export default function CoursePage({ user }) {
         e.preventDefault();
         setError('');
 
+        if (!user) {
+            setError('You must be logged in to submit a review');
+            return;
+        }
+
         if (rating === 0) {
             setError('Must include a star');
             return;
