@@ -44,10 +44,7 @@ services:
     #The container name of running the web scraper.
     container_name: course_scraper
 
-    #This container runs only when that of the database container runs finely.
-    depends_on:
-      db:
-        condition: service_healthy
+    command: ["sleep", "infinity"]
 
     #Intializes the environment variables in which connects towards that of the MySQL database container.
     environment:
@@ -56,9 +53,6 @@ services:
       DB_PASS: solaire85
       DB_NAME: coursesdb
       DB_PORT: 3306
-    
-    #The command to run that of executing the web scraper when the docker-compose.yml is built.
-    command: ["python3", "courseScraper.py"]
 
     volumes:
       - courses_data:/app/data
@@ -89,8 +83,6 @@ services:
     depends_on:
       db:
         condition: service_healthy
-      scraper:
-        condition: service_completed_successfully
     
     #This is broken up into that of two parts:
     # The backend directory seen in this project directory will also be seen in that of the /app folder inside the container.
