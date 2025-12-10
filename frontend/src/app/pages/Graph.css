@@ -85,6 +85,3 @@
   stroke-width: 2;
 }
 
-.react-flow__edge.animated path {
-  animation: none !important;
-}
