@@ -28,8 +28,10 @@ function Redirect() {
         // different filters depending on search input
         if (Number(term)) { // search by course level
             var filtered = Courses.filter(item => Math.floor(Number(item.number)/100)*100 == Number(term));
-        } else if (term.length == 4) { // search by depertment
+        } else if (term.length >= 2 && term.length <= 4) { // search by subject
             var filtered = Courses.filter(item => item.subject == term);
+        }  else if (term.length > 4 && term.length <= 7 && /\d/.test(term.slice(-1))) { // search by subject + number, checks if last character is a number
+            var filtered = Courses.filter(item => (item.subject + item.number) == term);
         } else { // search by exact course subject
             var filtered = Courses.filter(item => item.title.trim().toUpperCase().indexOf(term));
         }

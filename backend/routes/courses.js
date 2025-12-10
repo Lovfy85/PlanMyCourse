@@ -35,23 +35,32 @@ router.get('/search', (req,res) => {
         return
     }
 
-    const isNumber = !isNaN(Number(searchTerm));
+    const cleaned = searchTerm.toString().trim();
+    const isNumber = !isNaN(Number(cleaned));
     let query = '';
     let params = [];
 
     if (isNumber) {
         // search by level
         query = `SELECT * FROM Courses WHERE FLOOR(number / 100) * 100 = ? LIMIT ?, ?`;
-        params = [Number(searchTerm), offset, limit];
+        params = [Number(cleaned), offset, limit];
     } else {
-        // search by subject or class_name or title
-        query = `SELECT * FROM Courses WHERE 
-        class_name LIKE ? OR 
-        subject LIKE ? OR
-        title LIKE ?
-        LIMIT ?, 
-        ?`;
-        params = [`%${searchTerm}%`, `%${searchTerm}`, `%${searchTerm}%`, offset, limit];
+        const cleanedUpper = cleaned.toUpperCase();
+
+        // If the term looks like a subject code
+        if (searchTerm.length >=2 && searchTerm.length <=4) {
+            query = `SELECT * FROM Courses WHERE UPPER(subject) = ? OR UPPER(class_name) LIKE ? LIMIT ?, ?`;
+            params = [cleanedUpper, `${cleanedUpper}%`, offset, limit];
+        } else {
+            query = `SELECT * FROM Courses WHERE 
+            UPPER(class_name) LIKE ? OR 
+            UPPER(subject) LIKE ? OR
+            UPPER(title) LIKE ?
+            LIMIT ?, 
+            ?`;
+            const pattern = `%${cleanedUpper}%`;
+            params = [pattern, pattern, pattern, offset, limit];
+        }
     }
 
     connectMade.query(query, params, (err, results) => {
