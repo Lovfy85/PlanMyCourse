@@ -26,7 +26,11 @@ docker-compose up -d db
 ```
 docker-compose up -d scraper
 ```
-**Scrape Data**
+**Scrape Data** 
+
+This might take a while since it is scraping a lot of USASK courses. Might take up to 3-5 minutes. You will know when it is done 
+when it says after the "Connected to database" that of the phrase: "courses and prerequisites have been added successfully" and 
+"courses.json already exists."
 ```
 docker exec -it course_scraper python courseScraper.py
 ```
