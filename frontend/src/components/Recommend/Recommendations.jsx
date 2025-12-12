@@ -4,7 +4,7 @@ import Courses from "../../../../web-scraper/courses.json"
 import { useNavigate } from "react-router-dom";
 
 // recommendation component
-function Recommendation( {searchTerm, onFocused} ) {
+function Recommendation( {searchTerm, onFocused, onSearch} ) {
     const [recommendResult, setRecommendResult] = useState([]);
     const [recentSearches, setRecentSearches] = useState(() => {
         const stored = localStorage.getItem("recentSearches");
@@ -37,7 +37,6 @@ function Recommendation( {searchTerm, onFocused} ) {
         } else {
             setRecommendResult([]);
         }
-
         
     }, [searchTerm]);
 
@@ -60,36 +59,43 @@ function Recommendation( {searchTerm, onFocused} ) {
     }, [onFocused, recommendResult, recentSearches]);
 
     // redirect the user to another page if any of the recommended courses is interacted with
-    function redirect(course) {
-        if (course) {
+    function redirect(searched) {
+        if (recommendResult.length > 0) {
             setRecentSearches(recentSearches => {
-                const filtered = recentSearches.filter(item => item.title != course.title);
-                const updated = [course, ...filtered];
+                const filtered = recentSearches.filter(item => item != searched);
+                const updated = [searched, ...filtered];
                 return updated.slice(0,maxRecentSearches - 1);
             });
-            navigate(`./catalogue/${course.class_name.toUpperCase().trim()}`);
         }
+
+        navigate(`./catalogue/${searched}`);
     }
+
+    useEffect(() => {
+        if (onSearch == true) {
+            redirect(searchTerm)
+        }
+    }, [onSearch])
 
     return (
         <div 
         className='recommendation'
         id='recommendation'
         >
-            {recentSearches.map((course, index) => {
+            {recentSearches.map((term, index) => {
                 return (
                     <button
-                        key={course.class_name}
+                        key={term}
                         className="courseRecommended"
                         tabIndex={0}
                         onKeyDown={(e) => {
                             if (e.key == "Enter") {
-                                redirect(course)
+                                redirect(term)
                             }
                         }}
-                        onClick={() => redirect(course)}
+                        onClick={() => redirect(term)}
                         >
-                        {course.title}
+                        {term}
                         <img 
                             className="icon"
                             src="https://images.icon-icons.com/2024/PNG/512/clockwise_refresh_arrow_icon_123836.png"
@@ -108,10 +114,10 @@ function Recommendation( {searchTerm, onFocused} ) {
                         tabIndex={0}
                         onKeyDown={(e) => {
                             if (e.key == "Enter") {
-                                redirect(course)
+                                redirect(course.title)
                             }
                         }}
-                        onClick={() => redirect(course)}
+                        onClick={() => redirect(course.title)}
                         >
                         {course.title}
                         <img 

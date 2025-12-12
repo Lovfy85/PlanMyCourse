@@ -8,6 +8,7 @@ import Courses from "../../../../web-scraper/courses.json"
 function Redirect() {
     const [searchTerm, setSearchTerm] = useState("");
     const [onFocus, setOnFocused] = useState(false);
+    const [onSearch, setOnSearch] = useState(false);
     const navigate = useNavigate();
 
     // redirect the user to the catalogue page
@@ -17,7 +18,8 @@ function Redirect() {
         // check for invalid terms
         if (!term || term.trim().length == 0)  {
             setSearchTerm("");
-            document.getElementById("searchBox").placeholder = "Oops, it seems you tried entering nothing!";
+            const searchBox = document.getElementById("searchBox")
+            searchBox.placeholder = "Oops, it seems you tried entering nothing!";
 
             setTimeout(() => {
                 searchBox.placeholder = "Search for courses...";
@@ -26,14 +28,11 @@ function Redirect() {
         }
 
         // different filters depending on search input
-        if (Number(term)) { // search by course level
-            var filtered = Courses.filter(item => Math.floor(Number(item.number)/100)*100 == Number(term));
-        } else if (term.length >= 2 && term.length <= 4) { // search by subject
-            var filtered = Courses.filter(item => item.subject == term);
-        }  else if (term.length > 4 && term.length <= 7 && /\d/.test(term.slice(-1))) { // search by subject + number, checks if last character is a number
-            var filtered = Courses.filter(item => (item.subject + item.number) == term);
-        } else { // search by exact course subject
-            var filtered = Courses.filter(item => item.title.trim().toUpperCase().indexOf(term));
+        var filtered;
+        if (Number(searchTerm)) {
+            filtered = Courses.filter(item => Math.round(item.number/100)*100 == term)
+        } else {
+            filtered = Courses.filter(item => item.title.toUpperCase().trim().includes(term));
         }
 
         // check if filters return nothing so don't redirect the user to catalogue page
@@ -48,6 +47,7 @@ function Redirect() {
         }
 
         // redirect the user to the catalogue page with their search result
+        setOnSearch(true)
         navigate(`./catalogue/${searchTerm}`);
     }
 
@@ -79,7 +79,7 @@ function Redirect() {
                 onFocus={(e) => handleFocus(e)}
                 onBlur={(e) => handleBlur(e)}
             />
-            <Recommendation searchTerm={searchTerm} onFocused={onFocus}/>
+            <Recommendation searchTerm={searchTerm} onFocused={onFocus} onSearch={onSearch}/>
         </div>
     )
 }
