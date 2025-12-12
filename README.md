@@ -8,7 +8,14 @@ This is a full stack application designed for students at USASK,to help them pla
 Before running this project you must have Docker Desktop installed
 
 ### Steps to Run
-
+**Clone the repo**
+```
+git clone https://git.cs.usask.ca/kbv851/PlanMyCourse.git planmycourse
+```
+**Change terminal directory into root project file**
+```
+cd planmycourse
+```
 **Copy .env variables**
 ```
 cp backend/.env.example backend/.env
