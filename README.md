@@ -1,7 +1,5 @@
 
-# Plan My Course
-
-## Description
+# PlanMyCourse
 This is a full stack application designed for students at USASK,to help them plan and figure out which classes they still need to take and check each class prerequisites without having to navigate to another page. This app would also allow users to create reviews and comments on classes.
 
 ## How To Run This Project: 
@@ -45,6 +43,8 @@ docker-compose up -d
 docker logs -f main_server
 ```
 **Start the frontend**
+
+Make sure you are on a different terminal (still the same directory as before) when you run this command:
 ```
 docker logs -f main_frontend
 ```
@@ -57,18 +57,17 @@ docker-compose down
 
 If you are experiencing any permission issues or are having issues with running the docker commands run `sudo` after every docker command.
 
-`Note:` This issue might occur if you are running a UNIX device 
+`Note:` This issue might occur if you are on a UNIX (Linux or Mac) device 
 
 **Example**
 ```
 sudo docker-compose up -d db
 ```
 
-## Roadmap
-Finish deliverable 2 part 2
+**For Mac Users**
 
-## Contributing
-Not accepting contributions from outside our group
+Instead of `docker-compose` use `docker compose`
+
 
 ## Authors and acknowledgment
 Antoinette Rubia
@@ -83,6 +82,3 @@ Randolf Pugong
 
 ## License
 MIT License
-
-## Project status
-This project is in its coding stages, testing will be done when majority of the features are implemented.
