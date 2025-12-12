@@ -13,12 +13,22 @@ Before running this project you must have Docker Desktop installed
 ```
 cp backend/.env.example backend/.env
 ```
-
-**Builid Docker**
+**Initialize the data base**
+```
+docker-compose up -d db
+```
+**Initialize the scraper**
+```
+docker-compose up -d scraper
+```
+**Scrape Data**
+```
+docker exec -it course_scraper python courseScraper.py
+```
+**Build Docker**
 ```
 docker-compose up -d --build
 ```
-
 **Build Docker Up**
 ```
 docker-compose up -d
@@ -30,6 +40,21 @@ docker logs -f main_server
 **Start the frontend**
 ```
 docker logs -f main_frontend
+```
+**To stop docker**
+```
+docker-compose down
+```
+
+## Troubleshooting
+
+If you are experiencing any permission issues or are having issues with running the docker commands run `sudo` after every docker command.
+
+`Note:` This issue might occur if you are running a UNIX device 
+
+**Example**
+```
+sudo docker-compose up -d db
 ```
 
 ## Roadmap
